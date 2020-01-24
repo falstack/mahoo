@@ -61,15 +61,22 @@ jobs:
         with:
           ref: deploy
 
-      - name: Install
+      - name: Install Node
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
-      - name: Upload
+      - name: Install Qshell
         run: |
-          yarn
-          node qiniu.js ${{ secrets.QINIU_AK }} ${{ secrets.QINIU_SK }}
+          wget http://devtools.qiniu.com/qshell-darwin-x64-v2.4.1.zip
+          unzip qshell-darwin-x64-v2.4.1.zip
+          mv qshell-darwin-x64-v2.4.1 qshell
+          chmod +x qshell
+          mv qshell /usr/local/bin/qshell
+          qshell account ${{ secrets.QINIU_AK }} ${{ secrets.QINIU_SK }} falstack
+
+      - name: Upload
+        run: qshell qupload qiniu.json
 
   publish:
     needs: [merge, build, upload]
