@@ -54,7 +54,7 @@ jobs:
   upload:
     needs: [merge, build]
     name: upload
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
