@@ -2,7 +2,6 @@
 const nodeEnv = process.env.NODE_ENV
 const isDev = nodeEnv === 'development'
 const ENV = require('./.env')
-const qiniu = require('./qiniu')
 const injectScript = require('./.script')
 
 module.exports = {
@@ -14,7 +13,6 @@ module.exports = {
     INJECT: injectScript,
     SOCKET_HOST: ENV.SOCKET_HOST[nodeEnv]
   },
-  buildDir: isDev ? '.nuxt-dev' : '.nuxt',
   /*
    ** Headers of the page
    */
@@ -201,7 +199,7 @@ module.exports = {
         localsConvention: 'camelCase'
       }
     },
-    publicPath: isDev ? '/_nuxt/' : `${qiniu.host}${qiniu.key_prefix}`,
+    publicPath: isDev ? '/_nuxt/' : 'https://file.calibur.tv/mahoo/',
     babel: {
       presets: [
         [
