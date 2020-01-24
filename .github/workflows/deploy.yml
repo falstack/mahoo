@@ -1,0 +1,91 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  merge:
+    name: merge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge to deploy branch
+        uses: devmasx/merge-branch@v1.1.0
+        with:
+          type: now
+          target_branch: 'deploy'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  build:
+    needs: merge
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: deploy
+
+      - name: Install
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Build
+        run: yarn && yarn build
+
+      - name: Commit
+        run: |
+          git config --local user.email "icesilt@outlook.com"
+          git config --local user.name "falstack"
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "Add changes"
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'deploy'
+          force: true
+
+  upload:
+    needs: [merge, build]
+    name: upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: deploy
+
+      - name: Install
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Upload
+        run: |
+          yarn
+          node qiniu.js ${{ secrets.QINIU_AK }} ${{ secrets.QINIU_SK }}
+
+  publish:
+    needs: [merge, build, upload]
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.PRIVATE_KEY_PEM }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            cd ${{ secrets.SERVER_PATH }}
+            git pull
+            yarn
+            pm2 startOrRestart pm2.config.js --env=production -i max
+
