@@ -92,7 +92,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd ${{ secrets.SERVER_PATH }}
-            git pull
+            git pull origin deploy
             yarn
             pm2 startOrRestart pm2.config.js --env=production -i max
 
