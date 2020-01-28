@@ -443,8 +443,8 @@ export default {
       }
     },
     removeCache() {
-      this.$cache.remove(`editor_local_draft_title-${this.slug}`)
-      this.$cache.remove(`editor_local_draft-${this.slug}`)
+      this.$cache.del(`editor_local_draft_title-${this.slug}`)
+      this.$cache.del(`editor_local_draft-${this.slug}`)
     }
   },
   head: {

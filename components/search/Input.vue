@@ -153,7 +153,9 @@ export default {
       }
       this.$nextTick(() => {
         const cacheKey = 'search-all-tags'
-        if (this.$cache.expired(cacheKey, 86400)) {
+        if (this.$cache.has(cacheKey)) {
+          this.tags = this.$cache.get(cacheKey)
+        } else {
           this.$axios
             .$get('v1/search/tags')
             .then(tags => {
@@ -168,8 +170,6 @@ export default {
               }
             })
             .catch(() => {})
-        } else {
-          this.tags = this.$cache.get(cacheKey)
         }
       })
     },

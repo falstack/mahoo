@@ -95,3 +95,5 @@ export const off = (function() {
     }
   }
 })()
+
+export const isTouchDevice = () => 'ontouchstart' in document.documentElement
