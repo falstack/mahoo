@@ -1,17 +1,11 @@
 <template>
-  <div class="v-test" :style="{ backgroundColor: color }" />
+  <div class="v-test" />
 </template>
 
 <script>
 export default {
   name: 'VTest',
   components: {},
-  props: {
-    color: {
-      type: String,
-      required: true
-    }
-  },
   data() {
     return {}
   },

@@ -1,7 +1,7 @@
 /* eslint-disable */
 'use strict';
 
-const canvas = document.getElementsByTagName('canvas')[0];
+const canvas = document.getElementById('canvas');
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 
@@ -17,7 +17,7 @@ let config = {
   SHADING: true,
   COLORFUL: true,
   PAUSED: false,
-  BACK_COLOR: { r: 255, g: 255, b: 255 },
+  BACK_COLOR: { r: 0, g: 0, b: 0 },
   TRANSPARENT: false,
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
