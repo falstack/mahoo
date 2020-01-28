@@ -13,7 +13,7 @@ export default class Manager {
 
   _init() {
     const getTargetId = evt => {
-      if (evt.target.className !== 'curtain__header__menu') {
+      if (evt.target.className !== 'curtain__header__drag') {
         return ''
       }
       return evt.target.getAttribute('data-id')

@@ -1,17 +1,73 @@
+$curtain-border-color: #797d80;
+$curtain-header-size: 20px;
+
 .curtain {
   position: absolute;
   left: 0;
   top: 0;
   overflow: hidden;
+  border: 1px solid $curtain-border-color;
+  background-image: radial-gradient(#072420, rgba(#072420, .3));
 
   &__header {
-    height: 40px;
-    background-color: #6C7579;
+    height: $curtain-header-size;
+    border-bottom: 1px solid $curtain-border-color;
 
-    &__menu {
-      width: 100px;
+    &__close,
+    &__drag {
+      position: relative;
+      overflow: hidden;
       height: 100%;
-      background-color: #008cd2;
+    }
+
+    &__drag {
+      &:before {
+        content: '';
+        position: absolute;
+        right: $curtain-header-size;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: $curtain-border-color;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 1px;
+        top: 50%;
+        height: 6px;
+        border-radius: 3px;
+        transform: translateY(-50%);
+        width: $curtain-header-size - 2;
+        border: 1px solid $curtain-border-color;
+      }
+    }
+
+    &__close {
+      border-right: 1px solid $curtain-border-color;
+      width: $curtain-header-size;
+      float: left;
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        width: 200%;
+        height: 1px;
+        background-color: $curtain-border-color;
+      }
+
+      &:before {
+        transform: rotate(45deg) translateY(-1px);
+      }
+
+      &:after {
+        transform: rotate(-45deg) translateY(-1px);
+      }
     }
   }
 

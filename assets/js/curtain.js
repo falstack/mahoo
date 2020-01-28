@@ -118,7 +118,13 @@ export default {
             },
             [
               h('div', {
-                class: 'curtain__header__menu',
+                class: 'curtain__header__close',
+                attrs: {
+                  'data-id': this.id
+                }
+              }),
+              h('div', {
+                class: 'curtain__header__drag',
                 attrs: {
                   'data-id': this.id
                 }
