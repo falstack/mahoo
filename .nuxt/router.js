@@ -5,6 +5,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _2602b61e = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
 const _15a8c974 = () => interopDefault(import('../pages/about/index/managers.vue' /* webpackChunkName: "pages/about/index/managers" */))
+const _580b4e9e = () => interopDefault(import('../pages/pwa/index.vue' /* webpackChunkName: "pages/pwa/index" */))
 const _a4d327d2 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
 const _f3584928 = () => interopDefault(import('../pages/sign.vue' /* webpackChunkName: "pages/sign" */))
 const _6b8c1ac3 = () => interopDefault(import('../pages/write/index.vue' /* webpackChunkName: "pages/write/index" */))
@@ -85,6 +86,11 @@ export const routerOptions = {
       props: false,
       name: "about-index-managers"
     }]
+  }, {
+    path: "/pwa",
+    component: _580b4e9e,
+    props: false,
+    name: "pwa"
   }, {
     path: "/search",
     component: _a4d327d2,
