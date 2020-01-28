@@ -23,51 +23,63 @@ export const setUserSessionStore = user => {
   } catch (e) {}
 }
 
-export const has = key => {
+export const clear = () => {
   try {
-    const val = localStorage.getItem(key)
-    return val !== null
-  } catch (e) {
-    return false
-  }
-}
-
-export const expired = (key, timeout) => {
-  try {
-    const timeStr = localStorage.getItem(`${key}-created-at`)
-    return !timeStr || Date.now() - timeStr > timeout * 1000
-  } catch (e) {
-    return true
-  }
-}
-
-export const set = (key, val) => {
-  try {
-    localStorage.setItem(key, JSON.stringify(val))
-    localStorage.setItem(`${key}-created-at`, Date.now())
+    localStorage.clear()
   } catch (e) {}
 }
 
-export const get = (key, def) => {
+export const set = (key, value, timeout) => {
+  if (typeof window === 'undefined') {
+    return
+  }
   try {
-    const val = localStorage.getItem(key)
-    if (val === null) {
+    localStorage.setItem(key, JSON.stringify(value))
+    if (timeout) {
+      localStorage.setItem(`${key}-timeout`, Date.now() + timeout * 1000)
+    }
+  } catch (e) {}
+}
+
+export const get = (key, def = null) => {
+  if (typeof window === 'undefined') {
+    return def
+  }
+  try {
+    const value = localStorage.getItem(key)
+    if (!value) {
       return def
     }
-    return JSON.parse(val)
+    const timeout = localStorage.getItem(`${key}-timeout`)
+    if (timeout && parseInt(timeout) < Date.now()) {
+      localStorage.removeItem(key)
+      localStorage.removeItem(`${key}-timeout`)
+      return def
+    }
+    return JSON.parse(value)
   } catch (e) {
     return def
   }
 }
 
-export const remove = key => {
+export const del = key => {
+  if (typeof window === 'undefined') {
+    return
+  }
   try {
     localStorage.removeItem(key)
-  } catch (e) {}
+  } catch (e) {
+    // do nothing
+  }
 }
 
-export const clear = () => {
+export const has = key => {
+  if (typeof window === 'undefined') {
+    return false
+  }
   try {
-    localStorage.clear()
-  } catch (e) {}
+    return !!localStorage.getItem(key)
+  } catch (e) {
+    return false
+  }
 }
