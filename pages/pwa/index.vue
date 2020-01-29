@@ -5,7 +5,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
 
   > .float-menu {
     z-index: 2;
@@ -40,7 +39,7 @@
       height: 20px;
       line-height: 20px;
       width: 105px;
-      color: #fff;
+      color: $color-text-1;
       font-size: 20px;
       white-space: nowrap;
       overflow: hidden;
@@ -62,7 +61,7 @@
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%);
-    color: #fff;
+    color: $color-text-1;
     opacity: 0.5;
   }
 }
@@ -75,10 +74,12 @@
       <img class="logo" src="https://m1.calibur.tv/icon.png-sharejpg200" alt="logo" />
       <p class="site">calibur.tv</p>
       <Curtain id="test">
-        <VTest />
+        <div style="width:500px;height:300px" />
       </Curtain>
       <Curtain id="test-2">
-        <VTest />
+        <div style="width:200px;height:500px">
+          <img src="https://m1.calibur.tv/icon.png" alt="" />
+        </div>
       </Curtain>
     </div>
     <p class="beian">
@@ -92,20 +93,23 @@
 import useSignMixin from '~/mixins/useSign'
 import FloatMenu from '~/components/menu/index'
 import Curtain from '~/assets/js/curtain'
-import VTest from '~/components/Test'
 
 export default {
   name: 'PwaLayout',
   layout: 'empty',
   components: {
     Curtain,
-    FloatMenu,
-    VTest
+    FloatMenu
   },
   mixins: [useSignMixin],
   mounted() {
     // eslint-disable-next-line
     import('~/assets/js/webGL')
+  },
+  methods: {
+    handleClick() {
+      console.log('123')
+    }
   }
 }
 </script>
