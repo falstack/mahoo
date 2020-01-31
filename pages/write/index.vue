@@ -400,7 +400,17 @@ export default {
         })
         .then(slug => {
           this.removeCache()
-          window.location = this.$alias.pin(slug)
+          if (publish) {
+            window.location = this.$alias.pin(slug)
+          } else {
+            this.$router.replace({
+              name: this.$route.name,
+              query: {
+                ...this.$route.query,
+                slug
+              }
+            })
+          }
         })
         .catch(err => {
           this.$toast.error(err.message)
@@ -425,9 +435,19 @@ export default {
           ].concat(this.content),
           publish
         })
-        .then(result => {
+        .then(slug => {
           this.removeCache()
-          window.location = this.$alias.pin(result)
+          if (publish) {
+            this.$router.replace({
+              name: this.$route.name,
+              query: {
+                ...this.$route.query,
+                slug
+              }
+            })
+          } else {
+            window.location = this.$alias.pin(slug)
+          }
         })
         .catch(err => {
           this.$toast.error(err.message)
