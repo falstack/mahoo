@@ -50,7 +50,6 @@ import upload from '~/mixins/upload'
 import { uploadToQiniu } from '~/api/imageApi'
 import HeaderPlugin from '~/components/editor/plugin/header'
 import BaiduPlugin from '~/components/editor/plugin/baidu'
-import EmbedPlugin from '~/components/editor/plugin/media/embed'
 import DelimiterPlugin from '~/components/editor/plugin/delimiter'
 import ListPlugin from '~/components/editor/plugin/list'
 import ChecklistPlugin from '~/components/editor/plugin/checklist'
@@ -118,10 +117,6 @@ export default {
           placeholder: '请输入内容',
           autofocus: self.autofocus,
           tools: {
-            video: {
-              class: EmbedPlugin,
-              inlineToolbar: true
-            },
             marker: {
               class: MarkPlugin,
               shortcut: 'CMD+SHIFT+M'
