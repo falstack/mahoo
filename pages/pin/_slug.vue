@@ -99,37 +99,6 @@
       }
     }
   }
-
-  .notebook {
-    margin-top: 24px;
-
-    p {
-      font-weight: 600;
-      font-synthesis: style;
-      line-height: 1.375;
-      font-size: 16px;
-      color: #1a1a1a;
-      border-bottom: 1px solid #ebebeb;
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-    }
-
-    a {
-      display: inline-block;
-      height: 34px;
-      background-color: #f7f7f7;
-      border: 1px solid #dcdcdc;
-      font-size: 0;
-      border-radius: 4px;
-      margin: 0 18px 18px 0;
-      vertical-align: middle;
-    }
-
-    .name {
-      font-size: 14px;
-      margin: 0 10px;
-    }
-  }
 }
 </style>
 
@@ -194,13 +163,6 @@
         </div>
       </div>
       <CommentMain :slug="slug" />
-      <div v-if="notebook" class="notebook only-pc">
-        <p>文章被以下专栏收录</p>
-        <NLink target="_blank" :to="$alias.tag(notebook.slug)">
-          <VImg :src="notebook.avatar" width="32" height="32" />
-          <span class="name" v-text="notebook.name" />
-        </NLink>
-      </div>
     </div>
   </div>
 </template>
@@ -252,7 +214,6 @@ export default {
       content: [],
       area: null,
       topic: null,
-      notebook: null,
       visit_type: 0,
       trial_type: 0,
       comment_type: 0,
