@@ -107,9 +107,7 @@ export default {
     import('~/assets/js/webGL')
   },
   methods: {
-    handleClick() {
-      console.log('123')
-    }
+    handleClick() {}
   }
 }
 </script>

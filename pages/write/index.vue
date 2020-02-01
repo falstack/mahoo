@@ -438,15 +438,9 @@ export default {
         .then(slug => {
           this.removeCache()
           if (publish) {
-            this.$router.replace({
-              name: this.$route.name,
-              query: {
-                ...this.$route.query,
-                slug
-              }
-            })
-          } else {
             window.location = this.$alias.pin(slug)
+          } else {
+            this.loading = false
           }
         })
         .catch(err => {
