@@ -8,8 +8,10 @@ import useSignMixin from '~/mixins/useSign'
 export default {
   name: 'AppLayout',
   mixins: [useSignMixin],
-  head: {
-    titleTemplate: val => val
+  head() {
+    return {
+      titleTemplate: val => val
+    }
   }
 }
 </script>

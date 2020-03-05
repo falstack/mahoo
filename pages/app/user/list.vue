@@ -109,8 +109,10 @@ export default {
       return ''
     }
   },
-  head: {
-    title: '用户列表'
+  head() {
+    return {
+      title: '用户列表'
+    }
   }
 }
 </script>

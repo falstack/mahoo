@@ -20,7 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   build:
-    needs: merge
+    needs: [merge]
     name: build
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
   upload:
     needs: [merge, build]
     name: upload
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -68,11 +68,14 @@ jobs:
 
       - name: Install Qshell
         run: |
-          wget http://devtools.qiniu.com/qshell-darwin-x64-v2.4.1.zip
-          unzip qshell-darwin-x64-v2.4.1.zip
-          mv qshell-darwin-x64-v2.4.1 qshell
+          echo $PATH
+          cd /opt/hostedtoolcache/node/12.16.1/x64/bin
+          echo "export PATH=\$PATH:$(pwd)" >> ~/.profile
+          source ~/.profile
+          wget http://devtools.qiniu.com/qshell-linux-x64-v2.4.1.zip
+          unzip qshell-linux-x64-v2.4.1.zip
+          mv qshell-linux-x64-v2.4.1 qshell
           chmod +x qshell
-          mv qshell /usr/local/bin/qshell
           qshell account ${{ secrets.QINIU_AK }} ${{ secrets.QINIU_SK }} falstack
 
       - name: Upload

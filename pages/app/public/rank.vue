@@ -20,8 +20,10 @@ export default {
   created() {},
   mounted() {},
   methods: {},
-  head: {
-    title: '人气排行'
+  head() {
+    return {
+      title: '人气排行'
+    }
   }
 }
 </script>

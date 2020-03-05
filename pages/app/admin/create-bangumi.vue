@@ -172,8 +172,10 @@ export default {
       })
     }
   },
-  head: {
-    title: '创建分区'
+  head() {
+    return {
+      title: '创建分区'
+    }
   }
 }
 </script>

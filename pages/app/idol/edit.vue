@@ -112,8 +112,10 @@ export default {
         })
     }
   },
-  head: {
-    title: '编辑偶像'
+  head() {
+    return {
+      title: '编辑偶像'
+    }
   }
 }
 </script>

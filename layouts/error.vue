@@ -113,8 +113,10 @@ export default {
       this.$toast.error(this.message)
     }
   },
-  head: {
-    title: '出错了'
+  head() {
+    return {
+      title: '出错了'
+    }
   }
 }
 </script>
