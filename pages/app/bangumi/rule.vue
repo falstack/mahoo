@@ -146,8 +146,10 @@ export default {
         })
     }
   },
-  head: {
-    title: '入圈规则'
+  head() {
+    return {
+      title: '入圈规则'
+    }
   }
 }
 </script>

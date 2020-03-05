@@ -461,8 +461,10 @@ export default {
       this.$cache.del(`editor_local_draft-${this.slug}`)
     }
   },
-  head: {
-    title: '创作中心'
+  head() {
+    return {
+      title: '创作中心'
+    }
   }
 }
 </script>

@@ -20,8 +20,10 @@ export default {
   created() {},
   mounted() {},
   methods: {},
-  head: {
-    title: '社区章程'
+  head() {
+    return {
+      title: '社区章程'
+    }
   }
 }
 </script>

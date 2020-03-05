@@ -70,8 +70,10 @@ export default {
         })
     }
   },
-  head: {
-    title: '番剧关系'
+  head() {
+    return {
+      title: '番剧关系'
+    }
   }
 }
 </script>

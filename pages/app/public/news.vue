@@ -20,8 +20,10 @@ export default {
   created() {},
   mounted() {},
   methods: {},
-  head: {
-    title: '今日要闻'
+  head() {
+    return {
+      title: '今日要闻'
+    }
   }
 }
 </script>

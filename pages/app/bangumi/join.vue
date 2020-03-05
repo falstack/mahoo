@@ -276,8 +276,10 @@ export default {
         })
     }
   },
-  head: {
-    title: '答题'
+  head() {
+    return {
+      title: '答题'
+    }
   }
 }
 </script>

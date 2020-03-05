@@ -153,8 +153,10 @@ export default {
         })
     }
   },
-  head: {
-    title: '添加题目'
+  head() {
+    return {
+      title: '添加题目'
+    }
   }
 }
 </script>
