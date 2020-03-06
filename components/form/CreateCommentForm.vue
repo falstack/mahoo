@@ -74,7 +74,7 @@
 
 <template>
   <div class="create-comment-form">
-    <div v-if="showAvatar" class="avatar only-pc">
+    <div v-if="showAvatar" class="avatar">
       <VImg :src="avatar" radius="50%" width="40" height="40" />
     </div>
     <button class="submit-btn" @click="submit">点击<br />发送</button>
@@ -102,7 +102,6 @@
         :on-error="handleImageUploadError"
         :on-remove="handleImageUploadRemove"
         :on-exceed="handleImageUploadExceed"
-        class="only-pc"
       >
         <i class="el-icon-picture-outline-round" />
       </ElUpload>

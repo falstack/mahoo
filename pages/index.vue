@@ -1,104 +1,85 @@
 <style lang="scss">
-#homepage {
-  .pin-list {
-    > li {
-      margin: 24px 16px;
+#desktop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
-      &:first-child {
-        margin-top: 10px;
-      }
-    }
+  > .float-menu {
+    z-index: 2;
+  }
+
+  > #canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  > .view {
+    position: relative;
+    z-index: 1;
   }
 
   .beian {
-    margin: 20px auto;
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    color: $color-text-1;
+    opacity: 0.5;
     font-size: 12px;
-    color: $color-text-3;
-  }
-
-  .flow-loader-state {
-    &-nothing,
-    &-error {
-      img {
-        height: 175px;
-        margin-top: 25px;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 12px;
-        color: $color-text-3;
-      }
-    }
   }
 }
 </style>
 
 <template>
-  <div id="homepage">
-    <div class="container">
-      <FlowLoader
-        ref="loader"
-        func="getFlowRecommendedIndex"
-        type="seenIds"
-        :query="{
-          $axios: $axios,
-          changing: 'slug'
-        }"
-        :callback="handlePatch"
-      >
-        <ul slot-scope="{ flow }" class="pin-list">
-          <PinArticle v-for="pin in flow" :key="pin.slug" :item="pin" />
-        </ul>
-        <template slot="nothing">
-          <img src="~assets/img/error/no-content.png" />
-          <p>这里什么都没有</p>
-        </template>
-        <template slot="error">
-          <img src="~assets/img/error/no-network.png" />
-          <p>遇到错误了，点击重试</p>
-        </template>
-      </FlowLoader>
+  <div id="desktop">
+    <canvas id="canvas" />
+    <div class="view">
+      <Curtain id="logo" :position="{ left: 15, top: 40 }">
+        <Logo />
+      </Curtain>
+      <Curtain id="qr-code" :position="{ left: 255, top: 40 }">
+        <QrCode />
+      </Curtain>
+      <Curtain id="create" :position="{ left: 820, top: 40 }">
+        <Create />
+      </Curtain>
     </div>
     <p class="beian">
       <a href="http://www.beian.miit.gov.cn/" target="_blank">互联网 ICP 备案：沪 ICP 备 17050785 号 - 1</a>
     </p>
+    <FloatMenu class="float-menu" />
   </div>
 </template>
 
 <script>
-import PinArticle from '~/components/flow/PinArticle'
+import useSignMixin from '~/mixins/useSign'
+import FloatMenu from '~/components/menu/index'
+import Curtain from '~/assets/js/curtain'
+import QrCode from '~/components/QrCode'
+import Logo from '~/components/Logo'
+import Create from '~/components/Create'
 
 export default {
-  name: 'Homepage',
-  layout: 'web',
+  name: 'PwaLayout',
+  layout: 'empty',
   components: {
-    PinArticle
+    Logo,
+    QrCode,
+    Create,
+    Curtain,
+    FloatMenu
   },
-  async asyncData({ store, app }) {
-    await store.dispatch('flow/initData', {
-      func: 'getFlowRecommendedIndex',
-      type: 'seenIds',
-      query: {
-        $axios: app.$axios,
-        changing: 'slug'
-      }
-    })
+  mixins: [useSignMixin],
+  mounted() {
+    // eslint-disable-next-line
+    import('~/assets/js/webGL')
   },
   methods: {
-    handlePatch({ data }) {
-      this.$axios
-        .$get('v1/pin/batch_patch', {
-          params: {
-            slug: data.result.map(_ => _.slug).join(',')
-          }
-        })
-        .then(result => {
-          this.$refs.loader.patch(result)
-        })
-        .catch(() => {})
-    }
+    handleClick() {}
   }
 }
 </script>

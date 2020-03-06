@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import Cookies from 'js-cookie'
-import Toast from '~/assets/js/toast'
 import channel from '~/assets/js/channel'
-import * as Cache from '~/assets/js/cache'
 import Manager from '~/assets/js/manager'
-
-const isMobile = window.screen.width <= 768
 
 Vue.use({
   install(Vue) {
@@ -13,10 +9,6 @@ Vue.use({
 
     Vue.prototype.$channel = new Vue(channel)
 
-    Vue.prototype.$toast = new Toast(isMobile)
-
     Vue.prototype.$manager = new Manager()
-
-    Vue.prototype.$cache = Cache
   }
 })

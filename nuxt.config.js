@@ -133,16 +133,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/axios.all.js',
-    '~/plugins/components.all.js',
-    '~/plugins/prototypes.all.js',
-    '~/plugins/prototypes.client.js',
-    '~/plugins/h5.client.js',
-    '~/plugins/pc.client.js',
-    '~/plugins/socket.client.js',
-    '~/plugins/router.client.js'
-  ],
+  plugins: ['~/plugins/axios.all.js', '~/plugins/components.all.js', '~/plugins/prototypes.all.js', '~/plugins/prototypes.client.js', '~/plugins/socket.client.js', '~/plugins/router.client.js'],
 
   /*
    ** Nuxt.js modules
@@ -214,16 +205,8 @@ module.exports = {
         [
           'component',
           {
-            libraryName: 'mint-ui',
-            style: true
-          },
-          'mint-ui'
-        ],
-        [
-          'component',
-          {
-            libraryName: 'element-ui',
-            style: false
+            libraryName: '@calibur/sakura',
+            styleLibraryName: 'theme-sakura'
           }
         ]
       ]

@@ -12,26 +12,21 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
+    padding: 0 12px;
   }
 }
 </style>
 
 <template>
   <div class="reset-password-form">
-    <el-form ref="form" :model="form" :rules="rule">
-      <el-form-item prop="access">
-        <el-input v-model.trim="form.access" type="text" placeholder="手机号" auto-complete="off" />
-      </el-form-item>
-      <el-form-item prop="secret">
-        <el-input v-model.trim="form.secret" type="text" placeholder="新密码" auto-complete="off" />
-      </el-form-item>
-      <el-form-item>
-        <el-button :loading="submitBtnLoading" :disabled="submitBtnDisabled" class="submit-btn" type="primary" round @click="submitForm">
-          {{ submitBtnText }}
-          <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
-        </el-button>
-      </el-form-item>
-    </el-form>
+    <VForm :loading="submitBtnLoading" :form="form" :rule="rule" @submit="submitForm">
+      <VField v-model.trim="form.access" type="text" placeholder="手机号" auto-complete="off" />
+      <VField v-model.trim="form.secret" type="text" placeholder="新密码" auto-complete="off" />
+      <VButton slot="submit" :loading="submitBtnLoading" :disabled="submitBtnDisabled" size="large" block round>
+        {{ submitBtnText }}
+        <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
+      </VButton>
+    </VForm>
     <div class="others">
       <a @click="showLogin">返回登录></a>
       <a @click="showRegister">点击注册»</a>
@@ -41,9 +36,15 @@
 
 <script>
 import { sendMessage, resetPassword } from '~/api/userApi'
+import { VForm, VButton, VField } from '@calibur/sakura'
 
 export default {
   name: 'ResetPasswordForm',
+  components: {
+    VForm,
+    VButton,
+    VField
+  },
   data() {
     const validateAccess = (rule, value, callback) => {
       if (!value) {
@@ -102,18 +103,12 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$refs.form.validate(valid => {
-        if (valid) {
-          if (this.step === 0) {
-            this.getResetAuthCode()
-          }
-          if (this.step === 2) {
-            this.openConfirmModal()
-          }
-        } else {
-          return false
-        }
-      })
+      if (this.step === 0) {
+        this.getResetAuthCode()
+      }
+      if (this.step === 2) {
+        this.openConfirmModal()
+      }
     },
     async getResetAuthCode() {
       this.step = 1
@@ -168,11 +163,9 @@ export default {
     },
     showLogin() {
       this.$emit('to-login')
-      this.$refs.form.resetFields()
     },
     showRegister() {
       this.$emit('to-register')
-      this.$refs.form.resetFields()
     }
   }
 }
