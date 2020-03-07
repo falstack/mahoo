@@ -104,7 +104,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['normalize.css', '~/assets/css/global.scss', '~/theme/index.css'],
+  css: ['normalize.css', '~/assets/css/global.scss'],
 
   render: {
     csp: isDev
@@ -133,16 +133,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/axios.all.js',
-    '~/plugins/components.all.js',
-    '~/plugins/prototypes.all.js',
-    '~/plugins/prototypes.client.js',
-    '~/plugins/h5.client.js',
-    '~/plugins/pc.client.js',
-    '~/plugins/socket.client.js',
-    '~/plugins/router.client.js'
-  ],
+  plugins: ['~/plugins/axios.all.js', '~/plugins/components.all.js', '~/plugins/prototypes.all.js', '~/plugins/prototypes.client.js', '~/plugins/socket.client.js', '~/plugins/router.client.js'],
 
   /*
    ** Nuxt.js modules
@@ -214,16 +205,16 @@ module.exports = {
         [
           'component',
           {
-            libraryName: 'mint-ui',
-            style: true
+            libraryName: '@calibur/sakura',
+            styleLibraryName: 'theme-sakura'
           },
-          'mint-ui'
+          'sakura'
         ],
         [
-          'component',
+          "component",
           {
             libraryName: 'element-ui',
-            style: false
+            styleLibraryName: 'theme-chalk'
           }
         ]
       ]

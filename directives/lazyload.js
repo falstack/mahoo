@@ -6,17 +6,14 @@ export default {
     if (Vue.prototype.$isServer) {
       return
     }
+
     const list = []
     const opt = config || {
       preload: 1
     }
-    const isMobile = window.screen.width <= 768
 
     Vue.directive('lazyload', {
       bind(el, binding) {
-        if (binding.arg && binding.arg === 'pc' && isMobile) {
-          return
-        }
         list.push({ el, handler: binding.value })
       },
       inserted() {

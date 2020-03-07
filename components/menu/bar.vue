@@ -2,7 +2,7 @@
   <div class="menu-bar__wrap">
     <div v-show="show" class="menu-bar__mask" @click="closeMenu" />
     <transition-group class="menu-bar" name="menu" tag="div" :style="style">
-      <div v-for="item in items" v-show="show" :key="item" class="menu-bar__item" @click.stop />
+      <div v-for="item in items" v-show="show" :key="item" class="menu-bar__item" @click.stop v-text="item" />
     </transition-group>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      items: [1, 2, 3, 4, 5]
+      items: ['还', '在', '研', '发', '中']
     }
   },
   computed: {

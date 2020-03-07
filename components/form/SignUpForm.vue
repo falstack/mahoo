@@ -1,53 +1,60 @@
 <style lang="scss">
 .sign-up-form {
-  margin: 0 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-  .submit-btn {
+  .v-form {
+    position: relative;
     width: 100%;
+    height: 100%;
+
+    &__submit {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .others {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
-  }
+    padding: 0 12px;
 
-  .watch-pwd {
-    position: absolute;
-    right: 32px;
-    top: 10px;
-    font-size: 18px;
-    color: $color-gray-1;
-  }
+    .provider {
+      height: 16px;
+      margin-top: -8px;
 
-  .provider {
-    height: 16px;
-    margin-top: -8px;
+      span {
+        line-height: 21px;
+      }
 
-    span {
-      line-height: 21px;
-    }
+      li {
+        display: inline-block;
+      }
 
-    li {
-      display: inline-block;
-    }
+      i {
+        font-size: 20px;
+        vertical-align: middle;
+        margin-left: 10px;
+        color: $color-icon-1;
+        cursor: pointer;
+      }
 
-    i {
-      font-size: 20px;
-      vertical-align: middle;
-      margin-left: 10px;
-      color: $color-icon-1;
-      cursor: pointer;
-    }
+      .ic-qq:hover {
+        color: $color-blue;
+      }
 
-    .ic-qq:hover {
-      color: $color-blue;
-    }
-
-    .ic-v-chat:hover {
-      color: $color-green;
+      .ic-v-chat:hover {
+        color: $color-green;
+      }
     }
   }
 }
@@ -55,33 +62,22 @@
 
 <template>
   <div class="sign-up-form">
-    <ElForm ref="form" :model="form" :rules="rule">
-      <ElFormItem prop="access">
-        <ElInput v-model.trim="form.access" type="text" placeholder="手机（填写常用手机号，用于登录）" auto-complete="off" />
-      </ElFormItem>
-      <ElFormItem prop="secret">
-        <ElInput v-model.trim="form.secret" type="password" show-password placeholder="密码（6-16个字符组成，区分大小写）" auto-complete="off" />
-      </ElFormItem>
-      <ElFormItem v-if="!inviteCode">
-        <ElInput v-model.trim="form.inviteCode" placeholder="邀请码（可为空）" auto-complete="off" />
-      </ElFormItem>
-      <ElFormItem>
-        <ElButton :loading="submitBtnLoading" :disabled="submitBtnDisabled" class="submit-btn" type="primary" round @click="submitForm">
-          {{ submitBtnText }}
-          <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
-        </ElButton>
-      </ElFormItem>
-    </ElForm>
+    <VForm :loading="submitBtnLoading" :form="form" :rule="rule" :error="false" @submit="submitForm">
+      <VField v-model.trim="form.access" type="text" placeholder="手机（填写常用手机号，用于登录）" auto-complete="off" />
+      <VField v-model.trim="form.secret" type="password" show-password placeholder="密码（6-16个字符组成，区分大小写）" auto-complete="off" />
+      <VField v-if="!inviteCode" v-model.trim="form.inviteCode" placeholder="邀请码（可为空）" auto-complete="off" />
+      <VButton slot="submit" :loading="submitBtnLoading" :disabled="submitBtnDisabled" size="large" block round>
+        {{ submitBtnText }}
+        <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
+      </VButton>
+    </VForm>
     <div class="others">
       <ul class="provider">
         <span>社交账号注册</span>
         <li @click="qqRegisterLink">
           <i class="iconfont ic-qq" />
         </li>
-        <li class="only-pc" @click="wechatRegisterLink">
-          <i class="iconfont ic-v-chat" />
-        </li>
-        <li class="only-h5" @click="weixinRegisterLink">
+        <li @click="wechatRegisterLink">
           <i class="iconfont ic-v-chat" />
         </li>
       </ul>
@@ -92,9 +88,15 @@
 
 <script>
 import { sendMessage, register } from '~/api/userApi'
+import { VForm, VButton, VField } from '@calibur/sakura'
 
 export default {
   name: 'SignUpForm',
+  components: {
+    VForm,
+    VButton,
+    VField
+  },
   props: {
     inviteCode: {
       type: [String, Number],
@@ -134,8 +136,8 @@ export default {
         inviteCode: this.inviteCode
       },
       rule: {
-        access: [{ validator: validateAccess, trigger: 'blur' }],
-        secret: [{ validator: validateSecret, trigger: 'blur' }]
+        access: { validator: validateAccess },
+        secret: { validator: validateSecret }
       },
       /**
        * 0：初始化，表单待校验
@@ -213,25 +215,16 @@ export default {
     wechatRegisterLink() {
       window.location.href = `${this.addInviteForLink('https://api.calibur.tv/callback/oauth2/wechat?from=sign')}}`
     },
-    weixinRegisterLink() {
-      window.location.href = `${this.addInviteForLink('https://api.calibur.tv/callback/oauth2/weixin?from=sign')}}`
-    },
     redirect() {
       return this.$route.query.redirect ? this.$route.query.redirect : encodeURIComponent(window.location.href)
     },
     submitForm() {
-      this.$refs.form.validate(valid => {
-        if (valid) {
-          if (this.step === 0) {
-            this.getRegisterAuthCode()
-          }
-          if (this.step === 2) {
-            this.openConfirmModal()
-          }
-        } else {
-          return false
-        }
-      })
+      if (this.step === 0) {
+        this.getRegisterAuthCode()
+      }
+      if (this.step === 2) {
+        this.openConfirmModal()
+      }
     },
     async getRegisterAuthCode() {
       this.step = 1
@@ -293,7 +286,6 @@ export default {
     },
     showLogin() {
       this.$emit('to-login')
-      this.$refs.form.resetFields()
     }
   }
 }

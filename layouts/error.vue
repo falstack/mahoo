@@ -31,7 +31,6 @@
 
 <template>
   <div id="error-page">
-    <VHeader :show-user="false" />
     <div class="error-main">
       <div v-if="statusCode === 401" id="error-401">
         <img src="~assets/img/error/503.jpeg" alt="error-401" @click="toastMessage" />
@@ -48,15 +47,8 @@
       <div v-else-if="statusCode === 404" id="error-404">
         <img src="~assets/img/error/404.jpeg" alt="error-404" @click="toastMessage" />
         <h3>您要找的页面不存在</h3>
-        <div class="subtitle">
-          不存在的内容，或者正在审核中。
-        </div>
-        <NLink class="back only-h5" to="/app/found">
-          返回首页
-        </NLink>
-        <NLink class="back only-pc" to="/">
-          返回首页
-        </NLink>
+        <div class="subtitle">不存在的内容，或者正在审核中。</div>
+        <NLink class="back" to="/">返回首页</NLink>
       </div>
       <div v-else-if="statusCode >= 500" id="error-500">
         <img src="~assets/img/error/500.jpeg" alt="error-500" @click="toastMessage" />
@@ -73,13 +65,8 @@
 </template>
 
 <script>
-import VHeader from '~/components/common/Header'
-
 export default {
   name: 'nuxt-error', // eslint-disable-line
-  components: {
-    VHeader
-  },
   props: {
     error: {
       type: Object,
@@ -110,7 +97,7 @@ export default {
       this.$channel.$emit('sign-in')
     },
     toastMessage() {
-      this.$toast.error(this.message)
+      // this.$toast.error(this.message)
     }
   },
   head() {

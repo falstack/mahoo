@@ -77,13 +77,14 @@ $input-height: 40px;
     }
   }
 
-  .logo {
-    img {
-      height: 108px;
-      width: auto;
-      display: block;
-      margin: 0 auto;
-    }
+  .sign-logo {
+    width: 100%;
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://m1.calibur.tv/logo.png');
+    background-size: cover;
+    flex-shrink: 0;
   }
 }
 </style>
@@ -101,15 +102,9 @@ $input-height: 40px;
           class="sign-modal sign-in-modal"
           @click.stop
         >
-          <div class="logo">
-            <img src="https://file.calibur.tv/logo.png" alt="logo" />
-          </div>
-          <div v-show="showReset" class="form-container">
-            <ResetPasswordForm @to-login="showReset = false" @to-register="showRegister" />
-          </div>
-          <div v-show="!showReset" class="form-container">
-            <SignInForm @to-reset="showReset = true" @to-register="showRegister" />
-          </div>
+          <div class="sign-logo" />
+          <ResetPasswordForm v-show="showReset" @to-login="showReset = false" @to-register="showRegister" />
+          <SignInForm v-show="!showReset" @to-reset="showReset = true" @to-register="showRegister" />
         </div>
         <div
           :class="{
@@ -120,12 +115,8 @@ $input-height: 40px;
           class="sign-modal sign-up-modal"
           @click.stop
         >
-          <div class="logo">
-            <img src="https://file.calibur.tv/logo.png" alt="logo" />
-          </div>
-          <div class="form-container">
-            <SignUpForm @to-login="showLogin" />
-          </div>
+          <div class="sign-logo" />
+          <SignUpForm @to-login="showLogin" />
         </div>
       </div>
     </div>
