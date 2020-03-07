@@ -30,6 +30,7 @@
     color: $color-text-1;
     opacity: 0.5;
     font-size: 12px;
+    user-select: none;
   }
 }
 </style>

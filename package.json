@@ -42,7 +42,6 @@
     "cache-manager-redis": "^0.6.0",
     "cross-env": "^7.0.2",
     "element-ui": "^2.13.0",
-    "h5-vue-scroller": "^1.0.2",
     "js-cookie": "^2.2.1",
     "koa": "2.11.0",
     "normalize.css": "^8.0.1",

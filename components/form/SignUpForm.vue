@@ -1,40 +1,60 @@
 <style lang="scss">
 .sign-up-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .v-form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__submit {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
   .others {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
     padding: 0 12px;
-  }
 
-  .provider {
-    height: 16px;
-    margin-top: -8px;
+    .provider {
+      height: 16px;
+      margin-top: -8px;
 
-    span {
-      line-height: 21px;
-    }
+      span {
+        line-height: 21px;
+      }
 
-    li {
-      display: inline-block;
-    }
+      li {
+        display: inline-block;
+      }
 
-    i {
-      font-size: 20px;
-      vertical-align: middle;
-      margin-left: 10px;
-      color: $color-icon-1;
-      cursor: pointer;
-    }
+      i {
+        font-size: 20px;
+        vertical-align: middle;
+        margin-left: 10px;
+        color: $color-icon-1;
+        cursor: pointer;
+      }
 
-    .ic-qq:hover {
-      color: $color-blue;
-    }
+      .ic-qq:hover {
+        color: $color-blue;
+      }
 
-    .ic-v-chat:hover {
-      color: $color-green;
+      .ic-v-chat:hover {
+        color: $color-green;
+      }
     }
   }
 }
@@ -42,7 +62,7 @@
 
 <template>
   <div class="sign-up-form">
-    <VForm :loading="submitBtnLoading" :form="form" :rule="rule" @submit="submitForm">
+    <VForm :loading="submitBtnLoading" :form="form" :rule="rule" :error="false" @submit="submitForm">
       <VField v-model.trim="form.access" type="text" placeholder="手机（填写常用手机号，用于登录）" auto-complete="off" />
       <VField v-model.trim="form.secret" type="password" show-password placeholder="密码（6-16个字符组成，区分大小写）" auto-complete="off" />
       <VField v-if="!inviteCode" v-model.trim="form.inviteCode" placeholder="邀请码（可为空）" auto-complete="off" />

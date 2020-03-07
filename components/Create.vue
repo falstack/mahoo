@@ -18,9 +18,7 @@
     <VButton plain @click="handleSignIn">
       {{ isAuth ? '退出' : '登录' }}
     </VButton>
-    <NLink target="_blank" to="/write">
-      <VButton>投稿</VButton>
-    </NLink>
+    <VButton @click="handleCreate">投稿</VButton>
   </div>
 </template>
 
@@ -48,6 +46,9 @@ export default {
         return
       }
       this.$channel.$emit('sign-in')
+    },
+    handleCreate() {
+      this.$toast.success('先去小程序吧，网页之后我再维护~呐，好吗？')
     }
   }
 }

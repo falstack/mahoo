@@ -1,5 +1,11 @@
 <style lang="scss">
 .sign-in-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   .opt-container {
     margin-top: 15px;
     padding: 0 12px;
@@ -7,9 +13,45 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    .provider {
+      li {
+        display: inline-block;
+        margin-left: 8px;
+      }
+
+      i {
+        font-size: 20px;
+        vertical-align: middle;
+        color: $color-icon-1;
+        cursor: pointer;
+      }
+
+      .ic-qq:hover {
+        color: $color-blue;
+      }
+
+      .ic-v-chat:hover {
+        color: $color-green;
+      }
+    }
+  }
+
+  .v-form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__submit {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .others {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -17,36 +59,12 @@
     margin-top: 15px;
     padding: 0 12px;
   }
-
-  .provider {
-    height: 40px;
-
-    li {
-      display: inline-block;
-      margin-left: 8px;
-    }
-
-    i {
-      font-size: 20px;
-      vertical-align: middle;
-      color: $color-icon-1;
-      cursor: pointer;
-    }
-
-    .ic-qq:hover {
-      color: $color-blue;
-    }
-
-    .ic-v-chat:hover {
-      color: $color-green;
-    }
-  }
 }
 </style>
 
 <template>
   <div class="sign-in-form">
-    <VForm :loading="loading" :form="form" :rule="rule" @submit="login">
+    <VForm :loading="loading" :form="form" :rule="rule" :error="false" @submit="login">
       <VField v-model.trim="form.access" type="text" placeholder="手机（填写常用手机号，用于登录）" />
       <VField v-model.trim="form.secret" type="password" show-password placeholder="密码（6-16个字符组成，区分大小写）" @keydown.enter.native="submitForm" />
       <div class="opt-container">

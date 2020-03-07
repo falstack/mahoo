@@ -104,7 +104,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['normalize.css', '~/assets/css/global.scss', '~/theme/index.css'],
+  css: ['normalize.css', '~/assets/css/global.scss'],
 
   render: {
     csp: isDev
@@ -207,6 +207,14 @@ module.exports = {
           {
             libraryName: '@calibur/sakura',
             styleLibraryName: 'theme-sakura'
+          },
+          'sakura'
+        ],
+        [
+          "component",
+          {
+            libraryName: 'element-ui',
+            styleLibraryName: 'theme-chalk'
           }
         ]
       ]
