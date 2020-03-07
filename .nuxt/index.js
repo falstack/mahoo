@@ -17,8 +17,6 @@ import nuxt_plugin_axiosall_6aea33a4 from 'nuxt_plugin_axiosall_6aea33a4' // Sou
 import nuxt_plugin_componentsall_f6b62450 from 'nuxt_plugin_componentsall_f6b62450' // Source: ../plugins/components.all.js (mode: 'all')
 import nuxt_plugin_prototypesall_f47dfe06 from 'nuxt_plugin_prototypesall_f47dfe06' // Source: ../plugins/prototypes.all.js (mode: 'all')
 import nuxt_plugin_prototypesclient_020776b6 from 'nuxt_plugin_prototypesclient_020776b6' // Source: ../plugins/prototypes.client.js (mode: 'client')
-import nuxt_plugin_h5client_6cb9663e from 'nuxt_plugin_h5client_6cb9663e' // Source: ../plugins/h5.client.js (mode: 'client')
-import nuxt_plugin_pcclient_6f6ed2f2 from 'nuxt_plugin_pcclient_6f6ed2f2' // Source: ../plugins/pc.client.js (mode: 'client')
 import nuxt_plugin_socketclient_03aac5f2 from 'nuxt_plugin_socketclient_03aac5f2' // Source: ../plugins/socket.client.js (mode: 'client')
 import nuxt_plugin_routerclient_3702c15d from 'nuxt_plugin_routerclient_3702c15d' // Source: ../plugins/router.client.js (mode: 'client')
 
@@ -195,14 +193,6 @@ async function createApp (ssrContext) {
 
   if (process.client && typeof nuxt_plugin_prototypesclient_020776b6 === 'function') {
     await nuxt_plugin_prototypesclient_020776b6(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_h5client_6cb9663e === 'function') {
-    await nuxt_plugin_h5client_6cb9663e(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_pcclient_6f6ed2f2 === 'function') {
-    await nuxt_plugin_pcclient_6f6ed2f2(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_socketclient_03aac5f2 === 'function') {
