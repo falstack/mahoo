@@ -30,7 +30,7 @@ function redisCache(config) {
 function execConfig(config) {
   const { type, stores } = config
   let result
-  stores.forEach(cfg => {
+  stores.forEach((cfg) => {
     if (cfg.type === type) {
       result = cfg
     }

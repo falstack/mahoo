@@ -42,9 +42,7 @@ export default class Baidu {
     const roleContainer = document.createElement('div')
     roleContainer.classList.add('baidu-resource-role-wrap')
 
-    const radioName = `${Math.random()
-      .toString(36)
-      .substring(3, 6)}`
+    const radioName = `${Math.random().toString(36).substring(3, 6)}`
     const roleValue = this.data && this.data.visit_type ? this.data.visit_type : 0
     const roleIntro = document.createElement('span')
     roleIntro.textContent = '是否需要投食才能看到密码：'

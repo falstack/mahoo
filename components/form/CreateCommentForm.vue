@@ -77,7 +77,9 @@
     <div v-if="showAvatar" class="avatar">
       <VImg :src="avatar" radius="50%" width="40" height="40" />
     </div>
-    <button class="submit-btn" @click="submit">点击<br />发送</button>
+    <button class="submit-btn" @click="submit">
+      点击<br>发送
+    </button>
     <div class="input-wrap">
       <ElInput
         v-model="content"
@@ -173,14 +175,14 @@ export default {
           pin_slug: this.pinSlug,
           comment_id: this.commentId
         })
-        .then(data => {
+        .then((data) => {
           this.$emit('submit', data)
           this.content = ''
           this.resetUploaderStatus()
           this.$toast.success('评论成功')
           this.loading = false
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })

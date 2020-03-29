@@ -36,9 +36,18 @@
     <VForm :loading="submitBtnLoading" :form="form" :rule="rule" @submit="submitForm">
       <VField v-model.trim="form.access" type="text" placeholder="手机号" auto-complete="off" />
       <VField v-model.trim="form.secret" type="text" placeholder="新密码" auto-complete="off" />
-      <VButton slot="submit" :loading="submitBtnLoading" :disabled="submitBtnDisabled" size="large" block round>
+      <VButton
+        slot="submit"
+        :loading="submitBtnLoading"
+        :disabled="submitBtnDisabled"
+        size="large"
+        block
+        round
+      >
         {{ submitBtnText }}
-        <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
+        <template v-if="timeout">
+          （{{ timeout }}s 后可重新获取）
+        </template>
       </VButton>
     </VForm>
     <div class="others">
@@ -49,8 +58,8 @@
 </template>
 
 <script>
-import { sendMessage, resetPassword } from '~/api/userApi'
 import { VForm, VButton, VField } from '@calibur/sakura'
+import { sendMessage, resetPassword } from '~/api/userApi'
 
 export default {
   name: 'ResetPasswordForm',

@@ -35,7 +35,7 @@
         :query="{
           $axios: $axios,
           type: type,
-          slug: slug
+          slug: slug,
         }"
       >
         <ElTimeline slot-scope="{ flow }">

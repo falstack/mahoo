@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import MenuBar from './bar'
 import { isTouchDevice } from '../../assets/js/utils'
+import MenuBar from './bar'
 
 export default {
   name: 'FloatMenu',
@@ -30,7 +30,7 @@ export default {
       document.addEventListener('contextmenu', event => event.preventDefault())
     },
     bindTouch() {
-      document.addEventListener('touchstart', event => {
+      document.addEventListener('touchstart', (event) => {
         if (this.openMenu) {
           return
         }
@@ -47,7 +47,7 @@ export default {
         this.rightDown = false
         this.noTouch = true
       })
-      document.addEventListener('touchmove', event => {
+      document.addEventListener('touchmove', (event) => {
         if (!this.rightDown || !this.leftDown || this.openMenu) {
           return
         }
@@ -65,7 +65,7 @@ export default {
       })
     },
     bindPC() {
-      document.addEventListener('mousedown', event => {
+      document.addEventListener('mousedown', (event) => {
         if (this.openMenu) {
           return
         }
@@ -76,7 +76,7 @@ export default {
           this.rightDown = true
         }
       })
-      document.addEventListener('mouseup', event => {
+      document.addEventListener('mouseup', (event) => {
         if (this.openMenu) {
           return
         }
@@ -88,7 +88,7 @@ export default {
         }
         this.noTouch = true
       })
-      document.addEventListener('mousemove', event => {
+      document.addEventListener('mousemove', (event) => {
         if (!this.rightDown || !this.leftDown || this.openMenu) {
           return
         }

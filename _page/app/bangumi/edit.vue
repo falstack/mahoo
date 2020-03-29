@@ -58,11 +58,11 @@
 
 <template>
   <div v-if="bangumi" id="edit-bangumi">
-    <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })" />
+    <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })">
     <p class="title oneline" v-text="bangumi.name" />
     <p class="intro" v-html="bangumi.intro" />
     <template v-if="isAdmin">
-      <hr />
+      <hr>
       <div class="controls">
         <div>
           <span>番剧ID：</span>
@@ -70,7 +70,7 @@
         </div>
       </div>
     </template>
-    <hr />
+    <hr>
     <div class="controls">
       <NLink v-if="showEdit" :to="`/app/bangumi/profile?slug=${bangumi.slug}`">
         <i class="el-icon-setting" />
@@ -114,7 +114,7 @@ export default {
       .$get('v1/bangumi/show', {
         params: { slug }
       })
-      .then(bangumi => {
+      .then((bangumi) => {
         return { bangumi }
       })
       .catch(error)
@@ -153,7 +153,7 @@ export default {
             slug: this.bangumi.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.trialInfo = data
         })
         .catch()

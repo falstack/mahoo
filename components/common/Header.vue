@@ -336,7 +336,14 @@
             <template v-if="isAuth">
               <div class="user-panel icon-link">
                 <NLink :to="$alias.user(user.slug)" class="avatar">
-                  <VImg :src="user.avatar" def="default-avatar" width="33" height="33" radius="50%" :alt="user.nickname" />
+                  <VImg
+                    :src="user.avatar"
+                    def="default-avatar"
+                    width="33"
+                    height="33"
+                    radius="50%"
+                    :alt="user.nickname"
+                  />
                 </NLink>
                 <div class="user-popover">
                   <p class="nickname oneline" v-html="user.nickname" />

@@ -45,7 +45,7 @@
 <template>
   <li class="user-item" @click="goUser">
     <div class="avatar">
-      <img :src="$resize(user.avatar, { width: 80 })" />
+      <img :src="$resize(user.avatar, { width: 80 })">
     </div>
     <div class="content">
       <p class="nickname oneline" v-html="user.nickname" />

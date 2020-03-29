@@ -112,7 +112,7 @@
       <ul slot-scope="{ list }" class="child-node">
         <li v-for="item in list" :key="item.slug" class="node clearfix">
           <NLink :to="`/tag/${item.slug}`">
-            <img :src="$resize(item.avatar, { width: 50 })" width="50" height="50" :alt="item.name" />
+            <img :src="$resize(item.avatar, { width: 50 })" width="50" height="50" :alt="item.name">
             <span class="oneline" v-html="item.name" />
           </NLink>
         </li>
@@ -122,8 +122,8 @@
 </template>
 
 <script>
-import CreateTagBtn from '~/components/button/CreateTagBtn'
 import RollList from 'vue-roll-list'
+import CreateTagBtn from '~/components/button/CreateTagBtn'
 import { tagChildren } from '~/api/tagApi'
 
 export default {
@@ -167,7 +167,7 @@ export default {
         page: this.page,
         slug: this.slug
       })
-        .then(data => {
+        .then((data) => {
           this.allChildren = this.allChildren.concat(data.result)
           this.page++
         })

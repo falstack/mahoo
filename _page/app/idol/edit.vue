@@ -26,7 +26,7 @@
       </ElFormItem>
       <ElFormItem label="头像">
         <div class="avatar-field">
-          <img :src="$resize(idol.avatar, { width: 100 })" class="avatar" />
+          <img :src="$resize(idol.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"
@@ -44,21 +44,32 @@
         </div>
       </ElFormItem>
       <ElFormItem label="别名">
-        <ElSelect v-model="idol.alias" multiple filterable allow-create default-first-option placeholder="请输入番剧别名" popper-class="hidden-select-options" class="hidden-select-input" />
+        <ElSelect
+          v-model="idol.alias"
+          multiple
+          filterable
+          allow-create
+          default-first-option
+          placeholder="请输入番剧别名"
+          popper-class="hidden-select-options"
+          class="hidden-select-input"
+        />
       </ElFormItem>
       <ElFormItem label="简介">
         <ElInput v-model="idol.intro" type="textarea" rows="4" resize="vertical" />
       </ElFormItem>
       <ElFormItem>
-        <ElButton @click="handleSubmit">提交</ElButton>
+        <ElButton @click="handleSubmit">
+          提交
+        </ElButton>
       </ElFormItem>
     </el-form>
   </div>
 </template>
 
 <script>
-import mustSign from '~/mixins/mustSign'
 import { Upload, Select } from 'element-ui'
+import mustSign from '~/mixins/mustSign'
 import upload from '~/mixins/upload'
 
 export default {
@@ -78,7 +89,7 @@ export default {
       .$get('v1/idol/show', {
         params: { slug }
       })
-      .then(idol => {
+      .then((idol) => {
         return { idol }
       })
       .catch(error)
@@ -104,7 +115,7 @@ export default {
         .then(() => {
           this.$toast.success('修改成功')
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {

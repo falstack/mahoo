@@ -45,10 +45,10 @@ export default {
             slug: this.slug
           }
         })
-        .then(channel => {
+        .then((channel) => {
           redirectWindow.location = this.$alias.user(this.$store.state.user.slug, `message?mailto=${channel}&name=${this.nickname}`)
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           redirectWindow.close()
         })

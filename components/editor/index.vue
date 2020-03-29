@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     initEditor() {
-      Promise.all([import('@editorjs/editorjs'), import('~/components/editor/plugin/image'), import('~/components/editor/plugin/link')]).then(modules => {
+      Promise.all([import('@editorjs/editorjs'), import('~/components/editor/plugin/image'), import('~/components/editor/plugin/link')]).then((modules) => {
         const self = this
         let data = {}
         if (self.slug) {
@@ -131,7 +131,7 @@ export default {
                       formData.append('file', file)
                       formData.append('token', self.uploadHeaders.token)
                       uploadToQiniu(self, formData)
-                        .then(data => {
+                        .then((data) => {
                           data.url = `https://m1.calibur.tv/${data.url}`
                           resolve({
                             success: 1,
@@ -182,7 +182,7 @@ export default {
             this.bindSaveEvent()
             this.handleSave()
           })
-          .catch(reason => {
+          .catch((reason) => {
             this.$toast.error(`编辑器初始化失败：${reason}`)
           })
       })
@@ -190,7 +190,7 @@ export default {
     bindSaveEvent() {
       document.addEventListener(
         'keydown',
-        e => {
+        (e) => {
           if (e.keyCode === 83 && (e.ctrlKey || e.metaKey)) {
             e.stopPropagation()
             e.preventDefault()
@@ -206,7 +206,7 @@ export default {
       }
       this.editor
         .save()
-        .then(outputData => {
+        .then((outputData) => {
           const value = this.encodeData(outputData)
           const cacheKey = `editor_local_draft-${this.slug || ''}`
           this.$cache.set(cacheKey, value)

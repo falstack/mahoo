@@ -78,7 +78,7 @@ export default class Checklist {
 
     // fill with data
     if (this._data.items.length) {
-      this._data.items.forEach(item => {
+      this._data.items.forEach((item) => {
         const newItem = this.createChecklistItem(item)
 
         this._elements.items.push(newItem)
@@ -94,7 +94,7 @@ export default class Checklist {
     // add event-listeners
     this._elements.wrapper.addEventListener(
       'keydown',
-      event => {
+      (event) => {
         const [ENTER, BACKSPACE] = [13, 8] // key codes
 
         switch (event.keyCode) {
@@ -109,7 +109,7 @@ export default class Checklist {
       false
     )
 
-    this._elements.wrapper.addEventListener('click', event => {
+    this._elements.wrapper.addEventListener('click', (event) => {
       this.toggleCheckbox(event)
     })
 
@@ -223,15 +223,9 @@ export default class Checklist {
   backspace(event) {
     const currentItem = event.target.closest(`.${this.CSS.item}`)
     const currentIndex = this._elements.items.indexOf(currentItem)
-    const currentItemText = currentItem
-      .querySelector(`.${this.CSS.textField}`)
-      .innerHTML.replace('<br>', ' ')
-      .trim()
+    const currentItemText = currentItem.querySelector(`.${this.CSS.textField}`).innerHTML.replace('<br>', ' ').trim()
     const firstItem = this._elements.items[0]
-    const firstItemText = firstItem
-      .querySelector(`.${this.CSS.textField}`)
-      .innerHTML.replace('<br>', ' ')
-      .trim()
+    const firstItemText = firstItem.querySelector(`.${this.CSS.textField}`).innerHTML.replace('<br>', ' ').trim()
 
     if (!firstItemText) {
       return
@@ -303,10 +297,7 @@ export default class Checklist {
     this._data.items = []
 
     for (let i = 0; i < this._elements.items.length; i++) {
-      const value = this._elements.items[i]
-        .querySelector(`.${this.CSS.textField}`)
-        .innerHTML.replace('<br>', ' ')
-        .trim()
+      const value = this._elements.items[i].querySelector(`.${this.CSS.textField}`).innerHTML.replace('<br>', ' ').trim()
 
       if (value) {
         this._data.items.push({

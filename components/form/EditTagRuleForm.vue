@@ -126,7 +126,7 @@ export default {
         .then(() => {
           this.$toast.success('更新成功')
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {
@@ -140,10 +140,10 @@ export default {
             slug: this.tag.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.$set(this, 'rule', data)
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     }

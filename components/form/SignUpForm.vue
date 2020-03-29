@@ -66,9 +66,18 @@
       <VField v-model.trim="form.access" type="text" placeholder="手机（填写常用手机号，用于登录）" auto-complete="off" />
       <VField v-model.trim="form.secret" type="password" show-password placeholder="密码（6-16个字符组成，区分大小写）" auto-complete="off" />
       <VField v-if="!inviteCode" v-model.trim="form.inviteCode" placeholder="邀请码（可为空）" auto-complete="off" />
-      <VButton slot="submit" :loading="submitBtnLoading" :disabled="submitBtnDisabled" size="large" block round>
+      <VButton
+        slot="submit"
+        :loading="submitBtnLoading"
+        :disabled="submitBtnDisabled"
+        size="large"
+        block
+        round
+      >
         {{ submitBtnText }}
-        <template v-if="timeout"> （{{ timeout }}s 后可重新获取） </template>
+        <template v-if="timeout">
+          （{{ timeout }}s 后可重新获取）
+        </template>
       </VButton>
     </VForm>
     <div class="others">
@@ -87,8 +96,8 @@
 </template>
 
 <script>
-import { sendMessage, register } from '~/api/userApi'
 import { VForm, VButton, VField } from '@calibur/sakura'
+import { sendMessage, register } from '~/api/userApi'
 
 export default {
   name: 'SignUpForm',
@@ -269,7 +278,7 @@ export default {
         authCode: this.form.authCode,
         inviteCode: this.form.inviteCode
       })
-        .then(token => {
+        .then((token) => {
           this.$cookie.set('JWT-TOKEN', token)
           this.$toast.success('注册成功！').then(() => {
             if (this.$route.query.redirect) {
@@ -279,7 +288,7 @@ export default {
             }
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.step = 0
           this.$toast.error(err.message)
         })

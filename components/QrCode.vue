@@ -32,11 +32,11 @@
   <div class="qr-wrap">
     <VSwitcher :headers="['QQ', '微信']" align="center">
       <template slot="0">
-        <img src="https://m1.calibur.tv/qq_mini_app.png" alt="" />
+        <img src="https://m1.calibur.tv/qq_mini_app.png" alt="">
         <p>使用手机QQ扫码访问</p>
       </template>
       <template slot="1">
-        <img src="https://m1.calibur.tv/weixin_mini_app.jpg" alt="" />
+        <img src="https://m1.calibur.tv/weixin_mini_app.jpg" alt="">
         <p>使用手机微信扫码访问</p>
       </template>
     </VSwitcher>

@@ -12,14 +12,14 @@ export default class Manager {
   }
 
   _init() {
-    const getTargetId = evt => {
+    const getTargetId = (evt) => {
       if (evt.target.className !== 'curtain__header__drag') {
         return ''
       }
       return evt.target.getAttribute('data-id')
     }
     if (isTouchDevice()) {
-      document.addEventListener('touchstart', evt => {
+      document.addEventListener('touchstart', (evt) => {
         const id = getTargetId(evt)
         if (!id) {
           return
@@ -28,7 +28,7 @@ export default class Manager {
         this.mouseDown = true
         this.components[id].handleStart(evt.touches[0])
       })
-      document.addEventListener('touchmove', evt => {
+      document.addEventListener('touchmove', (evt) => {
         if (!this.mouseDown) {
           return
         }
@@ -38,7 +38,7 @@ export default class Manager {
         }
         comp.handleMove(evt.touches[0])
       })
-      document.addEventListener('touchend', evt => {
+      document.addEventListener('touchend', (evt) => {
         this.mouseDown = false
         if (!this.currentId) {
           return
@@ -51,7 +51,7 @@ export default class Manager {
         comp.handleEnd(evt.touches[0])
       })
     } else {
-      document.addEventListener('mousedown', evt => {
+      document.addEventListener('mousedown', (evt) => {
         const id = getTargetId(evt)
         if (!id) {
           return
@@ -60,7 +60,7 @@ export default class Manager {
         this.mouseDown = true
         this.components[id].handleStart(evt)
       })
-      document.addEventListener('mousemove', evt => {
+      document.addEventListener('mousemove', (evt) => {
         if (!this.mouseDown) {
           return
         }
@@ -70,7 +70,7 @@ export default class Manager {
         }
         comp.handleMove(evt)
       })
-      document.addEventListener('mouseup', evt => {
+      document.addEventListener('mouseup', (evt) => {
         this.mouseDown = false
         if (!this.currentId) {
           return

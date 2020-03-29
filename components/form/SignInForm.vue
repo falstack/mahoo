@@ -93,8 +93,8 @@
 </template>
 
 <script>
-import { login } from '~/api/userApi'
 import { VForm, VButton, VField, VRadio } from '@calibur/sakura'
+import { login } from '~/api/userApi'
 
 export default {
   name: 'SignInForm',
@@ -142,10 +142,10 @@ export default {
   },
   methods: {
     authQQ() {
-      window.location.href = `https://api.calibur.tv/callback/oauth2/qq?from=sign`
+      window.location.href = 'https://api.calibur.tv/callback/oauth2/qq?from=sign'
     },
     authWechat() {
-      window.location.href = `https://api.calibur.tv/callback/oauth2/wechat?from=sign`
+      window.location.href = 'https://api.calibur.tv/callback/oauth2/wechat?from=sign'
     },
     redirect() {
       return this.$route.query.redirect ? this.$route.query.redirect : encodeURIComponent(window.location.href)
@@ -160,7 +160,7 @@ export default {
         secret: this.form.secret,
         remember: this.form.remember
       })
-        .then(token => {
+        .then((token) => {
           this.$cookie.set('JWT-TOKEN', token, {
             expires: this.form.remember ? 365 : 1
           })
@@ -170,7 +170,7 @@ export default {
             window.location.reload()
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })

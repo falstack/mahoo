@@ -14,7 +14,7 @@ export default {
       redirect()
       return
     }
-    const canceler = this.$watch('$store.state.isAuth', val => {
+    const canceler = this.$watch('$store.state.isAuth', (val) => {
       if (val) {
         redirect()
         canceler()

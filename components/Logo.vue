@@ -39,7 +39,7 @@
 
 <template>
   <div class="logo">
-    <img src="https://m1.calibur.tv/icon.png-sharejpg200" alt="logo" />
+    <img src="https://m1.calibur.tv/icon.png-sharejpg200" alt="logo">
     <p>calibur.tv</p>
   </div>
 </template>

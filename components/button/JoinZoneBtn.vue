@@ -1,6 +1,13 @@
 <template>
   <div v-if="state" class="join-zone-wrap">
-    <ElButton :loading="loading" type="primary" size="mini" round plain @click="handleClick">
+    <ElButton
+      :loading="loading"
+      type="primary"
+      size="mini"
+      round
+      plain
+      @click="handleClick"
+    >
       {{ state.is_marked ? '已加入' : '加入' }}
     </ElButton>
     &nbsp;
@@ -49,7 +56,7 @@ export default {
         .$post('v1/atfield/begin', {
           slug: this.slug
         })
-        .then(result => {
+        .then((result) => {
           if (result === 'reject') {
             this.$toast.info('该分区还未开放')
           } else if (result === 'resolve') {
@@ -62,7 +69,7 @@ export default {
             this.getQuestions()
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {

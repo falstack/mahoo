@@ -204,7 +204,7 @@ export default {
             user_slug: this.user.slug
           }
         })
-        .then(slug => {
+        .then((slug) => {
           this.selected = slug
         })
         .catch(() => {})

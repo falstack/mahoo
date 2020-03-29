@@ -47,7 +47,7 @@ export default {
     getTrialInfo() {
       this.$axios
         .$get('v1/bangumi/atfield')
-        .then(data => {
+        .then((data) => {
           this.trialInfo = data
         })
         .catch()

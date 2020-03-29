@@ -97,7 +97,7 @@ $input-height: 40px;
           :class="{
             'sign-in-init': !showSignIn && !showSignUp,
             'sign-in-show': showSignIn && !showSignUp,
-            'sign-in-turn': !showSignIn && showSignUp
+            'sign-in-turn': !showSignIn && showSignUp,
           }"
           class="sign-modal sign-in-modal"
           @click.stop
@@ -110,7 +110,7 @@ $input-height: 40px;
           :class="{
             'sign-up-init': !showSignUp && !showSignIn,
             'sign-up-show': showSignUp && !showSignIn,
-            'sign-up-turn': !showSignUp && showSignIn
+            'sign-up-turn': !showSignUp && showSignIn,
           }"
           class="sign-modal sign-up-modal"
           @click.stop

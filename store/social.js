@@ -8,10 +8,10 @@ const generateField = (type, slug) => `${type}-${slug}`
 export const mutations = {
   set(state, { type, data, slug } = {}) {
     let isSingle = false
-    Object.keys(data).forEach(key => {
+    Object.keys(data).forEach((key) => {
       if (typeof data[key] === 'object') {
         const subData = data[key]
-        Object.keys(subData).forEach(subKey => {
+        Object.keys(subData).forEach((subKey) => {
           subData[`${subKey}_loading`] = false
         })
         Vue.set(state, `${type}-${key}`, subData)

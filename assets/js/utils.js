@@ -12,12 +12,10 @@ export const convertTA = (sex = -1, isMine = false) => {
 }
 
 export const randomStr = () => {
-  return `${Date.now()}-${Math.random()
-    .toString(36)
-    .substring(3, 6)}`
+  return `${Date.now()}-${Math.random().toString(36).substring(3, 6)}`
 }
 
-export const adjustDate = time => {
+export const adjustDate = (time) => {
   if (/^\d+$/.test(time) && time.toString().length === 10) {
     return new Date(time * 1000)
   }
@@ -28,11 +26,11 @@ export const adjustDate = time => {
   return result
 }
 
-export const shortenNumber = num => {
+export const shortenNumber = (num) => {
   return num > 1000 ? `${Math.floor((num / 1000) * 10) / 10}k` : num
 }
 
-export const timeAgo = time => {
+export const timeAgo = (time) => {
   const date = adjustDate(time)
   const delta = Date.now() - date.getTime()
   const format = [date.getFullYear(), `0${date.getMonth() + 1}`.substr(-2), `0${date.getDate()}`.substr(-2), `0${date.getHours()}`.substr(-2), `0${date.getMinutes()}`.substr(-2)]

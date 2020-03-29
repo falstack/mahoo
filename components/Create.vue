@@ -18,7 +18,9 @@
     <VButton plain @click="handleSignIn">
       {{ isAuth ? '退出' : '登录' }}
     </VButton>
-    <VButton @click="handleCreate">投稿</VButton>
+    <VButton @click="handleCreate">
+      投稿
+    </VButton>
   </div>
 </template>
 
@@ -48,7 +50,11 @@ export default {
       this.$channel.$emit('sign-in')
     },
     handleCreate() {
-      this.$toast.success('先去小程序吧，网页之后我再维护~呐，好吗？')
+      if (!this.isAuth) {
+        this.$channel.$emit('sign-in')
+        return
+      }
+      window.location = '/write'
     }
   }
 }

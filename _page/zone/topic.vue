@@ -33,7 +33,7 @@
         <PinFlowList :slug="slug" />
       </ElCol>
       <ElCol :xs="24" :span="5">
-        <br />
+        <br>
       </ElCol>
     </ElRow>
   </div>
@@ -57,7 +57,7 @@ export default {
   asyncData({ app, error }) {
     const slug = process.env.TAGS.topic
     return Promise.all([showTag(app, { slug }), tagChildren(app, { slug })])
-      .then(data => {
+      .then((data) => {
         return {
           tag: data[0],
           children: data[1]

@@ -43,7 +43,7 @@ export const getTagFlows = ({ $axios, slug, sort, time, take, seen_ids, last_id 
     })
   return new Promise((resolve, reject) => {
     Promise.all([request(), timeout()])
-      .then(data => {
+      .then((data) => {
         resolve(data[0])
       })
       .catch(reject)
@@ -58,7 +58,7 @@ export const getATField = ({ $axios, page, count, sort, slug }) => {
     })
   return new Promise((resolve, reject) => {
     Promise.all([request(), timeout()])
-      .then(data => {
+      .then((data) => {
         resolve(data[0])
       })
       .catch(reject)

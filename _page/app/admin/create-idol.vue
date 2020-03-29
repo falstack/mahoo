@@ -6,7 +6,14 @@
 
 <template>
   <div id="create-idol">
-    <ElForm ref="form" :model="tag" :rules="rules" :disabled="submitting" label-position="top" class="edit-tag-info-form">
+    <ElForm
+      ref="form"
+      :model="tag"
+      :rules="rules"
+      :disabled="submitting"
+      label-position="top"
+      class="edit-tag-info-form"
+    >
       <ElFormItem label="来源" required>
         <ElInput v-model="tag.id" placeholder="去 bgm.tv 寻找那个偶像吧！" />
       </ElFormItem>
@@ -17,7 +24,7 @@
       </ElFormItem>
       <ElFormItem label="头像" required>
         <div class="avatar-field">
-          <img v-if="tag.avatar" :src="$resize(tag.avatar, { width: 100 })" class="avatar" />
+          <img v-if="tag.avatar" :src="$resize(tag.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"
@@ -41,10 +48,27 @@
         <p class="form-tip">
           提示：按回车键生效
         </p>
-        <ElSelect v-model="tag.alias" multiple filterable allow-create default-first-option placeholder="请输入标签别名" popper-class="hidden-select-options" class="hidden-select-input" />
+        <ElSelect
+          v-model="tag.alias"
+          multiple
+          filterable
+          allow-create
+          default-first-option
+          placeholder="请输入标签别名"
+          popper-class="hidden-select-options"
+          class="hidden-select-input"
+        />
       </ElFormItem>
       <ElFormItem label="简介" required>
-        <ElInput v-model="tag.intro" type="textarea" :show-word-limit="true" :rows="8" maxlength="500" resize="none" placeholder="请输入板块介绍" />
+        <ElInput
+          v-model="tag.intro"
+          type="textarea"
+          :show-word-limit="true"
+          :rows="8"
+          maxlength="500"
+          resize="none"
+          placeholder="请输入板块介绍"
+        />
       </ElFormItem>
       <ElFormItem>
         <ElButton :loading="submitting" type="success" round @click="submit">
@@ -112,7 +136,7 @@ export default {
             source_id: this.tag.id
           }
         })
-        .then(info => {
+        .then((info) => {
           if (!info || !info.name) {
             return
           }
@@ -121,7 +145,7 @@ export default {
             ...info
           }
         })
-        .catch(err => {
+        .catch((err) => {
           if (err.statusCode === 400) {
             this.$toast.stop()
             this.$confirm('该角色已存在，是否跳转？')
@@ -139,7 +163,7 @@ export default {
         })
     },
     submit() {
-      this.$refs.form.validate(valid => {
+      this.$refs.form.validate((valid) => {
         if (valid) {
           this.submitting = true
           this.$axios
@@ -148,7 +172,7 @@ export default {
               alias: [this.tag.name, ...this.tag.alias],
               bangumi_slug: this.$route.query.slug
             })
-            .then(slug => {
+            .then((slug) => {
               this.$toast.info('创建成功')
               const isQQ = /qq/.test(window.navigator.userAgent.toLowerCase())
               const self = isQQ ? window.qq : window.wx
@@ -156,7 +180,7 @@ export default {
                 url: `/pages/idol/show/index?slug=${slug}`
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
               this.submitting = false
             })

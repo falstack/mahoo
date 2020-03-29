@@ -1,7 +1,7 @@
 import { getUserInfo } from '~/api/userApi'
 
 export const getUserFromSessionStore = (ctx, slug) => {
-  const getUser = async () => {
+  const getUser = async() => {
     const user = await getUserInfo(ctx, { slug })
     user && setUserSessionStore(user)
     return user
@@ -17,7 +17,7 @@ export const getUserFromSessionStore = (ctx, slug) => {
   }
 }
 
-export const setUserSessionStore = user => {
+export const setUserSessionStore = (user) => {
   try {
     sessionStorage.setItem(`user-item-${user.slug}`, JSON.stringify(user))
   } catch (e) {}
@@ -62,7 +62,7 @@ export const get = (key, def = null) => {
   }
 }
 
-export const del = key => {
+export const del = (key) => {
   if (typeof window === 'undefined') {
     return
   }
@@ -73,7 +73,7 @@ export const del = key => {
   }
 }
 
-export const has = key => {
+export const has = (key) => {
   if (typeof window === 'undefined') {
     return false
   }

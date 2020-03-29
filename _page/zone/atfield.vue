@@ -104,7 +104,7 @@
   <div id="atfield">
     <ElRow class="container">
       <ElCol class="only-pc" :span="5">
-        <br />
+        <br>
       </ElCol>
       <ElCol :xs="24" :span="14" class="main-wrap">
         <ul class="sortable">
@@ -112,21 +112,28 @@
         </ul>
         <FlowLoader ref="loader" func="getATField" type="page" :query="query">
           <ul slot-scope="{ flow }" class="flows">
-            <TagQuestion v-for="item in flow" :key="item.slug" :show-zone="!slug" :show-control="true" :item="item" @remove="handleRemove(item.slug)" />
+            <TagQuestion
+              v-for="item in flow"
+              :key="item.slug"
+              :show-zone="!slug"
+              :show-control="true"
+              :item="item"
+              @remove="handleRemove(item.slug)"
+            />
           </ul>
           <SkeletonArticle slot="loading" />
           <template slot="nothing">
-            <img src="~assets/img/error/no-content.png" />
+            <img src="~assets/img/error/no-content.png">
             <p>这里什么都没有</p>
           </template>
           <template slot="error">
-            <img src="~assets/img/error/no-network.png" />
+            <img src="~assets/img/error/no-network.png">
             <p>遇到错误了，点击重试</p>
           </template>
         </FlowLoader>
       </ElCol>
       <ElCol class="only-pc" :span="5">
-        <br />
+        <br>
       </ElCol>
     </ElRow>
   </div>

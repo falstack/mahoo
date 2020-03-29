@@ -63,7 +63,7 @@ export default class Tunes {
 
     this.buttons = []
 
-    Tunes.tunes.forEach(tune => {
+    Tunes.tunes.forEach((tune) => {
       const el = make('div', [this.CSS.buttonBase, this.CSS.button], {
         innerHTML: tune.icon,
         title: tune.title

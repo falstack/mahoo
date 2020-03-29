@@ -1,9 +1,9 @@
-const parseCookie = cookieStr => {
+const parseCookie = (cookieStr) => {
   if (!cookieStr) {
     return ''
   }
   let token = ''
-  cookieStr.split('; ').forEach(item => {
+  cookieStr.split('; ').forEach((item) => {
     if (item.startsWith('JWT-TOKEN=')) {
       token = item.split('JWT-TOKEN=')[1]
     }
@@ -11,7 +11,7 @@ const parseCookie = cookieStr => {
   return token
 }
 
-export default app => {
+export default (app) => {
   let token = ''
 
   if (typeof window !== 'undefined') {

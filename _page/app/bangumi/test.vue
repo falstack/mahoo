@@ -13,11 +13,19 @@
   <ElForm v-if="bangumi" id="create-bangumi-question" ref="form" :disabled="submitting" label-position="top">
     <ElFormItem>
       <h1>为《{{ bangumi.name }}》出题</h1>
-      <br />
+      <br>
       <ElAlert description="题目提交完，需要审核通过之后才会入库" title="出题规则" type="success" />
     </ElFormItem>
     <ElFormItem label="题目">
-      <ElInput v-model="title" :rows="2" type="textarea" placeholder="请输入题目" resize="none" maxlength="50" show-word-limit />
+      <ElInput
+        v-model="title"
+        :rows="2"
+        type="textarea"
+        placeholder="请输入题目"
+        resize="none"
+        maxlength="50"
+        show-word-limit
+      />
     </ElFormItem>
     <ElFormItem>
       <p class="form-tip">
@@ -34,7 +42,9 @@
     </ElFormItem>
     <ElFormItem label="答案">
       <ElRadioGroup v-model="rightOpt">
-        <ElRadio v-for="(item, index) in answers" :key="item.key" :label="item.key"> 答案{{ index + 1 }} </ElRadio>
+        <ElRadio v-for="(item, index) in answers" :key="item.key" :label="item.key">
+          答案{{ index + 1 }}
+        </ElRadio>
       </ElRadioGroup>
     </ElFormItem>
     <ElFormItem>
@@ -100,7 +110,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(bangumi => {
+        .then((bangumi) => {
           this.bangumi = bangumi
         })
         .catch(() => {})
@@ -112,7 +122,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.rule = data
         })
         .catch()
@@ -147,7 +157,7 @@ export default {
             window.location.reload()
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.submitting = false
         })

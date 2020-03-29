@@ -1,4 +1,52 @@
 #calibur {
+  @media (min-width: 768px) {
+    .v-modal {
+      background-color: hsla(0, 0%, 100%, 0.7);
+    }
+  }
+
+  .el-dialog {
+    border-radius: 6px !important;
+    box-shadow: 0 5px 25px rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 30px auto !important;
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &__header {
+      display: none;
+    }
+
+    &__body {
+      position: relative;
+      padding: 0;
+      color: #333;
+    }
+
+    .btn-danger {
+      color: rgba($color-main, 0.7);
+      border-color: rgba($color-main, 0.7);
+
+      &:hover {
+        border-color: $color-main;
+        background-color: rgba(236,97,73,.05);
+      }
+    }
+
+    .btn-success {
+      color: rgba($color-green, 0.7);
+      border-color: rgba($color-green, 0.7);
+
+      &:hover {
+        border-color: $color-green;
+        background-color: rgba(66,192,46,.05);
+      }
+    }
+  }
+
   .el-message {
     min-width: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -129,5 +177,53 @@
         }
       }
     }
+  }
+
+  .mint-indicator {
+    z-index: 5000;
+    position: relative;
+  }
+
+  .mint-msgbox {
+    border-radius: 13px;
+    background-color: rgba(255, 255, 255, 0.95);
+
+    &-message {
+      line-height: 24px;
+      font-size: 14px;
+      color: #000;
+
+      span {
+        display: block;
+        text-align: left;
+        font-size: 14px;
+        text-indent: 2em;
+        word-break: break-all;
+      }
+
+      p {
+        line-height: 36px;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &-confirm {
+      color: $color-main !important;
+    }
+
+    &-btn {
+      background-color: transparent;
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+
+  .el-select,
+  .el-cascader {
+    width: 100%;
   }
 }

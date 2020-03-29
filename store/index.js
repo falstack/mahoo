@@ -75,7 +75,7 @@ export const mutations = {
       state.mailbox = message
     } else if (message.channel === 'message-menu') {
       const result = []
-      message.data.forEach(item => {
+      message.data.forEach((item) => {
         if (!state.messageRoom[item.channel]) {
           Vue.set(state.messageRoom, item.channel, {
             time: '',
@@ -107,7 +107,7 @@ export const mutations = {
   },
   SET_MESSAGE_MENU(state, menu) {
     const result = []
-    menu.forEach(item => {
+    menu.forEach((item) => {
       if (state.messageRoom[item.channel]) {
         Vue.set(state.messageRoom, item.channel, {
           time: randomStr(),
@@ -126,7 +126,7 @@ export const mutations = {
     state.messageMenu.time = randomStr()
   },
   UPDATE_MESSAGE_MENU_USER(state, { channel, user }) {
-    state.messageMenu.list.forEach(item => {
+    state.messageMenu.list.forEach((item) => {
       if (item.channel === channel) {
         item.user = user
       }
@@ -191,7 +191,7 @@ export const actions = {
   },
   updateMessageMenu({ state, commit }) {
     const self = state.user.slug
-    state.messageMenu.list.forEach(async item => {
+    state.messageMenu.list.forEach(async(item) => {
       const arr = item.channel.split('@')
       let slug = arr[2]
       if (slug === self) {
@@ -207,7 +207,7 @@ export const actions = {
     }
     this.$axios
       .$get('v1/user/roles')
-      .then(data => {
+      .then((data) => {
         commit('SET_USER_ROLE', data)
       })
       .catch(() => {})

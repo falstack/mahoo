@@ -46,8 +46,8 @@
 
 <template>
   <picture v-lazyload="handle" :style="[style, extraStyle]" :class="{ 'is-full': isFull, 'is-blur': useBlur, 'show-animate': animate }" class="img">
-    <source :srcset="source" type="image/webp" />
-    <img :src="show" :alt="alt" :origin-src="src" @load="loaded" />
+    <source :srcset="source" type="image/webp">
+    <img :src="show" :alt="alt" :origin-src="src" @load="loaded">
   </picture>
 </template>
 

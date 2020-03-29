@@ -16,7 +16,9 @@
     <p>
       <span>设置父节点：</span>
       <ElInput v-model="bangumi.parent_slug" />
-      <button @click="handleSetParent">确认</button>
+      <button @click="handleSetParent">
+        确认
+      </button>
     </p>
   </div>
 </template>
@@ -39,7 +41,7 @@ export default {
       .$get('v1/bangumi/show', {
         params: { slug }
       })
-      .then(bangumi => {
+      .then((bangumi) => {
         return { bangumi }
       })
       .catch(error)
@@ -65,7 +67,7 @@ export default {
         .then(() => {
           this.$toast.info('设置成功')
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     }

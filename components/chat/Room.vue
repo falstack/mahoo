@@ -113,7 +113,17 @@
     <div class="room-header">
       {{ name }}
     </div>
-    <FlowLoader ref="loader" func="getUserMessage" type="sinceId" :query="query" :callback="handleMessageLoad" :callback-once="false" :cache-timeout="86400" :auto="0" class="room-body">
+    <FlowLoader
+      ref="loader"
+      func="getUserMessage"
+      type="sinceId"
+      :query="query"
+      :callback="handleMessageLoad"
+      :callback-once="false"
+      :cache-timeout="86400"
+      :auto="0"
+      class="room-body"
+    >
       <div ref="wrap" slot-scope="{ flow }" class="room-chats">
         <Scroll ref="scroll" :data="flow" @top="handleScrollUp">
           <ChatRoom ref="room" :avatar-component="avatarComp" :message-components="messageComps" />
@@ -215,7 +225,7 @@ export default {
   },
   methods: {
     initRoom() {
-      this.$nextTick(async () => {
+      this.$nextTick(async() => {
         this.$refs.room && this.$refs.room.clearMessage()
         this.$refs.loader && this.$refs.loader.forceCallback()
         await this.$refs.loader.initData({ is_up: 1 })
@@ -276,12 +286,12 @@ export default {
           data.result
             .map(_ => _)
             .reverse()
-            .map(msg => {
+            .map((msg) => {
               this.appendMessage(msg, false)
             })
           this.screenScroll(false)
         } else {
-          data.result.map(msg => {
+          data.result.map((msg) => {
             this.appendMessage(msg)
           })
           this.screenScroll()
@@ -315,13 +325,13 @@ export default {
           color:
             msg.user.sex === 2
               ? {
-                  bg: '#ff6881',
-                  text: '#fff'
-                }
+                bg: '#ff6881',
+                text: '#fff'
+              }
               : {
-                  bg: '#12b7f5',
-                  text: '#fff'
-                },
+                bg: '#12b7f5',
+                text: '#fff'
+              },
           data: msg
         },
         insertToAfter
@@ -339,9 +349,7 @@ export default {
           }
         }
       ]
-      const randomId = Math.random()
-        .toString(10)
-        .substring(3, 6)
+      const randomId = Math.random().toString(10).substring(3, 6)
       this.appendMessage({
         id: randomId,
         user: this.$store.state.user,
@@ -355,7 +363,7 @@ export default {
           channel: this.mailto,
           content: jsonContent
         })
-        .then(msg => {
+        .then((msg) => {
           this.$refs.room.updateMessage(randomId, {
             id: msg.id
           })

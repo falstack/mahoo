@@ -8,17 +8,32 @@
 </style>
 
 <template>
-  <ElForm v-if="tag" ref="form" :disabled="submitting" label-position="right" label-width="80px" class="create-tag-atfield-form">
+  <ElForm
+    v-if="tag"
+    ref="form"
+    :disabled="submitting"
+    label-position="right"
+    label-width="80px"
+    class="create-tag-atfield-form"
+  >
     <ElFormItem>
       <h1>为《{{ tag.name }}》出题</h1>
-      <br />
+      <br>
       <ElAlert v-if="rule" :description="`当前分区需要有「${rule.question_count}道」题入库之后才能开放加入`" title="当前分区答题规则" type="success" />
     </ElFormItem>
     <ElFormItem>
       <ElAlert v-if="info" :description="`当前分区有「${info.trial}道」题正在审核中，「${info.pass}道」题已入库`" title="当前分区题库信息" type="success" />
     </ElFormItem>
     <ElFormItem label="题目">
-      <ElInput v-model="title" :rows="2" type="textarea" placeholder="请输入题目" resize="none" maxlength="50" show-word-limit />
+      <ElInput
+        v-model="title"
+        :rows="2"
+        type="textarea"
+        placeholder="请输入题目"
+        resize="none"
+        maxlength="50"
+        show-word-limit
+      />
     </ElFormItem>
     <ElFormItem>
       <p class="form-tip">
@@ -35,7 +50,9 @@
     </ElFormItem>
     <ElFormItem label="答案">
       <ElRadioGroup v-model="rightOpt">
-        <ElRadio v-for="(item, index) in answers" :key="item.key" :label="item.key"> 答案{{ index + 1 }} </ElRadio>
+        <ElRadio v-for="(item, index) in answers" :key="item.key" :label="item.key">
+          答案{{ index + 1 }}
+        </ElRadio>
       </ElRadioGroup>
     </ElFormItem>
     <ElFormItem>
@@ -100,7 +117,7 @@ export default {
   methods: {
     getTag() {
       showTag(this, { slug: this.slug })
-        .then(tag => {
+        .then((tag) => {
           this.tag = tag
         })
         .catch()
@@ -112,7 +129,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.rule = data
         })
         .catch()
@@ -124,7 +141,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.info = data
         })
         .catch()
@@ -158,7 +175,7 @@ export default {
             window.location.reload()
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.submitting = false
         })
