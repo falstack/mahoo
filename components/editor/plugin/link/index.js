@@ -192,11 +192,11 @@ export default class LinkTool {
 
     this.nodes.input.dataset.placeholder = 'Link'
 
-    this.nodes.input.addEventListener('paste', event => {
+    this.nodes.input.addEventListener('paste', (event) => {
       this.startFetching(event)
     })
 
-    this.nodes.input.addEventListener('keydown', event => {
+    this.nodes.input.addEventListener('keydown', (event) => {
       const [ENTER, A] = [13, 65]
       const cmdPressed = event.ctrlKey || event.metaKey
 
@@ -326,7 +326,7 @@ export default class LinkTool {
    * Hide loading progressbar
    */
   hideProgress() {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.nodes.progress.classList.remove(this.CSS.progressLoading)
       this.nodes.progress.classList.add(this.CSS.progressLoaded)
 

@@ -27,7 +27,7 @@ export default {
       }
     })
 
-    const removeList = el => {
+    const removeList = (el) => {
       for (let i = 0, len = list.length; i < len; i++) {
         if (list[i] && list[i].el === el) {
           list.splice(i, 1)
@@ -36,7 +36,7 @@ export default {
       }
     }
 
-    const loadHandler = obj => {
+    const loadHandler = (obj) => {
       removeList(obj)
 
       obj.handler()
@@ -46,7 +46,7 @@ export default {
 
     const tProcess = throttle(200, running)
 
-    ;['scroll', 'resize', 'load'].forEach(evt => {
+    ;['scroll', 'resize', 'load'].forEach((evt) => {
       window.addEventListener(evt, () => {
         tProcess()
       })

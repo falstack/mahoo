@@ -66,7 +66,7 @@
       take: 10,
       changing: 'slug',
       time: '3-day',
-      sort: sort
+      sort: sort,
     }"
     :callback="handlePatch"
     class="pin-grid-list"
@@ -75,11 +75,11 @@
       <PinPoster v-for="item in flow" :key="item.slug" :item="item" />
     </ul>
     <template slot="nothing">
-      <img src="~assets/img/error/no-content.png" />
+      <img src="~assets/img/error/no-content.png">
       <p>这里什么都没有</p>
     </template>
     <template slot="error">
-      <img src="~assets/img/error/no-network.png" />
+      <img src="~assets/img/error/no-network.png">
       <p>遇到错误了，点击重试</p>
     </template>
   </FlowLoader>
@@ -114,7 +114,7 @@ export default {
             slug: data.result.map(_ => _.slug).join(',')
           }
         })
-        .then(result => {
+        .then((result) => {
           this.$refs.loader.patch(result)
         })
         .catch(() => {})

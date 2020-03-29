@@ -28,7 +28,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.tag = this.$set(this, 'tag', Object.assign(this.tag, data))
         })
         .catch(() => {})

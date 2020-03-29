@@ -307,9 +307,9 @@
     </div>
     <div class="container">
       <template v-if="showBirthday">
-        <br />
+        <br>
         <ElAlert title="祝这位不愿透露姓名的御坂妹妹生日快乐~！" type="success" />
-        <br />
+        <br>
       </template>
       <ElRow class="h5-no-margin" :gutter="10">
         <ElCol class="h5-no-margin" :span="17" :xs="24">
@@ -345,13 +345,13 @@
 </template>
 
 <script>
+import { Alert } from 'element-ui'
 import { getUserInfo } from '~/api/userApi'
 import UserAvatar from '~/components/user/UserAvatar'
 import UserNickname from '~/components/user/UserNickname'
 import DailySignBtn from '~/components/button/DailySignBtn'
 import UserFollowBtn from '~/components/button/UserFollowBtn'
 import SendMailBtn from '~/components/button/SendMailBtn'
-import { Alert } from 'element-ui'
 
 export default {
   name: 'UserLayout',
@@ -372,7 +372,7 @@ export default {
   },
   asyncData({ app, error, params }) {
     return getUserInfo(app, params)
-      .then(user => {
+      .then((user) => {
         return { user }
       })
       .catch(error)
@@ -465,7 +465,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.user = this.$set(this, 'user', Object.assign(this.user, data))
           this.$store.commit('social/set', {
             type: 'user-follow',

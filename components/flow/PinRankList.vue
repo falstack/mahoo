@@ -50,13 +50,20 @@
       take: take,
       changing: 'slug',
       time: time,
-      sort: 'hottest'
+      sort: 'hottest',
     }"
     :cache-timeout="3600"
     class="pin-rank-list"
   >
     <ul slot-scope="{ flow, count }" @mouseleave="defaultActive = 0">
-      <PinRanker v-for="(item, index) in flow" :key="item.slug" :index="index" :item="item" :show="defaultActive === index" @mouseenter.native="handleMove(index)" />
+      <PinRanker
+        v-for="(item, index) in flow"
+        :key="item.slug"
+        :index="index"
+        :item="item"
+        :show="defaultActive === index"
+        @mouseenter.native="handleMove(index)"
+      />
       <NLink v-if="count" class="more" :to="$alias.tag(slug)" target="_blank">
         <span>查看更多</span>
         <i class="el-icon-arrow-right" />

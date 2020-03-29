@@ -19,7 +19,7 @@ async function start() {
     await builder.build()
   }
 
-  app.use(ctx => {
+  app.use((ctx) => {
     ctx.status = 200
     ctx.set('X-XSS-Protection', '1; mode=block')
     ctx.set('X-Content-Type-Options', 'nosniff')

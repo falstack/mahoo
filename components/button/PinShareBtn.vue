@@ -131,7 +131,7 @@ export default {
       const title = document.title
       const content = document.querySelector('[name=description]').content
       const allNoteImages = []
-      ;[].forEach.call(document.querySelectorAll('.is-full'), imagePackage => {
+      ;[].forEach.call(document.querySelectorAll('.is-full'), (imagePackage) => {
         const image = imagePackage.querySelector('img')
         if (image) {
           let imageSrc = image.getAttribute('origin-src')

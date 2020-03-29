@@ -56,8 +56,12 @@
               <span v-text="item.bangumi.name" />
             </div>
             <div class="btn">
-              <button @click="handleDelete(item.id)">拒绝</button>
-              <button @click="handlePass(item.id)">通过</button>
+              <button @click="handleDelete(item.id)">
+                拒绝
+              </button>
+              <button @click="handlePass(item.id)">
+                通过
+              </button>
             </div>
           </div>
         </div>
@@ -92,7 +96,7 @@ export default {
               this.$toast.success('删除成功')
               this.$refs.loader.delete(id)
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
             .finally(() => {
@@ -112,7 +116,7 @@ export default {
           this.$toast.success('入库成功')
           this.$refs.loader.delete(id)
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {
@@ -122,7 +126,7 @@ export default {
     checkIsSelected(extra, key, id) {
       const answers = extra.answers || {}
       let result = false
-      Object.keys(answers).forEach(ansId => {
+      Object.keys(answers).forEach((ansId) => {
         if (ansId.toString() === id.toString() && !result) {
           result = answers[ansId] === key
         }

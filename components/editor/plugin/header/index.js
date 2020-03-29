@@ -108,7 +108,7 @@ export default class Header {
     const holder = document.createElement('DIV')
 
     /** Add type selectors */
-    this.levels.forEach(level => {
+    this.levels.forEach((level) => {
       const selectTypeButton = document.createElement('SPAN')
 
       selectTypeButton.classList.add(this._CSS.settingsButton)
@@ -164,7 +164,7 @@ export default class Header {
     /**
      * Highlight button by selected level
      */
-    this.settingsButtons.forEach(button => {
+    this.settingsButtons.forEach((button) => {
       button.classList.toggle(this._CSS.settingsButtonActive, parseInt(button.dataset.level) === level)
     })
   }

@@ -34,7 +34,7 @@ export default class Vote {
     const append = document.createElement('button')
     append.classList.add('vote-append', 'el-icon-plus')
 
-    const createItem = text => {
+    const createItem = (text) => {
       const wrap = document.createElement('li')
       const label = document.createElement('span')
       label.textContent = `${++this.i}. `

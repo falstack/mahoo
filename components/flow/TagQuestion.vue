@@ -107,10 +107,26 @@
           <time v-text="$utils.timeAgo(item.created_at)" />
         </div>
         <div v-if="showControl">
-          <ElButton v-if="showRemove" :loading="loading" size="mini" plain round type="primary" @click="handleDelete">
+          <ElButton
+            v-if="showRemove"
+            :loading="loading"
+            size="mini"
+            plain
+            round
+            type="primary"
+            @click="handleDelete"
+          >
             删除
           </ElButton>
-          <ElButton v-if="!item.recommended_at && showPass" :loading="loading" size="mini" plain round type="success" @click="handlePass">
+          <ElButton
+            v-if="!item.recommended_at && showPass"
+            :loading="loading"
+            size="mini"
+            plain
+            round
+            type="success"
+            @click="handlePass"
+          >
             通过
           </ElButton>
         </div>
@@ -174,7 +190,7 @@ export default {
               this.$toast.success('删除成功')
               this.$emit('remove')
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
               this.loading = false
             })
@@ -194,7 +210,7 @@ export default {
           this.$toast.success('入库成功')
           this.$emit('remove')
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })
@@ -218,7 +234,7 @@ export default {
             result: option.id
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {

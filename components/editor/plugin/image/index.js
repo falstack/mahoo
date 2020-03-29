@@ -127,7 +127,7 @@ export default class ImageTool {
       config: this.config,
       onSelectFile: () => {
         this.uploader.uploadSelectedFile({
-          onPreview: src => {
+          onPreview: (src) => {
             this.ui.showPreloader(src)
           }
         })
@@ -377,7 +377,7 @@ export default class ImageTool {
    */
   uploadFile(file) {
     this.uploader.uploadByFile(file, {
-      onPreview: src => {
+      onPreview: (src) => {
         this.ui.showPreloader(src)
       }
     })

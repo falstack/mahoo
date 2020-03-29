@@ -73,7 +73,7 @@ export default {
                 window.location.reload()
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })
@@ -97,7 +97,7 @@ export default {
             .then(() => {
               this.$toast.success('邀请成功')
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })
@@ -123,7 +123,7 @@ export default {
                 window.location.reload()
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })

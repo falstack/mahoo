@@ -101,7 +101,7 @@ export default {
                 window.location = '/'
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
               this.deleting = false
             })
@@ -121,7 +121,7 @@ export default {
             window.location.reload()
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     }

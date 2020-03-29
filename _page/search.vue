@@ -170,7 +170,7 @@
     <ElRow class="container">
       <div class="search-panel">
         <div class="before only-pc">
-          <img src="https://file.calibur.tv/logo.png" alt="logo" />
+          <img src="https://file.calibur.tv/logo.png" alt="logo">
           <span>搜索</span>
         </div>
         <div class="v-search">
@@ -185,7 +185,7 @@
     </ElRow>
     <ElRow>
       <ElCol class="only-pc" :span="6">
-        <br />
+        <br>
       </ElCol>
       <ElCol :span="12" :xs="24">
         <FlowLoader ref="loader" func="getMixinSearch" type="page" :query="query">
@@ -193,11 +193,11 @@
             <component :is="`${item.type}-item`" v-for="item in flow" :key="item.data.slug" :item="item.data" />
           </ul>
           <template slot="nothing">
-            <img src="~assets/img/error/no-content.png" />
+            <img src="~assets/img/error/no-content.png">
             <p>这里什么都没有</p>
           </template>
           <template slot="error">
-            <img src="~assets/img/error/no-network.png" />
+            <img src="~assets/img/error/no-network.png">
             <p>遇到错误了，点击重试</p>
           </template>
           <footer slot="footer" slot-scope="{ source }">
@@ -216,18 +216,18 @@
         </FlowLoader>
       </ElCol>
       <ElCol class="only-pc" :span="6">
-        <br />
+        <br>
       </ElCol>
     </ElRow>
   </div>
 </template>
 
 <script>
+import { Pagination } from 'element-ui'
 import VSearch from '~/components/search/Input'
 import PinItem from '~/components/flow/PinArticle'
 import TagItem from '~/components/flow/TagSearchItem'
 import UserItem from '~/components/flow/UserSearchItem'
-import { Pagination } from 'element-ui'
 
 export default {
   name: 'Search',

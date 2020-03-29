@@ -77,20 +77,6 @@ module.exports = {
         innerHTML: injectScript.baiduPush,
         type: 'text/javascript',
         async: true
-      },
-      {
-        src: '//qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js',
-        type: 'text/javascript',
-        async: true
-      },
-      {
-        src: '//qqq.gtimg.cn/miniprogram/webview_jssdk/qqjssdk-1.0.0.js',
-        type: 'text/javascript'
-      },
-      {
-        src: '//res2.wx.qq.com/open/js/jweixin-1.4.0.js',
-        type: 'text/javascript',
-        async: true
       }
     ],
     __dangerouslyDisableSanitizers: ['script']
@@ -104,30 +90,30 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['normalize.css', '~/assets/css/global.scss'],
+  css: ['normalize.css', '~/assets/css/global.scss', '~/theme/index.css'],
 
   render: {
     csp: isDev
       ? false
       : {
-          reportOnly: false,
-          policies: {
-            'object-src': ["'none'"],
-            'style-src': ["'self'", "'unsafe-inline'", '*.calibur.tv', 'static.geetest.com'],
-            'script-src': [
-              "'unsafe-inline'",
-              '*.calibur.tv',
-              'hm.baidu.com',
-              'qqq.gtimg.cn',
-              '*.geetest.com',
-              'zz.bdstatic.com',
-              'push.zhanzhang.baidu.com',
-              'res2.wx.qq.com',
-              'qzonestyle.gtimg.cn',
-              'polyfill.alicdn.com'
-            ]
-          }
+        reportOnly: false,
+        policies: {
+          'object-src': ["'none'"],
+          'style-src': ["'self'", "'unsafe-inline'", '*.calibur.tv', 'static.geetest.com'],
+          'script-src': [
+            "'unsafe-inline'",
+            '*.calibur.tv',
+            'hm.baidu.com',
+            'qqq.gtimg.cn',
+            '*.geetest.com',
+            'zz.bdstatic.com',
+            'push.zhanzhang.baidu.com',
+            'res2.wx.qq.com',
+            'qzonestyle.gtimg.cn',
+            'polyfill.alicdn.com'
+          ]
         }
+      }
   },
 
   /*
@@ -170,11 +156,6 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
     extractCSS: true,
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
@@ -211,10 +192,10 @@ module.exports = {
           'sakura'
         ],
         [
-          "component",
+          'component',
           {
             libraryName: 'element-ui',
-            styleLibraryName: 'theme-chalk'
+            style: false
           }
         ]
       ]

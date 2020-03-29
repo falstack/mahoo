@@ -94,7 +94,7 @@ export default {
       const hasVirtualCoin = !!this.user.wallet_coin
       const title = hasVirtualCoin ? '向TA投食需要消耗你一个团子，是否继续?' : '向TA投食需要消耗你一个光玉，是否继续?'
       this.$confirm(title, '提示')
-        .then(async () => {
+        .then(async() => {
           const data = await this.$store.dispatch('social/toggle', {
             type: 'pin',
             slug: this.pinSlug,

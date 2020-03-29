@@ -48,7 +48,14 @@
 </style>
 
 <template>
-  <FlowLoader ref="loader" func="getZoneQuestions" type="page" :query="{ $axios, slug, changing: 'slug' }" :callback="handleCallback" class="submit-atfield-form">
+  <FlowLoader
+    ref="loader"
+    func="getZoneQuestions"
+    type="page"
+    :query="{ $axios, slug, changing: 'slug' }"
+    :callback="handleCallback"
+    class="submit-atfield-form"
+  >
     <header slot="header" slot-scope="{ source }" class="qa-header">
       <h1>
         <span v-if="tag">《{{ tag.name }}》</span><span>共{{ source.total }}道题</span>
@@ -56,10 +63,24 @@
       <ElAlert title="题目都是单选，答完所有题之后只要满足「分区规则」即可加入分区" type="info" center show-icon :closable="false" />
     </header>
     <ul slot-scope="{ flow }" class="questions">
-      <TagQuestion v-for="(item, index) in flow" :key="item.slug" :item="item" :number="index + 1" :show-zone="false" @select="handleSelect" />
+      <TagQuestion
+        v-for="(item, index) in flow"
+        :key="item.slug"
+        :item="item"
+        :number="index + 1"
+        :show-zone="false"
+        @select="handleSelect"
+      />
     </ul>
     <footer slot="footer" class="qa-footer">
-      <ElButton :loading="loading" class="submit-btn" type="danger" plain round @click="restart">
+      <ElButton
+        :loading="loading"
+        class="submit-btn"
+        type="danger"
+        plain
+        round
+        @click="restart"
+      >
         更新试卷
       </ElButton>
       <ElButton :loading="loading" class="submit-btn" type="success" round @click="submit">
@@ -70,8 +91,8 @@
 </template>
 
 <script>
-import TagQuestion from '~/components/flow/TagQuestion'
 import { Alert } from 'element-ui'
+import TagQuestion from '~/components/flow/TagQuestion'
 
 export default {
   name: 'SubmitATFieldForm',
@@ -115,7 +136,7 @@ export default {
               slug: this.slug,
               retry: true
             })
-            .then(result => {
+            .then((result) => {
               if (result === 'reject') {
                 this.$toast.info('该分区还未开放')
               } else if (result === 'resolve') {
@@ -130,7 +151,7 @@ export default {
                 })
               }
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
             .finally(() => {
@@ -154,7 +175,7 @@ export default {
         .$post('v1/atfield/submit', {
           slug: this.slug
         })
-        .then(result => {
+        .then((result) => {
           if (result === 'pass') {
             this.$toast.success('挑战成功！')
           } else {
@@ -164,7 +185,7 @@ export default {
             window.location = this.$alias.tag(this.slug)
           }, 1000)
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })

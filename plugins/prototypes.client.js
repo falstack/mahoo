@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Cookies from 'js-cookie'
+import { MessageBox } from 'element-ui'
 import Toast from '~/assets/js/toast'
 import channel from '~/assets/js/channel'
 import * as Cache from '~/assets/js/cache'
 import Manager from '~/assets/js/manager'
-import { MessageBox } from 'element-ui'
 
 Vue.use({
   install(Vue) {

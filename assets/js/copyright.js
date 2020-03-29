@@ -33,7 +33,7 @@ export default class Copyright {
    * @return {null}
    */
   bind(ele, { minLength, authorNickname, shareLink, appendStr } = {}) {
-    ele.addEventListener('copy', evt => {
+    ele.addEventListener('copy', (evt) => {
       const lengthLimit = minLength || this.config.minLength
       const location = shareLink || this.config.shareLink
       const str = appendStr || this.config.appendStr
@@ -73,7 +73,7 @@ export default class Copyright {
    * @param ele
    */
   abort(ele) {
-    ele.addEventListener('copy', evt => {
+    ele.addEventListener('copy', (evt) => {
       evt.stopPropagation()
       evt.preventDefault()
       evt.cancelBubble = false

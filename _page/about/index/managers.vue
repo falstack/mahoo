@@ -93,7 +93,7 @@ export default {
   asyncData({ app, error }) {
     return app.$axios
       .$get('v1/user/managers')
-      .then(list => {
+      .then((list) => {
         const actives = Object.keys(list)
         return { list, actives }
       })
@@ -127,7 +127,7 @@ export default {
                 window.location.reload()
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })
@@ -150,7 +150,7 @@ export default {
                 window.location.reload()
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })

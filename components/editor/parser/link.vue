@@ -52,7 +52,7 @@
 <template>
   <div :class="$style.link">
     <a target="_blank" :href="item.data.link">
-      <img v-if="item.data.meta.image && item.data.meta.image.url" :class="$style.logo" :src="item.data.meta.image.url" width="65" height="65" />
+      <img v-if="item.data.meta.image && item.data.meta.image.url" :class="$style.logo" :src="item.data.meta.image.url" width="65" height="65">
       <div :class="$style.content">
         <h3 v-text="item.data.meta.title" />
         <p v-text="item.data.meta.description" />

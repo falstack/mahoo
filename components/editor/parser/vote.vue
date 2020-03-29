@@ -171,7 +171,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.stat = data
           this.maxCount = Math.max(...Object.values(this.stat))
         })
@@ -222,7 +222,7 @@ export default {
           this.voted = true
           this.getVoteStat()
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {

@@ -20,7 +20,7 @@
       :props="{
         value: 'slug',
         label: 'name',
-        emitPath: false
+        emitPath: false,
       }"
       filterable
     >

@@ -36,8 +36,8 @@ export const mutations = {
     state.hottest_tags = tags.result
   },
   SET_MY_TAGS(state, data) {
-    Object.keys(data).forEach(type => {
-      state.myTags.forEach(item => {
+    Object.keys(data).forEach((type) => {
+      state.myTags.forEach((item) => {
         if (item.slug === type) {
           item.children = data[type]
         }
@@ -63,7 +63,7 @@ export const actions = {
     }
     return this.$axios
       .$get('v1/tag/hottest')
-      .then(tags => {
+      .then((tags) => {
         commit('SET_HOTTEST_TAGS', tags)
       })
       .catch(() => {})

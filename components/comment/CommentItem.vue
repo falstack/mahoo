@@ -164,7 +164,7 @@ export default {
           action_slug: this.$store.state.user.slug,
           method_type: 'up_vote'
         })
-        .then(result => {
+        .then((result) => {
           this.loading = false
           this.$emit('agree', {
             id: this.item.id,
@@ -172,7 +172,7 @@ export default {
             result
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })
@@ -192,7 +192,7 @@ export default {
               this.$toast.success('删除成功')
               this.$emit('delete', this.item.id)
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
               this.deleting = false
             })

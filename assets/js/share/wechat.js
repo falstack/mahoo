@@ -21,7 +21,7 @@ export default class {
     wx.ready(() => {
       // 初始化查看图片
       const allNoteImages = []
-      ;[].forEach.call(document.querySelectorAll('.is-full'), imagePackage => {
+      ;[].forEach.call(document.querySelectorAll('.is-full'), (imagePackage) => {
         const image = imagePackage.querySelector('img')
 
         if (image) {

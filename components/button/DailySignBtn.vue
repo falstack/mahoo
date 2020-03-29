@@ -45,7 +45,7 @@ export default {
       this.loading = true
       this.$axios
         .$post('v1/user/daily_sign')
-        .then(data => {
+        .then((data) => {
           this.value.daily_signed = true
           this.$toast.success(data.message)
           this.loading = false
@@ -61,7 +61,7 @@ export default {
             // do nothing
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })

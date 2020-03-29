@@ -22,10 +22,17 @@
 </style>
 
 <template>
-  <ElForm ref="form" :model="tag" :rules="rules" :disabled="submitting" label-position="top" class="edit-tag-info-form">
+  <ElForm
+    ref="form"
+    :model="tag"
+    :rules="rules"
+    :disabled="submitting"
+    label-position="top"
+    class="edit-tag-info-form"
+  >
     <ElFormItem label="头像">
       <div class="avatar-field">
-        <img :src="$resize(tag.avatar, { width: 100 })" class="avatar" />
+        <img :src="$resize(tag.avatar, { width: 100 })" class="avatar">
         <ElUpload
           :show-file-list="false"
           :action="imageUploadAction"
@@ -49,10 +56,27 @@
       <p class="form-tip">
         提示：按回车键生效
       </p>
-      <ElSelect v-model="tag.alias" multiple filterable allow-create default-first-option placeholder="请输入标签别名" popper-class="hidden-select-options" class="hidden-select-input" />
+      <ElSelect
+        v-model="tag.alias"
+        multiple
+        filterable
+        allow-create
+        default-first-option
+        placeholder="请输入标签别名"
+        popper-class="hidden-select-options"
+        class="hidden-select-input"
+      />
     </ElFormItem>
     <ElFormItem label="简介">
-      <ElInput v-model="tag.intro" type="textarea" :show-word-limit="true" :rows="8" maxlength="233" resize="none" placeholder="请输入板块介绍" />
+      <ElInput
+        v-model="tag.intro"
+        type="textarea"
+        :show-word-limit="true"
+        :rows="8"
+        maxlength="233"
+        resize="none"
+        placeholder="请输入板块介绍"
+      />
     </ElFormItem>
     <ElFormItem>
       <ElButton :loading="submitting" type="success" round @click="submit">
@@ -109,7 +133,7 @@ export default {
       this.tag.avatar = res.data.url
     },
     submit() {
-      this.$refs.form.validate(valid => {
+      this.$refs.form.validate((valid) => {
         if (valid) {
           this.submitting = true
           updateTag(this, {
@@ -124,7 +148,7 @@ export default {
                 window.location.reload()
               })
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
               this.submitting = false
             })

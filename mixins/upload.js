@@ -111,9 +111,7 @@ export default {
       }
 
       const createFileName = ({ slug, file }) => {
-        return `${slug}/${new Date().getTime()}-${Math.random()
-          .toString(36)
-          .substring(3, 6)}.${file.type.split('/').pop()}`
+        return `${slug}/${new Date().getTime()}-${Math.random().toString(36).substring(3, 6)}.${file.type.split('/').pop()}`
       }
 
       this.uploadHeaders.key = createFileName({

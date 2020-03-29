@@ -77,7 +77,7 @@ export default {
       this.scroll && this.scroll.disable()
     },
     refresh() {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         this.$nextTick(() => {
           setTimeout(() => {
             this.scroll && this.scroll.refresh()

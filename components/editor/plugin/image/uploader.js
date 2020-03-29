@@ -28,7 +28,7 @@ export default class Uploader {
       const reader = new FileReader()
 
       reader.readAsDataURL(file)
-      reader.onload = e => {
+      reader.onload = (e) => {
         onPreview(e.target.result)
       }
     }
@@ -41,7 +41,7 @@ export default class Uploader {
 
     // custom uploading
     if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
-      upload = ajax.selectFiles().then(files => {
+      upload = ajax.selectFiles().then((files) => {
         preparePreview(files[0])
 
         const customUpload = this.config.uploader.uploadByFile(files[0])
@@ -62,7 +62,7 @@ export default class Uploader {
           data: this.config.additionalRequestData,
           accept: this.config.types,
           headers: this.config.additionalRequestHeaders,
-          beforeSend: files => {
+          beforeSend: (files) => {
             preparePreview(files[0])
           },
           fieldName: this.config.field
@@ -71,10 +71,10 @@ export default class Uploader {
     }
 
     upload
-      .then(response => {
+      .then((response) => {
         this.onUpload(response)
       })
-      .catch(error => {
+      .catch((error) => {
         this.onError(error)
       })
   }
@@ -117,10 +117,10 @@ export default class Uploader {
     }
 
     upload
-      .then(response => {
+      .then((response) => {
         this.onUpload(response)
       })
-      .catch(error => {
+      .catch((error) => {
         this.onError(error)
       })
   }
@@ -139,7 +139,7 @@ export default class Uploader {
     const reader = new FileReader()
 
     reader.readAsDataURL(file)
-    reader.onload = e => {
+    reader.onload = (e) => {
       onPreview(e.target.result)
     }
 
@@ -180,10 +180,10 @@ export default class Uploader {
     }
 
     upload
-      .then(response => {
+      .then((response) => {
         this.onUpload(response)
       })
-      .catch(error => {
+      .catch((error) => {
         this.onError(error)
       })
   }

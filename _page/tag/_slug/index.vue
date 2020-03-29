@@ -82,7 +82,7 @@ export default {
   asyncData({ app, error, params }) {
     const { slug } = params
     return Promise.all([showTag(app, { slug }), tagChildren(app, { slug })])
-      .then(data => {
+      .then((data) => {
         return {
           tag: data[0],
           children: data[1]
@@ -108,7 +108,7 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.tag = this.$set(this, 'tag', Object.assign(this.tag, data))
           this.$store.commit('social/set', {
             type: 'tag',

@@ -1,4 +1,4 @@
-export default err => {
+export default (err) => {
   const result = {}
   if (/timeout of/.test(err.message)) {
     result.statusCode = 504

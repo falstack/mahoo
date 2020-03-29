@@ -37,10 +37,10 @@ export default {
             name,
             parent_slug: this.parent
           })
-            .then(data => {
+            .then((data) => {
               this.$emit('create', data)
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
         })

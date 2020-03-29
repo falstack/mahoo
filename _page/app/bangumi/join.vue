@@ -73,7 +73,7 @@
   <div id="bangumi-join">
     <div v-if="showLaunch" class="launch">
       <template v-if="bangumi">
-        <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })" alt="" />
+        <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })" alt="">
         <p>加入《{{ bangumi.name }}》</p>
       </template>
       <template v-if="rule">
@@ -82,8 +82,12 @@
           <li>正确率需要：{{ rule.right_rate }}%</li>
         </ul>
       </template>
-      <ElButton type="success" round @click="handleBegin">开始答题</ElButton>
-      <NLink v-if="showCreate" :to="`/app/bangumi/test?slug=${slug}`">出题</NLink>
+      <ElButton type="success" round @click="handleBegin">
+        开始答题
+      </ElButton>
+      <NLink v-if="showCreate" :to="`/app/bangumi/test?slug=${slug}`">
+        出题
+      </NLink>
     </div>
     <template v-else>
       <ol class="question-list">
@@ -149,10 +153,10 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.rule = data
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     },
@@ -163,10 +167,10 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.bangumi = data
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     },
@@ -175,7 +179,7 @@ export default {
         .$post('v1/join/begin', {
           slug: this.slug
         })
-        .then(result => {
+        .then((result) => {
           if (result === 'reject') {
             this.$toast.info('该分区还未开放')
           } else if (result === 'resolve') {
@@ -189,7 +193,7 @@ export default {
             this.getQuestions()
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     },
@@ -200,12 +204,12 @@ export default {
             slug: this.slug
           }
         })
-        .then(data => {
+        .then((data) => {
           this.selected = data.extra.answers || {}
           this.questions = data.result
           this.showLaunch = false
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     },
@@ -218,7 +222,7 @@ export default {
         .then(() => {
           this.selected[questionId] = answerId
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
     },
@@ -237,7 +241,7 @@ export default {
             .then(() => {
               this.getQuestions()
             })
-            .catch(err => {
+            .catch((err) => {
               this.$toast.error(err.message)
             })
             .finally(() => {
@@ -259,7 +263,7 @@ export default {
         .$post('v1/join/submit', {
           slug: this.slug
         })
-        .then(result => {
+        .then((result) => {
           this.$toast.info(result).then(() => {
             const isQQ = /qq/.test(window.navigator.userAgent.toLowerCase())
             const self = isQQ ? window.qq : window.wx
@@ -268,7 +272,7 @@ export default {
             })
           })
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
         })
         .finally(() => {

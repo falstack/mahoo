@@ -73,11 +73,11 @@
         maxlength="50"
         @focus="handleInputFocus"
         @blur="handleInputBlur"
-      />
+      >
     </div>
     <ul v-show="displaySuggestion" class="search-suggestions">
       <NLink v-for="(item, index) in filteredSelect" :key="item.id" :class="{ active: index === selectedIndex }" :to="$alias.tag(item.slug)" tag="li">
-        <img :src="$resize(item.avatar, { width: 60 })" />
+        <img :src="$resize(item.avatar, { width: 60 })">
         <span v-text="item.name" />
       </NLink>
     </ul>
@@ -126,16 +126,16 @@ export default {
     }
   },
   mounted() {
-    this.$watch('value', val => {
+    this.$watch('value', (val) => {
       this.word = val
       this.typing = true
       this.selectedIndex = -1
       this.handleEnter(val)
     })
-    this.$watch('word', val => {
+    this.$watch('word', (val) => {
       this.$emit('input', val)
     })
-    this.$watch('$route', val => {
+    this.$watch('$route', (val) => {
       if (val.name === 'search') {
         this.word = val.query.q
         this.selectedType = val.query.type
@@ -158,7 +158,7 @@ export default {
         } else {
           this.$axios
             .$get('v1/search/tags')
-            .then(tags => {
+            .then((tags) => {
               this.tags = tags
               this.$cache.set(cacheKey, tags)
               if (this.word) {
@@ -192,7 +192,7 @@ export default {
         this.filteredSelect = []
         return
       }
-      this.filteredSelect = this.tags.filter(option => {
+      this.filteredSelect = this.tags.filter((option) => {
         return option.alias.includes(query) || option.name.includes(query)
       })
     },

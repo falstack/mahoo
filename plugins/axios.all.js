@@ -6,16 +6,16 @@ export default ({ $axios, app }) => {
 
   $axios.setToken(parseToken(app), 'Bearer')
 
-  $axios.onRequest(config => {
+  $axios.onRequest((config) => {
     config.baseURL = isClient ? process.env.API_URL_BROWSER : process.env.API_URL
     config.timeout = 10000
   })
 
-  $axios.onResponse(resp => {
+  $axios.onResponse((resp) => {
     return resp.data
   })
 
-  $axios.onError(error => {
+  $axios.onError((error) => {
     return Promise.reject(generateRequestError(error))
   })
 }

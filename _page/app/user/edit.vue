@@ -47,10 +47,17 @@
 
 <template>
   <div id="user-edit">
-    <ElForm v-if="isAuth" ref="form" :disabled="submitting" :model="user" :rules="rule" label-position="top">
+    <ElForm
+      v-if="isAuth"
+      ref="form"
+      :disabled="submitting"
+      :model="user"
+      :rules="rule"
+      label-position="top"
+    >
       <ElFormItem label="头像">
         <div class="avatar-field">
-          <img :src="$resize(user.avatar, { width: 100 })" class="avatar" />
+          <img :src="$resize(user.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"
@@ -70,7 +77,7 @@
       <ElFormItem label="背景">
         <div class="banner-field">
           <div class="banner-wrap">
-            <img :src="$resize(user.banner, { height: 100, mode: 2 })" class="banner" />
+            <img :src="$resize(user.banner, { height: 100, mode: 2 })" class="banner">
           </div>
           <ElUpload
             :show-file-list="false"
@@ -92,7 +99,15 @@
         <ElInput v-model.trim="nickname" />
       </ElFormItem>
       <ElFormItem label="生日" prop="birthday">
-        <ElDatePicker v-model="birthday" :editable="false" :clearable="false" type="date" format="yyyy 年 M 月 d 日" value-format="yyyy-MM-dd" placeholder="选择生日" />
+        <ElDatePicker
+          v-model="birthday"
+          :editable="false"
+          :clearable="false"
+          type="date"
+          format="yyyy 年 M 月 d 日"
+          value-format="yyyy-MM-dd"
+          placeholder="选择生日"
+        />
         <ElSwitch v-model="birthSecret" active-text="私密" inactive-text="公开" />
       </ElFormItem>
       <ElFormItem label="性别">
@@ -107,7 +122,15 @@
         <ElSwitch v-model="sexSecret" active-text="私密" inactive-text="公开" />
       </ElFormItem>
       <ElFormItem label="签名" prop="signature">
-        <ElInput v-model="signature" :rows="5" type="textarea" placeholder="留下自己想说的话" maxlength="60" show-word-limit resize="none" />
+        <ElInput
+          v-model="signature"
+          :rows="5"
+          type="textarea"
+          placeholder="留下自己想说的话"
+          maxlength="60"
+          show-word-limit
+          resize="none"
+        />
       </ElFormItem>
       <ElFormItem>
         <ElButton :loading="submitting" type="primary" @click="submit">
@@ -267,7 +290,7 @@ export default {
       })
     },
     submit() {
-      this.$refs.form.validate(async valid => {
+      this.$refs.form.validate(async(valid) => {
         if (valid) {
           if (this.submitting) {
             return

@@ -97,7 +97,7 @@ export default class List {
 
     // fill with data
     if (this._data.items.length) {
-      this._data.items.forEach(item => {
+      this._data.items.forEach((item) => {
         this._elements.wrapper.appendChild(
           this._make('li', this.CSS.item, {
             innerHTML: item
@@ -111,7 +111,7 @@ export default class List {
     // detect keydown on the last item to escape List
     this._elements.wrapper.addEventListener(
       'keydown',
-      event => {
+      (event) => {
         const [ENTER, BACKSPACE] = [13, 8] // key codes
 
         switch (event.keyCode) {
@@ -147,7 +147,7 @@ export default class List {
        * @param {ListData} data
        * @return {string}
        */
-      export: data => {
+      export: (data) => {
         return data.items.join('. ')
       },
       /**
@@ -155,7 +155,7 @@ export default class List {
        * @param string
        * @return {ListData}
        */
-      import: string => {
+      import: (string) => {
         return {
           items: [string],
           style: 'unordered'
@@ -183,7 +183,7 @@ export default class List {
   renderSettings() {
     const wrapper = this._make('div', [this.CSS.settingsWrapper], {})
 
-    this.settings.forEach(item => {
+    this.settings.forEach((item) => {
       const itemEl = this._make('div', this.CSS.settingsButton, {
         innerHTML: item.icon
       })

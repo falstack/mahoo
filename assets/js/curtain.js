@@ -57,10 +57,10 @@ export default {
         this.id,
         this.position
           ? {
-              ...this.position,
-              width: rect.width,
-              height: rect.height
-            }
+            ...this.position,
+            width: rect.width,
+            height: rect.height
+          }
           : null
       )
     },

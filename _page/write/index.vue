@@ -243,7 +243,7 @@
           <div slot="tip" class="el-upload-tip">
             <i class="el-icon-picture" />
             <div>请添加封面图（选填）</div>
-            <p>支持8MB内的JPG／JPEG／PNG格式的高清图片<br />（建议大于960*540像素）</p>
+            <p>支持8MB内的JPG／JPEG／PNG格式的高清图片<br>（建议大于960*540像素）</p>
           </div>
         </ElUpload>
         <template v-if="title && title.banner">
@@ -254,7 +254,15 @@
         </template>
       </div>
       <div class="title">
-        <ElInput v-model="title.text" :show-word-limit="true" :autosize="{ minRows: 1, maxRows: 2 }" type="textarea" resize="none" placeholder="请输入标题（建议30字以内）" maxlength="40" />
+        <ElInput
+          v-model="title.text"
+          :show-word-limit="true"
+          :autosize="{ minRows: 1, maxRows: 2 }"
+          type="textarea"
+          resize="none"
+          placeholder="请输入标题（建议30字以内）"
+          maxlength="40"
+        />
       </div>
       <Editor v-model="content" :slug="slug" :time="last_edit_at" @save="onEditorSave" />
       <ElForm class="footer" label-position="top" label-width="80px">
@@ -266,7 +274,14 @@
             <ElButton :loading="loading" type="success" round @click="actionUpdate(true)">
               {{ published_at ? '发布更新' : '更新并发布' }}
             </ElButton>
-            <ElButton v-if="!published_at" :loading="loading" round plain type="warning" @click="actionUpdate(false)">
+            <ElButton
+              v-if="!published_at"
+              :loading="loading"
+              round
+              plain
+              type="warning"
+              @click="actionUpdate(false)"
+            >
               存草稿
             </ElButton>
             <ElButton :loading="loading" type="primary" round plain @click="actionRedo">
@@ -315,7 +330,7 @@ export default {
       .$get('v1/pin/update/content', {
         params: { slug }
       })
-      .then(res => {
+      .then((res) => {
         const data = { ...res }
         data.area = data.area ? data.area.slug : ''
         data.topic = data.topic ? data.topic.slug : ''
@@ -398,7 +413,7 @@ export default {
           ].concat(this.content),
           publish
         })
-        .then(slug => {
+        .then((slug) => {
           this.removeCache()
           if (publish) {
             window.location = this.$alias.pin(slug)
@@ -412,7 +427,7 @@ export default {
             })
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })
@@ -435,7 +450,7 @@ export default {
           ].concat(this.content),
           publish
         })
-        .then(slug => {
+        .then((slug) => {
           this.removeCache()
           if (publish) {
             window.location = this.$alias.pin(slug)
@@ -443,7 +458,7 @@ export default {
             this.loading = false
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$toast.error(err.message)
           this.loading = false
         })

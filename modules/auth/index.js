@@ -1,4 +1,4 @@
-const parseAuthToken = headers => {
+const parseAuthToken = (headers) => {
   if (~['Geass', 'Innocence'].indexOf(headers['x-app-name'])) {
     return headers['x-auth-token'] || ''
   }
@@ -7,7 +7,7 @@ const parseAuthToken = headers => {
     return ''
   }
   let result = ''
-  cookie.split('; ').forEach(item => {
+  cookie.split('; ').forEach((item) => {
     if (item.startsWith('JWT-TOKEN=')) {
       result = item.split('JWT-TOKEN=')[1]
     }
