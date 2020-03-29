@@ -2,8 +2,10 @@ import Vue from 'vue'
 
 import {
   getMatchedComponentsInstances,
+  getChildrenComponentInstancesUsingFetch,
   promisify,
-  globalHandleError
+  globalHandleError,
+  sanitizeComponent
 } from './utils'
 
 import NuxtError from '../layouts/error.vue'
@@ -13,18 +15,13 @@ import '../node_modules/normalize.css/normalize.css'
 
 import '../assets/css/global.scss'
 
-const _6f6c098b = () => import('../layouts/default.vue'  /* webpackChunkName: "layouts/default" */).then(m => m.default || m)
+import '../theme/index.css'
 
-const layouts = { "_default": _6f6c098b }
+import _6f6c098b from '../layouts/default.vue'
 
-let resolvedLayouts = {}
+const layouts = { "_default": sanitizeComponent(_6f6c098b) }
 
 export default {
-  head: {"titleTemplate":function anonymous(val
-) {
-return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.title}`)
-},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"},{"name":"theme-color","content":"#ffffff"},{"name":"format-detection","content":"telephone=no,email=no,address=no"},{"name":"applicable-device","content":"pc,mobile"},{"name":"renderer","content":"webkit|ie-comp|ie-stand"},{"name":"force-rendering","content":"webkit"},{"http-equiv":"X-UA-Compatible","content":"IE=edge,chrome=1"},{"hid":"description","name":"description","content":"","template":val => (val ? `${val},${process.env.INJECT.description}` : `${process.env.INJECT.description}`)},{"hid":"keywords","name":"keywords","content":"","template":val => (val ? `${val},${process.env.INJECT.keywords}` : `${process.env.INJECT.keywords}`)}],"link":[{"rel":"dns-prefetch","href":"https:\u002F\u002Ffile.calibur.tv"},{"rel":"dns-prefetch","href":"https:\u002F\u002Fm1.calibur.tv"},{"rel":"preconnect","href":"https:\u002F\u002Fwww.calibur.tv"},{"rel":"preconnect","href":"https:\u002F\u002Fapi.calibur.tv"},{"rel":"icon","type":"image\u002Fx-icon","href":"https:\u002F\u002Ffile.calibur.tv\u002Ffavicon.ico"}],"bodyAttrs":{"id":"calibur"},"script":[{"src":"https:\u002F\u002Fpolyfill.alicdn.com\u002Fpolyfill.min.js","type":"text\u002Fjavascript"},{"innerHTML":"var _hmt=_hmt||[];(function (){var hm=document.createElement(\"script\");hm.src=\"https:\u002F\u002Fhm.baidu.com\u002Fhm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","type":"text\u002Fjavascript","async":true},{"innerHTML":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https:\u002F\u002Fzz.bdstatic.com\u002Flinksubmit\u002Fpush.js'}else{bp.src='http:\u002F\u002Fpush.zhanzhang.baidu.com\u002Fpush.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();","type":"text\u002Fjavascript","async":true},{"src":"\u002F\u002Fqzonestyle.gtimg.cn\u002Fqzone\u002Fqzact\u002Fcommon\u002Fshare\u002Fshare.js","type":"text\u002Fjavascript","async":true},{"src":"\u002F\u002Fqqq.gtimg.cn\u002Fminiprogram\u002Fwebview_jssdk\u002Fqqjssdk-1.0.0.js","type":"text\u002Fjavascript"},{"src":"\u002F\u002Fres2.wx.qq.com\u002Fopen\u002Fjs\u002Fjweixin-1.4.0.js","type":"text\u002Fjavascript","async":true}],"__dangerouslyDisableSanitizers":["script"],"style":[]},
-
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
 
@@ -77,8 +74,10 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
     isOnline: true,
 
     layout: null,
-    layoutName: ''
-  }),
+    layoutName: '',
+
+    nbFetching: 0
+    }),
 
   beforeCreate () {
     Vue.util.defineReactive(this, 'nuxt', this.$options.nuxt)
@@ -111,6 +110,10 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
   computed: {
     isOffline () {
       return !this.isOnline
+    },
+
+      isFetching() {
+      return this.nbFetching > 0
     }
   },
 
@@ -139,8 +142,17 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
       const promises = pages.map((page) => {
         const p = []
 
-        if (page.$options.fetch) {
+        // Old fetch
+        if (page.$options.fetch && page.$options.fetch.length) {
           p.push(promisify(page.$options.fetch, this.context))
+        }
+        if (page.$fetch) {
+          p.push(page.$fetch())
+        } else {
+          // Get all component instance to call $fetch
+          for (const component of getChildrenComponentInstancesUsingFetch(page.$vnode.componentInstance)) {
+            p.push(component.$fetch())
+          }
         }
 
         if (page.$options.asyncData) {
@@ -159,7 +171,7 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
       try {
         await Promise.all(promises)
       } catch (error) {
-        this.$loading.fail()
+        this.$loading.fail(error)
         globalHandleError(error)
         this.error(error)
       }
@@ -169,7 +181,7 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
     errorChanged () {
       if (this.nuxt.err && this.$loading) {
         if (this.$loading.fail) {
-          this.$loading.fail()
+          this.$loading.fail(this.nuxt.err)
         }
         if (this.$loading.finish) {
           this.$loading.finish()
@@ -178,32 +190,18 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
     },
 
     setLayout (layout) {
-      if (!layout || !resolvedLayouts['_' + layout]) {
+      if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
       this.layoutName = layout
-      let _layout = '_' + layout
-      this.layout = resolvedLayouts[_layout]
+      this.layout = layouts['_' + layout]
       return this.layout
     },
     loadLayout (layout) {
-      const undef = !layout
-      const nonexistent = !(layouts['_' + layout] || resolvedLayouts['_' + layout])
-      let _layout = '_' + ((undef || nonexistent) ? 'default' : layout)
-      if (resolvedLayouts[_layout]) {
-        return Promise.resolve(resolvedLayouts[_layout])
+      if (!layout || !layouts['_' + layout]) {
+        layout = 'default'
       }
-      return layouts[_layout]()
-        .then((Component) => {
-          resolvedLayouts[_layout] = Component
-          delete layouts[_layout]
-          return resolvedLayouts[_layout]
-        })
-        .catch((e) => {
-          if (this.$nuxt) {
-            return this.$nuxt.error({ statusCode: 500, message: e.message })
-          }
-        })
+      return Promise.resolve(layouts['_' + layout])
     }
   },
 
