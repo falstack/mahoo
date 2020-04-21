@@ -407,13 +407,7 @@ export default {
           if (publish) {
             window.location = this.$alias.pin(slug)
           } else {
-            this.$router.replace({
-              name: this.$route.name,
-              query: {
-                ...this.$route.query,
-                slug
-              }
-            })
+            window.location = this.$alias.create(slug)
           }
         })
         .catch((err) => {
