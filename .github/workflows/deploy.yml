@@ -69,7 +69,7 @@ jobs:
       - name: Install Qshell
         run: |
           echo $PATH
-          cd /opt/hostedtoolcache/node/12.16.1/x64/bin
+          cd /opt/hostedtoolcache/node/12.16.2/x64/bin
           echo "export PATH=\$PATH:$(pwd)" >> ~/.profile
           source ~/.profile
           wget http://devtools.qiniu.com/qshell-linux-x64-v2.4.1.zip
