@@ -168,7 +168,7 @@ export default {
           this.loading = false
           this.$emit('agree', {
             id: this.item.id,
-            count: result ? this.item.like_count - -1 : this.item.like_count - 1,
+            count: result ? this.item.like_count + 1 : this.item.like_count - 1,
             result
           })
         })

@@ -94,7 +94,7 @@ export default {
         }
       })
       if (data.success) {
-        this.count += data.result
+        this.count = data.result ? this.count + 1 : this.count - 1
       } else {
         this.$toast.error('服务器休息中')
       }
