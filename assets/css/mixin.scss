@@ -21,6 +21,11 @@
   -webkit-box-orient: vertical;
 }
 
+@mixin filter-blur($size: 4) {
+  filter: blur($size + px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$size, MakeShadow=false);
+}
+
 @mixin half-font($size, $origin: center) {
   display: block;
   font-size: $size * 2;
