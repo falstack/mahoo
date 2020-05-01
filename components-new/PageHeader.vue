@@ -1,4 +1,6 @@
 <style lang="scss">
+$header-link-padding: 7px;
+
 #page-header {
   position: relative;
   height: $page-header-hgt;
@@ -44,7 +46,7 @@
 
     .nav-link {
       display: block;
-      padding: 0 7px;
+      padding: 0 $header-link-padding;
       height: $page-header-hgt;
       line-height: $page-header-hgt;
       color: #222;
@@ -56,6 +58,10 @@
       float: left;
       margin-right: 3px;
     }
+  }
+
+  .home-link {
+    margin-left: -$header-link-padding;
   }
 
   &.with-bg {
@@ -86,7 +92,7 @@
     <div class="text-wrap v-layout">
       <ul class="v-layout__left">
         <li>
-          <NuxtLink class="nav-link" to="/">
+          <NuxtLink class="nav-link home-link" to="/">
             <i class="iconfont bili-bilibili-tv" />
             <span>主站</span>
           </NuxtLink>
