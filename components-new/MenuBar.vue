@@ -67,6 +67,7 @@
     border-radius: 0 0 4px 4px;
     background-color: #fff;
     display: none;
+    z-index: 9;
 
     &:hover {
       display: block;
