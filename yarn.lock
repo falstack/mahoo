@@ -2373,13 +2373,13 @@ cache-manager@^2.2.0:
     async "1.5.2"
     lru-cache "4.0.0"
 
-cache-manager@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/cache-manager/-/cache-manager-3.2.1.tgz#a00db7fed1319daf942ca5e710524c6f1958e1e6"
-  integrity sha512-H0pVQgl59aFjLJUzF5sxdWjgI/G1ZjXz3HNhK0qoNSZDVWM3CPK9+niCo8cOzKGn869IswYj0ax97gUlDG1cxQ==
+cache-manager@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/cache-manager/-/cache-manager-3.3.0.tgz#eb75fb45709ba4eb67a32054d72b5fb9e5ac717e"
+  integrity sha512-BH7pfWWZ6BYnkcj6759uWnTCwMz24LXI0PzribTP8WqpydHo9Jk6EM9itmG+rBXAJHbNOwo1ES49SIn8hyhW2A==
   dependencies:
     async "1.5.2"
-    lodash.clonedeep "4.5.0"
+    lodash "^4.17.15"
     lru-cache "4.0.0"
 
 cacheable-request@^6.0.0:
@@ -5891,11 +5891,6 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
-
-lodash.clonedeep@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
-  integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
 lodash.defaultsdeep@^4.6.1:
   version "4.6.1"
@@ -9770,12 +9765,12 @@ v-copy@^0.1.0:
   dependencies:
     modern-copy "^1.0.3"
 
-v-switcher@^1.0.80:
-  version "1.0.80"
-  resolved "https://registry.yarnpkg.com/v-switcher/-/v-switcher-1.0.80.tgz#e28e7a7d7f560de4b6d24977930175a67a1f8496"
-  integrity sha512-6kVE5XNDvPhR8PbQPU6URLatqOTT3nfJmGXYFdAx1fOpA7j1u0ameFND4HnCsi92OQyHARSUdnh1Nn8zTMh5xQ==
+v-switcher@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/v-switcher/-/v-switcher-1.1.0.tgz#cfaa30fa1ef67e1bfe81bde7f981a610111d2c53"
+  integrity sha512-TPUlKcOjcJpBM2pYdRXSLV3/hd75ClXXd6TS48zD4mMVbM902ADGT5Uj+YHVJ82oBvABx89Wtd4mbD6sDV3SIA==
   dependencies:
-    vue "^2.6.6"
+    vue "^2.6.11"
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
@@ -9854,10 +9849,10 @@ vue-meta@^2.3.3:
   dependencies:
     deepmerge "^4.2.2"
 
-vue-mixin-store@1.3.8:
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/vue-mixin-store/-/vue-mixin-store-1.3.8.tgz#cd90470407b298147db62d23ff978dd67c29d7c2"
-  integrity sha512-KwuGEiLPtQZWUBjmWZZF1vFmrnMnJrfIryIGV756HScD67/BFz6/yDt7F3PTOy1fe+5fclekj0CvFgOhgm8O1A==
+vue-mixin-store@1.3.9:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/vue-mixin-store/-/vue-mixin-store-1.3.9.tgz#6374513367fa35a7721c0c05d180e3fcdb662fda"
+  integrity sha512-sGgJr7dNwlt2Ht2jFmm9HF8gL6QcVtC3nWC0mGceRBLRM4kVIKyn35MpsZZzm0YIE/5mftojDu2xcer+wcx0wA==
   dependencies:
     vue "^2.6.11"
 
