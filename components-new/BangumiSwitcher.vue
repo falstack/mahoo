@@ -2,14 +2,11 @@
 #bangumi-switcher {
   padding-right: 20px;
 
-  .b-item {
+  .flow-content {
     margin-top: 26px;
     height: 398px;
-    background-color: #f6f9fa;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .v-switcher {
@@ -123,8 +120,14 @@
 </style>
 
 <template>
-  <div id="bangumi-switcher">
-    <VSwitcher :headers="headers" align="around" :header-height="36">
+  <div id="bangumi-switcher" v-lazyload="handleLazy">
+    <VSwitcher
+      :default-index="defaultIndex"
+      :headers="headers"
+      :header-height="36"
+      align="around"
+      @change="handleTabSwitch"
+    >
       <div
         slot="header-before"
         class="header-before"
@@ -140,27 +143,50 @@
         <span>新番时间表</span>
         <i />
       </a>
-      <div
-        v-for="(item, index) in headers"
-        :key="index"
-        :slot="index"
-        class="b-item"
-      >
-        {{ index }}
+      <div v-for="(item, index) in list" :key="index" :slot="index" class="flow-content">
+        <template v-if="list[index] && list[index].length">
+          {{ list[index] }}
+        </template>
+        <div v-else class="state-content">
+          <template v-if="!resource || resource.loading">
+            loading...
+          </template>
+          <template v-else-if="resource.error">
+            error...
+          </template>
+          <template v-else>
+            no-content...
+          </template>
+        </div>
       </div>
     </VSwitcher>
+    <FlowLoader
+      ref="loader"
+      func="getBangumiRelease"
+      type="page"
+      :query="{ $axios }"
+      :auto="0"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: 'BangumiSwitcher',
-  components: {},
-  props: {},
-  data() {
-    return {}
-  },
   computed: {
+    defaultIndex() {
+      const week = new Date().getDay()
+      return (week || 7) - 1
+    },
+    resource() {
+      return this.$store.getters['flow/getFlow']({
+        func: 'getBangumiRelease',
+        type: 'page'
+      })
+    },
+    list() {
+      return this.resource ? this.resource.result : [[], [], [], [], [], [], []]
+    },
     headers() {
       return [
         {
@@ -194,9 +220,15 @@ export default {
       ]
     }
   },
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {}
+  methods: {
+    handleLazy() {
+      this.$refs.loader.initData()
+    },
+    handleTabSwitch() {
+      if (this.resource && this.resource.error) {
+        this.$refs.loader.initData()
+      }
+    }
+  }
 }
 </script>
