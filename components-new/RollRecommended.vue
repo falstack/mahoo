@@ -1,8 +1,6 @@
 <style lang="scss">
 #roll-recommended {
-  width: 700px;
   height: 220px;
-  margin-left: 20px;
   border-radius: 4px;
   overflow: hidden;
   position: relative;

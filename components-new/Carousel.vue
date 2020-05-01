@@ -1,5 +1,8 @@
 <style lang="scss">
 #v-carousel {
+  float: left;
+  margin-right: 20px;
+
   .v-switcher {
     width: 440px;
     height: 220px;
