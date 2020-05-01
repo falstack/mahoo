@@ -1,38 +1,35 @@
 <style lang="scss">
 #homepage {
   min-height: 100vh;
-
-  .page-banner {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: $page-banner-hgt;
-    padding-top: $page-header-hgt;
-  }
 }
 </style>
 
 <template>
   <div id="homepage">
     <PageHeader :background="banner" />
-    <div class="page-banner" :style="{ backgroundImage: `url(${banner})` }">
-      <div class="v-layout">
-        2333
+    <PageBanner :background="banner" />
+    <div class="v-layout">
+      <MenuBar />
+      <div class="v-layout__row">
+        <Carousel />
       </div>
     </div>
-    <MenuBar />
   </div>
 </template>
 
 <script>
 import PageHeader from '~/components-new/PageHeader'
+import PageBanner from '~/components-new/PageBanner'
 import MenuBar from '~/components-new/MenuBar'
+import Carousel from '~/components-new/Carousel'
 
 export default {
   name: 'Homepage',
   components: {
     PageHeader,
-    MenuBar
+    PageBanner,
+    MenuBar,
+    Carousel
   },
   props: {},
   data() {

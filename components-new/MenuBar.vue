@@ -133,31 +133,29 @@
 </style>
 
 <template>
-  <div id="menu-bar" class="v-layout">
-    <ul class="v-layout__row">
-      <li>
-        <NuxtLink class="home-link menu-link" to="/">
-          <div class="icon" />
-          <span>首页</span>
-        </NuxtLink>
-      </li>
-      <li v-for="item in menus" :key="item.id" class="menu-item">
-        <NuxtLink class="menu-link" to="/">
-          <div class="count-wrap">
-            <span class="count">{{ item.count | convertCount }}</span>
-          </div>
-          <span v-text="item.name" />
-        </NuxtLink>
-        <ul class="sub-menu">
-          <li v-for="menu in item.children" :key="menu.id" class="sub-item">
-            <NuxtLink to="/">
-              <span v-text="menu.name" />
-            </NuxtLink>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <ul id="menu-bar" class="clearfix">
+    <li>
+      <NuxtLink class="home-link menu-link" to="/">
+        <div class="icon" />
+        <span>首页</span>
+      </NuxtLink>
+    </li>
+    <li v-for="item in menus" :key="item.id" class="menu-item">
+      <NuxtLink class="menu-link" to="/">
+        <div class="count-wrap">
+          <span class="count">{{ item.count | convertCount }}</span>
+        </div>
+        <span v-text="item.name" />
+      </NuxtLink>
+      <ul class="sub-menu">
+        <li v-for="menu in item.children" :key="menu.id" class="sub-item">
+          <NuxtLink to="/">
+            <span v-text="menu.name" />
+          </NuxtLink>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </template>
 
 <script>
