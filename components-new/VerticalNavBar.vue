@@ -41,6 +41,41 @@
       }
     }
   }
+
+  .back-top {
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    background-color: #f6f9fa;
+    border: 1px solid #e5e9ef;
+    border-top: none;
+    overflow: hidden;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    line-height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #00a1d6;
+      border-color: #00a1d6;
+
+      span {
+        background-position: -727px -89px;
+      }
+    }
+
+    span {
+      display: block;
+      background-position: -663px -89px;
+      height: 18px;
+      width: 19px;
+      transform: scale(.7);
+      background-image: url(~assets/img/icons.png);
+    }
+  }
 }
 </style>
 
@@ -51,6 +86,9 @@
         <a :href="`#${item.type}`" :class="{ 'is-active': index === active }" v-text="item.label" />
       </li>
     </ul>
+    <a href="#" class="back-top">
+      <span />
+    </a>
   </div>
 </template>
 
@@ -86,7 +124,7 @@ export default {
     window.addEventListener('scroll', this.onScroll)
   },
   methods: {
-    onScroll: throttle(300, function() {
+    onScroll: throttle(100, function() {
       const scrollTop = Math.max(
         window.pageYOffset,
         document.documentElement.scrollTop,
@@ -111,7 +149,7 @@ export default {
         this.offsets.push(rect.top)
       })
       const rectHgt = this.$el.getBoundingClientRect().height
-      const screenHgt = window.screen.height
+      const screenHgt = document.documentElement.clientHeight
       if (rectHgt >= screenHgt) {
         this.offsetTop = '0px'
       } else {
