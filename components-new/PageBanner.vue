@@ -156,6 +156,9 @@ export default {
   },
   methods: {
     handleSearch() {
+      if (!this.keyword) {
+        return
+      }
       window.open(`https://search.bilibili.com/all?keyword=${encodeURIComponent(this.keyword)}&from_source=calibur`)
     }
   }
