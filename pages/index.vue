@@ -70,7 +70,7 @@ export default {
   props: {},
   data() {
     return {
-      banner: 'http://pic.rmb.bdstatic.com/ae5eaf5df7b74c634904799cbe4164b3.jpeg'
+      banner: 'http://b-ssl.duitang.com/uploads/item/201801/26/20180126171546_RSGal.jpeg'
     }
   },
   computed: {
