@@ -29,7 +29,6 @@
           :slug="row.left.slug"
           :type="row.type"
           :name="row.name"
-          :params="row.params"
           class="v-layout__left"
         />
         <component
@@ -37,7 +36,6 @@
           :slug="row.right.slug"
           :type="row.type"
           :name="row.name"
-          :params="row.params"
           class="v-layout__right"
         />
       </a>
@@ -91,13 +89,11 @@ export default {
           name: '动画',
           left: {
             slug: 0,
-            type: 'MainFlowTab',
-            params: {}
+            type: 'MainFlowTab'
           },
           right: {
             slug: 1,
-            type: 'RankSwitcher',
-            params: {}
+            type: 'RankSwitcher'
           }
         },
         {
@@ -106,13 +102,11 @@ export default {
           name: '番剧',
           left: {
             slug: 2,
-            type: 'BangumiSwitcher',
-            params: {}
+            type: 'BangumiSwitcher'
           },
           right: {
             slug: 3,
-            type: 'RankDaily',
-            params: {}
+            type: 'RankDaily'
           }
         },
         {
@@ -120,13 +114,11 @@ export default {
           main: false,
           left: {
             slug: 4,
-            type: 'SubFlowTab',
-            params: {}
+            type: 'SubFlowTab'
           },
           right: {
             slug: 5,
-            type: 'RecommendedSwipe',
-            params: {}
+            type: 'RecommendedSwipe'
           }
         }
       ]

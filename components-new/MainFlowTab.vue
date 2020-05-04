@@ -133,10 +133,38 @@
         </a>
       </template>
       <template slot="0">
-        flow loader 0
+        <FlowLoader
+          func="getMixinFlowData"
+          :query="{
+            $axios,
+            slug,
+            sort: 'activity',
+            count: 10
+          }"
+          :auto="1"
+          type="page"
+        >
+          <template slot-scope="{ flow }">
+            {{ flow }}
+          </template>
+        </FlowLoader>
       </template>
       <template slot="1">
-        flow loader 1
+        <FlowLoader
+          func="getMixinFlowData"
+          :query="{
+            $axios,
+            slug,
+            sort: 'newest',
+            count: 10
+          }"
+          :auto="1"
+          type="page"
+        >
+          <template slot-scope="{ flow }">
+            {{ flow }}
+          </template>
+        </FlowLoader>
       </template>
     </VSwitcher>
   </div>
@@ -154,6 +182,10 @@ export default {
     name: {
       required: true,
       type: String
+    },
+    slug: {
+      required: true,
+      type: Number
     }
   },
   data() {
