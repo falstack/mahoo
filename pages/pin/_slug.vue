@@ -107,7 +107,7 @@
     <div
       v-if="title && title.banner && title.banner.width >= 2000"
       :style="{
-        backgroundImage: `url(${$resize(title.banner.url, { width: 2000 })})`,
+        backgroundImage: `url(${$resizeImage(title.banner.url, { width: 2000 })})`,
       }"
       class="banner full-size"
     />
@@ -116,7 +116,7 @@
         <div
           v-if="title.banner && title.banner.width < 2000"
           :style="{
-            backgroundImage: `url(${$resize(title.banner.url, { width: 660 })})`,
+            backgroundImage: `url(${$resizeImage(title.banner.url, { width: 660 })})`,
           }"
           class="banner"
         />

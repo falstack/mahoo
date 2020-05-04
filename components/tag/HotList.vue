@@ -112,7 +112,7 @@
       <ul slot-scope="{ list }" class="child-node">
         <li v-for="item in list" :key="item.slug" class="node clearfix">
           <NLink :to="`/tag/${item.slug}`">
-            <img :src="$resize(item.avatar, { width: 50 })" width="50" height="50" :alt="item.name">
+            <img :src="$resizeImage(item.avatar, { width: 50 })" width="50" height="50" :alt="item.name">
             <span class="oneline" v-html="item.name" />
           </NLink>
         </li>

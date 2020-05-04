@@ -9,7 +9,7 @@
   }
 
   .k-item {
-    height: 340px;
+    height: 319px;
     display: flex;
     flex-direction: row;
     justify-content: center;

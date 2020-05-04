@@ -3,11 +3,10 @@ import Switcher from 'v-switcher'
 import 'v-switcher/dist/v-switcher.css'
 import VueMixinStore from 'vue-mixin-store'
 import { Button, Row, Col, Form, FormItem, Input, Tag } from 'element-ui'
-import { VLazyload } from '@calibur/sakura'
-import Image from '~/components/common/Image'
+import { VLazyload, VImg } from '@calibur/sakura'
 
 Vue.use(VLazyload)
-Vue.component(Image.name, Image)
+Vue.component(VImg.name, VImg)
 Vue.component(Switcher.name, Switcher)
 Vue.component(VueMixinStore.FlowLoader.name, VueMixinStore.FlowLoader)
 Vue.component(Button.name, Button)

@@ -24,7 +24,7 @@
       </ElFormItem>
       <ElFormItem label="头像" required>
         <div class="avatar-field">
-          <img v-if="tag.avatar" :src="$resize(tag.avatar, { width: 100 })" class="avatar">
+          <img v-if="tag.avatar" :src="$resizeImage(tag.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"

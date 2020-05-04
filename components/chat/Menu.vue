@@ -103,7 +103,7 @@
   <ul class="message-menu">
     <li v-for="item in menu" :key="item.channel">
       <div class="room-item clearfix" @click="emitClick(item)">
-        <img v-if="item.user.avatar" class="avatar" :src="$resize(item.user.avatar, { width: 42 })" :alt="item.user.nickname">
+        <img v-if="item.user.avatar" class="avatar" :src="$resizeImage(item.user.avatar, { width: 42 })" :alt="item.user.nickname">
         <div class="content">
           <p class="nickname oneline" v-html="item.user.nickname" />
           <div class="footer">

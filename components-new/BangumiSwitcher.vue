@@ -9,6 +9,10 @@
 
       &-panel {
         height: 100%;
+      }
+
+      .flow-content {
+        height: 100%;
         overflow-y: auto;
         overflow-x: hidden;
       }
@@ -150,10 +154,10 @@
         <i />
       </a>
       <template v-for="(item, index) in list" :slot="index">
-        <template v-if="list[index] && list[index].length">
+        <div v-if="list[index] && list[index].length" class="flow-content" :key="index">
           {{ list[index] }}
-        </template>
-        <template v-else>
+        </div>
+        <div v-else :key="index" class="state-content">
           <template v-if="!resource || resource.loading">
             loading...
           </template>
@@ -163,7 +167,7 @@
           <template v-else>
             no-content...
           </template>
-        </template>
+        </div>
       </template>
     </VSwitcher>
     <FlowLoader

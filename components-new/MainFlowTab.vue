@@ -4,8 +4,9 @@
 
   .v-switcher {
     &-content {
-      height: 355px;
+      height: 351px;
       padding-top: 15px;
+      overflow: hidden;
     }
 
     &-header {
@@ -116,12 +117,30 @@
       }
     }
   }
+
+  .bili-video-item {
+    margin: 0 20px 20px 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    @media (min-width: 1400px) {
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 </style>
 
 <template>
   <div class="main-flow-tab">
-    <VSwitcher :headers="headers" :header-height="45" @change="switchContent">
+    <VSwitcher :headers="headers" :header-height="45">
       <template slot="header-before">
         <i :style="backgroundPosition" />
         <span v-text="name" />
@@ -139,13 +158,17 @@
             $axios,
             slug,
             sort: 'activity',
-            count: 10
+            take: 10
           }"
           :auto="1"
           type="page"
         >
           <template slot-scope="{ flow }">
-            {{ flow }}
+            <BilbiliVideoItem
+              v-for="item in flow"
+              :key="item.id"
+              :item="item"
+            />
           </template>
         </FlowLoader>
       </template>
@@ -156,13 +179,17 @@
             $axios,
             slug,
             sort: 'newest',
-            count: 10
+            take: 10
           }"
           :auto="1"
           type="page"
         >
           <template slot-scope="{ flow }">
-            {{ flow }}
+            <BilbiliVideoItem
+              v-for="item in flow"
+              :key="item.id"
+              :item="item"
+            />
           </template>
         </FlowLoader>
       </template>
@@ -171,9 +198,13 @@
 </template>
 
 <script>
+import BilbiliVideoItem from '~/components-new/BilbiliVideoItem'
+
 export default {
   name: 'MainFlowTab',
-  components: {},
+  components: {
+    BilbiliVideoItem
+  },
   props: {
     type: {
       required: true,
@@ -204,11 +235,6 @@ export default {
       return {
         backgroundPosition: result
       }
-    }
-  },
-  methods: {
-    switchContent(index) {
-
     }
   }
 }

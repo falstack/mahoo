@@ -150,8 +150,8 @@ export default {
       }
       width = parseInt(width, 10)
       height = parseInt(height, 10)
-      this.show = this.$resize(src, { width, height, mode, webP: false })
-      this.source = this.$resize(src, { width, height, mode })
+      this.show = this.$resizeImage(src, { width, height, mode, webP: false })
+      this.source = this.$resizeImage(src, { width, height, mode })
     },
     loaded() {
       if (this.useBlur) {

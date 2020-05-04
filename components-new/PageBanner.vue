@@ -108,7 +108,7 @@
 <template>
   <section id="page-banner" :style="{ backgroundImage: `url(${background})` }">
     <div class="v-layout">
-      <img class="logo" :src="$resize('https://m1.calibur.tv/logo.png', { width: 220, mode: 2 })" alt="logo">
+      <img class="logo" :src="$resizeImage('https://m1.calibur.tv/logo.png', { width: 220, rule: 2 })" alt="logo">
       <div class="search-box">
         <a href="https://www.bilibili.com/ranking" class="rank">
           <span>排行榜</span>

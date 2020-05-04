@@ -50,7 +50,7 @@
     >
       <ElFormItem label="头像">
         <div class="avatar-field">
-          <img :src="$resize(user.avatar, { width: 100 })" class="avatar">
+          <img :src="$resizeImage(user.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"
@@ -70,7 +70,7 @@
       <ElFormItem label="背景">
         <div class="banner-field">
           <div class="banner-wrap">
-            <img :src="$resize(user.banner, { height: 100, mode: 2 })" class="banner">
+            <img :src="$resizeImage(user.banner, { height: 100, mode: 2 })" class="banner">
           </div>
           <ElUpload
             :show-file-list="false"

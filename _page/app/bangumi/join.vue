@@ -73,7 +73,7 @@
   <div id="bangumi-join">
     <div v-if="showLaunch" class="launch">
       <template v-if="bangumi">
-        <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })" alt="">
+        <img class="avatar" :src="$resizeImage(bangumi.avatar, { width: 150 })" alt="">
         <p>加入《{{ bangumi.name }}》</p>
       </template>
       <template v-if="rule">

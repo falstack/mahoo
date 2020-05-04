@@ -77,7 +77,7 @@
     </div>
     <ul v-show="displaySuggestion" class="search-suggestions">
       <NLink v-for="(item, index) in filteredSelect" :key="item.id" :class="{ active: index === selectedIndex }" :to="$alias.tag(item.slug)" tag="li">
-        <img :src="$resize(item.avatar, { width: 60 })">
+        <img :src="$resizeImage(item.avatar, { width: 60 })">
         <span v-text="item.name" />
       </NLink>
     </ul>
