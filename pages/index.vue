@@ -2,6 +2,7 @@
 #homepage {
   .v-layout__row {
     display: block;
+    cursor: default !important;
     margin-bottom: 30px;
   }
 }
@@ -26,11 +27,17 @@
         <component
           :is="row.left.type"
           :slug="row.left.slug"
+          :type="row.type"
+          :name="row.name"
+          :params="row.params"
           class="v-layout__left"
         />
         <component
           :is="row.right.type"
           :slug="row.right.slug"
+          :type="row.type"
+          :name="row.name"
+          :params="row.params"
           class="v-layout__right"
         />
       </a>
@@ -52,6 +59,7 @@ import VerticalNavBar from '~/components-new/VerticalNavBar'
 import RollRecommended from '~/components-new/RollRecommended'
 import BangumiSwitcher from '~/components-new/BangumiSwitcher'
 import RankSwitcher from '~/components-new/RankSwitcher'
+import MainFlowTab from '~/components-new/MainFlowTab'
 
 export default {
   name: 'Homepage',
@@ -65,12 +73,13 @@ export default {
     VerticalNavBar,
     RollRecommended,
     BangumiSwitcher,
-    RankSwitcher
+    RankSwitcher,
+    MainFlowTab
   },
   props: {},
   data() {
     return {
-      banner: 'http://b-ssl.duitang.com/uploads/item/201801/26/20180126171546_RSGal.jpeg'
+      banner: 'https://m1.calibur.tv/default-banner'
     }
   },
   computed: {
@@ -79,27 +88,31 @@ export default {
         {
           type: 'douga',
           main: true,
-          label: '动画',
+          name: '动画',
           left: {
             slug: 0,
-            type: 'main-flow-tab'
+            type: 'MainFlowTab',
+            params: {}
           },
           right: {
             slug: 1,
-            type: 'RankSwitcher'
+            type: 'RankSwitcher',
+            params: {}
           }
         },
         {
           type: 'bangumi',
           main: true,
-          label: '番剧',
+          name: '番剧',
           left: {
             slug: 2,
-            type: 'BangumiSwitcher'
+            type: 'BangumiSwitcher',
+            params: {}
           },
           right: {
             slug: 3,
-            type: 'rank-daily'
+            type: 'RankDaily',
+            params: {}
           }
         },
         {
@@ -107,11 +120,13 @@ export default {
           main: false,
           left: {
             slug: 4,
-            type: 'sub-flow-tab'
+            type: 'SubFlowTab',
+            params: {}
           },
           right: {
             slug: 5,
-            type: 'recommended-swipe'
+            type: 'RecommendedSwipe',
+            params: {}
           }
         }
       ]

@@ -2,56 +2,62 @@
 #bangumi-switcher {
   padding-right: 20px;
 
-  .flow-content {
-    margin-top: 26px;
-    height: 398px;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
   .v-switcher {
-    overflow: visible;
-  }
+    &-content {
+      height: 424px;
+      padding-top: 26px;
 
-  .v-switcher-header {
-    &-wrap {
-      overflow: visible;
+      &-panel {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
     }
 
-    &-item {
-      width: 100%;
-      font-size: 18px;
-      line-height: 39px;
-      height: 39px;
-      color: #000;
-      transition: 0.2s;
-      border-bottom: 1px solid #e5e9ef;
-      cursor: pointer;
-
-      &:hover {
-        color: $color-main;
+    &-header {
+      &-wrap {
+        overflow: visible;
       }
 
-      &.is-active {
-        color: $color-main;
-        border-bottom-color: $color-main;
-        position: relative;
+      &-item {
+        width: 100%;
+        font-size: 18px;
+        line-height: 39px;
+        height: 39px;
+        color: #000;
+        transition: 0.2s;
+        border-bottom: 1px solid #e5e9ef;
+        cursor: pointer;
 
-        &:after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          margin-left: -3px;
-          bottom: 0;
-          width: 0;
-          height: 0;
-          border-bottom: 3px solid $color-main;
-          border-top: 0;
-          border-left: 3px dashed transparent;
-          border-right: 3px dashed transparent;
+        &:hover {
+          color: $color-main;
+        }
+
+        &.is-active {
+          color: $color-main;
+          border-bottom-color: $color-main;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 3px solid $color-main;
+            border-top: 0;
+            border-left: 3px dashed transparent;
+            border-right: 3px dashed transparent;
+          }
         }
       }
     }
+  }
+
+  .flow-loader {
+    display: none;
   }
 
   .header-before {
@@ -143,11 +149,11 @@
         <span>新番时间表</span>
         <i />
       </a>
-      <div v-for="(item, index) in list" :key="index" :slot="index" class="flow-content">
+      <template v-for="(item, index) in list" :slot="index">
         <template v-if="list[index] && list[index].length">
           {{ list[index] }}
         </template>
-        <div v-else class="state-content">
+        <template v-else>
           <template v-if="!resource || resource.loading">
             loading...
           </template>
@@ -157,8 +163,8 @@
           <template v-else>
             no-content...
           </template>
-        </div>
-      </div>
+        </template>
+      </template>
     </VSwitcher>
     <FlowLoader
       ref="loader"
