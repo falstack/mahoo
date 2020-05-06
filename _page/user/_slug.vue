@@ -253,7 +253,7 @@
 <template>
   <div id="user-layout">
     <div id="user-panel" class="container">
-      <div class="banner" :style="{ backgroundImage: `url(${$resize(banner, { height: 200, mode: 2 })})` }">
+      <div class="banner" :style="{ backgroundImage: `url(${$resizeImage(banner, { height: 200, mode: 2 })})` }">
         <div class="user">
           <UserAvatar :user="user" :avatar="avatar" :size="68" />
           <div v-if="user" class="actions only-pc">

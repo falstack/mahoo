@@ -58,7 +58,7 @@
 
 <template>
   <div v-if="bangumi" id="edit-bangumi">
-    <img class="avatar" :src="$resize(bangumi.avatar, { width: 150 })">
+    <img class="avatar" :src="$resizeImage(bangumi.avatar, { width: 150 })">
     <p class="title oneline" v-text="bangumi.name" />
     <p class="intro" v-html="bangumi.intro" />
     <template v-if="isAdmin">

@@ -95,3 +95,32 @@ export const off = (function() {
 })()
 
 export const isTouchDevice = () => 'ontouchstart' in document.documentElement
+
+export const pad = (number) => {
+  return number < 10 ? '0' + number : number
+}
+
+export const formatDuration = (n) => {
+  if (!n) {
+    return '00:00'
+  }
+  let h = 0
+  let m = 0
+  let s = 0
+  if (typeof n === 'number') {
+    if (n >= 3600) {
+      h = n / 3600 | 0
+    }
+    if (n - h * 3600 >= 60) {
+      m = (n - h * 3600) / 60 | 0
+    }
+    s = Math.max(n - h * 3600 - m * 60, 0)
+  } else {
+    const arr = n.split(':')
+    s = arr.pop() || 0
+    m = arr.pop() || 0
+    h = arr.pop() || 0
+  }
+  const result = h ? [pad(h), pad(m), pad(s)] : [pad(m), pad(s)]
+  return result.join(':')
+}

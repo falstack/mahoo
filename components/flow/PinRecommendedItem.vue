@@ -197,7 +197,7 @@
         <div v-if="item.media" class="media">
           <template v-if="item.media.image_count">
             <div v-if="item.media.image_count === 1" class="image-1">
-              <div class="img" :style="{ backgroundImage: `url(${$resize(item.media.images[0].url, { width: 200, mode: 2 })})` }">
+              <div class="img" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[0].url, { width: 200, mode: 2 })})` }">
                 <div v-if="item.media.images[0].mime === 'image/gif'" class="badge">
                   <span>GIF</span>
                 </div>
@@ -205,12 +205,12 @@
             </div>
             <div v-else-if="item.media.image_count === 2" class="image-2">
               <div class="wrap">
-                <div class="img" :style="{ backgroundImage: `url(${$resize(item.media.images[0].url, { width: 200, mode: 2 })})` }">
+                <div class="img" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[0].url, { width: 200, mode: 2 })})` }">
                   <div v-if="item.media.images[0].mime === 'image/gif'" class="badge">
                     <span>GIF</span>
                   </div>
                 </div>
-                <div class="img" :style="{ backgroundImage: `url(${$resize(item.media.images[1].url, { width: 200, mode: 2 })})` }">
+                <div class="img" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[1].url, { width: 200, mode: 2 })})` }">
                   <div v-if="item.media.images[1].mime === 'image/gif'" class="badge">
                     <span>GIF</span>
                   </div>
@@ -219,18 +219,18 @@
             </div>
             <div v-else class="image-3">
               <div class="wrap">
-                <div class="img big" :style="{ backgroundImage: `url(${$resize(item.media.images[0].url, { width: 300, mode: 2 })})` }">
+                <div class="img big" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[0].url, { width: 300, mode: 2 })})` }">
                   <div v-if="item.media.images[0].mime === 'image/gif'" class="badge">
                     <span>GIF</span>
                   </div>
                 </div>
                 <div class="small">
-                  <div class="img" :style="{ backgroundImage: `url(${$resize(item.media.images[1].url, { width: 150, mode: 2 })})` }">
+                  <div class="img" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[1].url, { width: 150, mode: 2 })})` }">
                     <div v-if="item.media.images[1].mime === 'image/gif'" class="badge">
                       <span>GIF</span>
                     </div>
                   </div>
-                  <div class="img" :style="{ backgroundImage: `url(${$resize(item.media.images[2].url, { width: 150, mode: 2 })})` }">
+                  <div class="img" :style="{ backgroundImage: `url(${$resizeImage(item.media.images[2].url, { width: 150, mode: 2 })})` }">
                     <div v-if="item.media.image_count - 3 > 0" class="badge">
                       <i class="el-icon-picture-outline" />
                       <span>+{{ item.media.image_count - 3 }}</span>

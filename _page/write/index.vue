@@ -247,7 +247,7 @@
           </div>
         </ElUpload>
         <template v-if="title && title.banner">
-          <div class="image" :style="{ backgroundImage: `url(${$resize(title.banner.url, { width: 660 })}` }" />
+          <div class="image" :style="{ backgroundImage: `url(${$resizeImage(title.banner.url, { width: 660 })}` }" />
           <div class="tool">
             <i class="el-icon-delete" @click="deleteBanner" />
           </div>

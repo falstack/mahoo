@@ -1,61 +1,31 @@
-export default (url, options = {}) => {
+export default (url, { width, height, rule, webP }) => {
   if (!url) {
     return ''
   }
 
-  if (/imageMogr2/.test(url)) {
+  if (/imageMogr2/.test(url) || url.startsWith('data')) {
     return url
   }
 
   const link = url.startsWith('http') ? url : `https://m1.calibur.tv/${url}`
-  const canUseWebP = () => {
-    if (typeof window === 'undefined') {
-      return false
-    }
-    if (window.supportWebP !== undefined) {
-      return window.supportWebP
-    }
+  const format = webP ? '/format/webp' : ''
+  const mode = (rule === undefined || rule === '') ? 1 : parseInt(rule)
 
-    const elem = document.createElement('canvas')
-
-    if (elem.getContext && elem.getContext('2d')) {
-      const support = elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
-      window.supportWebP = support
-      return support
-    }
-
-    return false
-  }
-
-  const format = options.webP === false ? '' : canUseWebP() ? '/format/webp' : ''
-  const mode = options.mode === undefined ? 1 : options.mode
-
-  if ((mode === 1 && !options.width) || (!options.width && !options.height)) {
+  if ((mode === 1 && !width) || (!width && !height)) {
     return `${link}?imageMogr2/auto-orient/strip${format}`
   }
 
-  let width
-  let height
-  const getRadio = () => {
-    if (typeof window === 'undefined') {
-      return 2
-    }
-    if (window.computedRadio !== undefined) {
-      return window.computedRadio
-    }
-    const result = window.devicePixelRatio
-    window.computedRadio = result
-    return result
-  }
-  const radio = getRadio()
+  let w
+  let h
+  const DPR = typeof window === 'undefined' ? 2 : window.devicePixelRatio
 
   if (mode === 1) {
-    width = `/w/${(options.width * radio) | 0}`
-    height = options.height ? `/h/${(options.height * radio) | 0}` : `/h/${(options.width * radio) | 0}`
+    w = `/w/${(width * DPR) | 0}`
+    h = height ? `/h/${(height * DPR) | 0}` : `/h/${(width * DPR) | 0}`
   } else {
-    width = options.width ? `/w/${(options.width * radio) | 0}` : ''
-    height = options.height ? `/h/${(options.height * radio) | 0}` : ''
+    w = width ? `/w/${(width * DPR) | 0}` : ''
+    h = height ? `/h/${(height * DPR) | 0}` : ''
   }
 
-  return `${link}?imageMogr2/auto-orient/strip|imageView2/${mode}${width}${height}${format}`
+  return `${link}?imageMogr2/auto-orient/strip|imageView2/${mode}${w}${h}${format}`
 }

@@ -4,6 +4,12 @@ export const getUserMessage = ({ $axios, channel, since_id, is_up, count }) => {
   })
 }
 
+export const getBangumiRelease = ({ $axios }) => $axios.$get('v1/bangumi/release')
+
+export const getMixinFlowData = ({ $axios, slug, sort, page, take }) => $axios.$get('v1/flow/spider', {
+  params: { slug, sort, page, take }
+})
+
 export const getUserRelation = ({ $axios, seen_ids, slug, relation }) => {
   return $axios.$get('v1/user/relation', {
     params: { seen_ids, slug, relation }

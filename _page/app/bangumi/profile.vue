@@ -26,7 +26,7 @@
       </ElFormItem>
       <ElFormItem label="头像">
         <div class="avatar-field">
-          <img :src="$resize(bangumi.avatar, { width: 100 })" class="avatar">
+          <img :src="$resizeImage(bangumi.avatar, { width: 100 })" class="avatar">
           <ElUpload
             :show-file-list="false"
             :action="imageUploadAction"

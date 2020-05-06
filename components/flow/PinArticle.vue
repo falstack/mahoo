@@ -195,7 +195,7 @@
   <li :class="$style['pin-article']">
     <NLink :to="$alias.pin(secretLink || item.slug)" :class="$style['pin-article-h5']" class="only-h5">
       <header v-if="item.media && item.media.banner" :style="{ paddingTop: `${(item.media.banner.height / item.media.banner.width) * 100}%` }">
-        <img :src="$resize(item.media.banner.url, { width: 400, mode: 2 })">
+        <img :src="$resizeImage(item.media.banner.url, { width: 400, mode: 2 })">
       </header>
       <main>
         <div :class="$style.user">

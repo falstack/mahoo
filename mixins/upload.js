@@ -83,7 +83,7 @@ export default {
           this.uploadImageList[index] = Object.assign(item, {
             data: res.data,
             status: 'success',
-            url: this.$resize(`${this.imagePrefix}${res.data.url}`, {
+            url: this.$resizeImage(`${this.imagePrefix}${res.data.url}`, {
               width: 100
             })
           })
