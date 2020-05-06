@@ -1,6 +1,8 @@
 <template>
   <div id="layout-web">
-    <nuxt />
+    <span>
+      <nuxt />
+    </span>
     <SignDialog />
   </div>
 </template>

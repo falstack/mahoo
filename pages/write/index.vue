@@ -308,7 +308,6 @@ import Editor from '~/components/editor'
 
 export default {
   name: 'Write',
-  layout: 'web',
   components: {
     Editor,
     ElUpload: Upload
