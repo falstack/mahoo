@@ -247,6 +247,12 @@
       padding-right: 0 !important;
     }
   }
+
+  .el-timeline-item {
+    display: block;
+    float: none;
+    @extend %clearfix;
+  }
 }
 </style>
 
@@ -355,7 +361,6 @@ import SendMailBtn from '~/components/button/SendMailBtn'
 
 export default {
   name: 'UserLayout',
-  layout: 'web',
   components: {
     ElAlert: Alert,
     UserAvatar,

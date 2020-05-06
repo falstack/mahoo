@@ -70,7 +70,7 @@
 
 <script>
 export default {
-  name: 'nuxt-error', // eslint-disable-line
+  name: 'NuxtError',
   props: {
     error: {
       type: Object,

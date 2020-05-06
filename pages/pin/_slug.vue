@@ -181,7 +181,6 @@ import ToolDropdown from '~/components/pin/ToolDropdown'
 
 export default {
   name: 'PinShow',
-  layout: 'web',
   components: {
     JsonContent,
     ContentAuthor,
