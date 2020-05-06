@@ -60,9 +60,9 @@
 
 <template>
   <div id="rank-switcher">
-    <VSwitcher :headers="['全部', '原创']" align="start" :animated="true" header-trigger="hover">
+    <VSwitcher :headers="['全网', '站内']" align="start" :animated="true" header-trigger="hover">
       <div slot="header-before" class="header-before">
-        排行
+        热门
       </div>
       <div slot="header-after" class="header-after">
         三日

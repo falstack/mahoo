@@ -3,6 +3,8 @@
   padding-right: 20px;
 
   .v-switcher {
+    overflow: visible;
+
     &-content {
       height: 424px;
       padding-top: 26px;
@@ -154,7 +156,7 @@
         <i />
       </a>
       <template v-for="(item, index) in list" :slot="index">
-        <div v-if="list[index] && list[index].length" class="flow-content" :key="index">
+        <div v-if="list[index] && list[index].length" :key="index" class="flow-content">
           {{ list[index] }}
         </div>
         <div v-else :key="index" class="state-content">

@@ -3,6 +3,8 @@
   padding-right: 20px;
 
   .v-switcher {
+    overflow: visible;
+
     &-content {
       height: 351px;
       padding-top: 15px;
@@ -231,6 +233,22 @@ export default {
       switch (this.type) {
         case 'douga':
           result = '-141px -908px'
+          break
+        case 'game':
+          result = '-141px -203px'
+          break
+        case 'manga':
+          result = '-139px -1931px'
+          break
+        case 'music':
+          result = '-140px -266px'
+          break
+        case 'dance':
+          result = '-141px -461px'
+          break
+        case 'novel':
+          result = '-138px -1803px'
+          break
       }
       return {
         backgroundPosition: result

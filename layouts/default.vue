@@ -11,7 +11,8 @@ import useSignMixin from '~/mixins/useSign'
 import socketMixin from '~/mixins/socket'
 
 export default {
-  name: 'Layout',
+  // eslint-disable-next-line
+  name: 'default',
   components: {
     SignDialog
   },

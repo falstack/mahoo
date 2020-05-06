@@ -1,9 +1,12 @@
 <style lang="scss">
 #homepage {
-  .v-layout__row {
-    display: block;
-    cursor: default !important;
-    margin-bottom: 30px;
+  .page-modules {
+    .v-layout__row {
+      display: block;
+      cursor: default !important;
+      margin-top: 10px;
+      padding-top: 20px;
+    }
   }
 }
 </style>
@@ -18,27 +21,30 @@
         <Carousel />
         <RollRecommended />
       </div>
-      <a
-        v-for="row in pageMenu"
-        :id="row.type"
-        :key="row.type"
-        class="v-layout__row anchor-module"
-      >
-        <component
-          :is="row.left.type"
-          :slug="row.left.slug"
-          :type="row.type"
-          :name="row.name"
-          class="v-layout__left"
-        />
-        <component
-          :is="row.right.type"
-          :slug="row.right.slug"
-          :type="row.type"
-          :name="row.name"
-          class="v-layout__right"
-        />
-      </a>
+      <div class="page-modules">
+        <a
+          v-for="row in pageMenu"
+          :id="row.type"
+          :key="row.type"
+          :class="{ 'anchor-module': row.main }"
+          class="v-layout__row"
+        >
+          <component
+            :is="row.left.type"
+            :slug="row.left.slug"
+            :type="row.type"
+            :name="row.name"
+            class="v-layout__left"
+          />
+          <component
+            :is="row.right.type"
+            :slug="row.right.slug"
+            :type="row.type"
+            :name="row.name"
+            class="v-layout__right"
+          />
+        </a>
+      </div>
     </div>
     <VerticalNavBar :menu="pageMenu.filter(_ => _.main)" />
     <AboutSite />
@@ -88,7 +94,7 @@ export default {
           main: true,
           name: '动画',
           left: {
-            slug: 0,
+            slug: 1,
             type: 'MainFlowTab'
           },
           right: {
@@ -105,19 +111,84 @@ export default {
             type: 'BangumiSwitcher'
           },
           right: {
-            slug: 3,
+            slug: 2,
             type: 'RankDaily'
+          }
+        },
+        {
+          type: 'manga',
+          main: true,
+          name: '漫画',
+          left: {
+            slug: 3,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 3,
+            type: 'RankSwitcher'
+          }
+        },
+        {
+          type: 'game',
+          main: true,
+          name: '游戏',
+          left: {
+            slug: 2,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 2,
+            type: 'RankSwitcher'
+          }
+        },
+        {
+          type: 'novel',
+          main: true,
+          name: '小说',
+          left: {
+            slug: 4,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 4,
+            type: 'RankSwitcher'
+          }
+        },
+        {
+          type: 'music',
+          main: true,
+          name: '音乐',
+          left: {
+            slug: 5,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 5,
+            type: 'RankSwitcher'
+          }
+        },
+        {
+          type: 'dance',
+          main: true,
+          name: '舞蹈',
+          left: {
+            slug: 6,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 6,
+            type: 'RankSwitcher'
           }
         },
         {
           type: 'bangumi-about',
           main: false,
           left: {
-            slug: 4,
+            slug: 6,
             type: 'SubFlowTab'
           },
           right: {
-            slug: 5,
+            slug: 6,
             type: 'RecommendedSwipe'
           }
         }
@@ -126,7 +197,9 @@ export default {
   },
   watch: {},
   created() {},
-  mounted() {},
+  mounted() {
+    alert('这个版本的 calibur 是一个娱乐向作品，仅供代码学习交流，请勿用作商用')
+  },
   methods: {}
 }
 </script>

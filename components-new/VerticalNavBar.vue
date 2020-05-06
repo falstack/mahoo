@@ -144,9 +144,14 @@ export default {
     calcOffset() {
       this.offsets = []
       const list = document.querySelectorAll('.anchor-module')
+      const scrollTop = Math.max(
+        window.pageYOffset,
+        document.documentElement.scrollTop,
+        document.body.scrollTop
+      )
       ;[].forEach.call(list, (item) => {
         const rect = item.getBoundingClientRect()
-        this.offsets.push(rect.top)
+        this.offsets.push(scrollTop + rect.top)
       })
       const rectHgt = this.$el.getBoundingClientRect().height
       const screenHgt = document.documentElement.clientHeight
@@ -155,6 +160,8 @@ export default {
       } else {
         this.offsetTop = `${(screenHgt - rectHgt) / 2 | 0}px`
       }
+      const offsets = this.offsets.map(_ => Math.abs(_ - scrollTop))
+      this.active = offsets.indexOf(Math.min(...offsets))
     }
   }
 }
