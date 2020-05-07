@@ -83,6 +83,21 @@
             color: $color-main;
           }
         }
+
+        p {
+          line-height: 24px;
+          font-weight: 400;
+          margin-right: 20px;
+          float: left;
+          color: #222;
+          font-size: 18px;
+          transition: color 0.2s;
+          margin-top: -3px;
+
+          &:hover {
+            color: $color-main;
+          }
+        }
       }
 
       &-after {
@@ -144,8 +159,11 @@
   <div class="main-flow-tab">
     <VSwitcher :headers="headers" :header-height="45">
       <template slot="header-before">
-        <i :style="backgroundPosition" />
-        <span v-text="name" />
+        <template v-if="backgroundPosition">
+          <i :style="{ backgroundPosition }" />
+          <span v-text="name" />
+        </template>
+        <p v-else v-text="name" />
       </template>
       <template slot="header-after">
         <a class="more" href="javascript:;">
@@ -234,6 +252,9 @@ export default {
         case 'douga':
           result = '-141px -908px'
           break
+        case 'bangumi':
+          result = '-141px -140px'
+          break
         case 'game':
           result = '-141px -203px'
           break
@@ -250,9 +271,7 @@ export default {
           result = '-138px -1803px'
           break
       }
-      return {
-        backgroundPosition: result
-      }
+      return result
     }
   }
 }
