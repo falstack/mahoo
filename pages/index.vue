@@ -118,6 +118,19 @@ export default {
           }
         },
         {
+          type: 'bangumi-about',
+          main: false,
+          name: '番剧动态',
+          left: {
+            slug: 6,
+            type: 'MainFlowTab'
+          },
+          right: {
+            slug: 6,
+            type: 'RankDaily'
+          }
+        },
+        {
           type: 'manga',
           main: true,
           name: '漫画',
@@ -153,7 +166,7 @@ export default {
           },
           right: {
             slug: 4,
-            type: 'RankSwitcher'
+            type: 'RankDaily'
           }
         },
         {
@@ -180,18 +193,6 @@ export default {
           right: {
             slug: 6,
             type: 'RankSwitcher'
-          }
-        },
-        {
-          type: 'bangumi-about',
-          main: false,
-          left: {
-            slug: 6,
-            type: 'SubFlowTab'
-          },
-          right: {
-            slug: 6,
-            type: 'RankDaily'
           }
         }
       ]
