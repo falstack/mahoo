@@ -198,7 +198,9 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    alert('这个版本的 calibur 是一个娱乐向作品，仅供代码学习交流，请勿用作商用')
+    if (process.env.NODE_ENV !== 'development') {
+      alert('这个版本的 calibur 是一个娱乐向作品，仅供代码学习交流，请勿用作商用')
+    }
   },
   methods: {}
 }
