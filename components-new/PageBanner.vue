@@ -18,7 +18,6 @@
     left: 24px;
     bottom: 0;
     z-index: 10;
-    filter: drop-shadow(0 0.2rem 0.75rem #fff);
   }
 
   .search-box {
@@ -108,7 +107,7 @@
 <template>
   <section id="page-banner" :style="{ backgroundImage: `url(${background})` }">
     <div class="v-layout">
-      <img class="logo" :src="$resizeImage('https://m1.calibur.tv/logo.png', { width: 220, rule: 2 })" alt="logo">
+      <img class="logo" :src="$resizeImage('logo-border.png', { width: 220, rule: 2 })" alt="logo">
       <div class="search-box">
         <a href="https://www.bilibili.com/ranking" class="rank">
           <span>排行榜</span>

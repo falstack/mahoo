@@ -15,10 +15,6 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-
-      &:hover .more {
-        opacity: 1;
-      }
     }
 
     .title {
@@ -29,14 +25,14 @@
       height: 35px;
       line-height: 35px;
       display: block;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
       color: #fff;
       font-size: 15px;
       text-decoration: none;
       padding-left: 10px;
-      padding-right: 160px;
+      width: 290px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .more {
@@ -71,10 +67,19 @@
       }
     }
 
+    &:hover .more {
+      opacity: 1;
+    }
+
     &-header {
       height: 27px;
-      width: 150px;
+      width: 140px;
       float: right;
+
+      &-before,
+      &-after {
+        position: static;
+      }
 
       &-wrap {
         position: absolute;
@@ -85,10 +90,12 @@
         border-bottom: none;
         background: -webkit-linear-gradient(transparent,rgba(0,0,0,.5));
         z-index: 1;
+        overflow: visible;
       }
 
       &-tabs {
         height: 27px;
+        margin-top: 8px;
       }
 
       &-item {
@@ -185,7 +192,6 @@ export default {
   mounted() {},
   methods: {
     handleChange(index) {
-      console.log('index', index)
       this.activeIndex = index
     }
   }
