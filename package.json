@@ -51,7 +51,7 @@
     "throttle-debounce": "^2.1.0",
     "url-polyfill": "^1.1.8",
     "v-copy": "^0.1.0",
-    "v-switcher": "^1.1.0",
+    "v-switcher": "^1.1.2",
     "vue-mixin-store": "1.3.10",
     "vue-native-websocket": "^2.0.14",
     "vue-roll-list": "^0.1.19"

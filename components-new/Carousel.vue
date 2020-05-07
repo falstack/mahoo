@@ -16,73 +16,79 @@
       background-repeat: no-repeat;
       background-size: cover;
 
-      .title {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 35px;
-        line-height: 35px;
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #fff;
-        font-size: 15px;
-        text-decoration: none;
-        background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-        padding-left: 10px;
-        padding-right: 160px;
-      }
-
-      .more {
-        display: block;
-        position: absolute;
-        right: 15px;
-        bottom: 35px;
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.64);
-        width: 50px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-        border-radius: 4px;
-        opacity: 0;
-        transition: all 0.2s linear;
-        font-size: 12px;
-        text-decoration: none;
-
-        &:hover {
-          text-shadow: 0 0 3px #fff;
-        }
-
-        &:after {
-          content: '';
-          display: inline-block;
-          width: 6px;
-          height: 12px;
-          margin: -2px 0 0 5px;
-          vertical-align: middle;
-          background: url(~assets/img/icons.png) -541px -218px;
-        }
-      }
-
       &:hover .more {
         opacity: 1;
       }
     }
 
+    .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 35px;
+      line-height: 35px;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      padding-left: 10px;
+      padding-right: 160px;
+    }
+
+    .more {
+      display: block;
+      position: absolute;
+      right: 15px;
+      bottom: 35px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.64);
+      width: 50px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+      opacity: 0;
+      transition: all 0.2s linear;
+      font-size: 12px;
+      text-decoration: none;
+
+      &:hover {
+        text-shadow: 0 0 3px #fff;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 12px;
+        margin: -2px 0 0 5px;
+        vertical-align: middle;
+        background: url(~assets/img/icons.png) -541px -218px;
+      }
+    }
+
     &-header {
+      height: 27px;
+      width: 150px;
+      float: right;
+
       &-wrap {
-        box-sizing: border-box;
         position: absolute;
+        left: 0;
         right: 0;
         bottom: 0;
-        height: 27px !important;
-        z-index: 1;
-        width: 150px;
-        padding-right: 20px;
+        height: 35px !important;
         border-bottom: none;
+        background: -webkit-linear-gradient(transparent,rgba(0,0,0,.5));
+        z-index: 1;
+      }
+
+      &-tabs {
+        height: 27px;
       }
 
       &-item {
@@ -110,17 +116,23 @@
 
 <template>
   <div id="v-carousel">
-    <VSwitcher :headers="headers" :swipe="true" :autoplay="2000" align="end">
+    <VSwitcher
+      :default-index="activeIndex"
+      :headers="headers"
+      :swipe="true"
+      :autoplay="2000"
+      align="end"
+      @change="handleChange"
+    >
       <div
         v-for="(item, index) in headers"
         :key="index"
         :slot="index"
         :style="{ backgroundColor: item.color }"
         class="carousel-item"
-      >
-        <a class="title" href="javascript:;">{{ item.title }}</a>
-        <a class="more" href="javascript:;">更多</a>
-      </div>
+      />
+      <a slot="header-before" class="title" href="javascript:;" v-text="showTitle" />
+      <a slot="header-after" class="more" href="javascript:;">更多</a>
     </VSwitcher>
   </div>
 </template>
@@ -130,7 +142,9 @@ export default {
   name: 'VCarousel',
   props: {},
   data() {
-    return {}
+    return {
+      activeIndex: 0
+    }
   },
   computed: {
     headers() {
@@ -161,6 +175,9 @@ export default {
           color: 'rgba(195,123,177,.5)'
         }
       ]
+    },
+    showTitle() {
+      return this.headers[this.activeIndex].title
     }
   },
   watch: {},
@@ -168,10 +185,8 @@ export default {
   mounted() {},
   methods: {
     handleChange(index) {
-      console.log('handleChange', index)
-    },
-    handleReport(index) {
-      console.log('handleReport', index)
+      console.log('index', index)
+      this.activeIndex = index
     }
   }
 }

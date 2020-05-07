@@ -9741,10 +9741,10 @@ v-copy@^0.1.0:
   dependencies:
     modern-copy "^1.0.3"
 
-v-switcher@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/v-switcher/-/v-switcher-1.1.0.tgz#cfaa30fa1ef67e1bfe81bde7f981a610111d2c53"
-  integrity sha512-TPUlKcOjcJpBM2pYdRXSLV3/hd75ClXXd6TS48zD4mMVbM902ADGT5Uj+YHVJ82oBvABx89Wtd4mbD6sDV3SIA==
+v-switcher@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/v-switcher/-/v-switcher-1.1.2.tgz#760207e6b6fa8964ed869e9df83fc29635437194"
+  integrity sha512-jqHJQdSG4sFbpAGkvmAkV+UKcH43xzLAwFiy0vDS8VyRFKfh2aFltmw1LYlr/JUsz+8sUBGRzjGWkOOU/iyuQg==
   dependencies:
     vue "^2.6.11"
 
