@@ -64,6 +64,7 @@ import RollRecommended from '~/components-new/RollRecommended'
 import BangumiSwitcher from '~/components-new/BangumiSwitcher'
 import RankSwitcher from '~/components-new/RankSwitcher'
 import MainFlowTab from '~/components-new/MainFlowTab'
+import RecommendedSwipe from '~/components-new/RecommendedSwipe'
 
 export default {
   name: 'Homepage',
@@ -78,7 +79,8 @@ export default {
     RollRecommended,
     BangumiSwitcher,
     RankSwitcher,
-    MainFlowTab
+    MainFlowTab,
+    RecommendedSwipe
   },
   props: {},
   data() {
@@ -112,7 +114,7 @@ export default {
           },
           right: {
             slug: 2,
-            type: 'RankDaily'
+            type: 'RecommendedSwipe'
           }
         },
         {
@@ -189,7 +191,7 @@ export default {
           },
           right: {
             slug: 6,
-            type: 'RecommendedSwipe'
+            type: 'RankDaily'
           }
         }
       ]

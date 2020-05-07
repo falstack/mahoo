@@ -1,5 +1,5 @@
 <style lang="scss">
-#rank-switcher {
+.rank-switcher {
   .header-before {
     font-size: 18px;
     font-weight: 400;
@@ -59,7 +59,7 @@
 </style>
 
 <template>
-  <div id="rank-switcher">
+  <div class="rank-switcher">
     <VSwitcher :headers="['全网', '站内']" align="start" :animated="true" header-trigger="hover">
       <div slot="header-before" class="header-before">
         热门
