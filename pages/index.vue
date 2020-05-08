@@ -159,7 +159,7 @@ export default {
         {
           type: 'novel',
           main: true,
-          name: '小说',
+          name: '帖子',
           left: {
             slug: 4,
             type: 'MainFlowTab'

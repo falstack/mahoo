@@ -48,6 +48,68 @@
       flex: 1;
     }
   }
+
+  .icons-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .icons-item {
+      position: relative;
+      width: 70px;
+      height: 75px;
+      text-align: center;
+
+      &:hover .qr {
+        display: block;
+      }
+    }
+
+    .qr {
+      position: absolute;
+      left: 50%;
+      bottom: 110%;
+      width: 117px;
+      height: 117px;
+      border: 1px solid #eee;
+      transform: translateX(-50%);
+      padding: 10px;
+      background-color: #fff;
+      display: none;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .iconfont {
+      font-size: 30px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      display: block;
+      color: #fff;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    .ic-qq {
+      background-color: $color-blue;
+    }
+
+    .ic-v-chat {
+      background-color: $color-green;
+    }
+
+    .name {
+      margin-top: 10px;
+      color: #212121;
+    }
+  }
 }
 </style>
 
@@ -56,7 +118,7 @@
     <div class="v-layout">
       <div class="links-wrap">
         <div class="links-item">
-          <p>bilibili</p>
+          <p>calibur</p>
           <ul>
             <a target="_blank" href="//www.bilibili.com/blackboard/aboutUs.html">关于我们</a>
             <a target="_blank" href="//www.bilibili.com/blackboard/contact.html">联系我们</a>
@@ -82,7 +144,22 @@
             <a target="_blank" href="//www.bilibili.com/blackboard/activity-S1jfy69Jz.html">名人堂</a>
           </ul>
         </div>
-        <div class="icons-wrap" />
+        <ul class="icons-wrap">
+          <li class="icons-item">
+            <i class="iconfont ic-qq" />
+            <p class="name">QQ</p>
+            <div class="qr">
+              <img src="https://m1.calibur.tv/qq_mini_app.png" alt="">
+            </div>
+          </li>
+          <li class="icons-item">
+            <i class="iconfont ic-v-chat" />
+            <p class="name">微信</p>
+            <div class="qr">
+              <img src="https://m1.calibur.tv/weixin_mini_app.jpg" alt="">
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>

@@ -64,7 +64,11 @@ $header-link-padding: 7px;
 
   .v-layout__left {
     .home-link {
-      margin-left: -$header-link-padding;
+      margin-left: -10px;
+
+      i {
+        font-size: 24px;
+      }
     }
   }
 
@@ -180,13 +184,13 @@ $header-link-padding: 7px;
       display: block;
       width: 68px;
       height: 46px;
-      line-height: $page-header-hgt;
+      line-height: 46px;
       text-align: center;
       font-size: 14px;
       color: #fff;
       background-color: #f45a8d;
       border-radius: 0 0 6px 6px;
-      padding-bottom: 4px;
+      padding-bottom: 2px;
       margin-left: 5px;
 
       &:hover {
@@ -224,7 +228,7 @@ $header-link-padding: 7px;
       <ul class="v-layout__left">
         <li>
           <NLink class="nav-link home-link" to="/">
-            <i class="iconfont bili-bilibili-tv" />
+            <i class="iconfont ic-calibur" />
             <span>主站</span>
           </NLink>
         </li>
@@ -255,7 +259,7 @@ $header-link-padding: 7px;
         </li>
         <li>
           <NLink class="nav-link" to="/">
-            <i class="iconfont bili-Navbar_mobile" />
+            <i class="iconfont ic-phone" />
             <span>下载APP</span>
           </NLink>
         </li>
