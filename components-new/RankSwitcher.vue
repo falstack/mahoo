@@ -9,7 +9,7 @@
   }
 
   .k-item {
-    height: 319px;
+    height: 316px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,10 +18,15 @@
 
   .v-switcher {
     &-content-wrap {
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     &-header {
+      &-wrap,
+      &-tabs {
+        overflow: visible;
+      }
+
       &-item {
         margin-left: 12px;
         padding: 0;
@@ -60,7 +65,7 @@
 
 <template>
   <div class="rank-switcher">
-    <VSwitcher :headers="['全网', '站内']" align="start" :animated="true" header-trigger="hover">
+    <VSwitcher :header-height="23" :headers="['全网', '站内']" align="start" :animated="true" header-trigger="hover">
       <div slot="header-before" class="header-before">
         热门
       </div>
