@@ -83,7 +83,7 @@
   <div id="vertical-nav-bar" :style="{ top }">
     <ul class="nav-list">
       <li v-for="(item, index) in menu" :key="item.type">
-        <a :href="`#${item.type}`" :class="{ 'is-active': index === active }" v-text="item.name" />
+        <a :href="`#${item.type}`" :class="{ 'is-active': index === active }" v-text="item.left.name" />
       </li>
     </ul>
     <a href="#" class="back-top">

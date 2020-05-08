@@ -1,5 +1,11 @@
 <style lang="scss">
 .recommended-swipe {
+  .name {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
   .v-switcher {
     border-radius: 4px;
 
@@ -56,6 +62,7 @@
 
 <template>
   <div class="recommended-swipe">
+    <p class="name" v-text="name" />
     <VSwitcher
       :headers="list"
       :header-height="35"
@@ -79,7 +86,12 @@
 export default {
   name: 'RecommendedSwipe',
   components: {},
-  props: {},
+  props: {
+    name: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       activeIndex: 0

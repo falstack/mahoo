@@ -6,17 +6,16 @@
     overflow: visible;
 
     &-content {
-      height: 351px;
-      padding-top: 15px;
+      height: 316px;
       overflow: hidden;
     }
 
     &-header {
-      height: 40px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+      margin-top: 14px;
+
+      &-wrap {
+        margin-top: -14px;
+      }
 
       &-item {
         position: relative;
@@ -157,7 +156,7 @@
 
 <template>
   <div class="main-flow-tab">
-    <VSwitcher :headers="headers" :header-height="45">
+    <VSwitcher :headers="headers" :header-height="55">
       <template slot="header-before">
         <template v-if="backgroundPosition">
           <i :style="{ backgroundPosition }" />

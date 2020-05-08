@@ -4,6 +4,7 @@
   position: relative;
   background-color: #f6f9fa;
   padding: 30px;
+  margin-top: 30px;
 
   .links-wrap {
     display: flex;

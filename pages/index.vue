@@ -1,5 +1,9 @@
 <style lang="scss">
 #homepage {
+  .ssr-modules {
+    margin-bottom: 20px;
+  }
+
   .page-modules {
     .v-layout__row {
       display: block;
@@ -17,7 +21,7 @@
     <PageBanner :background="banner" />
     <div class="v-layout">
       <MenuBar />
-      <div class="v-layout__row">
+      <div class="ssr-modules">
         <Carousel />
         <RollRecommended />
       </div>
@@ -33,14 +37,14 @@
             :is="row.left.type"
             :slug="row.left.slug"
             :type="row.type"
-            :name="row.name"
+            :name="row.left.name"
             class="v-layout__left"
           />
           <component
             :is="row.right.type"
             :slug="row.right.slug"
             :type="row.type"
-            :name="row.name"
+            :name="row.right.name"
             class="v-layout__right"
           />
         </a>
@@ -94,35 +98,36 @@ export default {
         {
           type: 'douga',
           main: true,
-          name: '动画',
           left: {
             slug: 1,
+            name: '动画',
             type: 'MainFlowTab'
           },
           right: {
             slug: 1,
-            type: 'RankSwitcher'
+            name: '特别推荐',
+            type: 'RecommendedSwipe'
           }
         },
         {
           type: 'bangumi',
           main: true,
-          name: '番剧',
           left: {
             slug: 2,
+            name: '番剧',
             type: 'BangumiSwitcher'
           },
           right: {
             slug: 2,
-            type: 'RecommendedSwipe'
+            type: 'RankSwitcher'
           }
         },
         {
           type: 'bangumi-about',
           main: false,
-          name: '番剧动态',
           left: {
             slug: 6,
+            name: '番剧动态',
             type: 'MainFlowTab'
           },
           right: {
@@ -133,9 +138,9 @@ export default {
         {
           type: 'manga',
           main: true,
-          name: '漫画',
           left: {
             slug: 3,
+            name: '漫画',
             type: 'MainFlowTab'
           },
           right: {
@@ -146,9 +151,9 @@ export default {
         {
           type: 'game',
           main: true,
-          name: '游戏',
           left: {
             slug: 2,
+            name: '游戏',
             type: 'MainFlowTab'
           },
           right: {
@@ -159,9 +164,9 @@ export default {
         {
           type: 'novel',
           main: true,
-          name: '帖子',
           left: {
             slug: 4,
+            name: '帖子',
             type: 'MainFlowTab'
           },
           right: {
@@ -172,9 +177,9 @@ export default {
         {
           type: 'music',
           main: true,
-          name: '音乐',
           left: {
             slug: 5,
+            name: '音乐',
             type: 'MainFlowTab'
           },
           right: {
@@ -185,9 +190,9 @@ export default {
         {
           type: 'dance',
           main: true,
-          name: '舞蹈',
           left: {
             slug: 6,
+            name: '舞蹈',
             type: 'MainFlowTab'
           },
           right: {
