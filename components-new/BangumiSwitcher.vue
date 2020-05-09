@@ -128,6 +128,55 @@
       background-image: url(~assets/img/icons.png);
     }
   }
+
+  .state-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #99a2aa;
+    font-size: 12px;
+
+    i,
+    span {
+      display: inline-block;
+    }
+
+    i {
+      margin-right: 3px;
+    }
+
+    em {
+      font-style: normal;
+      color: $color-main;
+    }
+
+    .loading-img {
+      background-image: url(~assets/img/small-loading.gif);
+      width: 24px;
+      height: 24px;
+    }
+
+    .loading-txt {
+      height: 24px;
+      line-height: 27px;
+    }
+
+    .error-img {
+      background-image: url(~assets/img/state.png);
+      background-repeat: no-repeat;
+      background-position: center -471px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .nothing-img {
+      background-image: url(~assets/img/no-bangumi.png);
+      width: 387px;
+      height: 228px;
+    }
+  }
 }
 </style>
 
@@ -155,19 +204,21 @@
         <span>新番时间表</span>
         <i />
       </a>
-      <template v-for="(item, index) in list" :slot="index">
+      <template v-for="index in 7" :slot="index">
         <div v-if="list[index] && list[index].length" :key="index" class="flow-content">
           {{ list[index] }}
         </div>
         <div v-else :key="index" class="state-content">
           <template v-if="!resource || resource.loading">
-            loading...
+            <i class="loading-img" />
+            <span class="loading-txt">正在加载...</span>
           </template>
           <template v-else-if="resource.error">
-            error...
+            <i class="error-img" />
+            <span @click="handleRetry">加载失败，<em>点击重试</em></span>
           </template>
           <template v-else>
-            no-content...
+            <i class="nothing-img" />
           </template>
         </div>
       </template>
@@ -240,6 +291,9 @@ export default {
       if (this.resource && this.resource.error) {
         this.$refs.loader.initData()
       }
+    },
+    handleRetry() {
+      this.$refs.loader.retry()
     }
   }
 }

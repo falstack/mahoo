@@ -8,6 +8,10 @@
     &-content {
       height: 316px;
       overflow: hidden;
+
+      &-panel {
+        height: 100%;
+      }
     }
 
     &-header {
@@ -170,58 +174,52 @@
           <i class="el-icon-arrow-right" />
         </a>
       </template>
-      <template slot="0">
-        <FlowLoader
-          func="getMixinFlowData"
-          :query="{
-            $axios,
-            slug,
-            sort: 'activity',
-            take: 10
-          }"
-          :auto="1"
-          type="page"
-        >
-          <template slot-scope="{ flow }">
-            <BilbiliVideoItem
-              v-for="item in flow"
-              :key="item.id"
-              :item="item"
-            />
-          </template>
-        </FlowLoader>
-      </template>
-      <template slot="1">
-        <FlowLoader
-          func="getMixinFlowData"
-          :query="{
-            $axios,
-            slug,
-            sort: 'newest',
-            take: 10
-          }"
-          :auto="1"
-          type="page"
-        >
-          <template slot-scope="{ flow }">
-            <BilbiliVideoItem
-              v-for="item in flow"
-              :key="item.id"
-              :item="item"
-            />
-          </template>
-        </FlowLoader>
-      </template>
+      <HomepageFlow
+        slot="0"
+        func="getMixinFlowData"
+        :query="{
+          slug,
+          sort: 'activity',
+          take: 10
+        }"
+      >
+        <template slot-scope="{ flow }">
+          <BilbiliVideoItem
+            v-for="item in flow"
+            :key="item.id"
+            :item="item"
+          />
+        </template>
+      </HomepageFlow>
+      <HomepageFlow
+        slot="1"
+        func="getMixinFlowData"
+        :query="{
+          slug,
+          sort: 'newest',
+          take: 10
+        }"
+      >
+        <template slot-scope="{ flow }">
+          <BilbiliVideoItem
+            v-for="item in flow"
+            :key="item.id"
+            :item="item"
+          />
+        </template>
+      </HomepageFlow>
     </VSwitcher>
   </div>
 </template>
 
 <script>
+import HomepageFlow from '~/components-new/HomepageFlow'
 import BilbiliVideoItem from '~/components-new/BilbiliVideoItem'
 
 export default {
   name: 'MainFlowTab',
   components: {
+    HomepageFlow,
     BilbiliVideoItem
   },
   props: {
