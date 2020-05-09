@@ -111,6 +111,16 @@
       color: #212121;
     }
   }
+
+  .text-con {
+    color: #999;
+    font-size: 12px;
+    line-height: 24px;
+
+    a:hover {
+      color: $color-main;
+    }
+  }
 }
 </style>
 
@@ -121,28 +131,22 @@
         <div class="links-item">
           <p>calibur</p>
           <ul>
-            <a target="_blank" href="//www.bilibili.com/blackboard/aboutUs.html">关于我们</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/contact.html">联系我们</a>
-            <a target="_blank" href="https://www.bilibili.com/protocal/licence.html">用户协议</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/join.html">加入我们</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/friends-links.html">友情链接</a>
-            <a target="_blank" href="https://www.bilibili.com/blackboard/privacy-pc.html">隐私政策</a>
-            <a target="_blank" href="//account.bilibili.com/account/official/home">bilibili认证</a>
-            <a target="_blank" href="http://ir.bilibili.com">Investor Relations</a>
+            <a href="javascript:;">关于我们</a>
+            <a href="javascript:;">联系我们</a>
+            <a href="javascript:;">用户协议</a>
+            <a href="javascript:;">加入我们</a>
+            <a href="javascript:;">友情链接</a>
+            <a href="javascript:;">隐私政策</a>
           </ul>
         </div>
         <div class="links-item">
           <p>传送门</p>
           <ul>
-            <a target="_blank" href="//www.bilibili.com/blackboard/help.html">帮助中心</a>
-            <a target="_blank" href="//www.bilibili.com/video/BV1Xx411c7cH/">高级弹幕</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/topic_list.html">活动专题页</a>
-            <a target="_blank" href="//www.bilibili.com/v/copyright/intro/">侵权申诉</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/x/act_list/">活动中心</a>
-            <a target="_blank" href="https://t.bilibili.com/topic/name/%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88%E8%AE%BA%E5%9D%9B/feed">用户反馈论坛</a>
-            <a target="_blank" href="//space.bilibili.com/6823116#/album">壁纸站</a>
-            <a target="_blank" href="//www.bilibili.com/basc">专车号服务中心</a>
-            <a target="_blank" href="//www.bilibili.com/blackboard/activity-S1jfy69Jz.html">名人堂</a>
+            <a href="javascript:;">Excalibur</a>
+            <a href="javascript:;">Dollars</a>
+            <a href="javascript:;">Sword Art Online</a>
+            <a href="javascript:;">SOS Dan</a>
+            <a href="javascript:;">Death Note</a>
           </ul>
         </div>
         <ul class="icons-wrap">
@@ -162,6 +166,20 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="v-layout">
+      <div class="text-con">
+        <p>
+          <span>互联网ICP备案：<a href="http://beian.miit.gov.cn/" target="_blank">沪ICP备17050785号-1</a></span>
+        </p>
+        <p>违法不良信息举报邮箱：<a href="mailto:im_bai@163.com">im_bai@163.com</a></p>
+        <p>
+          <a href="http://www.shjbzx.cn" target="_blank">上海互联网举报中心</a>&nbsp;|
+          <a href="http://jbts.mct.gov.cn/" target="_blank">12318全国文化市场举报网站</a>&nbsp;|
+          <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a>
+        </p>
+        <p>网上有害信息举报专区：<a href="https://www.12377.cn/" target="_blank">中国互联网违法和不良信息举报中心</a></p>
+        <p>公司名称：上海十六夜网络科技有限公司&nbsp;|&nbsp;公司地址：浦东新区 万祥镇宏祥北路83弄1-42号</p></div>
     </div>
   </footer>
 </template>
