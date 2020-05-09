@@ -3,7 +3,7 @@
   background-color: $color-gray-bg;
   min-height: 100vh;
 
-  #user-panel {
+  .user-panel {
     background-color: #fff;
     box-shadow: 0 0 0 1px #eee;
     border-radius: 0 0 4px 4px;
@@ -161,16 +161,9 @@
     background-color: #fff;
     margin-bottom: 10px;
     overflow: hidden;
-
-    @include pc() {
-      padding: 15px 20px;
-      border: 1px solid #eee;
-      border-radius: 4px;
-    }
-
-    @include h5() {
-      padding: 10px;
-    }
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
 
     .title {
       color: #000;
@@ -182,35 +175,44 @@
       height: 45px;
       line-height: 45px;
     }
-  }
 
-  .v-switcher-vertical {
     .v-switcher {
-      &-header-wrap {
-        width: 100%;
-      }
-
-      &-header-item {
-        text-align: left;
-        padding-left: 30px;
-        transition: background-color 0.3s ease;
-        height: 44px;
-        line-height: 44px;
-
-        a {
+      &-header {
+        &-item {
           display: block;
-          height: 100%;
-          font-size: 14px;
+          width: 100%;
+        }
+      }
+    }
+
+    .v-switcher-vertical {
+      .v-switcher {
+        &-header-wrap {
+          width: 100%;
         }
 
-        &.is-active {
-          background-color: $color-main !important;
-          color: #fff !important;
-        }
+        &-header-item {
+          text-align: left;
+          padding-left: 30px;
+          transition: background-color 0.3s ease;
+          height: 44px;
+          line-height: 44px;
 
-        &:hover {
-          color: $color-main;
-          background-color: #f4f5f7;
+          a {
+            display: block;
+            height: 100%;
+            font-size: 14px;
+          }
+
+          &.is-active {
+            background-color: $color-main !important;
+            color: #fff !important;
+          }
+
+          &:hover {
+            color: $color-main;
+            background-color: #f4f5f7;
+          }
         }
       }
     }
@@ -239,15 +241,6 @@
     }
   }
 
-  .h5-no-margin {
-    @include h5() {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-  }
-
   .el-timeline-item {
     display: block;
     float: none;
@@ -258,7 +251,8 @@
 
 <template>
   <div id="user-layout">
-    <div id="user-panel" class="container">
+    <PageHeader />
+    <div class="user-panel container">
       <div class="banner" :style="{ backgroundImage: `url(${$resizeImage(banner, { height: 200, mode: 2 })})` }">
         <div class="user">
           <UserAvatar :user="user" :avatar="avatar" :size="68" />
@@ -272,7 +266,14 @@
           </div>
         </div>
       </div>
-      <VSwitcher :headers="headers" :routable="true" :header-height="66" anchor-trigger="hover" align="start">
+      <VSwitcher
+        :headers="headers"
+        :routable="true"
+        :header-height="66"
+        :fixed-top="0"
+        anchor-trigger="hover"
+        align="start"
+      >
         <NLink v-for="(item, index) in headers" :key="index" :slot="`tab-${index}`" :to="item.route" class="only-pc">
           <i class="iconfont" :class="`ic-${item.icon}`" :style="{ color: item.color }" />
           <span v-text="item.name" />
@@ -282,19 +283,19 @@
             <div class="label">
               访问数
             </div>
-            <span class="value" v-text="user.visit_count" />
+            <span class="value" v-text="user.visit_count || '-'" />
           </li>
           <li>
             <div class="label">
               关注数
             </div>
-            <span class="value" v-text="user.following_count" />
+            <span class="value" v-text="user.following_count || '-'" />
           </li>
           <li>
             <div class="label">
               粉丝数
             </div>
-            <span class="value" v-text="user.followers_count" />
+            <span class="value" v-text="user.followers_count || '-'" />
           </li>
           <li>
             <div class="label">
@@ -312,13 +313,8 @@
       </VSwitcher>
     </div>
     <div class="container">
-      <template v-if="showBirthday">
-        <br>
-        <ElAlert title="祝这位不愿透露姓名的御坂妹妹生日快乐~！" type="success" />
-        <br>
-      </template>
-      <ElRow class="h5-no-margin" :gutter="10">
-        <ElCol class="h5-no-margin" :span="17" :xs="24">
+      <ElRow :gutter="10">
+        <ElCol :span="17" :xs="24">
           <section class="user-section">
             <NuxtChild :user="user" />
           </section>
@@ -351,18 +347,18 @@
 </template>
 
 <script>
-import { Alert } from 'element-ui'
 import { getUserInfo } from '~/api/userApi'
 import UserAvatar from '~/components/user/UserAvatar'
 import UserNickname from '~/components/user/UserNickname'
 import DailySignBtn from '~/components/button/DailySignBtn'
 import UserFollowBtn from '~/components/button/UserFollowBtn'
 import SendMailBtn from '~/components/button/SendMailBtn'
+import PageHeader from '~/components-new/PageHeader'
 
 export default {
   name: 'UserLayout',
   components: {
-    ElAlert: Alert,
+    PageHeader,
     UserAvatar,
     UserNickname,
     DailySignBtn,
@@ -388,10 +384,6 @@ export default {
     }
   },
   computed: {
-    showBirthday() {
-      const ts = Date.now()
-      return ts >= 1571155200000 && ts <= 1571241599000 && this.slug === 'cc-a18jd'
-    },
     isMine() {
       return this.$store.getters.isMine(this.slug)
     },
@@ -471,7 +463,10 @@ export default {
           }
         })
         .then((data) => {
-          this.user = this.$set(this, 'user', Object.assign(this.user, data))
+          this.$set(this, 'user', {
+            ...this.user,
+            ...data
+          })
           this.$store.commit('social/set', {
             type: 'user-follow',
             slug: this.slug,

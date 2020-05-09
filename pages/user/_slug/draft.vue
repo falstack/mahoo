@@ -4,6 +4,8 @@
     border-top: 1px solid #f0f2f7;
     padding-top: 20px;
     margin-top: 20px;
+    display: block;
+    width: 100%;
 
     &:first-child {
       padding-top: 0;
