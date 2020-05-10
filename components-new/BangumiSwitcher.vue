@@ -204,7 +204,7 @@
         <span>新番时间表</span>
         <i />
       </a>
-      <template v-for="index in 7" :slot="index">
+      <template v-for="(item, index) in headers" :slot="index">
         <div v-if="list[index] && list[index].length" :key="index" class="flow-content">
           {{ list[index] }}
         </div>
