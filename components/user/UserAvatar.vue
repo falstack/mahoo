@@ -2,17 +2,16 @@
 .user-avatar {
   display: block;
 
-  .img {
+  .v-img {
     box-shadow: 0 0 0 1px #edf2f9;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
 </style>
 
 <template>
-  <div v-if="disabled" :style="{ width: `${size}px`, height: `${size}px` }" class="user-avatar">
-    <VImg radius="50%" :src="avatar || user.avatar" :width="size" :height="size" :alt="user.nickname" />
-  </div>
-  <NLink v-else :style="{ width: `${size}px`, height: `${size}px` }" :to="$alias.user(user.slug)" target="_blank" class="user-avatar">
+  <NLink :style="{ width: `${size}px`, height: `${size}px` }" :to="$alias.user(user.slug)" target="_blank" class="user-avatar">
     <VImg radius="50%" :src="avatar || user.avatar" :width="size" :height="size" :alt="user.nickname" />
   </NLink>
 </template>

@@ -15,8 +15,7 @@
 
       .flow-content {
         height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
       }
     }
 
@@ -205,9 +204,9 @@
         <i />
       </a>
       <template v-for="(item, index) in headers" :slot="index">
-        <div v-if="list[index] && list[index].length" :key="index" class="flow-content">
-          {{ list[index] }}
-        </div>
+        <ul v-if="list[index] && list[index].length" :key="index" class="flow-content">
+          <BangumiIntroItem v-for="bangumi in list[index]" :item="bangumi" :key="bangumi.id" />
+        </ul>
         <div v-else :key="index" class="state-content">
           <template v-if="!resource || resource.loading">
             <i class="loading-img" />
@@ -234,8 +233,13 @@
 </template>
 
 <script>
+import BangumiIntroItem from '~/components-new/BangumiIntroItem'
+
 export default {
   name: 'BangumiSwitcher',
+  components: {
+    BangumiIntroItem
+  },
   computed: {
     defaultIndex() {
       const week = new Date().getDay()

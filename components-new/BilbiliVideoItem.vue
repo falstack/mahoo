@@ -20,9 +20,14 @@
     overflow: hidden;
     border-radius: 4px;
     text-align: center;
-    background-color: #f1f3f4;
+    background: #f1f3f4 url(~assets/img/default-poster.png) 50% no-repeat;
     width: 160px;
     height: 100px;
+
+    .cover {
+      width: 100%;
+      height: 100%;
+    }
 
     .mask {
       opacity: 0;
@@ -113,7 +118,7 @@
 <template>
   <li class="bili-video-item">
     <a class="poster" target="_blank" :href="href">
-      <VImg :src="item.data.poster" width="160" height="100" />
+      <img class="cover" :src="$resizeImage(item.data.poster, { width: 160, height: 100 })" />
       <div class="mask">
         <p class="duration" v-text="$utils.formatDuration(item.data.duration)" />
       </div>
