@@ -36,12 +36,7 @@
         display: inline-block;
         margin-bottom: 10px;
         color: #212121;
-        transition: color 0.3s;
         font-size: 14px;
-
-        &:hover {
-          color: $color-main;
-        }
       }
     }
 
@@ -87,7 +82,7 @@
     }
 
     .iconfont {
-      font-size: 30px;
+      font-size: 25px;
       width: 40px;
       height: 40px;
       line-height: 40px;
@@ -116,10 +111,7 @@
     color: #999;
     font-size: 12px;
     line-height: 24px;
-
-    a:hover {
-      color: $color-main;
-    }
+    margin-top: 15px;
   }
 }
 </style>
@@ -131,22 +123,22 @@
         <div class="links-item">
           <p>calibur</p>
           <ul>
-            <a href="javascript:;">关于我们</a>
-            <a href="javascript:;">联系我们</a>
-            <a href="javascript:;">用户协议</a>
-            <a href="javascript:;">加入我们</a>
-            <a href="javascript:;">友情链接</a>
-            <a href="javascript:;">隐私政策</a>
+            <a class="fade-link" href="javascript:;">关于我们</a>
+            <a class="fade-link" href="javascript:;">联系我们</a>
+            <a class="fade-link" href="javascript:;">用户协议</a>
+            <a class="fade-link" href="javascript:;">加入我们</a>
+            <a class="fade-link" href="javascript:;">友情链接</a>
+            <a class="fade-link" href="javascript:;">隐私政策</a>
           </ul>
         </div>
         <div class="links-item">
           <p>传送门</p>
           <ul>
-            <a href="javascript:;">Excalibur</a>
-            <a href="javascript:;">Dollars</a>
-            <a href="javascript:;">Sword Art Online</a>
-            <a href="javascript:;">SOS Dan</a>
-            <a href="javascript:;">Death Note</a>
+            <a class="fade-link" href="javascript:;">Excalibur</a>
+            <a class="fade-link" href="javascript:;">Dollars</a>
+            <a class="fade-link" href="javascript:;">Sword Art Online</a>
+            <a class="fade-link" href="javascript:;">SOS Dan</a>
+            <a class="fade-link" href="javascript:;">Death Note</a>
           </ul>
         </div>
         <ul class="icons-wrap">
@@ -170,15 +162,15 @@
     <div class="v-layout">
       <div class="text-con">
         <p>
-          <span>互联网ICP备案：<a href="http://beian.miit.gov.cn/" target="_blank">沪ICP备17050785号-1</a></span>
+          <span>互联网ICP备案：<a class="fade-link" href="http://beian.miit.gov.cn/" target="_blank">沪ICP备17050785号-1</a></span>
         </p>
-        <p>违法不良信息举报邮箱：<a href="mailto:im_bai@163.com">im_bai@163.com</a></p>
+        <p>违法不良信息举报邮箱：<a class="fade-link" href="mailto:im_bai@163.com">im_bai@163.com</a></p>
         <p>
-          <a href="http://www.shjbzx.cn" target="_blank">上海互联网举报中心</a>&nbsp;|
-          <a href="http://jbts.mct.gov.cn/" target="_blank">12318全国文化市场举报网站</a>&nbsp;|
-          <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a>
+          <a class="fade-link" href="http://www.shjbzx.cn" target="_blank">上海互联网举报中心</a>&nbsp;|
+          <a class="fade-link" href="http://jbts.mct.gov.cn/" target="_blank">12318全国文化市场举报网站</a>&nbsp;|
+          <a class="fade-link" href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a>
         </p>
-        <p>网上有害信息举报专区：<a href="https://www.12377.cn/" target="_blank">中国互联网违法和不良信息举报中心</a></p>
+        <p>网上有害信息举报专区：<a class="fade-link" href="https://www.12377.cn/" target="_blank">中国互联网违法和不良信息举报中心</a></p>
         <p>公司名称：上海十六夜网络科技有限公司&nbsp;|&nbsp;公司地址：浦东新区 万祥镇宏祥北路83弄1-42号</p></div>
     </div>
   </footer>

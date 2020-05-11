@@ -6,13 +6,21 @@
 
   .poster {
     float: left;
+    width: 72px;
+    height: 72px;
     margin-right: 12px;
+    background-color: #f1f3f4;
+    background-image: url(~assets/img/default-poster.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border-radius: 4px;
+    overflow: hidden;
 
     img {
-      width: 72px;
-      height: 72px;
       display: block;
-      border-radius: 4px;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -26,12 +34,7 @@
 
     a {
       font-size: 12px;
-      transition: color .2s;
       @include multi-line(18px);
-
-      &:hover {
-        color: $color-main;
-      }
     }
 
     span {
@@ -57,7 +60,7 @@
       <img :src="$resizeImage(item.avatar, { width: 72 })" />
     </a>
     <p class="intro">
-      <a href="javascript:;" class="title" v-text="item.name" />
+      <a href="javascript:;" class="title fade-link" v-text="item.name" />
       <span class="oneline">暂无</span>
     </p>
   </li>
