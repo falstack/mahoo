@@ -12,6 +12,10 @@
         bottom: -20px;
       }
     }
+
+    .title {
+      color: $color-main !important;
+    }
   }
 
   .poster {

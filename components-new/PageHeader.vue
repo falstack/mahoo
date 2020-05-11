@@ -256,7 +256,7 @@ $header-link-padding: 7px;
             <HeaderPopover className="user-popover">
               <template #trigger>
                 <NLink :to="$alias.user(user.slug)" class="avatar">
-                  <img :src="$resizeImage(user.avatar, { width: 33 })" alt="" >
+                  <img :src="$resizeImage(user.avatar, { width: 60 })" alt="" >
                 </NLink>
               </template>
               <template #content>
@@ -300,21 +300,28 @@ $header-link-padding: 7px;
               <span>收藏</span>
             </NLink>
           </li>
+        </template>
+        <template v-else>
           <li>
-            <NLink class="nav-link" to="/">
-              <span>历史</span>
-            </NLink>
+            <button class="nav-link" @click="handleSignIn">
+              登录
+            </button>
           </li>
           <li>
             <NLink class="nav-link" to="/">
-              <span>创作中心</span>
+              <span>动态</span>
             </NLink>
           </li>
         </template>
-        <li v-else>
-          <Button type="text" @click="handleSignIn">
-            登录
-          </Button>
+        <li>
+          <NLink class="nav-link" to="/">
+            <span>历史</span>
+          </NLink>
+        </li>
+        <li>
+          <NLink class="nav-link" to="/">
+            <span>创作中心</span>
+          </NLink>
         </li>
         <li>
           <Button class="create-btn">
@@ -328,6 +335,7 @@ $header-link-padding: 7px;
 
 <script>
 import HeaderPopover from '~/components-new/HeaderPopover'
+import { logout } from '~/api/userApi'
 
 export default {
   name: 'PageHeader',
@@ -362,7 +370,10 @@ export default {
       this.$channel.$emit('sign-in')
     },
     handleLogout() {
-
+      logout(this)
+      this.$cookie.remove('JWT-TOKEN')
+      this.$channel.socketDisconnect()
+      window.location = '/'
     }
   }
 }
