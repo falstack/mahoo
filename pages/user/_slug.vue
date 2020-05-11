@@ -250,98 +250,100 @@
 </style>
 
 <template>
-  <div id="user-layout">
+  <div>
     <PageHeader />
-    <div class="user-panel container">
-      <div class="banner" :style="{ backgroundImage: `url(${$resizeImage(banner, { height: 200, mode: 2 })})` }">
-        <div class="user">
-          <UserAvatar :user="user" :avatar="avatar" :size="68" />
-          <div v-if="user" class="actions only-pc">
-            <UserFollowBtn :slug="slug" @change="handleFollowAction" />
-            <SendMailBtn :slug="slug" :nickname="nickname" />
-          </div>
-          <div class="content">
-            <UserNickname :user="user" :nickname="nickname" :sex="sex" />
-            <p class="signature oneline" v-text="signature" />
+    <div id="user-layout">
+      <div class="user-panel container">
+        <div class="banner" :style="{ backgroundImage: `url(${$resizeImage(banner, { height: 200, mode: 2 })})` }">
+          <div class="user">
+            <UserAvatar :user="user" :avatar="avatar" :size="68" />
+            <div v-if="user" class="actions">
+              <UserFollowBtn :slug="slug" @change="handleFollowAction" />
+              <SendMailBtn :slug="slug" :nickname="nickname" />
+            </div>
+            <div class="content">
+              <UserNickname :user="user" :nickname="nickname" :sex="sex" />
+              <p class="signature oneline" v-text="signature" />
+            </div>
           </div>
         </div>
+        <VSwitcher
+          :headers="headers"
+          :routable="true"
+          :header-height="66"
+          :fixed-top="0"
+          anchor-trigger="hover"
+          align="start"
+        >
+          <NLink v-for="(item, index) in headers" :key="index" :slot="`tab-${index}`" :to="item.route" class="only-pc">
+            <i class="iconfont" :class="`ic-${item.icon}`" :style="{ color: item.color }" />
+            <span v-text="item.name" />
+          </NLink>
+          <ul slot="header-after" class="user-meta">
+            <li>
+              <div class="label">
+                访问数
+              </div>
+              <span class="value" v-text="user.visit_count || '-'" />
+            </li>
+            <li>
+              <div class="label">
+                关注数
+              </div>
+              <span class="value" v-text="user.following_count || '-'" />
+            </li>
+            <li>
+              <div class="label">
+                粉丝数
+              </div>
+              <span class="value" v-text="user.followers_count || '-'" />
+            </li>
+            <li>
+              <div class="label">
+                活跃度
+              </div>
+              <span class="value" v-text="user.stat_activity" />
+            </li>
+            <li>
+              <div class="label">
+                曝光度
+              </div>
+              <span class="value" v-text="user.stat_exposure" />
+            </li>
+          </ul>
+        </VSwitcher>
       </div>
-      <VSwitcher
-        :headers="headers"
-        :routable="true"
-        :header-height="66"
-        :fixed-top="0"
-        anchor-trigger="hover"
-        align="start"
-      >
-        <NLink v-for="(item, index) in headers" :key="index" :slot="`tab-${index}`" :to="item.route" class="only-pc">
-          <i class="iconfont" :class="`ic-${item.icon}`" :style="{ color: item.color }" />
-          <span v-text="item.name" />
-        </NLink>
-        <ul slot="header-after" class="user-meta">
-          <li>
-            <div class="label">
-              访问数
-            </div>
-            <span class="value" v-text="user.visit_count || '-'" />
-          </li>
-          <li>
-            <div class="label">
-              关注数
-            </div>
-            <span class="value" v-text="user.following_count || '-'" />
-          </li>
-          <li>
-            <div class="label">
-              粉丝数
-            </div>
-            <span class="value" v-text="user.followers_count || '-'" />
-          </li>
-          <li>
-            <div class="label">
-              活跃度
-            </div>
-            <span class="value" v-text="user.stat_activity" />
-          </li>
-          <li>
-            <div class="label">
-              曝光度
-            </div>
-            <span class="value" v-text="user.stat_exposure" />
-          </li>
-        </ul>
-      </VSwitcher>
-    </div>
-    <div class="container">
-      <ElRow :gutter="10">
-        <ElCol :span="17" :xs="24">
-          <section class="user-section">
-            <NuxtChild :user="user" />
-          </section>
-        </ElCol>
-        <ElCol v-if="user" :xs="0" :span="7">
-          <aside class="user-section">
-            <h3 class="title">
-              签到
-            </h3>
-            <DailySignBtn v-model="user" />
-            <template>
-              <p>总签到次数：{{ user.total_sign_count }}次</p>
-              <p>连续签到数：{{ user.continuous_sign_count }}次</p>
-              <p>最后签到于：{{ user.latest_signed_at ? $utils.timeAgo(user.latest_signed_at) : '未签到' }}</p>
-            </template>
-          </aside>
-          <aside v-if="isMine" class="user-section">
-            <h3 class="title">
-              钱包
-            </h3>
-            <template>
-              <p>团子：{{ parseFloat(self.wallet_coin).toFixed(2) }}</p>
-              <p>光玉：{{ parseFloat(self.wallet_money).toFixed(2) }}</p>
-            </template>
-          </aside>
-        </ElCol>
-      </ElRow>
+      <div class="container">
+        <ElRow :gutter="10">
+          <ElCol :span="17" :xs="24">
+            <section class="user-section">
+              <NuxtChild :user="user" />
+            </section>
+          </ElCol>
+          <ElCol v-if="user" :xs="0" :span="7">
+            <aside class="user-section">
+              <h3 class="title">
+                签到
+              </h3>
+              <DailySignBtn v-model="user" />
+              <template>
+                <p>总签到次数：{{ user.total_sign_count }}次</p>
+                <p>连续签到数：{{ user.continuous_sign_count }}次</p>
+                <p>最后签到于：{{ user.latest_signed_at ? $utils.timeAgo(user.latest_signed_at) : '未签到' }}</p>
+              </template>
+            </aside>
+            <aside v-if="isMine" class="user-section">
+              <h3 class="title">
+                钱包
+              </h3>
+              <template>
+                <p>团子：{{ parseFloat(self.wallet_coin).toFixed(2) }}</p>
+                <p>光玉：{{ parseFloat(self.wallet_money).toFixed(2) }}</p>
+              </template>
+            </aside>
+          </ElCol>
+        </ElRow>
+      </div>
     </div>
   </div>
 </template>

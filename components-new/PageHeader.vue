@@ -62,7 +62,9 @@ $header-link-padding: 7px;
     white-space: nowrap;
   }
 
-  .v-layout__left {
+  .header-left {
+    float: left;
+
     .home-link {
       margin-left: -10px;
 
@@ -72,7 +74,8 @@ $header-link-padding: 7px;
     }
   }
 
-  .v-layout__right {
+  .header-right {
+    float: right;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -87,11 +90,6 @@ $header-link-padding: 7px;
       &:hover {
         background-color: transparent;
 
-        .user-popover {
-          opacity: 1;
-          visibility: visible;
-        }
-
         .avatar {
           transform: scale(2) translateY(10px);
         }
@@ -103,31 +101,19 @@ $header-link-padding: 7px;
         transition: 0.3s;
         z-index: 1;
 
-        .img {
-          border: 1px solid $color-gray-1;
+        img {
+          display: block;
+          border: 1px solid #fff;
+          width: 33px;
+          height: 33px;
+          border-radius: 50%;
         }
       }
 
       .user-popover {
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%);
-        background-color: #fff;
         width: 260px;
         height: 328px;
         padding: 25px 12px 12px;
-        box-shadow: 0 2px 4px rgba(0,0,0,.16);
-        border-radius: 0 0 4px 4px;
-        transition: 0.3s;
-
-        &:hover {
-          opacity: 1;
-          visibility: visible;
-        }
 
         .nickname {
           margin: 10px 0;
@@ -225,7 +211,7 @@ $header-link-padding: 7px;
     </div>
     <div class="mask-shim" />
     <div class="text-wrap v-layout">
-      <ul class="v-layout__left">
+      <ul class="header-left">
         <li>
           <NLink class="nav-link home-link" to="/">
             <i class="iconfont ic-calibur" />
@@ -264,33 +250,30 @@ $header-link-padding: 7px;
           </NLink>
         </li>
       </ul>
-      <ul class="v-layout__right">
+      <ul class="header-right">
         <template v-if="isAuth">
-          <li class="user-panel icon-link">
-            <NLink :to="$alias.user(user.slug)" class="avatar">
-              <VImg
-                :src="user.avatar"
-                def="default-avatar"
-                width="33"
-                height="33"
-                radius="50%"
-                :alt="user.nickname"
-              />
-            </NLink>
-            <div class="user-popover">
-              <p class="nickname oneline" v-html="user.nickname" />
-              <NLink :to="$alias.user(user.slug, 'setting')">
-                <div class="field">
-                  <div class="label">
-                    <i class="iconfont ic-setup_fill" />
-                    <span>设置</span>
+          <li class="user-panel">
+            <HeaderPopover className="user-popover">
+              <template #trigger>
+                <NLink :to="$alias.user(user.slug)" class="avatar">
+                  <img :src="$resizeImage(user.avatar, { width: 33 })" alt="" >
+                </NLink>
+              </template>
+              <template #content>
+                <p class="nickname oneline" v-html="user.nickname" />
+                <NLink :to="$alias.user(user.slug, 'setting')">
+                  <div class="field">
+                    <div class="label">
+                      <i class="iconfont ic-setup_fill" />
+                      <span>设置</span>
+                    </div>
                   </div>
-                </div>
-              </NLink>
-              <button class="sign-out" @click="handleLogout">
-                退出
-              </button>
-            </div>
+                </NLink>
+                <button class="sign-out" @click="handleLogout">
+                  退出
+                </button>
+              </template>
+            </HeaderPopover>
           </li>
           <li>
             <NLink class="nav-link" to="/">
@@ -344,9 +327,13 @@ $header-link-padding: 7px;
 </template>
 
 <script>
+import HeaderPopover from '~/components-new/HeaderPopover'
+
 export default {
   name: 'PageHeader',
-  components: {},
+  components: {
+    HeaderPopover
+  },
   props: {
     background: {
       type: String,

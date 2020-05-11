@@ -50,6 +50,10 @@
         background: url(~assets/img/state.png) center -140px no-repeat
       }
     }
+
+    &-load {
+      display: none;
+    }
   }
 }
 </style>
