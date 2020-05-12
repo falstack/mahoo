@@ -3,6 +3,11 @@
   padding-top: 5px;
   margin-bottom: 10px;
 
+  .menu-item {
+    position: relative;
+    float: left;
+  }
+
   .menu-link {
     height: 48px;
     display: flex;
@@ -52,10 +57,6 @@
       height: 24px;
       background: url(~assets/img/icons.png) -660px -1170px no-repeat;
     }
-  }
-
-  .menu-item {
-    position: relative;
   }
 
   .sub-menu {
@@ -135,7 +136,7 @@
 
 <template>
   <ul id="menu-bar" class="clearfix">
-    <li>
+    <li class="menu-item">
       <NuxtLink class="home-link menu-link" to="/">
         <div class="icon" />
         <span>首页</span>

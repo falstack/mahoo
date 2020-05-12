@@ -3,6 +3,7 @@
   width: 214px;
   padding-right: 34px;
   margin-bottom: 36px;
+  float: left;
 
   .poster {
     float: left;
