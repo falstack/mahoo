@@ -8,6 +8,10 @@ $header-link-padding: 7px;
   font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
   z-index: 99;
 
+  li {
+    float: left;
+  }
+
   .mask-wrap {
     position: absolute;
     left: 0;
@@ -253,10 +257,10 @@ $header-link-padding: 7px;
       <ul class="header-right">
         <template v-if="isAuth">
           <li class="user-panel">
-            <HeaderPopover className="user-popover">
+            <HeaderPopover class-name="user-popover">
               <template #trigger>
                 <NLink :to="$alias.user(user.slug)" class="avatar">
-                  <img :src="$resizeImage(user.avatar, { width: 60 })" alt="" >
+                  <img :src="$resizeImage(user.avatar, { width: 60 })" alt="">
                 </NLink>
               </template>
               <template #content>

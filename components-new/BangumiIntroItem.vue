@@ -9,7 +9,6 @@
     width: 72px;
     height: 72px;
     margin-right: 12px;
-    background-color: #f1f3f4;
     background-image: url(~assets/img/default-poster.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +56,7 @@
 <template>
   <li class="bgm-intro-item">
     <a class="poster" href="javascript:;">
-      <img :src="$resizeImage(item.avatar, { width: 72 })" />
+      <img :src="$resizeImage(item.avatar, { width: 72 })">
     </a>
     <p class="intro">
       <a href="javascript:;" class="title fade-link" v-text="item.name" />

@@ -77,7 +77,9 @@
       <div slot="1" class="k-item" style="background-color: rgba(125,205,244,.5)">
         1
       </div>
-      <template slot="header-before">{{ list[activeIndex].title }}</template>
+      <template slot="header-before">
+        {{ list[activeIndex].title }}
+      </template>
     </VSwitcher>
   </div>
 </template>

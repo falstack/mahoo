@@ -144,14 +144,18 @@
         <ul class="icons-wrap">
           <li class="icons-item">
             <i class="iconfont ic-qq" />
-            <p class="name">QQ</p>
+            <p class="name">
+              QQ
+            </p>
             <div class="qr">
               <img src="https://m1.calibur.tv/qq_mini_app.png" alt="">
             </div>
           </li>
           <li class="icons-item">
             <i class="iconfont ic-v-chat" />
-            <p class="name">微信</p>
+            <p class="name">
+              微信
+            </p>
             <div class="qr">
               <img src="https://m1.calibur.tv/weixin_mini_app.jpg" alt="">
             </div>
@@ -171,7 +175,8 @@
           <a class="fade-link" href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a>
         </p>
         <p>网上有害信息举报专区：<a class="fade-link" href="https://www.12377.cn/" target="_blank">中国互联网违法和不良信息举报中心</a></p>
-        <p>公司名称：上海十六夜网络科技有限公司&nbsp;|&nbsp;公司地址：浦东新区 万祥镇宏祥北路83弄1-42号</p></div>
+        <p>公司名称：上海十六夜网络科技有限公司&nbsp;|&nbsp;公司地址：浦东新区 万祥镇宏祥北路83弄1-42号</p>
+      </div>
     </div>
   </footer>
 </template>

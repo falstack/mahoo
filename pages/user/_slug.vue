@@ -240,12 +240,6 @@
       }
     }
   }
-
-  .el-timeline-item {
-    display: block;
-    float: none;
-    @extend %clearfix;
-  }
 }
 </style>
 
