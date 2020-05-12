@@ -205,7 +205,7 @@
       </a>
       <template v-for="(item, index) in headers" :slot="index">
         <ul v-if="list[index] && list[index].length" :key="index" class="flow-content">
-          <BangumiIntroItem v-for="bangumi in list[index]" :item="bangumi" :key="bangumi.id" />
+          <BangumiIntroItem v-for="bangumi in list[index]" :key="bangumi.id" :item="bangumi" />
         </ul>
         <div v-else :key="index" class="state-content">
           <template v-if="!resource || resource.loading">
