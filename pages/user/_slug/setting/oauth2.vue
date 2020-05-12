@@ -26,8 +26,41 @@
 
     .ic-phone.is-bind,
     .ic-phone:hover {
-      color: $color-main;
+      color: $color-black;
     }
+
+    .ic-bilibili {
+      color: $color-icon-3;
+      font-size: 26px;
+
+      &.is-bind,
+      &:hover {
+        color: #fb7299;
+      }
+    }
+  }
+}
+
+.bind-bili-dialog {
+  p {
+    line-height: 30px;
+  }
+
+  a {
+    color: $color-main;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  input {
+    width: 300px;
+    margin: 10px 15px;
   }
 }
 </style>
@@ -44,12 +77,27 @@
       <li @click="bindUserPhone">
         <i :class="{ 'is-bind': user.providers.bind_phone }" class="iconfont ic-phone" />
       </li>
+      <li @click="bindUserBilibili">
+        <i :class="{ 'is-bind': user.providers.bind_bilibili }" class="iconfont ic-bilibili" />
+      </li>
     </ul>
-    <VDialog v-model="showInfoForm" width="400px" title="填写信息" @submit="submitBindPhone">
+    <VDialog v-model="showInfoForm" :loading="loadingBindPhone" width="400px" title="填写信息" @submit="submitBindPhone">
       <ElInput v-model.trim="authCode" type="number" placeholder="短信验证码" auto-complete="off" />
       <br>
       <br>
       <ElInput v-model.trim="password" type="text" placeholder="密码（6-16个字符组成，区分大小写）" auto-complete="off" />
+    </VDialog>
+    <VDialog v-model="showBiliForm" :loading="loadingBindBilibili" title="绑定bilibili账号" @submit="submitBindBilibili">
+      <div class="bind-bili-dialog">
+        <p><i>1. 访问 </i><a href="https://space.bilibili.com/279662469/" target="_blank">calibur官方账号</a></p>
+        <p>2. 关注该账号后，点击「发消息」按钮</p>
+        <p><i>3. 在新打开的聊天窗页面，发送：</i><span>我要认证calibur</span></p>
+        <p>4. 把你在 bilibili 的用户 uid 填入下面的输入框中（在个人空间页面的右下角可以看到）</p>
+        <p>
+          <ElInput v-model.trim="biliUid" type="text" placeholder="你自己的B站账号uid" auto-complete="off" />
+        </p>
+        <p>5. 点击「确定」按钮，等待验证完成</p>
+      </div>
     </VDialog>
   </div>
 </template>
@@ -71,7 +119,10 @@ export default {
       authCode: '',
       timeout: 0,
       showInfoForm: false,
-      loadingBindPhone: false
+      showBiliForm: false,
+      loadingBindPhone: false,
+      biliUid: '',
+      loadingBindBilibili: false
     }
   },
   computed: {
@@ -129,6 +180,39 @@ export default {
           }
         })
         .catch(() => {})
+    },
+    bindUserBilibili() {
+      if (this.user.providers.bind_bilibili) {
+        return
+      }
+      this.showBiliForm = true
+    },
+    submitBindBilibili() {
+      if (!this.biliUid || this.loadingBindBilibili) {
+        this.$toast.info('请先填写uid')
+        return
+      }
+      this.loadingBindBilibili = true
+      this.$toast.success('验证中，请稍候...')
+      this.$axios.$post('v1/door/oauth_channel', {
+        channel: 'bilibili',
+        id: this.biliUid
+      })
+        .then((result) => {
+          if (!result) {
+            this.$toast.info('认证失败，请填写正确的信息')
+            this.loadingBindBilibili = false
+            return
+          }
+          this.$toast.success('认证成功！')
+            .then(() => {
+              window.location.reload()
+            })
+        })
+        .catch((err) => {
+          this.$toast.error(err.message)
+          this.loadingBindBilibili = false
+        })
     },
     async submitBindPhone() {
       if (this.user.providers.bind_phone) {
