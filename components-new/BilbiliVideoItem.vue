@@ -5,6 +5,7 @@
   height: 148px;
   font-size: 12px;
   overflow: hidden;
+  float: left;
 
   &:hover {
     .text {

@@ -20,10 +20,6 @@
     border-bottom-left-radius: 0;
     padding-top: 6px;
 
-    li {
-      float: none;
-    }
-
     a {
       display: block;
       width: 48px;
