@@ -43,6 +43,10 @@ export default {
         {
           name: '认证设置',
           route: `/user/${this.slug}/setting/oauth2`
+        },
+        {
+          name: '内容授权',
+          route: `/user/${this.slug}/setting/spider`
         }
       ]
     }
