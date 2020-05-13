@@ -13,6 +13,7 @@ const _5b10ac14 = () => interopDefault(import('../pages/user/_slug/setting.vue' 
 const _7943400e = () => interopDefault(import('../pages/user/_slug/setting/index.vue' /* webpackChunkName: "pages/user/_slug/setting/index" */))
 const _e38e0556 = () => interopDefault(import('../pages/user/_slug/setting/basic.vue' /* webpackChunkName: "pages/user/_slug/setting/basic" */))
 const _822f9438 = () => interopDefault(import('../pages/user/_slug/setting/oauth2.vue' /* webpackChunkName: "pages/user/_slug/setting/oauth2" */))
+const _1186034e = () => interopDefault(import('../pages/user/_slug/setting/spider.vue' /* webpackChunkName: "pages/user/_slug/setting/spider" */))
 const _7de73e92 = () => interopDefault(import('../pages/user/_slug/social.vue' /* webpackChunkName: "pages/user/_slug/social" */))
 const _02a541fa = () => interopDefault(import('../pages/user/_slug/social/index.vue' /* webpackChunkName: "pages/user/_slug/social/index" */))
 const _3c715bbd = () => interopDefault(import('../pages/user/_slug/social/followers.vue' /* webpackChunkName: "pages/user/_slug/social/followers" */))
@@ -88,6 +89,10 @@ export const routerOptions = {
         path: "oauth2",
         component: _822f9438,
         name: "user-slug-setting-oauth2"
+      }, {
+        path: "spider",
+        component: _1186034e,
+        name: "user-slug-setting-spider"
       }]
     }, {
       path: "social",
