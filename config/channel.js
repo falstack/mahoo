@@ -30,12 +30,12 @@ export default [
     type: 'bangumi-about',
     main: false,
     left: {
-      slug: 3,
+      slug: 8,
       name: '番剧动态',
       type: 'MainFlowTab'
     },
     right: {
-      slug: 3,
+      slug: 8,
       type: 'RankDaily'
     }
   },
@@ -92,15 +92,15 @@ export default [
     }
   },
   {
-    type: 'dance',
+    type: 'life',
     main: true,
     left: {
-      slug: 8,
-      name: '舞蹈',
+      slug: 3,
+      name: '生活',
       type: 'MainFlowTab'
     },
     right: {
-      slug: 8,
+      slug: 3,
       type: 'RankSwitcher'
     }
   }
