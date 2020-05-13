@@ -55,7 +55,7 @@
 
 <template>
   <div v-if="isAuth" id="user-spider-setting">
-    <template v-if="user_bilibili_mid">
+    <template v-if="user.providers.bind_bilibili">
       <ElAlert title="什么是频道id？" type="success">
         <span>比如：</span>
         <a target="_blank" href="https://space.bilibili.com/279662469/channel/detail?cid=118679">https://space.bilibili.com/279662469/channel/detail?cid=118679</a>
@@ -67,7 +67,9 @@
         如果你删除规则，calibur 也会删除对应的内容，但这个过程需要几分钟至几小时的同步时间
       </ElAlert>
       <br>
-      <div class="rule-item" v-for="(item, index) in rule" :key="item.key">
+      <ElAlert title="你只能填写自己的频道id，填写他人的是无效的" type="error" />
+      <br>
+      <div v-for="(item, index) in rule" :key="item.key" class="rule-item">
         <ElButton class="close-btn" type="text" icon="el-icon-close" @click="deleteRuleItem(index)" />
         <p class="opt-item type">
           <span class="label">类型：</span>
@@ -81,20 +83,22 @@
                 v-for="opt in channel"
                 :key="opt.id"
                 :label="opt.name"
-                :value="opt.id">
-              </ElOption>
+                :value="opt.id"
+              />
             </ElSelect>
           </span>
         </p>
         <p class="opt-item source">
           <span class="label">资源：</span>
           <ElTag
-            v-for="(channel, index) in item.channel_id"
-            :key="channel"
+            v-for="(cnn, idx) in item.channel_id"
+            :key="cnn"
             type="success"
             closable
-            @close="handleClose(item, index)"
-          ><a target="_blank" :href="convertSourceUrl(channel)" v-text="channel" /></ElTag>
+            @close="handleClose(item, idx)"
+          >
+            <a target="_blank" :href="convertSourceUrl(cnn)" v-text="cnn" />
+          </ElTag>
           <ElInput
             v-model="item.new"
             placeholder="输入频道id后回车"
@@ -105,10 +109,12 @@
       </div>
       <div class="submit-row">
         <ElButton icon="el-icon-plus" circle @click="appendRule" />
-        <ElButton :loading="submitting" plain type="success" @click="saveRule">确认保存</ElButton>
+        <ElButton :loading="submitting" plain type="success" @click="saveRule">
+          确认保存
+        </ElButton>
       </div>
     </template>
-    <ElAlert v-else-if="user_bilibili_mid === null" title="请先在「认证设置」页面绑定你的B站账号" type="success" />
+    <ElAlert v-else title="请先在「认证设置」页面绑定你的B站账号" type="success" />
   </div>
 </template>
 
@@ -134,6 +140,9 @@ export default {
   computed: {
     isAuth() {
       return this.$store.state.isAuth
+    },
+    user() {
+      return this.$store.state.user
     },
     channel() {
       return config.filter(_ => _.main).map((_) => {
@@ -206,7 +215,6 @@ export default {
       })
         .then((res) => {
           if (!res || !res.rule) {
-            this.user_bilibili_mid = null
             return
           }
           this.user_bilibili_mid = res.user_id
