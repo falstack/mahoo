@@ -150,7 +150,7 @@ export default {
           id: _.left.slug,
           name: _.left.name
         }
-      }).filter(_ => ~[1, 2].indexOf(_.id))
+      }).filter(_ => ~[1, 2, 3].indexOf(_.id))
     }
   },
   mounted() {
