@@ -26,13 +26,13 @@
       line-height: 35px;
       display: block;
       color: #fff;
-      font-size: 15px;
       text-decoration: none;
       padding-left: 10px;
       width: 290px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      font-size: 14px;
     }
 
     .more {
@@ -47,10 +47,10 @@
       line-height: 24px;
       text-align: center;
       border-radius: 4px;
-      opacity: 0;
       transition: all 0.2s linear;
       font-size: 12px;
       text-decoration: none;
+      opacity: 0 !important;
 
       &:hover {
         text-shadow: 0 0 3px #fff;
@@ -91,6 +91,7 @@
         background: -webkit-linear-gradient(transparent,rgba(0,0,0,.5));
         z-index: 1;
         overflow: visible;
+        padding-right: 15px;
       }
 
       &-tabs {
@@ -125,20 +126,23 @@
   <div id="v-carousel">
     <VSwitcher
       :default-index="activeIndex"
-      :headers="headers"
+      :headers="list"
       :swipe="true"
-      :autoplay="2000"
+      :autoplay="5000"
       align="end"
       @change="handleChange"
     >
-      <div
-        v-for="(item, index) in headers"
+      <a
+        v-for="(item, index) in list"
         :key="index"
         :slot="index"
-        :style="{ backgroundColor: item.color }"
+        :href="convertUrl(item.link)"
+        target="_blank"
         class="carousel-item"
-      />
-      <a slot="header-before" class="title" href="javascript:;" v-text="showTitle" />
+      >
+        <VImg :src="$resizeImage(item.image, { width: 440, height: 220 })" />
+      </a>
+      <a slot="header-before" class="title" target="_blank" :href="showUrl" v-text="showTitle" />
       <a slot="header-after" class="more" href="javascript:;">更多</a>
     </VSwitcher>
   </div>
@@ -147,44 +151,25 @@
 <script>
 export default {
   name: 'VCarousel',
-  props: {},
+  props: {
+    list: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
       activeIndex: 0
     }
   },
   computed: {
-    headers() {
-      return [
-        {
-          text: '',
-          title: '成名必备！',
-          color: 'rgba(21,174,103,.5)'
-        },
-        {
-          text: '',
-          title: '花泽香菜，甜美来袭！',
-          color: 'rgba(255,230,135,.5)'
-        },
-        {
-          text: '',
-          title: '鸡鸣紫陌曙光寒，水转皇州春色阑',
-          color: 'rgba(195,123,177,.5)'
-        },
-        {
-          text: '',
-          title: '请查收您的追番清单!',
-          color: 'rgba(125,205,244,.5)'
-        },
-        {
-          text: '',
-          title: '欢迎来到天生制造狂的世界',
-          color: 'rgba(195,123,177,.5)'
-        }
-      ]
-    },
     showTitle() {
-      return this.headers[this.activeIndex].title
+      const item = this.list[this.activeIndex]
+      return item ? item.title : ''
+    },
+    showUrl() {
+      const item = this.list[this.activeIndex]
+      return item ? this.convertUrl(item.link) : ''
     }
   },
   watch: {},
@@ -193,6 +178,10 @@ export default {
   methods: {
     handleChange(index) {
       this.activeIndex = index
+    },
+    convertUrl(url) {
+      // TODO：from calibur
+      return url
     }
   }
 }
