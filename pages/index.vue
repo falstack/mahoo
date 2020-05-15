@@ -22,7 +22,7 @@
     <div class="v-layout">
       <MenuBar />
       <div class="ssr-modules">
-        <Carousel />
+        <Carousel :list="carousel" />
         <RollRecommended />
       </div>
       <div class="page-modules">
@@ -70,6 +70,7 @@ import RankSwitcher from '~/components-new/RankSwitcher'
 import MainFlowTab from '~/components-new/MainFlowTab'
 import RecommendedSwipe from '~/components-new/RecommendedSwipe'
 import channel from '~/config/channel'
+import { getCarousel } from '~/api/homepageApi'
 
 export default {
   name: 'Homepage',
@@ -88,8 +89,16 @@ export default {
     RecommendedSwipe
   },
   props: {},
+  asyncData({ app, error, params }) {
+    return getCarousel(app, params)
+      .then((carousel) => {
+        return { carousel }
+      })
+      .catch(error)
+  },
   data() {
     return {
+      carousel: [],
       banner: 'https://m1.calibur.tv/default-banner'
     }
   },
