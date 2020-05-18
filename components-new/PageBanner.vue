@@ -18,6 +18,7 @@
     left: 24px;
     bottom: 0;
     z-index: 10;
+    filter: drop-shadow(0 0.2rem 0.75rem rgba(0, 0, 0, .8))
   }
 
   .search-box {
