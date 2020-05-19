@@ -142,7 +142,7 @@
         <span>首页</span>
       </NuxtLink>
     </li>
-    <li v-for="item in menus" :key="item.id" class="menu-item">
+    <li v-for="item in list" :key="item.id" class="menu-item">
       <NuxtLink class="menu-link" to="/">
         <div class="count-wrap">
           <span class="count">{{ item.count | convertCount }}</span>
@@ -150,10 +150,14 @@
         <span v-text="item.name" />
       </NuxtLink>
       <ul class="sub-menu">
-        <li v-for="menu in item.children" :key="menu.id" class="sub-item">
-          <NuxtLink to="/">
-            <span v-text="menu.name" />
-          </NuxtLink>
+        <li v-for="sub in item.children" :key="sub.id" class="sub-item">
+          <a
+            target="_blank"
+            :href="sub.href"
+            :ping="`https://api.calibur.tv/v1/cm/report_menu_click?id=${sub.id}&type=${sub.type}`"
+          >
+            <span v-text="sub.name" />
+          </a>
         </li>
       </ul>
     </li>
@@ -161,9 +165,10 @@
 </template>
 
 <script>
+import { getMenuCounter } from '~/api/homepageApi'
+
 export default {
   name: 'MenuBar',
-  components: {},
   filters: {
     convertCount(value) {
       if (!value) {
@@ -175,51 +180,31 @@ export default {
       return value
     }
   },
-  props: {},
-  data() {
-    return {}
-  },
-  computed: {
-    menus() {
-      return [
-        {
-          id: 0,
-          name: '动画',
-          count: 19,
-          children: [
-            {
-              id: 1,
-              name: 'MAD·AMV'
-            },
-            {
-              id: 2,
-              name: 'MMD·3D'
-            },
-            {
-              id: 3,
-              name: '短片·手书·配音'
-            },
-            {
-              id: 4,
-              name: '特摄'
-            },
-            {
-              id: 5,
-              name: '综合'
-            }
-          ]
-        },
-        {
-          id: 6,
-          cunt: 0,
-          name: '番剧'
-        }
-      ]
+  props: {
+    menu: {
+      type: Array,
+      default: () => []
     }
   },
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {}
+  data() {
+    return {
+      list: this.menu
+    }
+  },
+  mounted() {
+    this.getCounter()
+  },
+  methods: {
+    getCounter() {
+      getMenuCounter(this)
+        .then((obj) => {
+          Object.keys(obj).forEach((key) => {
+            const index = this.list.findIndex(_ => _.id.toString() === key)
+            this.list[index].count = +obj[key]
+          })
+        })
+        .catch(() => {})
+    }
+  }
 }
 </script>
