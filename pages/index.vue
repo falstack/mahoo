@@ -20,7 +20,7 @@
     <PageHeader :background="banner" />
     <PageBanner :background="banner" />
     <div class="v-layout">
-      <MenuBar />
+      <MenuBar :menu="menu" />
       <div class="ssr-modules">
         <Carousel :list="carousel" />
         <RollRecommended />
@@ -70,7 +70,7 @@ import RankSwitcher from '~/components-new/RankSwitcher'
 import MainFlowTab from '~/components-new/MainFlowTab'
 import RecommendedSwipe from '~/components-new/RecommendedSwipe'
 import channel from '~/config/channel'
-import { getCarousel } from '~/api/homepageApi'
+import { getCarousel, getMenuList } from '~/api/homepageApi'
 
 export default {
   name: 'Homepage',
@@ -89,16 +89,23 @@ export default {
     RecommendedSwipe
   },
   props: {},
-  asyncData({ app, error, params }) {
-    return getCarousel(app, params)
-      .then((carousel) => {
-        return { carousel }
+  asyncData({ app, error }) {
+    return Promise.all([
+      getCarousel(app),
+      getMenuList(app)
+    ])
+      .then((data) => {
+        return {
+          carousel: data[0],
+          menu: data[1]
+        }
       })
       .catch(error)
   },
   data() {
     return {
       carousel: [],
+      menu: [],
       banner: 'https://m1.calibur.tv/default-banner'
     }
   },

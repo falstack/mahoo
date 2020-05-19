@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Image Tool for the Editor.js
  * @author CodeX <team@ifmo.su>
