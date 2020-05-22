@@ -154,7 +154,7 @@
           <a
             target="_blank"
             :href="sub.href"
-            :ping="`https://api.calibur.tv/v1/cm/report_menu_click?id=${sub.id}&type=${sub.type}`"
+            :ping="convertPing(sub)"
           >
             <span v-text="sub.name" />
           </a>
@@ -204,6 +204,9 @@ export default {
           })
         })
         .catch(() => {})
+    },
+    convertPing(item) {
+      return `${process.env.API_URL_BROWSER}v1/cm/report_menu_click?id=${item.id}&type=${item.type}`
     }
   }
 }

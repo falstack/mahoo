@@ -64,6 +64,7 @@
     :type="type"
     :query="{ $axios, ...query }"
     :auto="auto"
+    :callback="handleCallback"
     class="homepage-flow"
   >
     <template slot-scope="{ flow }">
@@ -112,6 +113,14 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {}
+  methods: {
+    handleCallback({ data }) {
+      const { result } = data
+      if (!result.length) {
+        return
+      }
+      this.$emit('callback', result)
+    }
+  }
 }
 </script>
