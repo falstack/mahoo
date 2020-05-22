@@ -10,6 +10,10 @@ export const getMixinFlowData = ({ $axios, slug, sort, page, take, rand_id }) =>
   params: { slug, sort, page, take, rand_id }
 })
 
+export const getHotFlowData = ({ $axios, day }) => $axios.$get('v1/flow/spider_hots', {
+  params: { day }
+})
+
 export const getUserRelation = ({ $axios, seen_ids, slug, relation }) => {
   return $axios.$get('v1/user/relation', {
     params: { seen_ids, slug, relation }

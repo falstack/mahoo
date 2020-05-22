@@ -67,12 +67,13 @@
     &-content {
       height: 220px;
 
-      .r-item {
+      .flow-loader {
         height: 220px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
       }
     }
   }
@@ -82,13 +83,24 @@
 <template>
   <div id="roll-recommended">
     <VSwitcher ref="switcher" :headers="['', '', '']" @change="handleChangeRecommended">
-      <div slot="0" class="r-item" style="background-color: rgba(21,174,103,.5)">
+      <!--
+      <HomepageFlow
+        slot="0"
+        func="getHotFlowData"
+        :query="{
+          day: 1
+        }"
+        @callback="handleLoaded"
+      >
+      </HomepageFlow>
+      -->
+      <div slot="0" class="flow-loader" style="background-color: rgba(21,174,103,.5)">
         三日
       </div>
-      <div slot="1" class="r-item" style="background-color: rgba(195,123,177,.5)">
+      <div slot="1" class="flow-loader" style="background-color: rgba(195,123,177,.5)">
         一周
       </div>
-      <div slot="2" class="r-item" style="background-color: rgba(125,205,244,.5)">
+      <div slot="2" class="flow-loader" style="background-color: rgba(125,205,244,.5)">
         昨日
       </div>
     </VSwitcher>
@@ -153,6 +165,9 @@ export default {
     },
     switchRecommended(isNext) {
       isNext ? this.$refs.switcher.next() : this.$refs.switcher.prev()
+    },
+    handleLoaded() {
+      console.log('handleLoaded')
     }
   }
 }
