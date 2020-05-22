@@ -180,8 +180,10 @@
         :query="{
           slug,
           sort: 'activity',
-          take: 10
+          take: 10,
+          rand_id: randId
         }"
+        @callback="handleLoaded"
       >
         <template slot-scope="{ flow }">
           <BilbiliVideoItem
@@ -197,8 +199,10 @@
         :query="{
           slug,
           sort: 'newest',
-          take: 10
+          take: 10,
+          rand_id: randId
         }"
+        @callback="handleLoaded"
       >
         <template slot-scope="{ flow }">
           <BilbiliVideoItem
@@ -215,6 +219,8 @@
 <script>
 import HomepageFlow from '~/components-new/HomepageFlow'
 import BilbiliVideoItem from '~/components-new/BilbiliVideoItem'
+
+const getRandId = () => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9][Math.random() * 9 | 0]
 
 export default {
   name: 'MainFlowTab',
@@ -237,7 +243,9 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      randId: getRandId()
+    }
   },
   computed: {
     headers() {
@@ -269,6 +277,14 @@ export default {
           break
       }
       return result
+    }
+  },
+  methods: {
+    handleLoaded(data) {
+      this.$axios.$post('v1/flow/spider_report', {
+        type: 'visit',
+        id: data.map(_ => _.id).join(',')
+      })
     }
   }
 }

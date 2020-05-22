@@ -137,6 +137,7 @@
         :key="index"
         :slot="index"
         :href="convertUrl(item.link)"
+        :ping="convertPing(item.id)"
         target="_blank"
         class="carousel-item"
       >
@@ -159,7 +160,8 @@ export default {
   },
   data() {
     return {
-      activeIndex: 0
+      activeIndex: 0,
+      reports: []
     }
   },
   computed: {
@@ -172,16 +174,24 @@ export default {
       return item ? this.convertUrl(item.link) : ''
     }
   },
-  watch: {},
-  created() {},
-  mounted() {},
   methods: {
     handleChange(index) {
       this.activeIndex = index
+      if (this.reports.includes(index)) {
+        return
+      }
+      this.reports.push(index)
+      this.$axios.$post('v1/cm/report_banner', {
+        type: 'visit',
+        id: this.list[index].id
+      })
     },
     convertUrl(url) {
       // TODO：from calibur
       return url
+    },
+    convertPing(id) {
+      return `${process.env.API_URL_BROWSER}v1/cm/report_banner?type=click&id=${id}`
     }
   }
 }

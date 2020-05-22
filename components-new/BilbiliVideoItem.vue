@@ -122,7 +122,12 @@
 
 <template>
   <li class="bili-video-item">
-    <a class="poster" target="_blank" :href="href">
+    <a
+      :href="href"
+      :ping="ping"
+      class="poster"
+      target="_blank"
+    >
       <img class="cover" :src="$resizeImage(item.data.poster, { width: 160, height: 100 })">
       <div class="mask">
         <p class="duration" v-text="$utils.formatDuration(item.data.duration)" />
@@ -133,11 +138,11 @@
       <div class="mask">
         <div>
           <i class="view-count" />
-          <span v-text="item.data.visit_count" />
+          <span v-text="$utils.formatNumber(item.data.visit_count)" />
         </div>
         <div>
           <i class="danmu-count" />
-          <span v-text="item.data.danmu_count" />
+          <span v-text="$utils.formatNumber(item.data.danmu_count)" />
         </div>
       </div>
     </div>
@@ -156,6 +161,9 @@ export default {
   computed: {
     href() {
       return `https://www.bilibili.com/av${this.item.model_id}`
+    },
+    ping() {
+      return `${process.env.API_URL_BROWSER}v1/flow/spider_report?type=click&id=${this.item.id}`
     }
   }
 }

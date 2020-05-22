@@ -100,6 +100,21 @@ export const pad = (number) => {
   return number < 10 ? '0' + number : number
 }
 
+export const formatNumber = (n) => {
+  if (!n) {
+    return 0
+  }
+  if (n >= 10000 && n < 100000000) {
+    n = (n / 10000).toFixed(1)
+    return n + '万'
+  } else if (n >= 100000000) {
+    n = (n / 100000000).toFixed(1)
+    return n + '亿'
+  } else {
+    return n
+  }
+}
+
 export const formatDuration = (n) => {
   if (!n) {
     return '00:00'
