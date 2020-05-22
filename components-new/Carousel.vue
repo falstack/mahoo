@@ -161,7 +161,7 @@ export default {
   data() {
     return {
       activeIndex: 0,
-      reports: []
+      reports: [0]
     }
   },
   computed: {
