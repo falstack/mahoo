@@ -59,7 +59,7 @@
       <img class="poster" :src="$resizeImage(item.data.poster, { width: 160, height: 100 })">
       <span class="mask">
         <p class="title" v-text="item.data.title" />
-        <p class="author">UP主：{{ item.data.username }}</p>
+        <p class="author">up主：{{ item.data.username }}</p>
         <p class="play">播放：{{ $utils.formatNumber(item.data.visit_count) }}</p>
       </span>
     </a>
