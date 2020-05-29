@@ -69,12 +69,17 @@
 
       .flow-loader {
         height: 220px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         overflow: hidden;
       }
+    }
+  }
+
+  .rec-rect-item {
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
     }
   }
 }
@@ -83,7 +88,6 @@
 <template>
   <div id="roll-recommended">
     <VSwitcher ref="switcher" :headers="['', '', '']" @change="handleChangeRecommended">
-      <!--
       <HomepageFlow
         slot="0"
         func="getHotFlowData"
@@ -92,17 +96,46 @@
         }"
         @callback="handleLoaded"
       >
+        <ul slot-scope="{ flow }">
+          <RecommendRectItem
+            v-for="item in flow"
+            :key="item.id"
+            :item="item"
+          />
+        </ul>
       </HomepageFlow>
-      -->
-      <div slot="0" class="flow-loader" style="background-color: rgba(21,174,103,.5)">
-        三日
-      </div>
-      <div slot="1" class="flow-loader" style="background-color: rgba(195,123,177,.5)">
-        一周
-      </div>
-      <div slot="2" class="flow-loader" style="background-color: rgba(125,205,244,.5)">
-        昨日
-      </div>
+      <HomepageFlow
+        slot="1"
+        func="getHotFlowData"
+        :query="{
+          day: 3
+        }"
+        @callback="handleLoaded"
+      >
+        <ul slot-scope="{ flow }">
+          <RecommendRectItem
+            v-for="item in flow"
+            :key="item.id"
+            :item="item"
+          />
+        </ul>
+      </HomepageFlow>
+      <HomepageFlow
+        slot="2"
+        func="getHotFlowData"
+        :query="{
+          day: 7
+        }"
+        @callback="handleLoaded"
+      >
+        <ul slot-scope="{ flow }">
+          <RecommendRectItem
+            v-for="item in flow"
+            :key="item.id"
+            :item="item"
+          />
+        </ul>
+      </HomepageFlow>
     </VSwitcher>
     <div class="indicator">
       <button class="btn-prev" @click="switchRecommended(false)">
@@ -116,9 +149,15 @@
 </template>
 
 <script>
+import HomepageFlow from '~/components-new/HomepageFlow'
+import RecommendRectItem from '~/components-new/RecommendRectItem'
+
 export default {
   name: 'RollRecommended',
-  components: {},
+  components: {
+    HomepageFlow,
+    RecommendRectItem
+  },
   props: {},
   data() {
     return {
