@@ -89,10 +89,18 @@ export default {
     RecommendedSwipe
   },
   props: {},
-  asyncData({ app, error }) {
+  asyncData({ app, store, error }) {
     return Promise.all([
       getCarousel(app),
-      getMenuList(app)
+      getMenuList(app),
+      store.dispatch('flow/initData', {
+        func: 'getHotFlowData',
+        type: 'page',
+        query: {
+          day: 1,
+          $axios: app.$axios
+        }
+      })
     ])
       .then((data) => {
         return {
