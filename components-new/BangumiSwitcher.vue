@@ -96,7 +96,7 @@
   }
 
   .header-after {
-    display: block;
+    display: flex;
     border: 1px solid #f25d8e;
     width: 104px;
     height: 36px;
@@ -108,6 +108,9 @@
     transition: 0.1s;
     text-decoration: none;
     margin-left: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       color: #fff;

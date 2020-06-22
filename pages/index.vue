@@ -69,6 +69,7 @@ import BangumiSwitcher from '~/components-new/BangumiSwitcher'
 import RankSwitcher from '~/components-new/RankSwitcher'
 import MainFlowTab from '~/components-new/MainFlowTab'
 import RecommendedSwipe from '~/components-new/RecommendedSwipe'
+import RankDaily from '~/components-new/RankDaily'
 import channel from '~/config/channel'
 import { getCarousel, getMenuList } from '~/api/homepageApi'
 
@@ -86,7 +87,8 @@ export default {
     BangumiSwitcher,
     RankSwitcher,
     MainFlowTab,
-    RecommendedSwipe
+    RecommendedSwipe,
+    RankDaily
   },
   props: {},
   asyncData({ app, store, error }) {

@@ -25,18 +25,6 @@ module.exports = {
         name: 'viewport',
         content: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover'
       },
-      {
-        name: 'theme-color',
-        content: '#ffffff'
-      },
-      {
-        name: 'format-detection',
-        content: 'telephone=no,email=no,address=no'
-      },
-      {
-        name: 'applicable-device',
-        content: 'pc,mobile'
-      },
       { name: 'renderer', content: 'webkit|ie-comp|ie-stand' },
       { name: 'force-rendering', content: 'webkit' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
