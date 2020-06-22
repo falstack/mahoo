@@ -1,0 +1,180 @@
+[
+  {
+    "name": "write",
+    "path": "/write",
+    "component": "/home/runner/work/mahoo/mahoo/pages/write/index.vue",
+    "chunkName": "pages/write/index",
+    "props": false,
+    "_name": "_6b8c1ac3"
+  },
+  {
+    "name": "pin-slug",
+    "path": "/pin/:slug?",
+    "component": "/home/runner/work/mahoo/mahoo/pages/pin/_slug.vue",
+    "chunkName": "pages/pin/_slug",
+    "props": true,
+    "_name": "_7a3ab5f1"
+  },
+  {
+    "name": "user-slug",
+    "path": "/user/:slug?",
+    "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug.vue",
+    "chunkName": "pages/user/_slug",
+    "children": [
+      {
+        "name": "user-slug-draft",
+        "path": "draft",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/draft.vue",
+        "chunkName": "pages/user/_slug/draft",
+        "props": true,
+        "_name": "_a7781f72"
+      },
+      {
+        "name": "user-slug-emotion",
+        "path": "emotion",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/index.vue",
+        "chunkName": "pages/user/_slug/emotion/index",
+        "props": true,
+        "_name": "_8166bf78"
+      },
+      {
+        "name": "user-slug-message",
+        "path": "message",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/message.vue",
+        "chunkName": "pages/user/_slug/message",
+        "props": true,
+        "_name": "_b4942fa6"
+      },
+      {
+        "path": "setting",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/setting.vue",
+        "chunkName": "pages/user/_slug/setting",
+        "children": [
+          {
+            "name": "user-slug-setting",
+            "path": "",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/setting/index.vue",
+            "chunkName": "pages/user/_slug/setting/index",
+            "_name": "_7943400e"
+          },
+          {
+            "name": "user-slug-setting-basic",
+            "path": "basic",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/setting/basic.vue",
+            "chunkName": "pages/user/_slug/setting/basic",
+            "_name": "_e38e0556"
+          },
+          {
+            "name": "user-slug-setting-oauth2",
+            "path": "oauth2",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/setting/oauth2.vue",
+            "chunkName": "pages/user/_slug/setting/oauth2",
+            "_name": "_822f9438"
+          },
+          {
+            "name": "user-slug-setting-spider",
+            "path": "spider",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/setting/spider.vue",
+            "chunkName": "pages/user/_slug/setting/spider",
+            "_name": "_1186034e"
+          }
+        ],
+        "props": true,
+        "_name": "_5b10ac14"
+      },
+      {
+        "path": "social",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/social.vue",
+        "chunkName": "pages/user/_slug/social",
+        "children": [
+          {
+            "name": "user-slug-social",
+            "path": "",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/social/index.vue",
+            "chunkName": "pages/user/_slug/social/index",
+            "_name": "_02a541fa"
+          },
+          {
+            "name": "user-slug-social-followers",
+            "path": "followers",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/social/followers.vue",
+            "chunkName": "pages/user/_slug/social/followers",
+            "_name": "_3c715bbd"
+          },
+          {
+            "name": "user-slug-social-following",
+            "path": "following",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/social/following.vue",
+            "chunkName": "pages/user/_slug/social/following",
+            "_name": "_088dcc39"
+          },
+          {
+            "name": "user-slug-social-friends",
+            "path": "friends",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/social/friends.vue",
+            "chunkName": "pages/user/_slug/social/friends",
+            "_name": "_3107a53d"
+          }
+        ],
+        "props": true,
+        "_name": "_7de73e92"
+      },
+      {
+        "name": "user-slug-timeline",
+        "path": "timeline",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/timeline.vue",
+        "chunkName": "pages/user/_slug/timeline",
+        "props": true,
+        "_name": "_908be1ea"
+      },
+      {
+        "name": "user-slug-emotion-category",
+        "path": "emotion/category",
+        "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/category.vue",
+        "chunkName": "pages/user/_slug/emotion/category",
+        "children": [
+          {
+            "name": "user-slug-emotion-category-bangumi",
+            "path": "bangumi",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/category/bangumi.vue",
+            "chunkName": "pages/user/_slug/emotion/category/bangumi",
+            "_name": "_47f317f4"
+          },
+          {
+            "name": "user-slug-emotion-category-game",
+            "path": "game",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/category/game.vue",
+            "chunkName": "pages/user/_slug/emotion/category/game",
+            "_name": "_0b341b55"
+          },
+          {
+            "name": "user-slug-emotion-category-notebook",
+            "path": "notebook",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/category/notebook.vue",
+            "chunkName": "pages/user/_slug/emotion/category/notebook",
+            "_name": "_785b773e"
+          },
+          {
+            "name": "user-slug-emotion-category-topic",
+            "path": "topic",
+            "component": "/home/runner/work/mahoo/mahoo/pages/user/_slug/emotion/category/topic.vue",
+            "chunkName": "pages/user/_slug/emotion/category/topic",
+            "_name": "_3969a3dc"
+          }
+        ],
+        "props": true,
+        "_name": "_82a58708"
+      }
+    ],
+    "props": true,
+    "_name": "_25f85796"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/runner/work/mahoo/mahoo/pages/index.vue",
+    "chunkName": "pages/index",
+    "props": false,
+    "_name": "_5276389a"
+  }
+]

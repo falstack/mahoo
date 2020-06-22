@@ -153,10 +153,10 @@ export async function setContext (app, context) {
       env: {"API_URL":"http://localhost/","API_URL_BROWSER":"https://api.calibur.tv/","TAGS":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"INJECT":{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"},"SOCKET_HOST":"wss://api.calibur.tv/ws"}
     }
     // Only set once
-    if (context.req) {
+    if (!process.static && context.req) {
       app.context.req = context.req
     }
-    if (context.res) {
+    if (!process.static && context.res) {
       app.context.res = context.res
     }
     if (context.ssrContext) {
@@ -567,7 +567,11 @@ function formatUrl (url, query) {
   let parts = url.split('/')
   let result = (protocol ? protocol + '://' : '//') + parts.shift()
 
-  let path = parts.filter(Boolean).join('/')
+  let path = parts.join('/')
+  if (path === '' && parts.length === 1) {
+    result += '/'
+  }
+
   let hash
   parts = path.split('#')
   if (parts.length === 2) {
@@ -610,4 +614,12 @@ export function addLifecycleHook(vm, hook, fn) {
   if (!vm.$options[hook].includes(fn)) {
     vm.$options[hook].push(fn)
   }
+}
+
+export const urlJoin = function urlJoin () {
+  return [].slice
+    .call(arguments)
+    .join('/')
+    .replace(/\/+/g, '/')
+    .replace(':/', '://')
 }

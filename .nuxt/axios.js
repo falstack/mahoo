@@ -1,8 +1,6 @@
 import Axios from 'axios'
 import defu from 'defu'
 
-const $nuxt = typeof window !== 'undefined' && window['$nuxt']
-
 // Axios.prototype cannot be modified
 const axiosExtra = {
   setBaseURL (baseURL) {

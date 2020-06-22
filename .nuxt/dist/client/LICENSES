@@ -1,5 +1,5 @@
 /*!
-  * vue-router v3.2.0
+  * vue-router v3.3.4
   * (c) 2020 Evan You
   * @license MIT
   */
@@ -69,7 +69,7 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
-/*! For license information please see editor.js.LICENSE */
+/*! For license information please see editor.js.LICENSE.txt */
 
 /**
  * Image Tool for the Editor.js

@@ -1,1 +1,8191 @@
-module.exports=function(e){var t={},n={0:0};function o(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,o),r.l=!0,r.exports}return o.e=function(t){if(0!==n[t]){var o=require("./"+{1:"4bb84972951b6c5ca5c8",2:"917dc99ed53a5d841581",3:"b2f4502b1d4482ba97bb",4:"542ea97f2f66fbc50feb",5:"19fc4048b644cc623ec2",6:"f31513cbe132c851cbe1",7:"b925ea1efce8c66560c2",8:"b35135c802c520dfe218",9:"e4c5412ddb879461ca52",10:"04d177d49735f986f202",11:"54c4e8b71d40bca31b68",12:"79030bb73a220f6c2346",13:"e885dabefcc4c604e3a7",14:"d0fbbd595dd8fb1f3a84",15:"8ed216af3a64ca89580a",16:"be50c54c569a41c599b0",17:"5345417a41d38be6210d",18:"2e855a4e56f29efa2b6d",19:"03f4ce5464acf9ef4fb9",20:"217d069b95ccc98848d0",21:"316b0a7ba36728462798",22:"c686afcc9c6658f1eb9c",23:"654a4f75ea3cd264ead8",24:"9e7dd213271fe849f050",25:"28810c3413ad7ce9d656"}[t]+".js"),r=o.modules,c=o.ids;for(var l in r)e[l]=r[l];for(var i=0;i<c.length;i++)n[c[i]]=0}return Promise.all([])},o.m=e,o.c=t,o.d=function(e,t,n){o.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.t=function(e,t){if(1&t&&(e=o(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)o.d(n,r,function(t){return e[t]}.bind(null,r));return n},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,"a",t),t},o.o=function(object,e){return Object.prototype.hasOwnProperty.call(object,e)},o.p="https://file.calibur.tv/mahoo/",o.oe=function(e){process.nextTick((function(){throw e}))},o(o.s=44)}([function(e,t){e.exports=require("vue")},function(e,t,n){"use strict";function o(e,t,n,o,r,c,l,h){var d,f="function"==typeof e?e.options:e;if(t&&(f.render=t,f.staticRenderFns=n,f._compiled=!0),o&&(f.functional=!0),c&&(f._scopeId="data-v-"+c),l?(d=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),r&&r.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(l)},f._ssrRegister=d):r&&(d=h?function(){r.call(this,(f.functional?this.parent:this).$root.$options.shadowRoot)}:r),d)if(f.functional){f._injectStyles=d;var m=f.render;f.render=function(e,t){return d.call(t),m(e,t)}}else{var v=f.beforeCreate;f.beforeCreate=v?[].concat(v,d):[d]}return{exports:e,options:f}}n.d(t,"a",(function(){return o}))},function(e,t,n){"use strict";n.d(t,"b",(function(){return o})),n.d(t,"j",(function(){return r})),n.d(t,"d",(function(){return c})),n.d(t,"a",(function(){return l})),n.d(t,"c",(function(){return h})),n.d(t,"i",(function(){return d})),n.d(t,"g",(function(){return f})),n.d(t,"e",(function(){return m})),n.d(t,"f",(function(){return v})),n.d(t,"h",(function(){return x}));const o=e=>e.$axios.$post("v1/door/get_user_info"),r=(e,t)=>e.$axios.$post("v1/user/update_info",t),c=(e,{slug:t})=>e.$axios.$get("v1/user/show",{params:{slug:t}}),l=(e,{slug:t,phone:n,password:o,authCode:r})=>e.$axios.$post("v1/door/bind_phone",{slug:t,phone:n,password:o,authCode:r}),h=(e,{slug:t})=>e.$axios.$get("v1/message/total",{params:{slug:t},progress:!1}),d=(e,{phone_number:t,type:n,geetest:o})=>e.$axios.$post("v1/door/message",{phone_number:t,type:n,geetest:o}),f=(e,{access:t,secret:n,authCode:o,inviteCode:r})=>e.$axios.$post("v1/door/register",{access:t,secret:n,authCode:o,inviteCode:r}),m=(e,{access:t,secret:n,remember:o,geetest:r})=>e.$axios.$post("v1/door/login",{access:t,secret:n,remember:o,geetest:r}),v=e=>e.$axios.$post("v1/door/logout"),x=(e,{method:t,access:n,authCode:o,secret:r})=>e.$axios.$post("v1/door/reset_password",{method:t,access:n,authCode:o,secret:r})},function(e,t){e.exports={}},function(e,t,n){"use strict";n.r(t),n.d(t,"convertTA",(function(){return o})),n.d(t,"randomStr",(function(){return r})),n.d(t,"adjustDate",(function(){return c})),n.d(t,"shortenNumber",(function(){return l})),n.d(t,"timeAgo",(function(){return h})),n.d(t,"checkInView",(function(){return d})),n.d(t,"on",(function(){return f})),n.d(t,"off",(function(){return m})),n.d(t,"isTouchDevice",(function(){return v})),n.d(t,"pad",(function(){return x})),n.d(t,"formatNumber",(function(){return _})),n.d(t,"formatDuration",(function(){return w}));const o=(e=-1,t=!1)=>t?"我":0===e?"TA":1===e?"他":2===e?"她":"TA",r=()=>`${Date.now()}-${Math.random().toString(36).substring(3,6)}`,c=time=>{if(/^\d+$/.test(time)&&10===time.toString().length)return new Date(1e3*time);let e=new Date(time);return"Invalid Date"===e.toString()&&(e=new Date(time.replace(/-/g,"/"))),e},l=e=>e>1e3?Math.floor(e/1e3*10)/10+"k":e,h=time=>{const e=c(time),t=Date.now()-e.getTime(),n=[e.getFullYear(),("0"+(e.getMonth()+1)).substr(-2),("0"+e.getDate()).substr(-2),("0"+e.getHours()).substr(-2),("0"+e.getMinutes()).substr(-2)];if(t>31536e6||t<=0)return`${n[0]}-${n[1]}-${n[2]}`;const o=(new Date).setHours(0,0,0,0);return o<e?`今天${n[3]}:${n[4]}`:o-864e5<e?`昨天${n[3]}:${n[4]}`:o-1728e5<e?`前天${n[3]}:${n[4]}`:`${n[1]}-${n[2]} ${n[3]}:${n[4]}`},d=(e,t=1)=>{if(!e)return!1;const rect=e.getBoundingClientRect();return rect.top<window.innerHeight+t&&rect.bottom+t>0&&rect.left<window.innerWidth+t&&rect.right+t>0},f=function(){if("undefined"!=typeof window)return document.addEventListener?function(element,e,t){element&&e&&t&&element.addEventListener(e,t,!1)}:function(element,e,t){element&&e&&t&&element.attachEvent("on"+e,t)}}(),m=function(){if("undefined"!=typeof window)return document.removeEventListener?function(element,e,t){element&&e&&element.removeEventListener(e,t,!1)}:function(element,e,t){element&&e&&element.detachEvent("on"+e,t)}}(),v=()=>"ontouchstart"in document.documentElement,x=e=>e<10?"0"+e:e,_=e=>e?e>=1e4&&e<1e8?(e=(e/1e4).toFixed(1))+"万":e>=1e8?(e=(e/1e8).toFixed(1))+"亿":e:0,w=e=>{if(!e)return"00:00";let t=0,n=0,s=0;if("number"==typeof e)e>=3600&&(t=e/3600|0),e-3600*t>=60&&(n=(e-3600*t)/60|0),s=Math.max(e-3600*t-60*n,0);else{const o=e.split(":");s=o.pop()||0,n=o.pop()||0,t=o.pop()||0}return(t?[x(t),x(n),x(s)]:[x(n),x(s)]).join(":")}},function(e,t){e.exports=require("@calibur/sakura/lib/v-field")},function(e,t){e.exports=require("@calibur/sakura/lib/v-button")},function(e,t){e.exports=require("@calibur/sakura/lib/v-form")},function(e,t){e.exports=require("vue-mixin-store")},function(e,t){e.exports=require("vue-router")},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t,n){"use strict";const o=e=>{if(!e)return"";let t="";return e.split("; ").forEach(e=>{e.startsWith("JWT-TOKEN=")&&(t=e.split("JWT-TOKEN=")[1])}),t};t.a=e=>{let t="";if("undefined"!=typeof window){if(window.__AUTH_TOKEN__)return window.__AUTH_TOKEN__;let e;try{e=JSON.parse(document.querySelector('script[data-name="page-data"]').textContent)}catch(t){e={authToken:""}}t=e.authToken,t||(t=o(document.cookie))}else t=o(e.context.req.headers.cookie);return!t&&e&&(t=e.context.query.token),t=~["undefined","null"].indexOf(t)?"":t,"undefined"!=typeof window&&(window.__AUTH_TOKEN__=t),t}},function(e,t){e.exports={}},function(e,t){e.exports=require("vue-no-ssr")},function(e,t){e.exports=require("axios")},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){},function(e,t){e.exports=require("element-ui/lib/tag")},function(e,t){e.exports=require("vue-client-only")},function(e,t){e.exports=require("vuex")},function(e,t){e.exports=require("element-ui/lib/input")},function(e,t){e.exports=require("element-ui/lib/form-item")},function(e,t){e.exports=require("element-ui/lib/form")},function(e,t){e.exports=require("element-ui/lib/col")},function(e,t){e.exports=require("element-ui/lib/row")},function(e,t){e.exports=require("element-ui/lib/button")},function(e,t){e.exports=require("@calibur/sakura/lib/v-img")},function(e,t,n){"use strict";n.d(t,"b",(function(){return o})),n.d(t,"a",(function(){return r}));const o=(e,{name:t,parent_slug:n})=>e.$axios.$post("v1/tag/create",{name:t,parent_slug:n}),r=(e,{slug:t})=>e.$axios.$get("v1/tag/bookmarks",{params:{slug:t}})},function(e,t,n){e.exports=n.p+"img/b07f58f.jpeg"},function(e,t,n){"use strict";n.r(t),n.d(t,"getUserMessage",(function(){return o})),n.d(t,"getBangumiRelease",(function(){return r})),n.d(t,"getMixinFlowData",(function(){return c})),n.d(t,"getHotFlowData",(function(){return l})),n.d(t,"getUserRelation",(function(){return h})),n.d(t,"getUserDrafts",(function(){return d})),n.d(t,"getUserTimeline",(function(){return f})),n.d(t,"getPinComments",(function(){return m})),n.d(t,"getTagFlows",(function(){return v})),n.d(t,"getATField",(function(){return x})),n.d(t,"getZoneQuestions",(function(){return _})),n.d(t,"getMixinSearch",(function(){return w})),n.d(t,"getTimeline",(function(){return y})),n.d(t,"getFlowRecommendedIndex",(function(){return S})),n.d(t,"tagHottest",(function(){return $})),n.d(t,"getBangumiQuestionTrials",(function(){return C})),n.d(t,"getIdolFans",(function(){return E})),n.d(t,"getBangumiLiker",(function(){return T}));const o=({$axios:e,channel:t,since_id:n,is_up:o,count:r})=>e.$get("v1/message/history",{params:{channel:t,since_id:n,count:r,is_up:o}}),r=({$axios:e})=>e.$get("v1/bangumi/release"),c=({$axios:e,slug:t,sort:n,page:o,take:r,rand_id:c})=>e.$get("v1/flow/spider",{params:{slug:t,sort:n,page:o,take:r,rand_id:c}}),l=({$axios:e,day:t})=>e.$get("v1/flow/spider_hots",{params:{day:t}}),h=({$axios:e,seen_ids:t,slug:n,relation:o})=>e.$get("v1/user/relation",{params:{seen_ids:t,slug:n,relation:o}}),d=({$axios:e,page:t,count:n})=>e.$get("v1/pin/drafts",{params:{page:t,count:n}}),f=({$axios:e,page:t,count:n,slug:o})=>e.$get("v1/user/timeline",{params:{page:t,count:n,slug:o}}),m=({$axios:e,sort:t,slug:n,count:o,last_id:r,seen_ids:c,mode:l,page:h})=>e.$get("v1/comment/list",{params:{sort:t,slug:n,count:o,last_id:r,seen_ids:c,mode:l,page:h}}),v=({$axios:e,slug:t,sort:n,time:time,take:o,seen_ids:r,last_id:c})=>new Promise((l,h)=>{Promise.all([e.$get("v1/flow/pins",{params:{slug:t,sort:n,time:time,take:o,is_up:0,spec_id:"newest"===n?c:r}}),new Promise(e=>setTimeout(e,400))]).then(data=>{l(data[0])}).catch(h)}),x=({$axios:e,page:t,count:n,sort:o,slug:r})=>new Promise((c,l)=>{Promise.all([e.$get("v1/atfield/flow",{params:{page:t,count:n,sort:o,slug:r}}),new Promise(e=>setTimeout(e,400))]).then(data=>{c(data[0])}).catch(l)}),_=({$axios:e,slug:t})=>e.$get("v1/atfield/list",{params:{slug:t}}),w=({$axios:e,page:t,type:n,q:q})=>e.$get("v1/search/mixin",{params:{page:t,type:n,q:q}}),y=({$axios:e,type:t,slug:n})=>e.$get(`v1/${t}/timeline`,{params:{slug:n}}),S=({$axios:e,seen_ids:t})=>e.$get("v1/flow/index",{params:{seen_ids:t}}),$=({$axios:e,page:t,take:n})=>e.$get("v1/tag/hottest",{params:{page:t,take:n}}),C=({$axios:e,page:t,take:n,bangumi_slug:o,user_slug:r,status:c,sort:l})=>e.$get("v1/join/flow",{params:{page:t,take:n,bangumi_slug:o,user_slug:r,status:c,sort:l}}),E=({$axios:e,page:t,take:n,slug:o,sort:r})=>e.$get("v1/idol/fans",{params:{page:t,take:n,slug:o,sort:r}}),T=({$axios:e,page:t,take:n,slug:o})=>e.$get("v1/bangumi/liker",{params:{page:t,take:n,slug:o}})},function(e,t){e.exports=require("querystring")},function(e,t){e.exports=require("node-fetch")},function(e,t){e.exports=require("vue-meta")},function(e,t){e.exports=require("@calibur/sakura/lib/v-radio")},function(e,t){},function(e,t){e.exports=require("defu")},function(e,t){e.exports=require("@calibur/sakura/lib/v-lazyload")},function(e,t,n){e.exports=n(63)},function(e,t,n){e.exports=n.p+"img/d465ab1.jpeg"},function(e,t,n){e.exports=n.p+"img/adea640.jpeg"},function(e,t,n){"use strict";n.r(t);var o=n(10),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t);var o=n(11),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t,n){"use strict";n.r(t);var o=n(12),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t);var o=n(13),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t);var o=n(14),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t);var o=n(15),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t),n.d(t,"state",(function(){return h})),n.d(t,"mutations",(function(){return d})),n.d(t,"actions",(function(){return f})),n.d(t,"getters",(function(){return m}));var o=n(8),r=n.n(o),c=n(36);const l=r.a.FlowStore(c),h=l.state,d=l.mutations,f=l.actions,m=l.getters},function(e,t,n){"use strict";n.r(t),n.d(t,"state",(function(){return r})),n.d(t,"mutations",(function(){return c})),n.d(t,"actions",(function(){return l}));var o=n(34);const r=()=>({myTagsFetched:!1,myTags:[{name:"动漫",slug:"bangumi",children:[]},{name:"游戏",slug:"game",children:[]},{name:"话题",slug:"topic",children:[]},{name:"专栏",slug:"notebook",children:[]}],hottest_tags:[],tags:[]}),c={SET_MY_TAGS_STATE(e){e.myTagsFetched=!0},SET_HOTTEST_TAGS(e,t){e.hottest_tags=t.result},SET_MY_TAGS(e,data){Object.keys(data).forEach(t=>{e.myTags.forEach(e=>{e.slug===t&&(e.children=data[t])})})}},l={async getMyTags({rootState:e,state:t,commit:n}){if(t.myTagsFetched||!e.isAuth)return;n("SET_MY_TAGS_STATE");n("SET_MY_TAGS",await Object(o.a)(this,{slug:e.user.slug}))},getHottestTags({state:e,commit:t}){if(!e.hottest_tags.length)return this.$axios.$get("v1/tag/hottest").then(e=>{t("SET_HOTTEST_TAGS",e)}).catch(()=>{})}}},function(e,t,n){"use strict";n.r(t),n.d(t,"state",(function(){return l})),n.d(t,"mutations",(function(){return d})),n.d(t,"actions",(function(){return f})),n.d(t,"getters",(function(){return m}));var o=n(0),r=n.n(o),c=n(41);const l=()=>({}),h=(e,t)=>`${e}-${t}`,d={set(e,{type:t,data:data,slug:n}={}){let o=!1;Object.keys(data).forEach(n=>{if("object"==typeof data[n]){const o=data[n];Object.keys(o).forEach(e=>{o[e+"_loading"]=!1}),r.a.set(e,`${t}-${n}`,o)}else o=!0,data[n+"_loading"]=!1}),o&&r.a.set(e,`${t}-${n}`,data)},PUSH_USERS(e,{type:t,slug:n,key:o,data:data}){const r=h(t,n),c=o+"_users",l=e[r][c].list,d=data.list.map(e=>e.slug);e[r][c].list=l.filter(e=>!d.includes(e.slug)).concat(data.list),e[r][c].total=data.total,e[r][c].no_more=data.no_more,e[r][c].loading=!1},SET_STATE(e,{type:t,slug:n,key:o,result:r,user:c}){if(0===r)return;const l=h(t,n),d=o+"_users";e[l][o]=r>0,e[l][o+"_loading"]=!1,e[l][d]&&(r>0?(e[l][d].total++,e[l][d].no_more=!1,e[l][d].list.unshift(c)):(e[l][d].total--,e[l][d].list.forEach((t,n)=>{t.slug===c.slug&&e[l][d].list.splice(n,1)})))},SET_STATUS(e,{type:t,slug:n,key:o,value:r}){e[h(t,n)][o+"_users"][r]=!0},SET_LOADING(e,{type:t,slug:n,action:o,result:r}){e[h(t,n)][o+"_loading"]=r}},f={async users({state:e,commit:t},{type:n,slug:o,key:r}){const l=e[h(n,o)][r+"_users"];if(!l.loading&&!l.no_more){t("SET_STATUS",{type:n,key:r,slug:o,value:"loading"});try{t("PUSH_USERS",{type:n,slug:o,key:r,data:await c.users({ctx:this,type:r,slug:o,last_slug:l.list.length?l.list[l.list.length-1].slug:0,model:n,take:15})})}catch(e){t("SET_STATUS",{type:n,key:r,slug:o,value:"error"})}}},async toggle({state:e,commit:t,rootState:n},{type:o,slug:r,action:c,params:l}){if(!e[h(o,r)][c+"_loading"]){t("SET_LOADING",{action:c,type:o,slug:r,result:!0});try{const e=await this.$axios.$post("v1/social/toggle",l),{user:h}=n;return t("SET_STATE",{type:o,key:c,slug:r,result:e,user:{slug:h.slug,nickname:h.nickname,avatar:h.avatar,created_at:parseInt(Date.now()/1e3)}}),{success:!0,result:e}}catch(e){return t("SET_LOADING",{action:c,type:o,slug:r,result:!1}),{success:!1}}}}},m={get:e=>(t,n)=>e[h(t,n)]}},function(e,t){e.exports={}},function(e,t){e.exports={}},function(e,t,n){"use strict";n.r(t);var o=n(17),r=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,(function(){return o[e]}))}(c);t.default=r.a},function(e,t,n){"use strict";n.r(t);var o=n(37),r=n(0),c=n.n(r),l=n(38),h=n.n(l);var d={};function f(e){return e.then(e=>e.default||e)}function m(e){return e.options&&e._Ctor===e||(e.options?(e._Ctor=e,e.extendOptions=e.options):(e=c.a.extend(e))._Ctor=e,!e.options.name&&e.options.__file&&(e.options.name=e.options.__file)),e}function v(e,t=!1,n="components"){return Array.prototype.concat.apply([],e.matched.map((e,o)=>Object.keys(e[n]).map(r=>(t&&t.push(o),e[n][r]))))}function x(e,t){return Promise.all(function(e,t){return Array.prototype.concat.apply([],e.matched.map((e,n)=>Object.keys(e.components).reduce((o,r)=>(e.components[r]?o.push(t(e.components[r],e.instances[r],e,r,n)):delete e.components[r],o),[])))}(e,async(e,n,o,r)=>("function"!=typeof e||e.options||(e=await e()),o.components[r]=e=m(e),"function"==typeof t?t(e,n,o,r):e)))}async function _(e){if(e)return await x(e),{...e,meta:v(e).map((t,n)=>({...t.options.meta,...(e.matched[n]||{}).meta}))}}async function w(e,t){e.context||(e.context={isStatic:!1,isDev:!1,isHMR:!1,app:e,store:e.store,payload:t.payload,error:t.error,base:"/",env:{API_URL:"http://localhost/",API_URL_BROWSER:"https://api.calibur.tv/",TAGS:{newbie:"ugf6",notebook:"uh4f",bangumi:"2he",topic:"3p6",game:"285"},INJECT:{tags:{newbie:"ugf6",notebook:"uh4f",bangumi:"2he",topic:"3p6",game:"285"},author:"冰淤",description:"咔哩吧是一个二次元社区",keywords:"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交",title:"calibur - 天下漫友是一家",name:"calibur",baiduStat:'var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();',baiduPush:"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"},SOCKET_HOST:"wss://api.calibur.tv/ws"}},t.req&&(e.context.req=t.req),t.res&&(e.context.res=t.res),t.ssrContext&&(e.context.ssrContext=t.ssrContext),e.context.redirect=(t,path,n)=>{if(!t)return;e.context._redirected=!0;let o=typeof path;"number"==typeof t||"undefined"!==o&&"object"!==o||(n=path||{},o=typeof(path=t),t=302),"object"===o&&(path=e.router.resolve(path).route.fullPath),/(^[.]{1,2}\/)|(^\/(?!\/))/.test(path)?e.context.next({path:path,query:n,status:t}):(path=function(e,t){let n;const o=e.indexOf("://");-1!==o?(n=e.substring(0,o),e=e.substring(o+3)):e.startsWith("//")&&(e=e.substring(2));let r,c=e.split("/"),l=(n?n+"://":"//")+c.shift(),path=c.filter(Boolean).join("/");c=path.split("#"),2===c.length&&([path,r]=c);l+=path?"/"+path:"",t&&"{}"!==JSON.stringify(t)&&(l+=(2===e.split("?").length?"&":"?")+function(e){return Object.keys(e).sort().map(t=>{const n=e[t];return null==n?"":Array.isArray(n)?n.slice().map(e=>[t,"=",e].join("")).join("&"):t+"="+n}).filter(Boolean).join("&")}(t));return l+=r?"#"+r:"",l}(path,n),e.context.next({path:path,status:t}))},e.context.beforeNuxtRender=e=>t.beforeRenderFns.push(e));const[n,o]=await Promise.all([_(t.route),_(t.from)]);t.route&&(e.context.route=n),t.from&&(e.context.from=o),e.context.next=t.next,e.context._redirected=!1,e.context._errored=!1,e.context.isHMR=!1,e.context.params=e.context.route.params||{},e.context.query=e.context.route.query||{}}function y(e,t){return!e.length||t._redirected||t._errored?Promise.resolve():S(e[0],t).then(()=>y(e.slice(1),t))}function S(e,t){let n;return n=2===e.length?new Promise(n=>{e(t,(function(e,data){e&&t.error(e),n(data=data||{})}))}):e(t),n&&n instanceof Promise&&"function"==typeof n.then?n:Promise.resolve(n)}function $(e,t){return function(e,t){const n=new Array(e.length);for(let i=0;i<e.length;i++)"object"==typeof e[i]&&(n[i]=new RegExp("^(?:"+e[i].pattern+")$",N(t)));return function(t,o){let path="";const data=t||{},r=(o||{}).pretty?T:encodeURIComponent;for(let i=0;i<e.length;i++){const t=e[i];if("string"==typeof t){path+=t;continue}const o=data[t.name||"pathMatch"];let c;if(null==o){if(t.optional){t.partial&&(path+=t.prefix);continue}throw new TypeError('Expected "'+t.name+'" to be defined')}if(Array.isArray(o)){if(!t.repeat)throw new TypeError('Expected "'+t.name+'" to not repeat, but received `'+JSON.stringify(o)+"`");if(0===o.length){if(t.optional)continue;throw new TypeError('Expected "'+t.name+'" to not be empty')}for(let e=0;e<o.length;e++){if(c=r(o[e]),!n[i].test(c))throw new TypeError('Expected all "'+t.name+'" to match "'+t.pattern+'", but received `'+JSON.stringify(c)+"`");path+=(0===e?t.prefix:t.delimiter)+c}}else{if(c=t.asterisk?T(o,!0):r(o),!n[i].test(c))throw new TypeError('Expected "'+t.name+'" to match "'+t.pattern+'", but received "'+c+'"');path+=t.prefix+c}}return path}}(function(e,t){const n=[];let o=0,r=0,path="";const c=t&&t.delimiter||"/";let l;for(;null!=(l=E.exec(e));){const t=l[0],h=l[1],d=l.index;if(path+=e.slice(r,d),r=d+t.length,h){path+=h[1];continue}const f=e[r],m=l[2],v=l[3],x=l[4],_=l[5],w=l[6],y=l[7];path&&(n.push(path),path="");const S=null!=m&&null!=f&&f!==m,$="+"===w||"*"===w,C="?"===w||"*"===w,E=l[2]||c,pattern=x||_;n.push({name:v||o++,prefix:m||"",delimiter:E,optional:C,repeat:$,partial:S,asterisk:Boolean(y),pattern:pattern?O(pattern):y?".*":"[^"+k(E)+"]+?"})}r<e.length&&(path+=e.substr(r));path&&n.push(path);return n}(e,t),t)}function C(e){let t;if(e.message||"string"==typeof e)t=e.message||e;else try{t=JSON.stringify(e,null,2)}catch(n){t=`[${e.constructor.name}]`}return{...e,message:t,statusCode:e.statusCode||e.status||e.response&&e.response.status||500}}const E=new RegExp(["(\\\\.)","([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))"].join("|"),"g");function T(e,t){const n=t?/[?#]/g:/[/?#]/g;return encodeURI(e).replace(n,e=>"%"+e.charCodeAt(0).toString(16).toUpperCase())}function k(e){return e.replace(/([.+*?=^!:${}()[\]|/\\])/g,"\\$1")}function O(e){return e.replace(/([=!:$/()])/g,"\\$1")}function N(e){return e&&e.sensitive?"":"i"}async function I(){if(!this._fetchOnServer)return;try{await this.$options.fetch.call(this)}catch(e){this.$fetchState.error=C(e)}this.$fetchState.pending=!1,this._fetchKey=this.$ssrContext.nuxt.fetch.length;(this.$vnode.data.attrs=this.$vnode.data.attrs||{})["data-fetch-key"]=this._fetchKey,this.$ssrContext.nuxt.fetch.push(this.$fetchState.error?{_error:this.$fetchState.error}:this._data)}var R={beforeCreate(){var e;(e=this).$options&&"function"==typeof e.$options.fetch&&!e.$options.fetch.length&&("function"==typeof this.$options.fetchOnServer?this._fetchOnServer=!1!==this.$options.fetchOnServer.call(this):this._fetchOnServer=!1!==this.$options.fetchOnServer,c.a.util.defineReactive(this,"$fetchState",{pending:!0,error:null,timestamp:Date.now()}),function(e,t,n){e.$options[t]||(e.$options[t]=[]),e.$options[t].includes(n)||e.$options[t].push(n)}(this,"serverPrefetch",I))}},A=n(39),M=n.n(A),j=n(25),L=n.n(j),P=n(18),D=n.n(P),z=n(9),F=n.n(z);const U=()=>{},B=F.a.prototype.push;F.a.prototype.push=function(e,t=U,n){return B.call(this,e,t,n)},c.a.use(F.a);const H={mode:"history",base:decodeURI("/"),linkActiveClass:"nuxt-link-active",linkExactActiveClass:"nuxt-link-exact-active",scrollBehavior:function(e,t,n){let o=!1;const r=v(e);(r.length<2&&r.every(e=>!1!==e.options.scrollToTop)||r.some(e=>e.options.scrollToTop))&&(o={x:0,y:0}),n&&(o=n);const c=window.$nuxt;return e.path===t.path&&e.hash!==t.hash&&c.$nextTick(()=>c.$emit("triggerScroll")),new Promise(t=>{c.$once("triggerScroll",()=>{if(e.hash){let t=e.hash;void 0!==window.CSS&&void 0!==window.CSS.escape&&(t="#"+window.CSS.escape(t.substr(1)));try{document.querySelector(t)&&(o={selector:t})}catch(e){console.warn("Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).")}}t(o)})})},routes:[{path:"/write",component:()=>f(n.e(23).then(n.bind(null,279))),props:!1,name:"write"},{path:"/pin/:slug?",component:()=>f(n.e(2).then(n.bind(null,276))),props:!0,name:"pin-slug"},{path:"/user/:slug?",component:()=>f(n.e(3).then(n.bind(null,280))),props:!0,name:"user-slug",children:[{path:"draft",component:()=>f(n.e(4).then(n.bind(null,281))),props:!0,name:"user-slug-draft"},{path:"emotion",component:()=>f(n.e(10).then(n.bind(null,282))),props:!0,name:"user-slug-emotion"},{path:"message",component:()=>f(n.e(11).then(n.bind(null,277))),props:!0,name:"user-slug-message"},{path:"setting",component:()=>f(n.e(12).then(n.bind(null,283))),props:!0,children:[{path:"",component:()=>f(n.e(14).then(n.bind(null,284))),name:"user-slug-setting"},{path:"basic",component:()=>f(n.e(13).then(n.bind(null,285))),name:"user-slug-setting-basic"},{path:"oauth2",component:()=>f(n.e(15).then(n.bind(null,286))),name:"user-slug-setting-oauth2"},{path:"spider",component:()=>f(n.e(16).then(n.bind(null,287))),name:"user-slug-setting-spider"}]},{path:"social",component:()=>f(n.e(17).then(n.bind(null,288))),props:!0,children:[{path:"",component:()=>f(n.e(21).then(n.bind(null,289))),name:"user-slug-social"},{path:"followers",component:()=>f(n.e(18).then(n.bind(null,290))),name:"user-slug-social-followers"},{path:"following",component:()=>f(n.e(19).then(n.bind(null,291))),name:"user-slug-social-following"},{path:"friends",component:()=>f(n.e(20).then(n.bind(null,292))),name:"user-slug-social-friends"}]},{path:"timeline",component:()=>f(n.e(22).then(n.bind(null,278))),props:!0,name:"user-slug-timeline"},{path:"emotion/category",component:()=>f(n.e(5).then(n.bind(null,293))),props:!0,name:"user-slug-emotion-category",children:[{path:"bangumi",component:()=>f(n.e(6).then(n.bind(null,294))),name:"user-slug-emotion-category-bangumi"},{path:"game",component:()=>f(n.e(7).then(n.bind(null,295))),name:"user-slug-emotion-category-game"},{path:"notebook",component:()=>f(n.e(8).then(n.bind(null,296))),name:"user-slug-emotion-category-notebook"},{path:"topic",component:()=>f(n.e(9).then(n.bind(null,297))),name:"user-slug-emotion-category-topic"}]}]},{path:"/",component:()=>f(n.e(1).then(n.bind(null,275))),props:!1,name:"index"}],fallback:!1};var W={name:"NuxtChild",functional:!0,props:{nuxtChildKey:{type:String,default:""},keepAlive:Boolean,keepAliveProps:{type:Object,default:void 0}},render(e,{parent:t,data:data,props:n}){const o=t.$createElement;data.nuxtChild=!0;const r=t,c=t.$nuxt.nuxt.transitions,l=t.$nuxt.nuxt.defaultTransition;let h=0;for(;t;)t.$vnode&&t.$vnode.data.nuxtChild&&h++,t=t.$parent;data.nuxtChildDepth=h;const d=c[h]||l,f={};K.forEach(e=>{void 0!==d[e]&&(f[e]=d[e])});const m={};if(V.forEach(e=>{"function"==typeof d[e]&&(m[e]=d[e].bind(r))}),!1===d.css){const e=m.leave;(!e||e.length<2)&&(m.leave=(t,n)=>{e&&e.call(r,t),r.$nextTick(n)})}let v=o("routerView",data);return n.keepAlive&&(v=o("keep-alive",{props:n.keepAliveProps},[v])),o("transition",{props:f,on:m},[v])}};const K=["name","mode","appear","css","type","duration","enterClass","leaveClass","appearClass","enterActiveClass","enterActiveClass","leaveActiveClass","appearActiveClass","enterToClass","leaveToClass","appearToClass"],V=["beforeEnter","enter","afterEnter","enterCancelled","beforeLeave","leave","afterLeave","leaveCancelled","beforeAppear","appear","afterAppear","appearCancelled"];var G={name:"NuxtError",props:{error:{type:Object,default:null}},computed:{statusCode(){return"继续操作前请先登录"===this.message?401:"请在APP内打开该页面"===this.message?403:this.error&&this.error.statusCode||404},message(){return this.error&&this.error.message}},mounted(){401===this.statusCode&&(window.location=this.$alias.sign())},methods:{handleLogin(){this.$channel.$emit("sign-in")},toastMessage(){}},head:()=>({title:"出错了"})},Y=n(1);var X=Object(Y.a)(G,(function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{attrs:{id:"error-page"}},[e._ssrNode('<div class="error-main">',"</div>",[401===e.statusCode?e._ssrNode('<div id="error-401">',"</div>",[e._ssrNode("<img"+e._ssrAttr("src",n(45))+' alt="error-401"> <h3>'+e._ssrEscape(e._s(e.message||"请登录后重新访问"))+'</h3> <button class="back">\n        登录\n      </button>')],2):403===e.statusCode?e._ssrNode('<div id="error-403"><img'+e._ssrAttr("src",n(35))+' alt="error-403"> <h3>'+e._ssrEscape(e._s(e.message||"您没有权限访问该页面"))+'</h3> <a href="/" class="back">回到首页</a></div>'):404===e.statusCode?e._ssrNode('<div id="error-404">',"</div>",[e._ssrNode("<img"+e._ssrAttr("src",n(46))+' alt="error-404"> <h3>您要找的页面不存在</h3> <div class="subtitle">\n        不存在的内容，或者正在审核中。\n      </div> '),o("NLink",{staticClass:"back",attrs:{to:"/"}},[e._v("\n        返回首页\n      ")])],2):e.statusCode>=500?e._ssrNode('<div id="error-500">',"</div>",[e._ssrNode("<img"+e._ssrAttr("src",n(35))+' alt="error-500"> <h3>服务器出错了</h3> <div class="subtitle">\n        服务器出了点问题，工程师正在加紧抢修ヽ( ° ▽°)ノ\n      </div> '),o("NLink",{staticClass:"back",attrs:{to:"/"}},[e._v("\n        返回首页\n      ")])],2):e._e()])])}),[],!1,(function(e){var t=n(47);t.__inject__&&t.__inject__(e)}),null,"5eafafce").exports,J={name:"Nuxt",components:{NuxtChild:W,NuxtError:X},props:{nuxtChildKey:{type:String,default:void 0},keepAlive:Boolean,keepAliveProps:{type:Object,default:void 0},name:{type:String,default:"default"}},errorCaptured(e){this.displayingNuxtError&&(this.errorFromNuxtError=e,this.$forceUpdate())},computed:{routerViewKey(){if(void 0!==this.nuxtChildKey||this.$route.matched.length>1)return this.nuxtChildKey||$(this.$route.matched[0].path)(this.$route.params);const[e]=this.$route.matched;if(!e)return this.$route.path;const t=e.components.default;if(t&&t.options){const{options:e}=t;if(e.key)return"function"==typeof e.key?e.key(this.$route):e.key}return/\/$/.test(e.path)?this.$route.path:this.$route.path.replace(/\/$/,"")}},beforeCreate(){c.a.util.defineReactive(this,"nuxt",this.$root.$options.nuxt)},render(e){return this.nuxt.err?this.errorFromNuxtError?(this.$nextTick(()=>this.errorFromNuxtError=!1),e("div",{},[e("h2","An error occured while showing the error page"),e("p","Unfortunately an error occured and while showing the error page another error occured"),e("p","Error details: "+this.errorFromNuxtError.toString()),e("nuxt-link",{props:{to:"/"}},"Go back to home")])):(this.displayingNuxtError=!0,this.$nextTick(()=>this.displayingNuxtError=!1),e(X,{props:{error:this.nuxt.err}})):e("NuxtChild",{key:this.routerViewKey,props:this.$props})}},Q={name:"NuxtLoading",data:()=>({percent:0,show:!1,canSucceed:!0,reversed:!1,skipTimerCount:0,rtl:!1,throttle:200,duration:5e3,continuous:!1}),computed:{left(){return!(!this.continuous&&!this.rtl)&&(this.rtl?this.reversed?"0px":"auto":this.reversed?"auto":"0px")}},beforeDestroy(){this.clear()},methods:{clear(){clearInterval(this._timer),clearTimeout(this._throttle),this._timer=null},start(){return this.clear(),this.percent=0,this.reversed=!1,this.skipTimerCount=0,this.canSucceed=!0,this.throttle?this._throttle=setTimeout(()=>this.startTimer(),this.throttle):this.startTimer(),this},set(e){return this.show=!0,this.canSucceed=!0,this.percent=Math.min(100,Math.max(0,Math.floor(e))),this},get(){return this.percent},increase(e){return this.percent=Math.min(100,Math.floor(this.percent+e)),this},decrease(e){return this.percent=Math.max(0,Math.floor(this.percent-e)),this},pause(){return clearInterval(this._timer),this},resume(){return this.startTimer(),this},finish(){return this.percent=this.reversed?0:100,this.hide(),this},hide(){return this.clear(),setTimeout(()=>{this.show=!1,this.$nextTick(()=>{this.percent=0,this.reversed=!1})},500),this},fail(e){return this.canSucceed=!1,this},startTimer(){this.show||(this.show=!0),void 0===this._cut&&(this._cut=1e4/Math.floor(this.duration)),this._timer=setInterval(()=>{this.skipTimerCount>0?this.skipTimerCount--:(this.reversed?this.decrease(this._cut):this.increase(this._cut),this.continuous&&(this.percent>=100||this.percent<=0)&&(this.skipTimerCount=1,this.reversed=!this.reversed))},100)}},render(e){let t=e(!1);return this.show&&(t=e("div",{staticClass:"nuxt-progress",class:{"nuxt-progress-notransition":this.skipTimerCount>0,"nuxt-progress-failed":!this.canSucceed},style:{width:this.percent+"%",left:this.left}})),t}};var Z=Object(Y.a)(Q,void 0,void 0,!1,(function(e){var t=n(48);t.__inject__&&t.__inject__(e)}),null,"06d04ef8").exports,ee=(n(49),n(50),n(51),n(52),n(3),n(40)),te=n.n(ee),ne=(n(20),n(5)),se=n.n(ne),ie=(n(21),n(6)),oe=n.n(ie),re=(n(22),n(7)),ae=n.n(re),ce=n(2),ue={name:"SignInForm",components:{VForm:ae.a,VButton:oe.a,VField:se.a,VRadio:te.a},data:()=>({form:{access:"",secret:"",remember:!0},rule:{access:{validator:(e,t,n)=>t?11!==t.length?n(new Error("请填写11位手机号")):void n():n(new Error("请填写手机号"))},secret:{validator:(e,t,n)=>""===t?n(new Error("请填写登录密码")):t.length<6?n(new Error("密码不能小于6位")):t.length>16?n(new Error("密码不能大于16位")):void n()}},loading:!1,showOAuth:!0}),methods:{authQQ(){window.location.href="https://api.calibur.tv/callback/oauth2/qq?from=sign"},authWechat(){window.location.href="https://api.calibur.tv/callback/oauth2/wechat?from=sign"},redirect(){return this.$route.query.redirect?this.$route.query.redirect:encodeURIComponent(window.location.href)},login(){this.loading||(this.loading=!0,Object(ce.e)(this,{access:this.form.access,secret:this.form.secret,remember:this.form.remember}).then(e=>{this.$cookie.set("JWT-TOKEN",e,{expires:this.form.remember?365:1}),this.$route.query.redirect?window.location=decodeURIComponent(this.$route.query.redirect):window.location.reload()}).catch(e=>{this.$toast.error(e.message),this.loading=!1}))},showReset(){this.$emit("to-reset")},showRegister(){this.$emit("to-register")}}};var le=Object(Y.a)(ue,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"sign-in-form"},[n("VForm",{attrs:{loading:e.loading,form:e.form,rule:e.rule,error:!1},on:{submit:e.login}},[n("VField",{attrs:{type:"text",placeholder:"手机（填写常用手机号，用于登录）"},model:{value:e.form.access,callback:function(t){e.$set(e.form,"access","string"==typeof t?t.trim():t)},expression:"form.access"}}),e._v(" "),n("VField",{attrs:{type:"password","show-password":"",placeholder:"密码（6-16个字符组成，区分大小写）"},nativeOn:{keydown:function(t){return!t.type.indexOf("key")&&e._k(t.keyCode,"enter",13,t.key,"Enter")?null:e.submitForm(t)}},model:{value:e.form.secret,callback:function(t){e.$set(e.form,"secret","string"==typeof t?t.trim():t)},expression:"form.secret"}}),e._v(" "),n("div",{staticClass:"opt-container"},[n("VRadio",{attrs:{size:"small",label:"记住我"},model:{value:e.form.remember,callback:function(t){e.$set(e.form,"remember",t)},expression:"form.remember"}}),e._v(" "),e.showOAuth?n("ul",{staticClass:"provider"},[n("li",{on:{click:e.authQQ}},[n("i",{staticClass:"iconfont ic-qq"})]),e._v(" "),n("li",{on:{click:e.authWechat}},[n("i",{staticClass:"iconfont ic-v-chat"})])]):n("button",{attrs:{type:"button"},on:{click:function(t){e.showOAuth=!0}}},[e._v("\n        社交账号登录\n      ")])],1),e._v(" "),n("VButton",{attrs:{slot:"submit",loading:e.loading,size:"large",block:"",round:""},slot:"submit"},[e._v("\n      登录\n    ")])],1),e._ssrNode(' <div class="others"><a>忘记密码?&gt;</a> <a>点击注册»</a></div>')],2)}),[],!1,(function(e){var t=n(53);t.__inject__&&t.__inject__(e)}),null,"224ccb1e").exports,he={name:"SignUpForm",components:{VForm:ae.a,VButton:oe.a,VField:se.a},props:{inviteCode:{type:[String,Number],default:""}},data(){return{form:{access:"",secret:"",authCode:"",inviteCode:this.inviteCode},rule:{access:{validator:(e,t,n)=>t?11!==t.length?n(new Error("请填写11位手机号")):/^(0|86|17951)?(1)[0-9]{10}$/.test(t)?void n():n(new Error("错误的手机号格式")):n(new Error("请填写手机号"))},secret:{validator:(e,t,n)=>""===t?n(new Error("请填写登录密码")):t.length<6?n(new Error("密码不能小于6位")):t.length>16?n(new Error("密码不能大于16位")):void n()}},step:0,timeout:0}},computed:{submitBtnText(){return 0===this.step?"注册":1===this.step?"提交中...":2===this.step?"短信已发送":3===this.step?"注册中...":"注册"},submitBtnLoading(){return 1===this.step||3===this.step},submitBtnDisabled(){return 0!==this.timeout&&0===this.step||3===this.step},query(){return this.$route.query},paramsIsOK(){return!!(this.query.uid&&/^\d+$/.test(this.query.uid)&&this.query.time&&/^\d+$/.test(this.query.time)&&Date.now()<=1e3*this.query.time&&this.query.key===this.$md5(`${this.query.uid}-the-world-${this.query.time}`))}},methods:{addInviteForLink(e){let t=e;return this.paramsIsOK?t=`${t}&invite=${this.query.uid}`:"about-invite-id"===this.$route.name&&(t=`${t}&invite=${this.$route.params.id}`),t},qqRegisterLink(){window.location.href=this.addInviteForLink("https://api.calibur.tv/callback/oauth2/qq?from=sign")+"}"},wechatRegisterLink(){window.location.href=this.addInviteForLink("https://api.calibur.tv/callback/oauth2/wechat?from=sign")+"}"},redirect(){return this.$route.query.redirect?this.$route.query.redirect:encodeURIComponent(window.location.href)},submitForm(){0===this.step&&this.getRegisterAuthCode(),2===this.step&&this.openConfirmModal()},async getRegisterAuthCode(){this.step=1;try{await Object(ce.i)(this,{type:"sign_up",phone_number:this.form.access}),this.step=2,this.openConfirmModal()}catch(e){this.$toast.error(e.message),this.step=0}finally{this.timeout=60;const e=setInterval(()=>{--this.timeout||(this.step=0,clearInterval(e))},1e3)}},openConfirmModal(){this.$prompt("请输入收到的验证码","短信已发送",{confirmButtonText:"确定",cancelButtonText:"取消",inputPattern:/^\d{6}$/,inputErrorMessage:"验证码格式不正确"}).then(({value:e})=>{this.form.authCode=e,this.step=3,this.signUp()}).catch(()=>{})},signUp(){Object(ce.g)(this,{access:this.form.access,secret:this.form.secret,authCode:this.form.authCode,inviteCode:this.form.inviteCode}).then(e=>{this.$cookie.set("JWT-TOKEN",e),this.$toast.success("注册成功！").then(()=>{this.$route.query.redirect?window.location=decodeURIComponent(this.$route.query.redirect):window.location.reload()})}).catch(e=>{this.step=0,this.$toast.error(e.message)})},showLogin(){this.$emit("to-login")}}};var de=Object(Y.a)(he,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"sign-up-form"},[n("VForm",{attrs:{loading:e.submitBtnLoading,form:e.form,rule:e.rule,error:!1},on:{submit:e.submitForm}},[n("VField",{attrs:{type:"text",placeholder:"手机（填写常用手机号，用于登录）","auto-complete":"off"},model:{value:e.form.access,callback:function(t){e.$set(e.form,"access","string"==typeof t?t.trim():t)},expression:"form.access"}}),e._v(" "),n("VField",{attrs:{type:"password","show-password":"",placeholder:"密码（6-16个字符组成，区分大小写）","auto-complete":"off"},model:{value:e.form.secret,callback:function(t){e.$set(e.form,"secret","string"==typeof t?t.trim():t)},expression:"form.secret"}}),e._v(" "),e.inviteCode?e._e():n("VField",{attrs:{placeholder:"邀请码（可为空）","auto-complete":"off"},model:{value:e.form.inviteCode,callback:function(t){e.$set(e.form,"inviteCode","string"==typeof t?t.trim():t)},expression:"form.inviteCode"}}),e._v(" "),n("VButton",{attrs:{slot:"submit",loading:e.submitBtnLoading,disabled:e.submitBtnDisabled,size:"large",block:"",round:""},slot:"submit"},[e._v("\n      "+e._s(e.submitBtnText)+"\n      "),e.timeout?[e._v("\n        （"+e._s(e.timeout)+"s 后可重新获取）\n      ")]:e._e()],2)],1),e._ssrNode(' <div class="others"><ul class="provider"><span>社交账号注册</span> <li><i class="iconfont ic-qq"></i></li> <li><i class="iconfont ic-v-chat"></i></li></ul> '+(e.inviteCode?"\x3c!----\x3e":"<a>已有账号»</a>")+"</div>")],2)}),[],!1,(function(e){var t=n(54);t.__inject__&&t.__inject__(e)}),null,"ea587432").exports,pe={name:"ResetPasswordForm",components:{VForm:ae.a,VButton:oe.a,VField:se.a},data:()=>({form:{access:"",secret:"",authCode:""},rule:{access:[{validator:(e,t,n)=>t?11!==t.length?n(new Error("请填写11位手机号")):void n():n(new Error("请填写手机号")),trigger:"blur"}],secret:[{validator:(e,t,n)=>""===t?n(new Error("请填写登录密码")):t.length<6?n(new Error("密码不能小于6位")):t.length>16?n(new Error("密码不能大于16位")):void n(),trigger:"blur"}]},step:0,timeout:0}),computed:{submitBtnText(){return 0===this.step?"立即重置":1===this.step?"提交中...":2===this.step?"短信已发送":3===this.step?"已重置":"立即重置"},submitBtnLoading(){return 1===this.step||3===this.step},submitBtnDisabled(){return 0!==this.timeout&&0===this.step||3===this.step}},methods:{submitForm(){0===this.step&&this.getResetAuthCode(),2===this.step&&this.openConfirmModal()},async getResetAuthCode(){this.step=1;try{await Object(ce.i)(this,{type:"forgot_password",phone_number:this.form.access}),this.step=2,this.openConfirmModal()}catch(e){this.$toast.error(e.message),this.step=0}finally{this.timeout=60;const e=setInterval(()=>{--this.timeout||(this.step=0,clearInterval(e))},1e3)}},openConfirmModal(){this.$prompt("请输入收到的验证码","短信已发送",{confirmButtonText:"确定",cancelButtonText:"取消",inputPattern:/^\d{6}$/,inputErrorMessage:"验证码格式不正确"}).then(({value:e})=>{this.form.authCode=e,this.step=3,this.signReset()}).catch(()=>{})},async signReset(){try{const e=await Object(ce.h)(this,{access:this.form.access,authCode:this.form.authCode,secret:this.form.secret});this.$toast.success(e),this.showLogin()}catch(e){this.$toast.error(e.message)}finally{this.step=0}},showLogin(){this.$emit("to-login")},showRegister(){this.$emit("to-register")}}};var fe={name:"SignDialog",components:{SignUpForm:de,SignInForm:le,ResetPasswordForm:Object(Y.a)(pe,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"reset-password-form"},[n("VForm",{attrs:{loading:e.submitBtnLoading,form:e.form,rule:e.rule},on:{submit:e.submitForm}},[n("VField",{attrs:{type:"text",placeholder:"手机号","auto-complete":"off"},model:{value:e.form.access,callback:function(t){e.$set(e.form,"access","string"==typeof t?t.trim():t)},expression:"form.access"}}),e._v(" "),n("VField",{attrs:{type:"text",placeholder:"新密码","auto-complete":"off"},model:{value:e.form.secret,callback:function(t){e.$set(e.form,"secret","string"==typeof t?t.trim():t)},expression:"form.secret"}}),e._v(" "),n("VButton",{attrs:{slot:"submit",loading:e.submitBtnLoading,disabled:e.submitBtnDisabled,size:"large",block:"",round:""},slot:"submit"},[e._v("\n      "+e._s(e.submitBtnText)+"\n      "),e.timeout?[e._v("\n        （"+e._s(e.timeout)+"s 后可重新获取）\n      ")]:e._e()],2)],1),e._ssrNode(' <div class="others"><a>返回登录&gt;</a> <a>点击注册»</a></div>')],2)}),[],!1,(function(e){var t=n(55);t.__inject__&&t.__inject__(e)}),null,"5d3315f3").exports},data:()=>({canRender:!1,showModal:!1,showSignIn:!1,showSignUp:!1,showReset:!1}),computed:{isGuest(){return!this.$store.state.isAuth}},mounted(){this.canRender=!0,this.$channel.$on("sign-in",()=>{window.screen.width<=768?window.location.href=this.$alias.sign():this.showLogin()}),this.$channel.$on("sign-up",()=>{this.showRegister()})},methods:{showLogin(){this.showReset=!1,this.showModal=!0,this.showSignIn=!0,this.showSignUp=!1},showRegister(){this.showModal=!0,this.showSignUp=!0,this.showSignIn=!1},hiddenSign(){this.showModal=!1,this.showSignIn=!1,this.showSignUp=!1,this.showReset=!1}}};var me=Object(Y.a)(fe,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return e.canRender?n("div",{staticClass:"sign-container"},[e.isGuest?e._ssrNode('<div id="space3D"'+e._ssrClass(null,[e.showModal?"space-enter":"space-leave"])+">","</div>",[e._ssrNode('<div class="sign-modal-wrap">',"</div>",[e._ssrNode("<div"+e._ssrClass("sign-modal sign-in-modal",{"sign-in-init":!e.showSignIn&&!e.showSignUp,"sign-in-show":e.showSignIn&&!e.showSignUp,"sign-in-turn":!e.showSignIn&&e.showSignUp})+">","</div>",[e._ssrNode('<div class="sign-logo"></div> '),n("ResetPasswordForm",{directives:[{name:"show",rawName:"v-show",value:e.showReset,expression:"showReset"}],on:{"to-login":function(t){e.showReset=!1},"to-register":e.showRegister}}),e._ssrNode(" "),n("SignInForm",{directives:[{name:"show",rawName:"v-show",value:!e.showReset,expression:"!showReset"}],on:{"to-reset":function(t){e.showReset=!0},"to-register":e.showRegister}})],2),e._ssrNode(" "),e._ssrNode("<div"+e._ssrClass("sign-modal sign-up-modal",{"sign-up-init":!e.showSignUp&&!e.showSignIn,"sign-up-show":e.showSignUp&&!e.showSignIn,"sign-up-turn":!e.showSignUp&&e.showSignIn})+">","</div>",[e._ssrNode('<div class="sign-logo"></div> '),n("SignUpForm",{on:{"to-login":e.showLogin}})],2)],2)]):e._e()]):e._e()}),[],!1,(function(e){var t=n(56);t.__inject__&&t.__inject__(e)}),null,"79bf5a35").exports,ge=n(16),ve={name:"default",components:{SignDialog:me},mixins:[{async beforeMount(){if(this.$store.state.logging){const e=this.$watch("$store.state.logging",()=>{this.$store.state.isAuth?(this.$channel.$fire("user-signed"),e()):(this.$cookie.remove("JWT-TOKEN"),this.$channel.$fire("user-not-sign"))})}else{const e=Object(ge.a)();this.$store.commit("SET_USER_TOKEN",e);await this.$store.dispatch("initAuth")?(this.$channel.$fire("user-signed"),this.$store.dispatch("getUserRoles")):(this.$cookie.remove("JWT-TOKEN"),this.$channel.$fire("user-not-sign"))}}},{beforeMount(){this.$channel.$when("user-signed",()=>{const e=()=>Date.now()-this.$cache.get("socket-connect-heartbeat",0)<=1e3;setTimeout(()=>{const t=()=>{this.$channel.socketConnect();const e=setInterval(()=>{this.$store.state.socket.isConnected?this.$cache.set("socket-connect-heartbeat",Date.now()):clearInterval(e)},1e3);window.addEventListener("beforeunload",()=>{this.$channel.socketDisconnect()})},n=()=>{const n=setInterval(()=>{e()?Date.now()-this.$cache.get("socket-on-message-time",0)<=1e3&&this.$store.commit("SOCKET_ONMESSAGE",this.$cache.get("socket-on-message-data")):"visible"===document.visibilityState&&(t(),clearInterval(n))},2e3)};e()||"visible"!==document.visibilityState?(this.$store.commit("SOCKET_AUTO_CONNECT"),n()):t()},2e3)})},beforeDestroy(){this.$store.state.socket.isConnected&&this.$channel.socketDisconnect()}}]};const xe={_default:m(Object(Y.a)(ve,(function(){var e=this.$createElement,t=this._self._c||e;return t("div",{attrs:{id:"layout-web"}},[this._ssrNode("<span>","</span>",[t("nuxt")],1),this._ssrNode(" "),t("SignDialog")],2)}),[],!1,null,null,"9d4724dc").exports)};var _e={render(e,t){const n=e("NuxtLoading",{ref:"loading"});if(this.nuxt.err&&X){const e=(X.options||X).layout;e&&this.setLayout("function"==typeof e?e.call(X,this.context):e)}const o=e(this.layout||"nuxt"),r=e("div",{domProps:{id:"__layout"},key:this.layoutName},[o]),c=e("transition",{props:{name:"layout",mode:"out-in"},on:{beforeEnter(e){window.$nuxt.$nextTick(()=>{window.$nuxt.$emit("triggerScroll")})}}},[r]);return e("div",{domProps:{id:"__nuxt"}},[n,c])},data:()=>({isOnline:!0,layout:null,layoutName:"",nbFetching:0}),beforeCreate(){c.a.util.defineReactive(this,"nuxt",this.$options.nuxt)},created(){c.a.prototype.$nuxt=this,this.error=this.nuxt.error,this.context=this.$options.context},mounted(){this.$loading=this.$refs.loading},watch:{"nuxt.err":"errorChanged"},computed:{isOffline(){return!this.isOnline},isFetching(){return this.nbFetching>0}},methods:{refreshOnlineStatus(){0},async refresh(){const e=function(e,t=!1){return v(e,t,"instances")}(this.$route);if(!e.length)return;this.$loading.start();const t=e.map(e=>{const p=[];if(e.$options.fetch&&e.$options.fetch.length&&p.push(S(e.$options.fetch,this.context)),e.$fetch)p.push(e.$fetch());else for(const component of function e(t,n=[]){const o=t.$children||[];for(const t of o)t.$fetch?n.push(t):t.$children&&e(t,n);return n}(e.$vnode.componentInstance))p.push(component.$fetch());return e.$options.asyncData&&p.push(S(e.$options.asyncData,this.context).then(t=>{for(const n in t)c.a.set(e.$data,n,t[n])})),Promise.all(p)});try{await Promise.all(t)}catch(e){this.$loading.fail(e),function(e){c.a.config.errorHandler&&c.a.config.errorHandler(e)}(e),this.error(e)}this.$loading.finish()},errorChanged(){this.nuxt.err&&this.$loading&&(this.$loading.fail&&this.$loading.fail(this.nuxt.err),this.$loading.finish&&this.$loading.finish())},setLayout(e){return e&&xe["_"+e]||(e="default"),this.layoutName=e,this.layout=xe["_"+e],this.layout},loadLayout:e=>(e&&xe["_"+e]||(e="default"),Promise.resolve(xe["_"+e]))},components:{NuxtLoading:Z}},be=n(26),we=n.n(be);c.a.use(we.a);const ye=["state","getters","actions","mutations"];let Se={};Se=function(e,t){if((e=e.default||e).commit)throw new Error(`[nuxt] ${t} should export a method that returns a Vuex instance.`);return"function"!=typeof e&&(e=Object.assign({},e)),Ce(e,t)}(n(64),"store/index.js"),Se.modules=Se.modules||{},Ee(n(57),"flow.js"),Ee(n(58),"global.js"),Ee(n(59),"social.js");const $e=Se instanceof Function?Se:()=>new we.a.Store(Object.assign({strict:!1},Se));function Ce(e,t){if(e.state&&"function"!=typeof e.state){console.warn("'state' should be a method that returns an object in "+t);const n=Object.assign({},e.state);e=Object.assign({},e,{state:()=>n})}return e}function Ee(e,t){e=e.default||e;const n=t.replace(/\.(js|mjs)$/,"").split("/");let o=n[n.length-1];const r="store/"+t;if(e="state"===o?function(e,t){if("function"!=typeof e){console.warn(t+" should export a method that returns an object");const n=Object.assign({},e);return()=>n}return Ce(e,t)}(e,r):Ce(e,r),ye.includes(o)){const t=o;return void ke(Te(Se,n,{isProperty:!0}),e,t)}"index"===o&&(n.pop(),o=n[n.length-1]);const c=Te(Se,n);for(const t of ye)ke(c,e[t],t);!1===e.namespaced&&delete c.namespaced}function Te(e,t,{isProperty:n=!1}={}){if(!t.length||n&&1===t.length)return e;const o=t.shift();return e.modules[o]=e.modules[o]||{},e.modules[o].namespaced=!0,e.modules[o].modules=e.modules[o].modules||{},Te(e.modules[o],t,{isProperty:n})}function ke(e,t,n){t&&("state"===n?e.state=t||e.state:e[n]=Object.assign({},e[n],t))}var Oe=n(19),Ne=n.n(Oe),Ie=n(42),Re=n.n(Ie);"undefined"!=typeof window&&window.$nuxt;const Ae={setBaseURL(e){this.defaults.baseURL=e},setHeader(e,t,n="common"){for(let o of Array.isArray(n)?n:[n]){if(!t)return void delete this.defaults.headers[o][e];this.defaults.headers[o][e]=t}},setToken(e,t,n="common"){const o=e?(t?t+" ":"")+e:null;this.setHeader("Authorization",o,n)},onRequest(e){this.interceptors.request.use(t=>e(t)||t)},onResponse(e){this.interceptors.response.use(t=>e(t)||t)},onRequestError(e){this.interceptors.request.use(void 0,t=>e(t)||Promise.reject(t))},onResponseError(e){this.interceptors.response.use(void 0,t=>e(t)||Promise.reject(t))},onError(e){this.onRequestError(e),this.onResponseError(e)},create(e){return qe(Re()(e,this.defaults))}};for(let e of["request","delete","get","head","options","post","put","patch"])Ae["$"+e]=function(){return this[e].apply(this,arguments).then(e=>e&&e.data)};const qe=e=>{const t=Ne.a.create(e);return t.CancelToken=Ne.a.CancelToken,t.isCancel=Ne.a.isCancel,(e=>{for(let t in Ae)e[t]=Ae[t].bind(e)})(t),t};var Me=(e,t)=>{const n={baseURL:process.env._AXIOS_BASE_URL_||"http://localhost:3000/",headers:{common:{Accept:"application/json, text/plain, */*"},delete:{},get:{},head:{},post:{},put:{},patch:{}}};if(e.req&&e.req.headers){const t={...e.req.headers};for(let e of["accept","host","cf-ray","cf-connecting-ip","content-length","content-md5","content-type"])delete t[e];n.headers.common={...t,...n.headers.common}}n.headers.common["accept-encoding"]="gzip, deflate";const o=qe(n);e.$axios=o,t("axios",o)},je=({$axios:e,app:t})=>{const n="undefined"!=typeof window;e.setToken(Object(ge.a)(t),"Bearer"),e.onRequest(e=>{e.baseURL=n?"https://api.calibur.tv/":"http://localhost/",e.timeout=1e4}),e.onResponse(e=>e.data),e.onError(e=>Promise.reject((e=>{const t={};return/timeout of/.test(e.message)?(t.statusCode=504,t.message="网络请求超时，请重试！",t):e.response?(t.statusCode=e.response.status,t.message=e.response.data.message||"发生错误了，请稍后再试！","string"!=typeof t.message&&(t.message="网络错误，请重试！"),t):(t.statusCode=502,t.message="网络错误，请重试！",t)})(e)))},Le=n(27),Pe=n.n(Le),De=n(28),ze=n.n(De),Fe=n(29),Ue=n.n(Fe),Be=n(24),He=n.n(Be),We=n(30),Ke=n.n(We),Ve=n(31),Ge=n.n(Ve),Ye=n(32),Xe=n.n(Ye),Je=(n(60),n(33)),Qe=n.n(Je),Ze=(n(61),n(43)),et=n.n(Ze);function tt(e,t){var n=function(){},o=function(e){setTimeout(e||n,0)},r=/android/.test(window.navigator.userAgent.toLocaleLowerCase()),c=0;if(e){var l,h,d,element=e.children[0];t=t||{};var f=parseInt(t.startSlide,10)||0,m=t.speed||300,v=t.disabled||!1;t.continuous=void 0===t.continuous||t.continuous;var x,_,w=t.auto||0,y={},S={},$={handleEvent:function(e){switch(e.type){case"touchstart":this.start(e);break;case"touchmove":this.move(e);break;case"touchend":o(this.end(e));break;case"webkitTransitionEnd":case"msTransitionEnd":case"oTransitionEnd":case"otransitionend":case"transitionend":o(this.transitionEnd(e));break;case"resize":o(C)}t.stopPropagation&&e.stopPropagation()},start:function(e){if(!v){var t=e.touches[0];y={x:t.pageX,y:t.pageY,time:+new Date},_=void 0,S={},element.addEventListener("touchmove",this,!1),element.addEventListener("touchend",this,!1)}},move:function(e){if(!v&&!(e.touches.length>1||e.scale&&1!==e.scale)){t.disableScroll&&e.preventDefault();var n=e.touches[0];if(S={x:n.pageX-y.x,y:n.pageY-y.y},void 0===_&&(_=!!(_||Math.abs(S.x)<Math.abs(S.y))),!_){if(e.preventDefault(),r){if(Math.abs(S.x)<3*Math.abs(S.y))return void I()}else e.stopPropagation();if(I(),t.continuous)O(circle(f-1),S.x+h[circle(f-1)],0),O(f,S.x+h[f],0),O(circle(f+1),S.x+h[circle(f+1)],0);else{if(S.x=S.x/(!f&&S.x>0||f===l.length-1&&S.x<0?Math.abs(S.x)/d+1:1),0===f&&S.x>0)return;if(f===element.children.length-1&&S.x<0)return;O(f-1,S.x+h[f-1],0),O(f,S.x+h[f],0),O(f+1,S.x+h[f+1],0)}}}},end:function(){var e=+new Date-y.time,n=Number(e)<250&&Math.abs(S.x)>20||Math.abs(S.x)>d/2,o=!f&&S.x>0||f===l.length-1&&S.x<0;t.continuous&&(o=!1);var r=S.x<0;_||(n&&!o?(r?(t.continuous?(k(circle(f-1),-d,0),k(circle(f+2),d,0)):k(f-1,-d,0),k(f,h[f]-d,m),k(circle(f+1),h[circle(f+1)]-d,m),f=circle(f+1)):(t.continuous?(k(circle(f+1),d,0),k(circle(f-2),-d,0)):k(f+1,d,0),k(f,h[f]+d,m),k(circle(f-1),h[circle(f-1)]+d,m),f=circle(f-1)),c=Date.now(),t.callback&&t.callback(f,l[f])):t.continuous?(k(circle(f-1),-d,m),k(f,0,m),k(circle(f+1),d,m)):(k(f-1,-d,m),k(f,0,m),k(f+1,d,m))),element.removeEventListener("touchmove",$,!1),element.removeEventListener("touchend",$,!1)},transitionEnd:function(e){parseInt(e.target.getAttribute("data-index"),10)===f&&(w&&N(),t.transitionEnd&&t.transitionEnd.call(e,f,l[f]))}};return C(),w&&N(),element.addEventListener("touchstart",$,!1),element.addEventListener("webkitTransitionEnd",$,!1),element.addEventListener("msTransitionEnd",$,!1),element.addEventListener("oTransitionEnd",$,!1),element.addEventListener("otransitionend",$,!1),element.addEventListener("transitionend",$,!1),window.addEventListener("resize",$,!1),{slide:function(e,t){t&&Date.now()-c<=t||(I(),T(e,t))},prev:function(){I(),(t.continuous||f)&&T(f-1)},next:function(){I(),E()}}}function C(){(l=element.children).length<2&&(t.continuous=!1),t.continuous&&l.length<3&&(element.appendChild(l[0].cloneNode(!0)),element.appendChild(element.children[1].cloneNode(!0)),l=element.children),h=new Array(l.length),d=l[0].getBoundingClientRect().width||l[0].offsetWidth,element.style.width=l.length*d+"px",element.parentElement.style.width=d+"px";for(var n=l.length;n--;){var o=l[n];o.style.width=d+"px",o.setAttribute("data-index",n),o.style.left=n*-d+"px",o.style.zIndex=l.length-n,k(n,f>n?-d:f<n?d:0,0)}t.continuous&&(k(circle(f-1),-d,0),k(circle(f+1),d,0)),e.style.visibility="visible"}function E(){(t.continuous||f<l.length-1)&&T(f+1)}function circle(e){return(l.length+e%l.length)%l.length}function T(e,n){if(f!==e){var r=Math.abs(f-e)/(f-e);if(t.continuous){var v=r;(r=-h[circle(e)]/d)!==v&&(e=-r*l.length+e)}for(var x=Math.abs(f-e)-1;x--;)k(circle((e>f?e:f)-x-1),d*r,0);e=circle(e),k(f,d*r,n||m),k(e,0,n||m),t.continuous&&k(circle(e-r),-d*r,0),f=e,o(t.callback&&t.callback(f,l[f])),c=Date.now()}}function k(e,t,n){O(e,t,n),h[e]=t}function O(e,t,n){var o=l[e],style=o&&o.style;style&&(style.webkitTransitionDuration=style.MozTransitionDuration=style.msTransitionDuration=style.OTransitionDuration=style.transitionDuration=n+"ms",style.webkitTransform=style.msTransform=style.MozTransform=style.OTransform="translateX("+t+"px)")}function N(){x=setTimeout(E,w)}function I(){w=0,x&&clearTimeout(x)}}const nt=(e,path)=>{let t=-1;return e.map(e=>e.route).forEach((e,n)=>{path.startsWith(e)&&(t=n)}),t},st=function(){if("undefined"!=typeof window)return document.addEventListener?function(element,e,t){element&&e&&t&&element.addEventListener(e,t,!1)}:function(element,e,t){element&&e&&t&&element.attachEvent("on"+e,t)}}(),it=function(){if("undefined"!=typeof window)return document.removeEventListener?function(element,e,t){element&&e&&element.removeEventListener(e,t,!1)}:function(element,e,t){element&&e&&element.detachEvent("on"+e,t)}}(),ot=(e,t)=>{const n=t?"scrollTop":"scrollLeft";let o=e[t?"pageYOffset":"pageXOffset"];return"number"!=typeof o&&(o=window.document.documentElement[n]),o},at=e=>{let t=e;if(!t)return null;for(;t&&"HTML"!==t.tagName&&"BOYD"!==t.tagName&&1===t.nodeType;){const e=window.getComputedStyle(t).overflowY;if("scroll"===e||"auto"===e)return"HTML"===t.tagName||"BODY"===t.tagName?document:t;t=t.parentNode}return document};var ct={name:"VSwitcher",mixins:[{props:{fixedTop:{type:Number}},data:()=>({isFixed:!1,showFixedShim:!1,fixedShimStyle:{},fixedHeaderStyle:{}}),mounted(){if(void 0!==this.fixedTop){const e=at(this.$el);st(e,"scroll",this.handleScroll),st(e,"resize",this.handleScroll),this.$nextTick(()=>{this.handleScroll()})}},beforeDestroy(){if(void 0!==this.fixedTop){const e=at(this.$el);it(e,"scroll",this.handleScroll),it(e,"resize",this.handleScroll)}},methods:{handleScroll(){const e=this.isFixed,t=ot(window,!0),n=(element=>{const rect=element.getBoundingClientRect(),e=ot(window,!0),t=ot(window),n=window.document.body,o=n.clientTop||0,r=n.clientLeft||0;return{top:rect.top+e-o,left:rect.left+t-r}})(this.$el);n.top-this.fixedTop<t&&!e?(this.isFixed=!0,this.fixedShimStyle={width:this.$refs.headerWrap.clientWidth+"px",height:this.$refs.headerWrap.clientHeight+"px"},this.showFixedShim=!0,this.fixedHeaderStyle={top:this.fixedTop+"px",left:n.left+"px",width:this.$el.offsetWidth+"px"},this.$emit("on-fixed",!0)):n.top-this.fixedTop>t&&e&&(this.showFixedShim=!1,this.fixedShimStyle={},this.isFixed=!1,this.fixedHeaderStyle=null,this.$emit("on-fixed",!1))}}}],props:{headers:{type:Array,required:!0},defaultIndex:{type:Number,default:0},routable:{type:Boolean,default:!1},animated:{type:Boolean,default:!1},duration:{type:Number,default:300},align:{type:String,default:"start",validator:e=>~["around","start","center","end","vertical"].indexOf(e)},headerTrigger:{type:String,default:"click",validator:e=>~["click","hover"].indexOf(e)},anchorTrigger:{type:String,default:"click",validator:e=>~["click","hover"].indexOf(e)},anchorPadding:{type:Number,default:0,validator:e=>e>=0},swipe:{type:Boolean,default:!1},autoplay:{type:Number,default:0},contentWidth:{type:String,default:"100%"},headerHeight:{type:Number,default:40,validator:e=>e>=0},sticky:{type:Boolean,default:!1},disabledSwipe:{type:Boolean,default:!1},continuousSwipe:{type:Boolean,default:!1}},data(){let e;return e=this.routable?nt(this.headers,this.$route.path):this.defaultIndex,{cursorInner:!1,touchInner:!1,focusIndex:e,anchorStyle:{},headerStyle:{},timer:0,headerLeft:0,headerLastPoint:0,contentStartPoint:{x:0,y:0},contentDeltaPoint:{x:0,y:0},swiper:null,lastSlide:0,sizeCache:{tabs:[],header:null,headerSize:0,headerTabsWidth:0,headerWrapWidth:0,headerListWidth:0,headerScrollHeight:0,curScreenIndex:0,maxScreenCount:1}}},computed:{hiddenTabs(){return this.autoplay&&this.headerCount<=1},formatHeaders(){const e=[];return this.headers.forEach((t,n)=>{e.push({text:this._computeItemText(t,n),icon:this._computeItemIcon(t,n)})}),e},headerCount(){return this.headers.length},headerItemStyle(){const e={};return this.autoplay||"vertical"===this.align||(e.height=this.headerHeight+"px",e.lineHeight=this.headerHeight+"px"),"around"===this.align&&(e.width=100/this.headerCount+"%"),e},contentWrapStyle(){const style={};return this.sticky&&(style.paddingTop=this.headerHeight+"px",style.marginTop=`-${this.headerHeight}px`),style},contentStyle(){const style={};return this.swipe||this.animated&&(style.width=100*this.headerCount+"%",style.transform=`translateX(${this.focusIndex/this.headerCount*-100}%)`,style.transitionDuration=this.duration+"ms"),style},notTouchDevice:()=>"undefined"==typeof document||!("ontouchstart"in document.documentElement)},beforeMount(){this.routable&&this.$watch("$route",e=>{const t=nt(this.headers,e.path);t<0?(this.focusIndex=-1,this._resetAnchorStyle()):this._handleTabSwitch(t,!0)}),this.$watch("headers",e=>{this.$nextTick(()=>{const t=this.focusIndex;this._cacheComponentSize(),this.routable&&(this.focusIndex=nt(e,this.$route.path)),t!==this.focusIndex&&(this._computeAnchorStyle(this.focusIndex),this._computeHeaderStyle(t))})}),this.$watch("focusIndex",(e,t)=>{this._computeAnchorStyle(e),this._computeHeaderStyle(t),this.$emit("change",e)})},mounted(){this.$nextTick(()=>{this._cacheComponentSize(),this._initSwipe(),this._initCarousel(),this.$emit("change",this.focusIndex),this.$nextTick(()=>{this._computeAnchorStyle(this.focusIndex),this._computeHeaderStyle(0)}),st(window,"resize",this._cacheComponentSize)})},beforeDestroy(){it(window,"resize",this._cacheComponentSize),this.timer&&window.clearInterval(this.timer)},methods:{_initCarousel(){this.autoplay&&(this.timer=window.setInterval(()=>{if(!(Date.now()-this.lastSlide<this.duration)){if(this.notTouchDevice){if(this.cursorInner)return}else if(this.touchInner)return;this._switchTrigger(!0)}},this.autoplay))},_initSwipe(){this.swipe&&(this.swiper=tt(this.$refs.content,{startSlide:this.focusIndex,speed:this.duration,disabled:this.disabledSwipe,continuous:this.continuousSwipe||!!this.autoplay,callback:this._swipeCallback}))},_triggerSwiper(){this.swipe&&this.swiper.slide(this.focusIndex,this.duration)},_computeHeaderStyle(e){if("start"!==this.align||this.sizeCache.maxScreenCount<=1)return;const t=this.focusIndex;if(t<0)return;let n=this.headerLeft;const o=this.sizeCache.headerScrollHeight;if(t)if(t===this.headerCount-1)n=o;else{const o=this._getComponentSize("tabs",0).left,r=this._getComponentSize("tabs",t);if(e>t){const e=this._getComponentSize("tabs",t-1);e.left+n<o&&(n=o-e.left);const c=r.right-o-this.sizeCache.headerTabsWidth;c>n>0&&(n=-c)}else{const e=this._getComponentSize("tabs",t+1).right-o-this.sizeCache.headerTabsWidth;e>0&&(n=-e);const c=r.left-o;n+c<0&&(n=-c)}}else n=0;n<o?n=o:n>0&&(n=0),this._setHeaderScroll(n),this._computeCurrentScreenIndex(n),this.headerLeft=n},_setHeaderScroll(e,t=!0){this.headerStyle={transform:`translateX(${e}px)`,transitionDuration:(t?this.duration:0)+"ms"}},_computePanelStyle(e){return this.swipe?{width:this.contentWidth}:this.animated?{width:100/this.headerCount+"%"}:this.focusIndex!==e?{display:"none"}:{}},_computeMaxScreenCount(){if("start"!==this.align)return;const e=this._getComponentSize("tabs",this.headerCount-1),header=this._getComponentSize("header");if(!e||!header)return;const t=e.left+e.width-header.left;this.sizeCache.maxScreenCount=Math.ceil(t/this.sizeCache.headerListWidth),this.$emit("calc-screen-count",this.sizeCache.maxScreenCount)},_computeAnchorStyle(e,t=0){if(e<0)return;const n=this._getComponentSize("tabs",e);if(!n)return void(t<5&&setTimeout(()=>{this._computeAnchorStyle(this.focusIndex,t+1)},200));const o=+this.anchorPadding,header=this._getComponentSize("header");"vertical"===this.align?this.anchorStyle={height:n.height-2*o+"px",transform:`translateY(${n.top-header.top+o}px)`,transitionDuration:this.duration+"ms"}:this.anchorStyle={width:n.width-2*o+"px",transform:`translateX(${n.left-header.left+o}px)`,transitionDuration:this.duration+"ms"}},_resetAnchorStyle(){this.focusIndex>-1||("vertical"===this.align?this.anchorStyle.transform="translateY(-100%)":this.anchorStyle.transform="translateX(-100%)")},_computeItemText(e,t){let n;if("string"==typeof e)n=e;else if(n=e.label||e.name||e.text,this.focusIndex===t){const t=e["label-active"]||e["name-active"]||e["text-active"];t&&(n=t)}return n},_computeItemIcon(e,t){let n;return"string"!=typeof e&&e.icon?(n="iconfont ic-"+e.icon.replace("ic-",""),this.focusIndex===t&&e["icon-active"]&&(n="iconfont ic-"+e["icon-active"].replace("ic-",""))):n="",n},_swipeCallback(e){isNaN(e)||(this.lastSlide=Date.now(),this._handleTabSwitch(e,!1,!1))},_handleTabSwitch(e,t=!1,n=!0){if(this.routable&&!t)return;let o=e;this.autoplay&&e>=this.headerCount&&(o=(o-this.headerCount)%2?this.headerCount-1:0),this.focusIndex!==o&&(this.focusIndex=o),n&&this._triggerSwiper()},_switchTrigger(e){if(Date.now()-this.lastSlide<this.duration)return;let t;t=e?this.focusIndex===this.headerCount-1?0:this.focusIndex+1:0===this.focusIndex?this.headerCount-1:this.focusIndex-1,this._handleTabSwitch(t)},_handleAnchorTrigger(e){"hover"===this.anchorTrigger&&this._computeAnchorStyle(e),"hover"===this.headerTrigger&&this._handleTabSwitch(e)},_moveHeader(e){const t=-e*this.sizeCache.headerListWidth;this._setHeaderScroll(t),this.headerLeft=t,this.sizeCache.curScreenIndex=e,this.$emit("header-move",{is_first:0===e,is_last:e+1===this.sizeCache.maxScreenCount})},_handleContentTouchStart(e){if(this.swipe||!this.animated)return;const t=e.touches?e.touches[0]:e;this.contentStartPoint={x:t.pageX,y:t.pageY}},_handleContentTouchMove(e){if(this.swipe||!this.animated)return;const t=e.touches?e.touches[0]:e,n=this.contentStartPoint;this.contentDeltaPoint={x:t.pageX-n.x,y:t.pageY-n.y}},_handleContentTouchEnd(){if(this.swipe||!this.animated)return;const e=this.contentDeltaPoint;if(!(Math.abs(e.x)<Math.abs(e.y)||3*Math.abs(e.x)<this.sizeCache.headerWrapWidth)){if(e.x>0){if(!this.focusIndex)return;this.prev()}else{if(this.focusIndex>=this.headerCount-1)return;this.next()}this.lastSlide=Date.now()}},_handleHeaderTouchStart(e){if(this.sizeCache.maxScreenCount<=1)return;const t=e.touches?e.touches[0]:e;this.headerLastPoint="vertical"===this.align?t.pageY:t.pageX},_handleHeaderTouchMove(e){if(this.sizeCache.maxScreenCount<=1)return;const t=e.touches?e.touches[0]:e,n="vertical"===this.align,o=n?t.pageY:t.pageX,r=o-this.headerLastPoint;this.headerLastPoint=o;let c=this.headerLeft+r;n||(c>0&&r>0?c=0:r<0&&c+this.sizeCache.headerSize<this.sizeCache.headerTabsWidth&&(c=this.sizeCache.headerScrollHeight),this.headerLeft=c,this._setHeaderScroll(c,!1))},_handleHeaderTouchEnd(){this.sizeCache.maxScreenCount<=1||this._computeCurrentScreenIndex(this.headerLeft)},_computeCurrentScreenIndex(e){const t=Math.round(Math.abs(e/this.sizeCache.headerWrapWidth));this.sizeCache.curScreenIndex=t,this.$emit("header-move",{is_first:0===t,is_last:t+1===this.sizeCache.maxScreenCount})},_computeComponentSize(){const e=this._getComponentSize("tabs",this.headerCount-1),t=this._getComponentSize("tabs",0);t&&e&&(this.sizeCache.headerSize="vertical"===this.align?t.top-e.bottom:e.right-t.left)},_cacheComponentSize(){const e=this.$refs.tab;if(e){const t=[];e.forEach(e=>{const rect=e.getBoundingClientRect();t.push({top:rect.top,left:rect.left,right:rect.right,bottom:rect.bottom,width:rect.width,height:rect.height})}),this.sizeCache.tabs=t,this._computeComponentSize()}const t=this.$refs.headerWrap;t&&(this.sizeCache.headerWrapWidth=t.clientWidth);const n=this.$refs.tabWrap;n&&(this.sizeCache.headerTabsWidth=n.clientWidth);const header=this.$refs.header;if(header){const e=header.getBoundingClientRect();this.sizeCache.header={top:e.top,left:e.left,right:e.right,bottom:e.bottom},this.sizeCache.headerListWidth=e.width,this._computeMaxScreenCount()}this.sizeCache.headerScrollHeight=this.sizeCache.headerTabsWidth-this.sizeCache.headerSize},_getComponentSize(e,t=-1){const n=this.sizeCache[e];return n?t>=0?n[t]?n[t]:null:n:null},next(){this.swiper?this.swiper.next():this._switchTrigger(!0)},prev(){this.swiper?this.swiper.prev():this._switchTrigger(!1)},forward(){"start"!==this.align||this.sizeCache.curScreenIndex+1>=this.sizeCache.maxScreenCount?this.$emit("header-move",{is_first:!1,is_last:!0}):this._moveHeader(this.sizeCache.curScreenIndex+1)},backward(){"start"!==this.align||0===this.sizeCache.curScreenIndex?this.$emit("header-move",{is_first:!0,is_last:!1}):this._moveHeader(this.sizeCache.curScreenIndex-1)}}};var ut=Object(Y.a)(ct,(function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"v-switcher",class:[{"v-switcher-vertical":"vertical"===e.align},{"v-switcher-sticky":e.sticky}],on:{mouseenter:function(t){e.cursorInner=!0},mouseleave:function(t){e.cursorInner=!1},touchstart:function(t){e.touchInner=!0},touchend:function(t){e.touchInner=!1}}},[e._ssrNode("<div"+e._ssrClass("v-switcher-header-wrap",{"v-switcher-header-wrap-fixed":e.isFixed})+e._ssrStyle(null,[{height:e.headerHeight+"px"},e.fixedHeaderStyle],null)+">","</div>",[e._ssrNode('<div class="v-switcher-header-before">',"</div>",[e._t("header-before")],2),e._ssrNode(" "),e._ssrNode('<div class="v-switcher-header-after">',"</div>",[e._t("header-after")],2),e._ssrNode(" "),e._ssrNode('<div class="v-switcher-header-tabs">',"</div>",[e._ssrNode("<ul"+e._ssrClass("v-switcher-header",["v-switcher-header-"+e.align,"v-switcher-header-translate"])+e._ssrStyle(null,e.headerStyle,{display:e.hiddenTabs?"none":""})+">","</ul>",[e._l(e.formatHeaders,(function(t,o){return e._ssrNode("<li"+e._ssrClass("v-switcher-header-item",{"is-active":o===e.focusIndex})+e._ssrStyle(null,e.headerItemStyle,null)+">","</li>",[e._t("tab-"+o,[t.icon?n("i",{class:t.icon}):e._e(),e._v(" "),n("span",{domProps:{textContent:e._s(t.text)}})])],2)})),e._ssrNode(" "),e._ssrNode('<li class="v-switcher-header-anchor"'+e._ssrStyle(null,e.anchorStyle,null)+">","</li>",[e._t("anchor")],2)],2)])],2),e._ssrNode(" <div"+e._ssrStyle(null,e.fixedShimStyle,{display:e.showFixedShim?"":"none"})+"></div> "),e.routable?e._e():e._ssrNode("<div"+e._ssrClass("v-switcher-content-wrap",{"v-switcher-content-swipe":e.swipe})+e._ssrStyle(null,e.contentWrapStyle,null)+">","</div>",[e._ssrNode("<div"+e._ssrClass("v-switcher-content",[{"v-switcher-content-animated":e.animated&&!e.swipe}])+e._ssrStyle(null,e.contentStyle,null)+">","</div>",e._l(e.headers,(function(t,n){return e._ssrNode('<div class="v-switcher-content-panel"'+e._ssrStyle(null,e._computePanelStyle(n),null)+">","</div>",[e._t(n)],2)})),0)])],2)}),[],!1,(function(e){var t=n(62);t.__inject__&&t.__inject__(e)}),null,"6e4e5534").exports,lt=n(8),ht=n.n(lt);c.a.use(et.a),c.a.component(Qe.a.name,Qe.a),c.a.component(ut.name,ut),c.a.component(ht.a.FlowLoader.name,ht.a.FlowLoader),c.a.component(Xe.a.name,Xe.a),c.a.component(Ge.a.name,Ge.a),c.a.component(Ke.a.name,Ke.a),c.a.component(He.a.name,He.a),c.a.component(Ue.a.name,Ue.a),c.a.component(ze.a.name,ze.a),c.a.component(Pe.a.name,Pe.a);var pt={sign:(e="")=>"/sign?redirect="+encodeURIComponent(e||("undefined"==typeof window?"/":window.location.href)),tag:(e,path="")=>`/tag/${e}/${path}`,user:(e,path="timeline")=>`/user/${e}/${path}`,pin:e=>"/pin/"+e,create:e=>e?"/write?slug="+e:"/write"},ft=n(4),mt=(e,{width:t,height:n,rule:o,webP:r})=>{if(!e)return"";if(/imageMogr2/.test(e)||e.startsWith("data"))return e;const link=e.startsWith("http")?e:"https://m1.calibur.tv/"+e,c=r?"/format/webp":"",l=void 0===o||""===o?1:parseInt(o);if(1===l&&!t||!t&&!n)return`${link}?imageMogr2/auto-orient/strip${c}`;let h,d;const f="undefined"==typeof window?2:window.devicePixelRatio;return 1===l?(h="/w/"+(t*f|0),d=n?"/h/"+(n*f|0):"/h/"+(t*f|0)):(h=t?"/w/"+(t*f|0):"",d=n?"/h/"+(n*f|0):""),`${link}?imageMogr2/auto-orient/strip|imageView2/${l}${h}${d}${c}`},gt=({store:e})=>{c.a.use({install(t){t.prototype.$alias=pt,t.prototype.$utils=ft,t.prototype.$resizeImage=mt,t.prototype.$hasRole=e.getters.hasRole,t.prototype.$isMine=e.getters.isMine}})};n(23);c.a.component(L.a.name,L.a),c.a.component(D.a.name,{...D.a,render:(e,t)=>D.a.render(e,t)}),c.a.component(W.name,W),c.a.component("NChild",W),c.a.component(J.name,J),c.a.use(M.a,{keyName:"head",attribute:"data-n-head",ssrAttribute:"data-n-head-ssr",tagIDKeyName:"hid"});const vt={name:"page",mode:"out-in",appear:!1,appearClass:"appear",appearActiveClass:"appear-active",appearToClass:"appear-to"};async function xt(e){const t=await new F.a(H),n=$e(e);n.$router=t;const o=n.registerModule;n.registerModule=(path,e,t)=>o.call(n,path,e,Object.assign({preserveState:!1},t));const r={head:{titleTemplate:function(e){return e?e+" - calibur - 天下漫友是一家":"calibur - 天下漫友是一家"},meta:[{charset:"utf-8"},{name:"viewport",content:"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"},{name:"theme-color",content:"#ffffff"},{name:"format-detection",content:"telephone=no,email=no,address=no"},{name:"applicable-device",content:"pc,mobile"},{name:"renderer",content:"webkit|ie-comp|ie-stand"},{name:"force-rendering",content:"webkit"},{"http-equiv":"X-UA-Compatible",content:"IE=edge,chrome=1"},{hid:"description",name:"description",content:"",template:e=>e?e+",咔哩吧是一个二次元社区":"咔哩吧是一个二次元社区"},{hid:"keywords",name:"keywords",content:"",template:e=>e?e+",C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交"}],link:[{rel:"dns-prefetch",href:"https://file.calibur.tv"},{rel:"dns-prefetch",href:"https://m1.calibur.tv"},{rel:"preconnect",href:"https://www.calibur.tv"},{rel:"preconnect",href:"https://api.calibur.tv"},{rel:"icon",type:"image/x-icon",href:"https://file.calibur.tv/favicon.ico"}],bodyAttrs:{id:"calibur"},script:[{src:"https://polyfill.alicdn.com/polyfill.min.js",type:"text/javascript"},{innerHTML:'var _hmt=_hmt||[];(function (){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();',type:"text/javascript",async:!0},{innerHTML:"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();",type:"text/javascript",async:!0}],__dangerouslyDisableSanitizers:["script"],style:[]},store:n,router:t,nuxt:{defaultTransition:vt,transitions:[vt],setTransitions(e){return Array.isArray(e)||(e=[e]),e=e.map(e=>e=e?"string"==typeof e?Object.assign({},vt,{name:e}):Object.assign({},vt,e):vt),this.$options.nuxt.transitions=e,e},err:null,dateErr:null,error(t){t=t||null,r.context._errored=Boolean(t),t=t?C(t):null;let n=r.nuxt;return this&&(n=this.nuxt||this.$options.nuxt),n.dateErr=Date.now(),n.err=t,e&&(e.nuxt.error=t),t}},..._e};n.app=r;const l=e?e.next:e=>r.router.push(e);let h;if(e)h=t.resolve(e.url).route;else{const path=function(base,e){let path=decodeURI(window.location.pathname);return"hash"===e?window.location.hash.replace(/^#\//,""):(base&&0===path.indexOf(base)&&(path=path.slice(base.length)),(path||"/")+window.location.search+window.location.hash)}(t.options.base,t.options.mode);h=t.resolve(path).route}await w(r,{store:n,route:h,next:l,error:r.nuxt.error.bind(r),payload:e?e.payload:void 0,req:e?e.req:void 0,res:e?e.res:void 0,beforeRenderFns:e?e.beforeRenderFns:void 0,ssrContext:e});const d=function(e,t){if(!e)throw new Error("inject(key, value) has no key provided");if(void 0===t)throw new Error(`inject('${e}', value) has no value provided`);r[e="$"+e]=t,n[e]=r[e];const o="__nuxt_"+e+"_installed__";c.a[o]||(c.a[o]=!0,c.a.use(()=>{Object.prototype.hasOwnProperty.call(c.a,e)||Object.defineProperty(c.a.prototype,e,{get(){return this.$root.$options[e]}})}))};return await Me(r.context,d),await je(r.context),await gt(r.context),e&&e.url&&await new Promise((n,o)=>{t.push(e.url,n,()=>{const o=t.afterEach(async(t,c,l)=>{e.url=t.fullPath,r.context.route=await _(t),r.context.params=t.params||{},r.context.query=t.query||{},o(),n()})})}),{store:n,app:r,router:t}}var _t={name:"NuxtLink",extends:c.a.component("RouterLink"),props:{prefetch:{type:Boolean,default:!0},noPrefetch:{type:Boolean,default:!1}}};c.a.config.optionMergeStrategies.serverPrefetch=c.a.config.optionMergeStrategies.created,c.a.__nuxt__fetch__mixin__||(c.a.mixin(R),c.a.__nuxt__fetch__mixin__=!0),c.a.component(_t.name,_t),c.a.component("NLink",_t),global.fetch||(global.fetch=h.a);const bt=()=>new c.a({render:e=>e("div")});const wt=e=>t=>{if(e.redirected=t,!e.res)return void(e.nuxt.serverRendered=!1);t.query=Object(o.stringify)(t.query),t.path=t.path+(t.query?"?"+t.query:"");t.path.startsWith("http"),t.path!==e.url?(e.res.writeHead(t.status,{Location:t.path}),e.res.end()):e.redirected=!1};t.default=async e=>{e.redirected=!1,e.next=wt(e),e.beforeRenderFns=[],e.nuxt={layout:"default",data:[],fetch:[],error:null,state:null,serverRendered:!0,routePath:""};const{app:t,router:n,store:o}=await xt(e),r=new c.a(t);e.nuxt.routePath=t.context.route.path,e.meta=r.$meta(),e.asyncData={};const l=async()=>{await Promise.all(e.beforeRenderFns.map(t=>S(t,{Components:x,nuxtState:e.nuxt}))),e.rendered=()=>{e.nuxt.state=o.state}},h=async()=>{const n=(X.options||X).layout,o="function"==typeof n?n.call(X,t.context):n;return e.nuxt.layout=o||"default",await r.loadLayout(o),r.setLayout(o),await l(),r},f=()=>(t.context.error({statusCode:404,path:e.url,message:"This page could not be found"}),h()),x=v(n.match(e.url));if(o._actions&&o._actions.nuxtServerInit)try{await o.dispatch("nuxtServerInit",t.context)}catch(e){throw console.debug("Error occurred when calling nuxtServerInit: ",e.message),e}if(e.redirected)return bt();if(e.nuxt.error)return h();let _=[];if(_=_.map(e=>"function"==typeof e?e:("function"!=typeof d[e]&&t.context.error({statusCode:500,message:"Unknown middleware "+e}),d[e])),await y(_,t.context),e.redirected)return bt();if(e.nuxt.error)return h();let w=x.length?x[0].options.layout:X.layout;if("function"==typeof w&&(w=w(t.context)),await r.loadLayout(w),e.nuxt.error)return h();if(w=r.setLayout(w),e.nuxt.layout=r.layoutName,_=[],w=m(w),w.options.middleware&&(_=_.concat(w.options.middleware)),x.forEach(e=>{e.options.middleware&&(_=_.concat(e.options.middleware))}),_=_.map(e=>"function"==typeof e?e:("function"!=typeof d[e]&&t.context.error({statusCode:500,message:"Unknown middleware "+e}),d[e])),await y(_,t.context),e.redirected)return bt();if(e.nuxt.error)return h();let $=!0;try{for(const e of x)if("function"==typeof e.options.validate&&($=await e.options.validate(t.context),!$))break}catch(e){return t.context.error({statusCode:e.statusCode||"500",message:e.message}),h()}if(!$)return e._generate&&(e.nuxt.serverRendered=!1),f();if(!x.length)return f();const C=await Promise.all(x.map(n=>{const o=[];if(n.options.asyncData&&"function"==typeof n.options.asyncData){const r=S(n.options.asyncData,t.context);r.then(t=>(e.asyncData[n.cid]=t,function(e,t){if(!t&&e.options.__hasNuxtData)return;const n=e.options._originDataFn||e.options.data||function(){return{}};e.options._originDataFn=n,e.options.data=function(){const data=n.call(this,this);return this.$ssrContext&&(t=this.$ssrContext.asyncData[e.cid]),{...data,...t}},e.options.__hasNuxtData=!0,e._Ctor&&e._Ctor.options&&(e._Ctor.options.data=e.options.data)}(n),t)),o.push(r)}else o.push(null);return n.options.fetch&&n.options.fetch.length?o.push(n.options.fetch(t.context)):o.push(null),Promise.all(o)}));return e.nuxt.data=C.map(e=>e[0]||{}),e.redirected?bt():e.nuxt.error?h():(await l(),r)}},function(e,t,n){"use strict";n.r(t),n.d(t,"state",(function(){return f})),n.d(t,"mutations",(function(){return m})),n.d(t,"actions",(function(){return v})),n.d(t,"getters",(function(){return x}));var o=n(0),r=n.n(o),c=n(2);const l=e=>{try{sessionStorage.setItem("user-item-"+e.slug,JSON.stringify(e))}catch(e){}},h=(e,t,n)=>{if("undefined"!=typeof window)try{localStorage.setItem(e,JSON.stringify(t)),n&&localStorage.setItem(e+"-timeout",Date.now()+1e3*n)}catch(e){}};var d=n(4);const f=()=>({user:{},haveAuthToken:!1,roles:null,isAuth:!1,isLogout:!1,logging:!1,mailbox:{unread_message_total:0,unread_notice_total:0},messageMenu:{list:[],time:""},messageRoom:{},socket:{isConnected:!1,reconnectErr:!1,isMaster:!1}}),m={SET_USER_INFO(e,t){const n=!(!t||!t.slug);e.user=t,e.haveAuthToken=n,e.isAuth=n,e.logging=!1},SET_USER_TOKEN(e,t){e.isLogout||(e.haveAuthToken=!!t)},SET_LOGGING(e){e.logging=!0},USER_LOGOUT(e){e.haveAuthToken=!1,e.isAuth=!1,e.logging=!1,e.isLogout=!0,e.user={}},UPDATE_USER_INFO(e,{key:t,value:n}){r.a.set(e.user,t,n)},SOCKET_AUTO_CONNECT(e){e.socket.isConnected=!0,e.socket.reconnectErr=!1,e.socket.isMaster=!1},SOCKET_ONOPEN(e,t){e.socket.isConnected=!0,e.socket.reconnectErr=!1,e.socket.isMaster=!0},SOCKET_ONCLOSE(e,t){e.socket.isConnected=!1},SOCKET_ONERROR(e,t){e.socket.reconnectErr=!0},SOCKET_ONMESSAGE(e,t){if("unread_total"===t.channel)e.mailbox=t;else if("message-menu"===t.channel){const n=[];t.data.forEach(t=>{e.messageRoom[t.channel]||r.a.set(e.messageRoom,t.channel,{time:"",data:null}),n.push(Object.assign(t,{user:{}}))}),e.messageMenu.list=n,e.messageMenu.time=Object(d.randomStr)()}else e.messageRoom[t.channel].data=t,e.messageRoom[t.channel].time=Object(d.randomStr)();e.socket.isMaster&&(h("socket-on-message-data",t),h("socket-on-message-time",Date.now()))},SOCKET_RECONNECT(e,t){},SOCKET_RECONNECT_ERROR(e){e.socket.reconnectErr=!0},SET_MESSAGE_MENU(e,menu){const t=[];menu.forEach(n=>{e.messageRoom[n.channel]?r.a.set(e.messageRoom,n.channel,{time:Object(d.randomStr)(),data:null}):r.a.set(e.messageRoom,n.channel,{time:"",data:null}),n.user={},t.push(n)}),e.messageMenu.list=t,e.messageMenu.time=Object(d.randomStr)()},UPDATE_MESSAGE_MENU_USER(e,{channel:t,user:n}){e.messageMenu.list.forEach(e=>{e.channel===t&&(e.user=n)})},DELETE_MESSAGE_MENU(e,t){e.messageMenu.list.forEach((n,o)=>{n.channel===t&&e.messageMenu.list.splice(o,1)})},INIT_MESSAGE_ROOM(e,t){r.a.set(e.messageRoom,t,{time:"",data:null})},CLEAR_NOTIFICATION(e,{channel:t,count:n}){e.messageMenu.list.forEach((o,r)=>{o.channel===t&&(e.messageMenu.list[r].count-=n,e.mailbox.unread_message_total-=n)})},SET_USER_ROLE(e,data){e.roles=data}},v={async initAuth({state:e,commit:t}){if(!e.haveAuthToken||e.logging)return null;if(e.user.slug)return e.user;try{t("SET_LOGGING");const e=await Object(c.b)(this);return t("SET_USER_INFO",e),e}catch(e){return t("SET_USER_INFO",{}),null}},async refreshMailbox({state:e,commit:t}){if(e.socket.isConnected)return;t("SOCKET_ONMESSAGE",await Object(c.c)(this,{slug:e.user.slug}))},async getMessageMenu({commit:e}){e("SET_MESSAGE_MENU",await this.$axios.$get("v1/message/menu"))},updateMessageMenu({state:e,commit:t}){const n=e.user.slug;e.messageMenu.list.forEach(async e=>{const o=e.channel.split("@");let r=o[2];r===n&&(r=o[3]);const h=await((e,t)=>{const n=async()=>{const n=await Object(c.d)(e,{slug:t});return n&&l(n),n};try{return sessionStorage.getItem("user-item-"+t)?JSON.parse(sessionStorage.getItem("user-item-"+t)):n()}catch(e){return n()}})(this,r);t("UPDATE_MESSAGE_MENU_USER",{channel:e.channel,user:h})})},getUserRoles({state:e,commit:t}){!e.roles&&e.user&&e.user.title.length&&this.$axios.$get("v1/user/roles").then(data=>{t("SET_USER_ROLE",data)}).catch(()=>{})}},x={isMine:e=>t=>!!e.isAuth&&e.user.slug===t,isAdmin:e=>!!e.isAuth&&e.user.is_admin,hasRole:e=>t=>!!e.user.is_admin||!!e.roles&&~e.roles.indexOf(t)}},function(e,t){e.exports=require("element-ui/lib/alert")},function(e,t){e.exports=require("element-ui/lib/upload")},function(e,t){e.exports=require("element-ui/lib/dialog")},function(e,t){e.exports=require("element-ui/lib/option")},function(e,t){e.exports=require("element-ui/lib/select")},function(e,t){e.exports=require("@codexteam/ajax")},function(e,t){e.exports=require("element-ui/lib/tooltip")},function(e,t){e.exports=require("element-ui/lib/pagination")},function(e,t){e.exports=require("element-ui/lib/popover")},function(e,t){e.exports=require("v-copy")},function(e,t){e.exports=require("element-ui/lib/dropdown-item")},function(e,t){e.exports=require("element-ui/lib/dropdown-menu")},function(e,t){e.exports=require("element-ui/lib/dropdown")},function(e,t){e.exports=require("element-ui/lib/cascader")},function(e,t){e.exports=require("element-ui/lib/loading")},function(e,t){e.exports=require("oh-my-chat")},function(e,t){e.exports=require("@better-scroll/core")},function(e,t){e.exports=require("@better-scroll/mouse-wheel")},function(e,t){e.exports=require("element-ui/lib/date-picker")},function(e,t){e.exports=require("element-ui/lib/radio-group")},function(e,t){e.exports=require("element-ui/lib/radio")},function(e,t){e.exports=require("element-ui/lib/switch")},function(e,t){e.exports=require("element-ui/lib/timeline-item")},function(e,t){e.exports=require("element-ui/lib/timeline")},function(e,t){e.exports=require("throttle-debounce")},function(e,t){e.exports=require("url")},function(e,t){e.exports=require("url-polyfill")},function(e,t){e.exports=require("@editorjs/editorjs")}]);
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	var installedChunks = {
+/******/ 		0: 0
+/******/ 	};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// require() chunk loading for javascript
+/******/
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] !== 0) {
+/******/ 			var chunk = require("./" + ({"1":"pages/index","2":"pages/pin/_slug","3":"pages/user/_slug","4":"pages/user/_slug/draft","5":"pages/user/_slug/emotion/category","6":"pages/user/_slug/emotion/category/bangumi","7":"pages/user/_slug/emotion/category/game","8":"pages/user/_slug/emotion/category/notebook","9":"pages/user/_slug/emotion/category/topic","10":"pages/user/_slug/emotion/index","11":"pages/user/_slug/message","12":"pages/user/_slug/setting","13":"pages/user/_slug/setting/basic","14":"pages/user/_slug/setting/index","15":"pages/user/_slug/setting/oauth2","16":"pages/user/_slug/setting/spider","17":"pages/user/_slug/social","18":"pages/user/_slug/social/followers","19":"pages/user/_slug/social/following","20":"pages/user/_slug/social/friends","21":"pages/user/_slug/social/index","22":"pages/user/_slug/timeline","23":"pages/write/index"}[chunkId]||chunkId) + ".js");
+/******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
+/******/ 			for(var moduleId in moreModules) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 			for(var i = 0; i < chunkIds.length; i++)
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "https://file.calibur.tv/mahoo/";
+/******/
+/******/ 	// uncaught error handler for webpack runtime
+/******/ 	__webpack_require__.oe = function(err) {
+/******/ 		process.nextTick(function() {
+/******/ 			throw err; // catch this error by using import().catch()
+/******/ 		});
+/******/ 	};
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export getRecommendedUsers */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLoginUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return settingProfile; });
+/* unused harmony export settingImage */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getUserInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bindPhone; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getMailboxTotal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return sendMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return logout; });
+/* unused harmony export feedback */
+/* unused harmony export daySignAction */
+/* unused harmony export getUserCard */
+/* unused harmony export getUserBadgeDetail */
+/* unused harmony export report */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return resetPassword; });
+/* unused harmony export readAllMessage */
+/* unused harmony export readMessage */
+/* unused harmony export readNotice */
+/* unused harmony export getNotifications */
+/* unused harmony export getNotificationCount */
+/* unused harmony export getSystemNotice */
+const getRecommendedUsers = ctx => ctx.$axios.$get('user/recommended');
+const getLoginUser = ctx => ctx.$axios.$post('v1/door/get_user_info');
+const settingProfile = (ctx, params) => ctx.$axios.$post('v1/user/update_info', params);
+const settingImage = (ctx, {
+  type,
+  url
+}) => ctx.$axios.$post('user/setting/image', {
+  type,
+  url
+});
+const getUserInfo = (ctx, {
+  slug
+}) => ctx.$axios.$get('v1/user/show', {
+  params: {
+    slug
+  }
+});
+const bindPhone = (ctx, {
+  slug,
+  phone,
+  password,
+  authCode
+}) => ctx.$axios.$post('v1/door/bind_phone', {
+  slug,
+  phone,
+  password,
+  authCode
+});
+const getMailboxTotal = (ctx, {
+  slug
+}) => ctx.$axios.$get('v1/message/total', {
+  params: {
+    slug
+  },
+  progress: false
+});
+const sendMessage = (ctx, {
+  phone_number,
+  type,
+  geetest
+}) => ctx.$axios.$post('v1/door/message', {
+  phone_number,
+  type,
+  geetest
+});
+const register = (ctx, {
+  access,
+  secret,
+  authCode,
+  inviteCode
+}) => ctx.$axios.$post('v1/door/register', {
+  access,
+  secret,
+  authCode,
+  inviteCode
+});
+const login = (ctx, {
+  access,
+  secret,
+  remember,
+  geetest
+}) => ctx.$axios.$post('v1/door/login', {
+  access,
+  secret,
+  remember,
+  geetest
+});
+const logout = ctx => ctx.$axios.$post('v1/door/logout');
+const feedback = (ctx, {
+  type,
+  desc,
+  ua
+}) => ctx.$axios.$post('user/feedback', {
+  type,
+  desc,
+  ua
+});
+const daySignAction = ctx => ctx.$axios.$post('user/daySign');
+const getUserCard = (ctx, {
+  id
+}) => ctx.$axios.$get('user/card', {
+  params: {
+    id
+  }
+});
+const getUserBadgeDetail = (ctx, {
+  user_id,
+  badge_id
+}) => ctx.$axios.$get('user/badge/item', {
+  params: {
+    user_id,
+    badge_id
+  }
+});
+const report = (ctx, {
+  id,
+  type,
+  model,
+  message
+}) => ctx.$axios.$post('report/send', {
+  id,
+  type,
+  model,
+  message
+});
+const resetPassword = (ctx, {
+  method,
+  access,
+  authCode,
+  secret
+}) => ctx.$axios.$post('v1/door/reset_password', {
+  method,
+  access,
+  authCode,
+  secret
+});
+const readAllMessage = ctx => ctx.$axios.$post('user/notification/clear');
+const readMessage = (ctx, {
+  id
+}) => ctx.$axios.$post('user/notification/read', {
+  id
+});
+const readNotice = (ctx, {
+  id
+}) => ctx.$axios.$post('user/notice/mark', {
+  id
+});
+const getNotifications = (ctx, {
+  minId
+}) => ctx.$axios.$get('user/notification/list', {
+  params: {
+    minId
+  }
+});
+const getNotificationCount = ctx => ctx.$axios.$get('user/notification/count');
+const getSystemNotice = ctx => ctx.$axios.$get('user/notice/list');
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertTA", function() { return convertTA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "randomStr", function() { return randomStr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adjustDate", function() { return adjustDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shortenNumber", function() { return shortenNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timeAgo", function() { return timeAgo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkInView", function() { return checkInView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "on", function() { return on; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "off", function() { return off; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTouchDevice", function() { return isTouchDevice; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pad", function() { return pad; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatNumber", function() { return formatNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDuration", function() { return formatDuration; });
+const convertTA = (sex = -1, isMine = false) => {
+  if (isMine) {
+    return '我';
+  } else if (sex === 0) {
+    return 'TA';
+  } else if (sex === 1) {
+    return '他';
+  } else if (sex === 2) {
+    return '她';
+  }
+
+  return 'TA';
+};
+const randomStr = () => {
+  return `${Date.now()}-${Math.random().toString(36).substring(3, 6)}`;
+};
+const adjustDate = time => {
+  if (/^\d+$/.test(time) && time.toString().length === 10) {
+    return new Date(time * 1000);
+  }
+
+  let result = new Date(time);
+
+  if (result.toString() === 'Invalid Date') {
+    result = new Date(time.replace(/-/g, '/'));
+  }
+
+  return result;
+};
+const shortenNumber = num => {
+  return num > 1000 ? `${Math.floor(num / 1000 * 10) / 10}k` : num;
+};
+const timeAgo = time => {
+  const date = adjustDate(time);
+  const delta = Date.now() - date.getTime();
+  const format = [date.getFullYear(), `0${date.getMonth() + 1}`.substr(-2), `0${date.getDate()}`.substr(-2), `0${date.getHours()}`.substr(-2), `0${date.getMinutes()}`.substr(-2)];
+
+  if (delta > 365 * 86400000 || delta <= 0) {
+    return `${format[0]}-${format[1]}-${format[2]}`;
+  }
+
+  const today = new Date().setHours(0, 0, 0, 0);
+
+  if (today < date) {
+    return `今天${format[3]}:${format[4]}`;
+  }
+
+  if (today - 86400000 < date) {
+    return `昨天${format[3]}:${format[4]}`;
+  }
+
+  if (today - 172800000 < date) {
+    return `前天${format[3]}:${format[4]}`;
+  }
+
+  return `${format[1]}-${format[2]} ${format[3]}:${format[4]}`;
+};
+const checkInView = (dom, preload = 1) => {
+  if (!dom) {
+    return false;
+  }
+
+  const rect = dom.getBoundingClientRect();
+  return rect.top < window.innerHeight + preload && rect.bottom + preload > 0 && rect.left < window.innerWidth + preload && rect.right + preload > 0;
+};
+const on = function () {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if (document.addEventListener) {
+    return function (element, event, handler) {
+      if (element && event && handler) {
+        element.addEventListener(event, handler, false);
+      }
+    };
+  }
+
+  return function (element, event, handler) {
+    if (element && event && handler) {
+      element.attachEvent('on' + event, handler);
+    }
+  };
+}();
+const off = function () {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if (document.removeEventListener) {
+    return function (element, event, handler) {
+      if (element && event) {
+        element.removeEventListener(event, handler, false);
+      }
+    };
+  }
+
+  return function (element, event, handler) {
+    if (element && event) {
+      element.detachEvent('on' + event, handler);
+    }
+  };
+}();
+const isTouchDevice = () => 'ontouchstart' in document.documentElement;
+const pad = number => {
+  return number < 10 ? '0' + number : number;
+};
+const formatNumber = n => {
+  if (!n) {
+    return 0;
+  }
+
+  if (n >= 10000 && n < 100000000) {
+    n = (n / 10000).toFixed(1);
+    return n + '万';
+  } else if (n >= 100000000) {
+    n = (n / 100000000).toFixed(1);
+    return n + '亿';
+  } else {
+    return n;
+  }
+};
+const formatDuration = n => {
+  if (!n) {
+    return '00:00';
+  }
+
+  let h = 0;
+  let m = 0;
+  let s = 0;
+
+  if (typeof n === 'number') {
+    if (n >= 3600) {
+      h = n / 3600 | 0;
+    }
+
+    if (n - h * 3600 >= 60) {
+      m = (n - h * 3600) / 60 | 0;
+    }
+
+    s = Math.max(n - h * 3600 - m * 60, 0);
+  } else {
+    const arr = n.split(':');
+    s = arr.pop() || 0;
+    m = arr.pop() || 0;
+    h = arr.pop() || 0;
+  }
+
+  const result = h ? [pad(h), pad(m), pad(s)] : [pad(m), pad(s)];
+  return result.join(':');
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-field");
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-button");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-form");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-mixin-store");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-router");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const parseCookie = cookieStr => {
+  if (!cookieStr) {
+    return '';
+  }
+
+  let token = '';
+  cookieStr.split('; ').forEach(item => {
+    if (item.startsWith('JWT-TOKEN=')) {
+      token = item.split('JWT-TOKEN=')[1];
+    }
+  });
+  return token;
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (app => {
+  let token = '';
+
+  if (typeof window !== 'undefined') {
+    if (window.__AUTH_TOKEN__) {
+      return window.__AUTH_TOKEN__;
+    }
+
+    let pageData;
+
+    try {
+      pageData = JSON.parse(document.querySelector('script[data-name="page-data"]').textContent);
+    } catch (e) {
+      pageData = {
+        authToken: ''
+      };
+    }
+
+    token = pageData.authToken;
+
+    if (!token) {
+      token = parseCookie(document.cookie);
+    }
+  } else {
+    token = parseCookie(app.context.req.headers.cookie);
+  }
+
+  if (!token && app) {
+    token = app.context.query.token;
+  }
+
+  token = ~['undefined', 'null'].indexOf(token) ? '' : token;
+
+  if (typeof window !== 'undefined') {
+    window.__AUTH_TOKEN__ = token;
+  }
+
+  return token;
+});
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-no-ssr");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+// This file is intentionally left empty for noop aliases
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/tag");
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-client-only");
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("vuex");
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/input");
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/form-item");
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/form");
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/col");
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/row");
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/button");
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-img");
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export showTag */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createTag; });
+/* unused harmony export updateTag */
+/* unused harmony export relinkTag */
+/* unused harmony export deleteTag */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bookmarkTags; });
+/* unused harmony export tagChildren */
+const showTag = (ctx, {
+  slug
+}) => ctx.$axios.$get('v1/tag/show', {
+  params: {
+    slug
+  }
+});
+const createTag = (ctx, {
+  name,
+  parent_slug
+}) => ctx.$axios.$post('v1/tag/create', {
+  name,
+  parent_slug
+});
+const updateTag = (ctx, {
+  name,
+  slug,
+  avatar,
+  alias,
+  intro
+}) => ctx.$axios.$post('v1/tag/update', {
+  name,
+  slug,
+  avatar,
+  alias,
+  intro
+});
+const relinkTag = (ctx, {
+  slug,
+  target_slug
+}) => ctx.$axios.$post('v1/tag/relink', {
+  slug,
+  target_slug
+});
+const deleteTag = (ctx, {
+  slug
+}) => ctx.$axios.$post('v1/tag/delete', {
+  slug
+});
+const bookmarkTags = (ctx, {
+  slug
+}) => ctx.$axios.$get('v1/tag/bookmarks', {
+  params: {
+    slug
+  }
+});
+const tagChildren = (ctx, {
+  slug,
+  page,
+  take
+}) => ctx.$axios.$get('v1/tag/children', {
+  params: {
+    slug,
+    page,
+    take
+  }
+});
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/500.b07f58f.jpeg";
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserMessage", function() { return getUserMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBangumiRelease", function() { return getBangumiRelease; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMixinFlowData", function() { return getMixinFlowData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHotFlowData", function() { return getHotFlowData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserRelation", function() { return getUserRelation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserDrafts", function() { return getUserDrafts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserTimeline", function() { return getUserTimeline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPinComments", function() { return getPinComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTagFlows", function() { return getTagFlows; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getATField", function() { return getATField; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getZoneQuestions", function() { return getZoneQuestions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMixinSearch", function() { return getMixinSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeline", function() { return getTimeline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFlowRecommendedIndex", function() { return getFlowRecommendedIndex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tagHottest", function() { return tagHottest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBangumiQuestionTrials", function() { return getBangumiQuestionTrials; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getIdolFans", function() { return getIdolFans; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBangumiLiker", function() { return getBangumiLiker; });
+const getUserMessage = ({
+  $axios,
+  channel,
+  since_id,
+  is_up,
+  count
+}) => {
+  return $axios.$get('v1/message/history', {
+    params: {
+      channel,
+      since_id,
+      count,
+      is_up
+    }
+  });
+};
+const getBangumiRelease = ({
+  $axios
+}) => $axios.$get('v1/bangumi/release');
+const getMixinFlowData = ({
+  $axios,
+  slug,
+  sort,
+  page,
+  take,
+  rand_id
+}) => $axios.$get('v1/flow/spider', {
+  params: {
+    slug,
+    sort,
+    page,
+    take,
+    rand_id
+  }
+});
+const getHotFlowData = ({
+  $axios,
+  day
+}) => $axios.$get('v1/flow/spider_hots', {
+  params: {
+    day
+  }
+});
+const getUserRelation = ({
+  $axios,
+  seen_ids,
+  slug,
+  relation
+}) => {
+  return $axios.$get('v1/user/relation', {
+    params: {
+      seen_ids,
+      slug,
+      relation
+    }
+  });
+};
+const getUserDrafts = ({
+  $axios,
+  page,
+  count
+}) => {
+  return $axios.$get('v1/pin/drafts', {
+    params: {
+      page,
+      count
+    }
+  });
+};
+const getUserTimeline = ({
+  $axios,
+  page,
+  count,
+  slug
+}) => {
+  return $axios.$get('v1/user/timeline', {
+    params: {
+      page,
+      count,
+      slug
+    }
+  });
+};
+const getPinComments = ({
+  $axios,
+  sort,
+  slug,
+  count,
+  last_id,
+  seen_ids,
+  mode,
+  page
+}) => {
+  return $axios.$get('v1/comment/list', {
+    params: {
+      sort,
+      slug,
+      count,
+      last_id,
+      seen_ids,
+      mode,
+      page
+    }
+  });
+};
+const getTagFlows = ({
+  $axios,
+  slug,
+  sort,
+  time,
+  take,
+  seen_ids,
+  last_id
+}) => {
+  const timeout = () => new Promise(resolve => setTimeout(resolve, 400));
+
+  const request = () => $axios.$get('v1/flow/pins', {
+    params: {
+      slug,
+      sort,
+      time,
+      take,
+      is_up: 0,
+      spec_id: sort === 'newest' ? last_id : seen_ids
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    Promise.all([request(), timeout()]).then(data => {
+      resolve(data[0]);
+    }).catch(reject);
+  });
+};
+const getATField = ({
+  $axios,
+  page,
+  count,
+  sort,
+  slug
+}) => {
+  const timeout = () => new Promise(resolve => setTimeout(resolve, 400));
+
+  const request = () => $axios.$get('v1/atfield/flow', {
+    params: {
+      page,
+      count,
+      sort,
+      slug
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    Promise.all([request(), timeout()]).then(data => {
+      resolve(data[0]);
+    }).catch(reject);
+  });
+};
+const getZoneQuestions = ({
+  $axios,
+  slug
+}) => {
+  return $axios.$get('v1/atfield/list', {
+    params: {
+      slug
+    }
+  });
+};
+const getMixinSearch = ({
+  $axios,
+  page,
+  type,
+  q
+}) => {
+  return $axios.$get('v1/search/mixin', {
+    params: {
+      page,
+      type,
+      q
+    }
+  });
+};
+const getTimeline = ({
+  $axios,
+  type,
+  slug
+}) => {
+  return $axios.$get(`v1/${type}/timeline`, {
+    params: {
+      slug
+    }
+  });
+};
+const getFlowRecommendedIndex = ({
+  $axios,
+  seen_ids
+}) => {
+  return $axios.$get('v1/flow/index', {
+    params: {
+      seen_ids
+    }
+  });
+};
+const tagHottest = ({
+  $axios,
+  page,
+  take
+}) => $axios.$get('v1/tag/hottest', {
+  params: {
+    page,
+    take
+  }
+});
+const getBangumiQuestionTrials = ({
+  $axios,
+  page,
+  take,
+  bangumi_slug,
+  user_slug,
+  status,
+  sort
+}) => {
+  return $axios.$get('v1/join/flow', {
+    params: {
+      page,
+      take,
+      bangumi_slug,
+      user_slug,
+      status,
+      sort
+    }
+  });
+};
+const getIdolFans = ({
+  $axios,
+  page,
+  take,
+  slug,
+  sort
+}) => {
+  return $axios.$get('v1/idol/fans', {
+    params: {
+      page,
+      take,
+      slug,
+      sort
+    }
+  });
+};
+const getBangumiLiker = ({
+  $axios,
+  page,
+  take,
+  slug
+}) => {
+  return $axios.$get('v1/bangumi/liker', {
+    params: {
+      page,
+      take,
+      slug
+    }
+  });
+};
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+module.exports = require("querystring");
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+module.exports = require("node-fetch");
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-meta");
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-radio");
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+module.exports = require("defu");
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+module.exports = require("@calibur/sakura/lib/v-lazyload");
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(45);
+module.exports = __webpack_require__(64);
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+global.installComponents = function (component, components) {
+  const options = typeof component.exports === 'function'
+    ? component.exports.extendOptions
+    : component.options
+
+  if (typeof component.exports === 'function') {
+    options.components = component.exports.options.components
+  }
+
+  options.components = options.components || {}
+
+  for (var i in components) {
+    options.components[i] = options.components[i] || components[i]
+  }
+
+
+  if (options.functional) {
+    provideFunctionalComponents(component, options.components)
+  }
+}
+
+const functionalPatchKey = '_functionalComponents'
+
+function provideFunctionalComponents(component, components) {
+  if (component.exports[functionalPatchKey]) {
+    return
+  }
+  component.exports[functionalPatchKey] = true
+
+  const render = component.exports.render
+  component.exports.render = function (h, vm) {
+    return render(h, Object.assign({}, vm, {
+      _c: function (n, a, b) {
+        return vm._c(components[n] || n, a, b)
+      }
+    }))
+  }
+}
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/503.d465ab1.jpeg";
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/404.adea640.jpeg";
+
+/***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_error_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_1_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignDialog_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "state", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
+/* harmony import */ var vue_mixin_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var vue_mixin_store__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_mixin_store__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_flowApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(36);
+
+
+const flow = vue_mixin_store__WEBPACK_IMPORTED_MODULE_0___default.a.FlowStore(_api_flowApi__WEBPACK_IMPORTED_MODULE_1__);
+const state = flow.state;
+const mutations = flow.mutations;
+const actions = flow.actions;
+const getters = flow.getters;
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "state", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony import */ var _api_tagApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
+
+const state = () => ({
+  myTagsFetched: false,
+  myTags: [{
+    name: '动漫',
+    slug: 'bangumi',
+    children: []
+  }, {
+    name: '游戏',
+    slug: 'game',
+    children: []
+  }, {
+    name: '话题',
+    slug: 'topic',
+    children: []
+  }, {
+    name: '专栏',
+    slug: 'notebook',
+    children: []
+  }],
+  hottest_tags: [],
+  tags: []
+});
+const mutations = {
+  SET_MY_TAGS_STATE(state) {
+    state.myTagsFetched = true;
+  },
+
+  SET_HOTTEST_TAGS(state, tags) {
+    state.hottest_tags = tags.result;
+  },
+
+  SET_MY_TAGS(state, data) {
+    Object.keys(data).forEach(type => {
+      state.myTags.forEach(item => {
+        if (item.slug === type) {
+          item.children = data[type];
+        }
+      });
+    });
+  }
+
+};
+const actions = {
+  async getMyTags({
+    rootState,
+    state,
+    commit
+  }) {
+    if (state.myTagsFetched || !rootState.isAuth) {
+      return;
+    }
+
+    commit('SET_MY_TAGS_STATE');
+    const data = await Object(_api_tagApi__WEBPACK_IMPORTED_MODULE_0__[/* bookmarkTags */ "a"])(this, {
+      slug: rootState.user.slug
+    });
+    commit('SET_MY_TAGS', data);
+  },
+
+  getHottestTags({
+    state,
+    commit
+  }) {
+    if (state.hottest_tags.length) {
+      return;
+    }
+
+    return this.$axios.$get('v1/tag/hottest').then(tags => {
+      commit('SET_HOTTEST_TAGS', tags);
+    }).catch(() => {});
+  }
+
+};
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "state", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_toggleApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41);
+/* harmony import */ var _api_toggleApi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_api_toggleApi__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const state = () => ({});
+
+const generateField = (type, slug) => `${type}-${slug}`;
+
+const mutations = {
+  set(state, {
+    type,
+    data,
+    slug
+  } = {}) {
+    let isSingle = false;
+    Object.keys(data).forEach(key => {
+      if (typeof data[key] === 'object') {
+        const subData = data[key];
+        Object.keys(subData).forEach(subKey => {
+          subData[`${subKey}_loading`] = false;
+        });
+        vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(state, `${type}-${key}`, subData);
+      } else {
+        isSingle = true;
+        data[`${key}_loading`] = false;
+      }
+    });
+
+    if (isSingle) {
+      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(state, `${type}-${slug}`, data);
+    }
+  },
+
+  PUSH_USERS(state, {
+    type,
+    slug,
+    key,
+    data
+  }) {
+    const namespace = generateField(type, slug);
+    const prefix = `${key}_users`;
+    const oldList = state[namespace][prefix].list;
+    const newIds = data.list.map(_ => _.slug);
+    state[namespace][prefix].list = oldList.filter(_ => !newIds.includes(_.slug)).concat(data.list);
+    state[namespace][prefix].total = data.total;
+    state[namespace][prefix].no_more = data.no_more;
+    state[namespace][prefix].loading = false;
+  },
+
+  SET_STATE(state, {
+    type,
+    slug,
+    key,
+    result,
+    user
+  }) {
+    if (result === 0) {
+      return;
+    }
+
+    const namespace = generateField(type, slug);
+    const prefix = `${key}_users`;
+    state[namespace][key] = result > 0;
+    state[namespace][`${key}_loading`] = false;
+
+    if (!state[namespace][prefix]) {
+      return;
+    }
+
+    if (result > 0) {
+      state[namespace][prefix].total++;
+      state[namespace][prefix].no_more = false;
+      state[namespace][prefix].list.unshift(user);
+    } else {
+      state[namespace][prefix].total--;
+      state[namespace][prefix].list.forEach((item, index) => {
+        if (item.slug === user.slug) {
+          state[namespace][prefix].list.splice(index, 1);
+        }
+      });
+    }
+  },
+
+  SET_STATUS(state, {
+    type,
+    slug,
+    key,
+    value
+  }) {
+    state[generateField(type, slug)][`${key}_users`][value] = true;
+  },
+
+  SET_LOADING(state, {
+    type,
+    slug,
+    action,
+    result
+  }) {
+    state[generateField(type, slug)][`${action}_loading`] = result;
+  }
+
+};
+const actions = {
+  async users({
+    state,
+    commit
+  }, {
+    type,
+    slug,
+    key
+  }) {
+    const store = state[generateField(type, slug)][`${key}_users`];
+
+    if (store.loading || store.no_more) {
+      return;
+    }
+
+    commit('SET_STATUS', {
+      type,
+      key,
+      slug,
+      value: 'loading'
+    });
+
+    try {
+      const listObj = await _api_toggleApi__WEBPACK_IMPORTED_MODULE_1__["users"]({
+        ctx: this,
+        type: key,
+        slug,
+        last_slug: store.list.length ? store.list[store.list.length - 1].slug : 0,
+        model: type,
+        take: 15
+      });
+      commit('PUSH_USERS', {
+        type,
+        slug,
+        key,
+        data: listObj
+      });
+    } catch (e) {
+      commit('SET_STATUS', {
+        type,
+        key,
+        slug,
+        value: 'error'
+      });
+    }
+  },
+
+  async toggle({
+    state,
+    commit,
+    rootState
+  }, {
+    type,
+    slug,
+    action,
+    params
+  }) {
+    const store = state[generateField(type, slug)];
+
+    if (store[`${action}_loading`]) {
+      return;
+    }
+
+    commit('SET_LOADING', {
+      action,
+      type,
+      slug,
+      result: true
+    });
+
+    try {
+      const result = await this.$axios.$post('v1/social/toggle', params);
+      const {
+        user
+      } = rootState;
+      commit('SET_STATE', {
+        type,
+        key: action,
+        slug,
+        result,
+        user: {
+          slug: user.slug,
+          nickname: user.nickname,
+          avatar: user.avatar,
+          created_at: parseInt(Date.now() / 1000)
+        }
+      });
+      return {
+        success: true,
+        result
+      };
+    } catch (e) {
+      commit('SET_LOADING', {
+        action,
+        type,
+        slug,
+        result: false
+      });
+      return {
+        success: false
+      };
+    }
+  }
+
+};
+const getters = {
+  get: state => (type, slug) => {
+    return state[generateField(type, slug)];
+  }
+};
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
+/* harmony import */ var _css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_css_loader_dist_cjs_js_ref_7_oneOf_1_0_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_oneOf_1_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_nuxt_components_dist_loader_js_ref_0_0_vue_loader_lib_index_js_vue_loader_options_v_switcher_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "querystring"
+var external_querystring_ = __webpack_require__(37);
+
+// EXTERNAL MODULE: external "vue"
+var external_vue_ = __webpack_require__(0);
+var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
+
+// EXTERNAL MODULE: external "node-fetch"
+var external_node_fetch_ = __webpack_require__(38);
+var external_node_fetch_default = /*#__PURE__*/__webpack_require__.n(external_node_fetch_);
+
+// CONCATENATED MODULE: ./.nuxt/middleware.js
+const middleware = {};
+/* harmony default export */ var _nuxt_middleware = (middleware);
+// CONCATENATED MODULE: ./.nuxt/utils.js
+ // window.{{globals.loadedCallback}} hook
+// Useful for jsdom testing or plugins (https://github.com/tmpvar/jsdom#dealing-with-asynchronous-script-loading)
+
+if (false) {}
+
+function empty() {}
+function globalHandleError(error) {
+  if (external_vue_default.a.config.errorHandler) {
+    external_vue_default.a.config.errorHandler(error);
+  }
+}
+function interopDefault(promise) {
+  return promise.then(m => m.default || m);
+}
+function hasFetch(vm) {
+  return vm.$options && typeof vm.$options.fetch === 'function' && !vm.$options.fetch.length;
+}
+function getChildrenComponentInstancesUsingFetch(vm, instances = []) {
+  const children = vm.$children || [];
+
+  for (const child of children) {
+    if (child.$fetch) {
+      instances.push(child);
+      continue; // Don't get the children since it will reload the template
+    }
+
+    if (child.$children) {
+      getChildrenComponentInstancesUsingFetch(child, instances);
+    }
+  }
+
+  return instances;
+}
+function applyAsyncData(Component, asyncData) {
+  if ( // For SSR, we once all this function without second param to just apply asyncData
+  // Prevent doing this for each SSR request
+  !asyncData && Component.options.__hasNuxtData) {
+    return;
+  }
+
+  const ComponentData = Component.options._originDataFn || Component.options.data || function () {
+    return {};
+  };
+
+  Component.options._originDataFn = ComponentData;
+
+  Component.options.data = function () {
+    const data = ComponentData.call(this, this);
+
+    if (this.$ssrContext) {
+      asyncData = this.$ssrContext.asyncData[Component.cid];
+    }
+
+    return { ...data,
+      ...asyncData
+    };
+  };
+
+  Component.options.__hasNuxtData = true;
+
+  if (Component._Ctor && Component._Ctor.options) {
+    Component._Ctor.options.data = Component.options.data;
+  }
+}
+function sanitizeComponent(Component) {
+  // If Component already sanitized
+  if (Component.options && Component._Ctor === Component) {
+    return Component;
+  }
+
+  if (!Component.options) {
+    Component = external_vue_default.a.extend(Component); // fix issue #6
+
+    Component._Ctor = Component;
+  } else {
+    Component._Ctor = Component;
+    Component.extendOptions = Component.options;
+  } // If no component name defined, set file path as name, (also fixes #5703)
+
+
+  if (!Component.options.name && Component.options.__file) {
+    Component.options.name = Component.options.__file;
+  }
+
+  return Component;
+}
+function getMatchedComponents(route, matches = false, prop = 'components') {
+  return Array.prototype.concat.apply([], route.matched.map((m, index) => {
+    return Object.keys(m[prop]).map(key => {
+      matches && matches.push(index);
+      return m[prop][key];
+    });
+  }));
+}
+function getMatchedComponentsInstances(route, matches = false) {
+  return getMatchedComponents(route, matches, 'instances');
+}
+function flatMapComponents(route, fn) {
+  return Array.prototype.concat.apply([], route.matched.map((m, index) => {
+    return Object.keys(m.components).reduce((promises, key) => {
+      if (m.components[key]) {
+        promises.push(fn(m.components[key], m.instances[key], m, key, index));
+      } else {
+        delete m.components[key];
+      }
+
+      return promises;
+    }, []);
+  }));
+}
+function resolveRouteComponents(route, fn) {
+  return Promise.all(flatMapComponents(route, async (Component, instance, match, key) => {
+    // If component is a function, resolve it
+    if (typeof Component === 'function' && !Component.options) {
+      Component = await Component();
+    }
+
+    match.components[key] = Component = sanitizeComponent(Component);
+    return typeof fn === 'function' ? fn(Component, instance, match, key) : Component;
+  }));
+}
+async function getRouteData(route) {
+  if (!route) {
+    return;
+  } // Make sure the components are resolved (code-splitting)
+
+
+  await resolveRouteComponents(route); // Send back a copy of route with meta based on Component definition
+
+  return { ...route,
+    meta: getMatchedComponents(route).map((Component, index) => {
+      return { ...Component.options.meta,
+        ...(route.matched[index] || {}).meta
+      };
+    })
+  };
+}
+async function setContext(app, context) {
+  // If context not defined, create it
+  if (!app.context) {
+    app.context = {
+      isStatic: false,
+      isDev: false,
+      isHMR: false,
+      app,
+      store: app.store,
+      payload: context.payload,
+      error: context.error,
+      base: '/',
+      env: {
+        "API_URL": "http://localhost/",
+        "API_URL_BROWSER": "https://api.calibur.tv/",
+        "TAGS": {
+          "newbie": "ugf6",
+          "notebook": "uh4f",
+          "bangumi": "2he",
+          "topic": "3p6",
+          "game": "285"
+        },
+        "INJECT": {
+          "tags": {
+            "newbie": "ugf6",
+            "notebook": "uh4f",
+            "bangumi": "2he",
+            "topic": "3p6",
+            "game": "285"
+          },
+          "author": "冰淤",
+          "description": "咔哩吧是一个二次元社区",
+          "keywords": "C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交",
+          "title": "calibur - 天下漫友是一家",
+          "name": "calibur",
+          "baiduStat": "var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();",
+          "baiduPush": "(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"
+        },
+        "SOCKET_HOST": "wss://api.calibur.tv/ws"
+      }
+    }; // Only set once
+
+    if ( true && context.req) {
+      app.context.req = context.req;
+    }
+
+    if ( true && context.res) {
+      app.context.res = context.res;
+    }
+
+    if (context.ssrContext) {
+      app.context.ssrContext = context.ssrContext;
+    }
+
+    app.context.redirect = (status, path, query) => {
+      if (!status) {
+        return;
+      }
+
+      app.context._redirected = true; // if only 1 or 2 arguments: redirect('/') or redirect('/', { foo: 'bar' })
+
+      let pathType = typeof path;
+
+      if (typeof status !== 'number' && (pathType === 'undefined' || pathType === 'object')) {
+        query = path || {};
+        path = status;
+        pathType = typeof path;
+        status = 302;
+      }
+
+      if (pathType === 'object') {
+        path = app.router.resolve(path).route.fullPath;
+      } // "/absolute/route", "./relative/route" or "../relative/route"
+
+
+      if (/(^[.]{1,2}\/)|(^\/(?!\/))/.test(path)) {
+        app.context.next({
+          path,
+          query,
+          status
+        });
+      } else {
+        path = formatUrl(path, query);
+
+        if (true) {
+          app.context.next({
+            path,
+            status
+          });
+        }
+
+        if (false) {}
+      }
+    };
+
+    if (true) {
+      app.context.beforeNuxtRender = fn => context.beforeRenderFns.push(fn);
+    }
+
+    if (false) {}
+  } // Dynamic keys
+
+
+  const [currentRouteData, fromRouteData] = await Promise.all([getRouteData(context.route), getRouteData(context.from)]);
+
+  if (context.route) {
+    app.context.route = currentRouteData;
+  }
+
+  if (context.from) {
+    app.context.from = fromRouteData;
+  }
+
+  app.context.next = context.next;
+  app.context._redirected = false;
+  app.context._errored = false;
+  app.context.isHMR = false;
+  app.context.params = app.context.route.params || {};
+  app.context.query = app.context.route.query || {};
+}
+function middlewareSeries(promises, appContext) {
+  if (!promises.length || appContext._redirected || appContext._errored) {
+    return Promise.resolve();
+  }
+
+  return promisify(promises[0], appContext).then(() => {
+    return middlewareSeries(promises.slice(1), appContext);
+  });
+}
+function promisify(fn, context) {
+  let promise;
+
+  if (fn.length === 2) {
+    // fn(context, callback)
+    promise = new Promise(resolve => {
+      fn(context, function (err, data) {
+        if (err) {
+          context.error(err);
+        }
+
+        data = data || {};
+        resolve(data);
+      });
+    });
+  } else {
+    promise = fn(context);
+  }
+
+  if (promise && promise instanceof Promise && typeof promise.then === 'function') {
+    return promise;
+  }
+
+  return Promise.resolve(promise);
+} // Imported from vue-router
+
+function getLocation(base, mode) {
+  let path = decodeURI(window.location.pathname);
+
+  if (mode === 'hash') {
+    return window.location.hash.replace(/^#\//, '');
+  }
+
+  if (base && path.indexOf(base) === 0) {
+    path = path.slice(base.length);
+  }
+
+  return (path || '/') + window.location.search + window.location.hash;
+} // Imported from path-to-regexp
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+
+function compile(str, options) {
+  return tokensToFunction(parse(str, options), options);
+}
+function getQueryDiff(toQuery, fromQuery) {
+  const diff = {};
+  const queries = { ...toQuery,
+    ...fromQuery
+  };
+
+  for (const k in queries) {
+    if (String(toQuery[k]) !== String(fromQuery[k])) {
+      diff[k] = true;
+    }
+  }
+
+  return diff;
+}
+function normalizeError(err) {
+  let message;
+
+  if (!(err.message || typeof err === 'string')) {
+    try {
+      message = JSON.stringify(err, null, 2);
+    } catch (e) {
+      message = `[${err.constructor.name}]`;
+    }
+  } else {
+    message = err.message || err;
+  }
+
+  return { ...err,
+    message,
+    statusCode: err.statusCode || err.status || err.response && err.response.status || 500
+  };
+}
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+
+const PATH_REGEXP = new RegExp([// Match escaped characters that would otherwise appear in future matches.
+// This allows the user to escape special characters that won't transform.
+'(\\\\.)', // Match Express-style parameters and un-named parameters with a prefix
+// and optional suffixes. Matches appear as:
+//
+// "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+// "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+// "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+'([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'].join('|'), 'g');
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+
+function parse(str, options) {
+  const tokens = [];
+  let key = 0;
+  let index = 0;
+  let path = '';
+  const defaultDelimiter = options && options.delimiter || '/';
+  let res;
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    const m = res[0];
+    const escaped = res[1];
+    const offset = res.index;
+    path += str.slice(index, offset);
+    index = offset + m.length; // Ignore already escaped sequences.
+
+    if (escaped) {
+      path += escaped[1];
+      continue;
+    }
+
+    const next = str[index];
+    const prefix = res[2];
+    const name = res[3];
+    const capture = res[4];
+    const group = res[5];
+    const modifier = res[6];
+    const asterisk = res[7]; // Push the current path onto the tokens.
+
+    if (path) {
+      tokens.push(path);
+      path = '';
+    }
+
+    const partial = prefix != null && next != null && next !== prefix;
+    const repeat = modifier === '+' || modifier === '*';
+    const optional = modifier === '?' || modifier === '*';
+    const delimiter = res[2] || defaultDelimiter;
+    const pattern = capture || group;
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter,
+      optional,
+      repeat,
+      partial,
+      asterisk: Boolean(asterisk),
+      pattern: pattern ? escapeGroup(pattern) : asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?'
+    });
+  } // Match any characters still remaining.
+
+
+  if (index < str.length) {
+    path += str.substr(index);
+  } // If the path exists, push it onto the end.
+
+
+  if (path) {
+    tokens.push(path);
+  }
+
+  return tokens;
+}
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+
+
+function encodeURIComponentPretty(str, slashAllowed) {
+  const re = slashAllowed ? /[?#]/g : /[/?#]/g;
+  return encodeURI(str).replace(re, c => {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+  });
+}
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+
+
+function encodeAsterisk(str) {
+  return encodeURIComponentPretty(str, true);
+}
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+
+
+function escapeString(str) {
+  return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1');
+}
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+
+
+function escapeGroup(group) {
+  return group.replace(/([=!:$/()])/g, '\\$1');
+}
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+
+
+function tokensToFunction(tokens, options) {
+  // Compile all the tokens into regexps.
+  const matches = new Array(tokens.length); // Compile all the patterns before compilation.
+
+  for (let i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options));
+    }
+  }
+
+  return function (obj, opts) {
+    let path = '';
+    const data = obj || {};
+    const options = opts || {};
+    const encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent;
+
+    for (let i = 0; i < tokens.length; i++) {
+      const token = tokens[i];
+
+      if (typeof token === 'string') {
+        path += token;
+        continue;
+      }
+
+      const value = data[token.name || 'pathMatch'];
+      let segment;
+
+      if (value == null) {
+        if (token.optional) {
+          // Prepend partial segment prefixes.
+          if (token.partial) {
+            path += token.prefix;
+          }
+
+          continue;
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined');
+        }
+      }
+
+      if (Array.isArray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`');
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue;
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty');
+          }
+        }
+
+        for (let j = 0; j < value.length; j++) {
+          segment = encode(value[j]);
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`');
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment;
+        }
+
+        continue;
+      }
+
+      segment = token.asterisk ? encodeAsterisk(value) : encode(value);
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"');
+      }
+
+      path += token.prefix + segment;
+    }
+
+    return path;
+  };
+}
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+
+
+function flags(options) {
+  return options && options.sensitive ? '' : 'i';
+}
+/**
+ * Format given url, append query to url query string
+ *
+ * @param  {string} url
+ * @param  {string} query
+ * @return {string}
+ */
+
+
+function formatUrl(url, query) {
+  let protocol;
+  const index = url.indexOf('://');
+
+  if (index !== -1) {
+    protocol = url.substring(0, index);
+    url = url.substring(index + 3);
+  } else if (url.startsWith('//')) {
+    url = url.substring(2);
+  }
+
+  let parts = url.split('/');
+  let result = (protocol ? protocol + '://' : '//') + parts.shift();
+  let path = parts.join('/');
+
+  if (path === '' && parts.length === 1) {
+    result += '/';
+  }
+
+  let hash;
+  parts = path.split('#');
+
+  if (parts.length === 2) {
+    [path, hash] = parts;
+  }
+
+  result += path ? '/' + path : '';
+
+  if (query && JSON.stringify(query) !== '{}') {
+    result += (url.split('?').length === 2 ? '&' : '?') + formatQuery(query);
+  }
+
+  result += hash ? '#' + hash : '';
+  return result;
+}
+/**
+ * Transform data object to query string
+ *
+ * @param  {object} query
+ * @return {string}
+ */
+
+
+function formatQuery(query) {
+  return Object.keys(query).sort().map(key => {
+    const val = query[key];
+
+    if (val == null) {
+      return '';
+    }
+
+    if (Array.isArray(val)) {
+      return val.slice().map(val2 => [key, '=', val2].join('')).join('&');
+    }
+
+    return key + '=' + val;
+  }).filter(Boolean).join('&');
+}
+
+function addLifecycleHook(vm, hook, fn) {
+  if (!vm.$options[hook]) {
+    vm.$options[hook] = [];
+  }
+
+  if (!vm.$options[hook].includes(fn)) {
+    vm.$options[hook].push(fn);
+  }
+}
+const urlJoin = function urlJoin() {
+  return [].slice.call(arguments).join('/').replace(/\/+/g, '/').replace(':/', '://');
+};
+// CONCATENATED MODULE: ./.nuxt/mixins/fetch.server.js
+
+
+
+async function serverPrefetch() {
+  if (!this._fetchOnServer) {
+    return;
+  } // Call and await on $fetch
+
+
+  try {
+    await this.$options.fetch.call(this);
+  } catch (err) {
+    if (false) {}
+
+    this.$fetchState.error = normalizeError(err);
+  }
+
+  this.$fetchState.pending = false; // Define an ssrKey for hydration
+
+  this._fetchKey = this.$ssrContext.nuxt.fetch.length; // Add data-fetch-key on parent element of Component
+
+  const attrs = this.$vnode.data.attrs = this.$vnode.data.attrs || {};
+  attrs['data-fetch-key'] = this._fetchKey; // Add to ssrContext for window.__NUXT__.fetch
+
+  this.$ssrContext.nuxt.fetch.push(this.$fetchState.error ? {
+    _error: this.$fetchState.error
+  } : this._data);
+}
+
+/* harmony default export */ var fetch_server = ({
+  created() {
+    if (!hasFetch(this)) {
+      return;
+    }
+
+    if (typeof this.$options.fetchOnServer === 'function') {
+      this._fetchOnServer = this.$options.fetchOnServer.call(this) !== false;
+    } else {
+      this._fetchOnServer = this.$options.fetchOnServer !== false;
+    }
+
+    external_vue_default.a.util.defineReactive(this, '$fetchState', {
+      pending: true,
+      error: null,
+      timestamp: Date.now()
+    });
+    addLifecycleHook(this, 'serverPrefetch', serverPrefetch);
+  }
+
+});
+// EXTERNAL MODULE: external "vue-meta"
+var external_vue_meta_ = __webpack_require__(39);
+var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
+
+// EXTERNAL MODULE: external "vue-client-only"
+var external_vue_client_only_ = __webpack_require__(25);
+var external_vue_client_only_default = /*#__PURE__*/__webpack_require__.n(external_vue_client_only_);
+
+// EXTERNAL MODULE: external "vue-no-ssr"
+var external_vue_no_ssr_ = __webpack_require__(18);
+var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vue_no_ssr_);
+
+// EXTERNAL MODULE: external "vue-router"
+var external_vue_router_ = __webpack_require__(9);
+var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
+
+// CONCATENATED MODULE: ./.nuxt/router.scrollBehavior.js
+
+
+if (false) {}
+
+/* harmony default export */ var router_scrollBehavior = (function (to, from, savedPosition) {
+  // if the returned position is falsy or an empty object,
+  // will retain current scroll position.
+  let position = false; // if no children detected and scrollToTop is not explicitly disabled
+
+  const Pages = getMatchedComponents(to);
+
+  if (Pages.length < 2 && Pages.every(Page => Page.options.scrollToTop !== false)) {
+    // scroll to the top of the page
+    position = {
+      x: 0,
+      y: 0
+    };
+  } else if (Pages.some(Page => Page.options.scrollToTop)) {
+    // if one of the children has scrollToTop option set to true
+    position = {
+      x: 0,
+      y: 0
+    };
+  } // savedPosition is only available for popstate navigations (back button)
+
+
+  if (savedPosition) {
+    position = savedPosition;
+  }
+
+  const nuxt = window.$nuxt; // triggerScroll is only fired when a new component is loaded
+
+  if (to.path === from.path && to.hash !== from.hash) {
+    nuxt.$nextTick(() => nuxt.$emit('triggerScroll'));
+  }
+
+  return new Promise(resolve => {
+    // wait for the out transition to complete (if necessary)
+    nuxt.$once('triggerScroll', () => {
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash; // CSS.escape() is not supported with IE and Edge.
+
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1));
+        }
+
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = {
+              selector: hash
+            };
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).');
+        }
+      }
+
+      resolve(position);
+    });
+  });
+});
+// CONCATENATED MODULE: ./.nuxt/router.js
+
+
+
+
+
+const _6b8c1ac3 = () => interopDefault(__webpack_require__.e(/* import() | pages/write/index */ 23).then(__webpack_require__.bind(null, 280)));
+
+const _7a3ab5f1 = () => interopDefault(__webpack_require__.e(/* import() | pages/pin/_slug */ 2).then(__webpack_require__.bind(null, 277)));
+
+const _25f85796 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug */ 3).then(__webpack_require__.bind(null, 281)));
+
+const _a7781f72 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/draft */ 4).then(__webpack_require__.bind(null, 282)));
+
+const _8166bf78 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/index */ 10).then(__webpack_require__.bind(null, 283)));
+
+const _b4942fa6 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/message */ 11).then(__webpack_require__.bind(null, 278)));
+
+const _5b10ac14 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting */ 12).then(__webpack_require__.bind(null, 284)));
+
+const _7943400e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/index */ 14).then(__webpack_require__.bind(null, 285)));
+
+const _e38e0556 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/basic */ 13).then(__webpack_require__.bind(null, 286)));
+
+const _822f9438 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/oauth2 */ 15).then(__webpack_require__.bind(null, 287)));
+
+const _1186034e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/spider */ 16).then(__webpack_require__.bind(null, 288)));
+
+const _7de73e92 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social */ 17).then(__webpack_require__.bind(null, 289)));
+
+const _02a541fa = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/index */ 21).then(__webpack_require__.bind(null, 290)));
+
+const _3c715bbd = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/followers */ 18).then(__webpack_require__.bind(null, 291)));
+
+const _088dcc39 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/following */ 19).then(__webpack_require__.bind(null, 292)));
+
+const _3107a53d = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/friends */ 20).then(__webpack_require__.bind(null, 293)));
+
+const _908be1ea = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/timeline */ 22).then(__webpack_require__.bind(null, 279)));
+
+const _82a58708 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category */ 5).then(__webpack_require__.bind(null, 294)));
+
+const _47f317f4 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/bangumi */ 6).then(__webpack_require__.bind(null, 295)));
+
+const _0b341b55 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/game */ 7).then(__webpack_require__.bind(null, 296)));
+
+const _785b773e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/notebook */ 8).then(__webpack_require__.bind(null, 297)));
+
+const _3969a3dc = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/topic */ 9).then(__webpack_require__.bind(null, 298)));
+
+const _5276389a = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 1).then(__webpack_require__.bind(null, 276))); // TODO: remove in Nuxt 3
+
+
+const emptyFn = () => {};
+
+const originalPush = external_vue_router_default.a.prototype.push;
+
+external_vue_router_default.a.prototype.push = function push(location, onComplete = emptyFn, onAbort) {
+  return originalPush.call(this, location, onComplete, onAbort);
+};
+
+external_vue_default.a.use(external_vue_router_default.a);
+const routerOptions = {
+  mode: 'history',
+  base: decodeURI('/'),
+  linkActiveClass: 'nuxt-link-active',
+  linkExactActiveClass: 'nuxt-link-exact-active',
+  scrollBehavior: router_scrollBehavior,
+  routes: [{
+    path: "/write",
+    component: _6b8c1ac3,
+    props: false,
+    name: "write"
+  }, {
+    path: "/pin/:slug?",
+    component: _7a3ab5f1,
+    props: true,
+    name: "pin-slug"
+  }, {
+    path: "/user/:slug?",
+    component: _25f85796,
+    props: true,
+    name: "user-slug",
+    children: [{
+      path: "draft",
+      component: _a7781f72,
+      props: true,
+      name: "user-slug-draft"
+    }, {
+      path: "emotion",
+      component: _8166bf78,
+      props: true,
+      name: "user-slug-emotion"
+    }, {
+      path: "message",
+      component: _b4942fa6,
+      props: true,
+      name: "user-slug-message"
+    }, {
+      path: "setting",
+      component: _5b10ac14,
+      props: true,
+      children: [{
+        path: "",
+        component: _7943400e,
+        name: "user-slug-setting"
+      }, {
+        path: "basic",
+        component: _e38e0556,
+        name: "user-slug-setting-basic"
+      }, {
+        path: "oauth2",
+        component: _822f9438,
+        name: "user-slug-setting-oauth2"
+      }, {
+        path: "spider",
+        component: _1186034e,
+        name: "user-slug-setting-spider"
+      }]
+    }, {
+      path: "social",
+      component: _7de73e92,
+      props: true,
+      children: [{
+        path: "",
+        component: _02a541fa,
+        name: "user-slug-social"
+      }, {
+        path: "followers",
+        component: _3c715bbd,
+        name: "user-slug-social-followers"
+      }, {
+        path: "following",
+        component: _088dcc39,
+        name: "user-slug-social-following"
+      }, {
+        path: "friends",
+        component: _3107a53d,
+        name: "user-slug-social-friends"
+      }]
+    }, {
+      path: "timeline",
+      component: _908be1ea,
+      props: true,
+      name: "user-slug-timeline"
+    }, {
+      path: "emotion/category",
+      component: _82a58708,
+      props: true,
+      name: "user-slug-emotion-category",
+      children: [{
+        path: "bangumi",
+        component: _47f317f4,
+        name: "user-slug-emotion-category-bangumi"
+      }, {
+        path: "game",
+        component: _0b341b55,
+        name: "user-slug-emotion-category-game"
+      }, {
+        path: "notebook",
+        component: _785b773e,
+        name: "user-slug-emotion-category-notebook"
+      }, {
+        path: "topic",
+        component: _3969a3dc,
+        name: "user-slug-emotion-category-topic"
+      }]
+    }]
+  }, {
+    path: "/",
+    component: _5276389a,
+    props: false,
+    name: "index"
+  }],
+  fallback: false
+};
+function createRouter() {
+  return new external_vue_router_default.a(routerOptions);
+}
+// CONCATENATED MODULE: ./.nuxt/components/nuxt-child.js
+/* harmony default export */ var nuxt_child = ({
+  name: 'NuxtChild',
+  functional: true,
+  props: {
+    nuxtChildKey: {
+      type: String,
+      default: ''
+    },
+    keepAlive: Boolean,
+    keepAliveProps: {
+      type: Object,
+      default: undefined
+    }
+  },
+
+  render(_, {
+    parent,
+    data,
+    props
+  }) {
+    const h = parent.$createElement;
+    data.nuxtChild = true;
+    const _parent = parent;
+    const transitions = parent.$nuxt.nuxt.transitions;
+    const defaultTransition = parent.$nuxt.nuxt.defaultTransition;
+    let depth = 0;
+
+    while (parent) {
+      if (parent.$vnode && parent.$vnode.data.nuxtChild) {
+        depth++;
+      }
+
+      parent = parent.$parent;
+    }
+
+    data.nuxtChildDepth = depth;
+    const transition = transitions[depth] || defaultTransition;
+    const transitionProps = {};
+    transitionsKeys.forEach(key => {
+      if (typeof transition[key] !== 'undefined') {
+        transitionProps[key] = transition[key];
+      }
+    });
+    const listeners = {};
+    listenersKeys.forEach(key => {
+      if (typeof transition[key] === 'function') {
+        listeners[key] = transition[key].bind(_parent);
+      }
+    });
+
+    if (false) {} // make sure that leave is called asynchronous (fix #5703)
+
+
+    if (transition.css === false) {
+      const leave = listeners.leave; // only add leave listener when user didnt provide one
+      // or when it misses the done argument
+
+      if (!leave || leave.length < 2) {
+        listeners.leave = (el, done) => {
+          if (leave) {
+            leave.call(_parent, el);
+          }
+
+          _parent.$nextTick(done);
+        };
+      }
+    }
+
+    let routerView = h('routerView', data);
+
+    if (props.keepAlive) {
+      routerView = h('keep-alive', {
+        props: props.keepAliveProps
+      }, [routerView]);
+    }
+
+    return h('transition', {
+      props: transitionProps,
+      on: listeners
+    }, [routerView]);
+  }
+
+});
+const transitionsKeys = ['name', 'mode', 'appear', 'css', 'type', 'duration', 'enterClass', 'leaveClass', 'appearClass', 'enterActiveClass', 'enterActiveClass', 'leaveActiveClass', 'appearActiveClass', 'enterToClass', 'leaveToClass', 'appearToClass'];
+const listenersKeys = ['beforeEnter', 'enter', 'afterEnter', 'enterCancelled', 'beforeLeave', 'leave', 'afterLeave', 'leaveCancelled', 'beforeAppear', 'appear', 'afterAppear', 'appearCancelled'];
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/error.vue?vue&type=template&id=615bb0c2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"error-page"}},[_vm._ssrNode("<div class=\"error-main\">","</div>",[(_vm.statusCode === 401)?_vm._ssrNode("<div id=\"error-401\">","</div>",[_vm._ssrNode("<img"+(_vm._ssrAttr("src",__webpack_require__(46)))+" alt=\"error-401\"> <h3>"+_vm._ssrEscape(_vm._s(_vm.message || '请登录后重新访问'))+"</h3> <button class=\"back\">\n        登录\n      </button>")],2):(_vm.statusCode === 403)?_vm._ssrNode(("<div id=\"error-403\"><img"+(_vm._ssrAttr("src",__webpack_require__(35)))+" alt=\"error-403\"> <h3>"+_vm._ssrEscape(_vm._s(_vm.message || '您没有权限访问该页面'))+"</h3> <a href=\"/\" class=\"back\">回到首页</a></div>")):(_vm.statusCode === 404)?_vm._ssrNode("<div id=\"error-404\">","</div>",[_vm._ssrNode("<img"+(_vm._ssrAttr("src",__webpack_require__(47)))+" alt=\"error-404\"> <h3>您要找的页面不存在</h3> <div class=\"subtitle\">\n        不存在的内容，或者正在审核中。\n      </div> "),_c('NLink',{staticClass:"back",attrs:{"to":"/"}},[_vm._v("\n        返回首页\n      ")])],2):(_vm.statusCode >= 500)?_vm._ssrNode("<div id=\"error-500\">","</div>",[_vm._ssrNode("<img"+(_vm._ssrAttr("src",__webpack_require__(35)))+" alt=\"error-500\"> <h3>服务器出错了</h3> <div class=\"subtitle\">\n        服务器出了点问题，工程师正在加紧抢修ヽ( ° ▽°)ノ\n      </div> "),_c('NLink',{staticClass:"back",attrs:{"to":"/"}},[_vm._v("\n        返回首页\n      ")])],2):_vm._e()])])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./layouts/error.vue?vue&type=template&id=615bb0c2&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/error.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var errorvue_type_script_lang_js_ = ({
+  name: 'NuxtError',
+  props: {
+    error: {
+      type: Object,
+      default: null
+    }
+  },
+  computed: {
+    statusCode() {
+      if (this.message === '继续操作前请先登录') {
+        return 401;
+      }
+
+      if (this.message === '请在APP内打开该页面') {
+        return 403;
+      }
+
+      return this.error && this.error.statusCode || 404;
+    },
+
+    message() {
+      return this.error && this.error.message;
+    }
+
+  },
+
+  mounted() {
+    if (this.statusCode === 401) {
+      window.location = this.$alias.sign();
+    }
+  },
+
+  methods: {
+    handleLogin() {
+      this.$channel.$emit('sign-in');
+    },
+
+    toastMessage() {// this.$toast.error(this.message)
+    }
+
+  },
+
+  head() {
+    return {
+      title: '出错了'
+    };
+  }
+
+});
+// CONCATENATED MODULE: ./layouts/error.vue?vue&type=script&lang=js&
+ /* harmony default export */ var layouts_errorvue_type_script_lang_js_ = (errorvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./layouts/error.vue
+
+
+
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(48)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var error_component = Object(componentNormalizer["a" /* default */])(
+  layouts_errorvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  injectStyles,
+  null,
+  "767a2175"
+  
+)
+
+/* harmony default export */ var layouts_error = (error_component.exports);
+// CONCATENATED MODULE: ./.nuxt/components/nuxt.js
+
+
+
+
+/* harmony default export */ var components_nuxt = ({
+  name: 'Nuxt',
+  components: {
+    NuxtChild: nuxt_child,
+    NuxtError: layouts_error
+  },
+  props: {
+    nuxtChildKey: {
+      type: String,
+      default: undefined
+    },
+    keepAlive: Boolean,
+    keepAliveProps: {
+      type: Object,
+      default: undefined
+    },
+    name: {
+      type: String,
+      default: 'default'
+    }
+  },
+
+  errorCaptured(error) {
+    // if we receive and error while showing the NuxtError component
+    // capture the error and force an immediate update so we re-render
+    // without the NuxtError component
+    if (this.displayingNuxtError) {
+      this.errorFromNuxtError = error;
+      this.$forceUpdate();
+    }
+  },
+
+  computed: {
+    routerViewKey() {
+      // If nuxtChildKey prop is given or current route has children
+      if (typeof this.nuxtChildKey !== 'undefined' || this.$route.matched.length > 1) {
+        return this.nuxtChildKey || compile(this.$route.matched[0].path)(this.$route.params);
+      }
+
+      const [matchedRoute] = this.$route.matched;
+
+      if (!matchedRoute) {
+        return this.$route.path;
+      }
+
+      const Component = matchedRoute.components.default;
+
+      if (Component && Component.options) {
+        const {
+          options
+        } = Component;
+
+        if (options.key) {
+          return typeof options.key === 'function' ? options.key(this.$route) : options.key;
+        }
+      }
+
+      const strict = /\/$/.test(matchedRoute.path);
+      return strict ? this.$route.path : this.$route.path.replace(/\/$/, '');
+    }
+
+  },
+
+  beforeCreate() {
+    external_vue_default.a.util.defineReactive(this, 'nuxt', this.$root.$options.nuxt);
+  },
+
+  render(h) {
+    // if there is no error
+    if (!this.nuxt.err) {
+      // Directly return nuxt child
+      return h('NuxtChild', {
+        key: this.routerViewKey,
+        props: this.$props
+      });
+    } // if an error occurred within NuxtError show a simple
+    // error message instead to prevent looping
+
+
+    if (this.errorFromNuxtError) {
+      this.$nextTick(() => this.errorFromNuxtError = false);
+      return h('div', {}, [h('h2', 'An error occurred while showing the error page'), h('p', 'Unfortunately an error occurred and while showing the error page another error occurred'), h('p', `Error details: ${this.errorFromNuxtError.toString()}`), h('nuxt-link', {
+        props: {
+          to: '/'
+        }
+      }, 'Go back to home')]);
+    } // track if we are showing the NuxtError component
+
+
+    this.displayingNuxtError = true;
+    this.$nextTick(() => this.displayingNuxtError = false);
+    return h(layouts_error, {
+      props: {
+        error: this.nuxt.err
+      }
+    });
+  }
+
+});
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-loading.vue?vue&type=script&lang=js&
+/* harmony default export */ var nuxt_loadingvue_type_script_lang_js_ = ({
+  name: 'NuxtLoading',
+
+  data() {
+    return {
+      percent: 0,
+      show: false,
+      canSucceed: true,
+      reversed: false,
+      skipTimerCount: 0,
+      rtl: false,
+      throttle: 200,
+      duration: 5000,
+      continuous: false
+    };
+  },
+
+  computed: {
+    left() {
+      if (!this.continuous && !this.rtl) {
+        return false;
+      }
+
+      return this.rtl ? this.reversed ? '0px' : 'auto' : !this.reversed ? '0px' : 'auto';
+    }
+
+  },
+
+  beforeDestroy() {
+    this.clear();
+  },
+
+  methods: {
+    clear() {
+      clearInterval(this._timer);
+      clearTimeout(this._throttle);
+      this._timer = null;
+    },
+
+    start() {
+      this.clear();
+      this.percent = 0;
+      this.reversed = false;
+      this.skipTimerCount = 0;
+      this.canSucceed = true;
+
+      if (this.throttle) {
+        this._throttle = setTimeout(() => this.startTimer(), this.throttle);
+      } else {
+        this.startTimer();
+      }
+
+      return this;
+    },
+
+    set(num) {
+      this.show = true;
+      this.canSucceed = true;
+      this.percent = Math.min(100, Math.max(0, Math.floor(num)));
+      return this;
+    },
+
+    get() {
+      return this.percent;
+    },
+
+    increase(num) {
+      this.percent = Math.min(100, Math.floor(this.percent + num));
+      return this;
+    },
+
+    decrease(num) {
+      this.percent = Math.max(0, Math.floor(this.percent - num));
+      return this;
+    },
+
+    pause() {
+      clearInterval(this._timer);
+      return this;
+    },
+
+    resume() {
+      this.startTimer();
+      return this;
+    },
+
+    finish() {
+      this.percent = this.reversed ? 0 : 100;
+      this.hide();
+      return this;
+    },
+
+    hide() {
+      this.clear();
+      setTimeout(() => {
+        this.show = false;
+        this.$nextTick(() => {
+          this.percent = 0;
+          this.reversed = false;
+        });
+      }, 500);
+      return this;
+    },
+
+    fail(error) {
+      this.canSucceed = false;
+      return this;
+    },
+
+    startTimer() {
+      if (!this.show) {
+        this.show = true;
+      }
+
+      if (typeof this._cut === 'undefined') {
+        this._cut = 10000 / Math.floor(this.duration);
+      }
+
+      this._timer = setInterval(() => {
+        /**
+         * When reversing direction skip one timers
+         * so 0, 100 are displayed for two iterations
+         * also disable css width transitioning
+         * which otherwise interferes and shows
+         * a jojo effect
+         */
+        if (this.skipTimerCount > 0) {
+          this.skipTimerCount--;
+          return;
+        }
+
+        if (this.reversed) {
+          this.decrease(this._cut);
+        } else {
+          this.increase(this._cut);
+        }
+
+        if (this.continuous) {
+          if (this.percent >= 100) {
+            this.skipTimerCount = 1;
+            this.reversed = !this.reversed;
+          } else if (this.percent <= 0) {
+            this.skipTimerCount = 1;
+            this.reversed = !this.reversed;
+          }
+        }
+      }, 100);
+    }
+
+  },
+
+  render(h) {
+    let el = h(false);
+
+    if (this.show) {
+      el = h('div', {
+        staticClass: 'nuxt-progress',
+        class: {
+          'nuxt-progress-notransition': this.skipTimerCount > 0,
+          'nuxt-progress-failed': !this.canSucceed
+        },
+        style: {
+          width: this.percent + '%',
+          left: this.left
+        }
+      });
+    }
+
+    return el;
+  }
+
+});
+// CONCATENATED MODULE: ./.nuxt/components/nuxt-loading.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_nuxt_loadingvue_type_script_lang_js_ = (nuxt_loadingvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./.nuxt/components/nuxt-loading.vue
+var nuxt_loading_render, nuxt_loading_staticRenderFns
+
+
+function nuxt_loading_injectStyles (context) {
+  
+  var style0 = __webpack_require__(49)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
+  components_nuxt_loadingvue_type_script_lang_js_,
+  nuxt_loading_render,
+  nuxt_loading_staticRenderFns,
+  false,
+  nuxt_loading_injectStyles,
+  null,
+  "166399e0"
+  
+)
+
+/* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
+// EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
+var normalize = __webpack_require__(50);
+
+// EXTERNAL MODULE: ./assets/css/global.scss
+var css_global = __webpack_require__(51);
+
+// EXTERNAL MODULE: ./theme/index.css
+var theme = __webpack_require__(52);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=bf3baec6&
+var defaultvue_type_template_id_bf3baec6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"layout-web"}},[_vm._ssrNode("<span>","</span>",[_c('nuxt')],1),_vm._ssrNode(" "),_c('SignDialog')],2)}
+var defaultvue_type_template_id_bf3baec6_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=bf3baec6&
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/SignDialog.vue?vue&type=template&id=75f2c4a9&
+var SignDialogvue_type_template_id_75f2c4a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.canRender)?_c('div',{staticClass:"sign-container"},[(_vm.isGuest)?_vm._ssrNode("<div id=\"space3D\""+(_vm._ssrClass(null,[_vm.showModal ? 'space-enter' : 'space-leave']))+">","</div>",[_vm._ssrNode("<div class=\"sign-modal-wrap\">","</div>",[_vm._ssrNode("<div"+(_vm._ssrClass("sign-modal sign-in-modal",{
+          'sign-in-init': !_vm.showSignIn && !_vm.showSignUp,
+          'sign-in-show': _vm.showSignIn && !_vm.showSignUp,
+          'sign-in-turn': !_vm.showSignIn && _vm.showSignUp,
+        }))+">","</div>",[_vm._ssrNode("<div class=\"sign-logo\"></div> "),_c('ResetPasswordForm',{directives:[{name:"show",rawName:"v-show",value:(_vm.showReset),expression:"showReset"}],on:{"to-login":function($event){_vm.showReset = false},"to-register":_vm.showRegister}}),_vm._ssrNode(" "),_c('SignInForm',{directives:[{name:"show",rawName:"v-show",value:(!_vm.showReset),expression:"!showReset"}],on:{"to-reset":function($event){_vm.showReset = true},"to-register":_vm.showRegister}})],2),_vm._ssrNode(" "),_vm._ssrNode("<div"+(_vm._ssrClass("sign-modal sign-up-modal",{
+          'sign-up-init': !_vm.showSignUp && !_vm.showSignIn,
+          'sign-up-show': _vm.showSignUp && !_vm.showSignIn,
+          'sign-up-turn': !_vm.showSignUp && _vm.showSignIn,
+        }))+">","</div>",[_vm._ssrNode("<div class=\"sign-logo\"></div> "),_c('SignUpForm',{on:{"to-login":_vm.showLogin}})],2)],2)]):_vm._e()]):_vm._e()}
+var SignDialogvue_type_template_id_75f2c4a9_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/SignDialog.vue?vue&type=template&id=75f2c4a9&
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/SignInForm.vue?vue&type=template&id=650f8aec&
+var SignInFormvue_type_template_id_650f8aec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sign-in-form"},[_c('VForm',{attrs:{"loading":_vm.loading,"form":_vm.form,"rule":_vm.rule,"error":false},on:{"submit":_vm.login}},[_c('VField',{attrs:{"type":"text","placeholder":"手机（填写常用手机号，用于登录）"},model:{value:(_vm.form.access),callback:function ($$v) {_vm.$set(_vm.form, "access", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.access"}}),_vm._v(" "),_c('VField',{attrs:{"type":"password","show-password":"","placeholder":"密码（6-16个字符组成，区分大小写）"},nativeOn:{"keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.submitForm($event)}},model:{value:(_vm.form.secret),callback:function ($$v) {_vm.$set(_vm.form, "secret", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.secret"}}),_vm._v(" "),_c('div',{staticClass:"opt-container"},[_c('VRadio',{attrs:{"size":"small","label":"记住我"},model:{value:(_vm.form.remember),callback:function ($$v) {_vm.$set(_vm.form, "remember", $$v)},expression:"form.remember"}}),_vm._v(" "),(_vm.showOAuth)?_c('ul',{staticClass:"provider"},[_c('li',{on:{"click":_vm.authQQ}},[_c('i',{staticClass:"iconfont ic-qq"})]),_vm._v(" "),_c('li',{on:{"click":_vm.authWechat}},[_c('i',{staticClass:"iconfont ic-v-chat"})])]):_c('button',{attrs:{"type":"button"},on:{"click":function($event){_vm.showOAuth = true}}},[_vm._v("\n        社交账号登录\n      ")])],1),_vm._v(" "),_c('VButton',{attrs:{"slot":"submit","loading":_vm.loading,"size":"large","block":"","round":""},slot:"submit"},[_vm._v("\n      登录\n    ")])],1),_vm._ssrNode(" <div class=\"others\"><a>忘记密码?&gt;</a> <a>点击注册»</a></div>")],2)}
+var SignInFormvue_type_template_id_650f8aec_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/form/SignInForm.vue?vue&type=template&id=650f8aec&
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-radio.css
+var v_radio = __webpack_require__(53);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/base.css
+var base = __webpack_require__(3);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-radio"
+var v_radio_ = __webpack_require__(40);
+var lib_v_radio_default = /*#__PURE__*/__webpack_require__.n(v_radio_);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-field.css
+var v_field = __webpack_require__(20);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-field"
+var v_field_ = __webpack_require__(5);
+var lib_v_field_default = /*#__PURE__*/__webpack_require__.n(v_field_);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-button.css
+var v_button = __webpack_require__(21);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-button"
+var v_button_ = __webpack_require__(6);
+var lib_v_button_default = /*#__PURE__*/__webpack_require__.n(v_button_);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-form.css
+var v_form = __webpack_require__(22);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-form"
+var v_form_ = __webpack_require__(7);
+var lib_v_form_default = /*#__PURE__*/__webpack_require__.n(v_form_);
+
+// EXTERNAL MODULE: ./api/userApi.js
+var userApi = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/SignInForm.vue?vue&type=script&lang=js&
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var SignInFormvue_type_script_lang_js_ = ({
+  name: 'SignInForm',
+  components: {
+    VForm: lib_v_form_default.a,
+    VButton: lib_v_button_default.a,
+    VField: lib_v_field_default.a,
+    VRadio: lib_v_radio_default.a
+  },
+
+  data() {
+    const validateAccess = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('请填写手机号'));
+      }
+
+      if (value.length !== 11) {
+        return callback(new Error('请填写11位手机号'));
+      }
+
+      callback();
+    };
+
+    const validateSecret = (rule, value, callback) => {
+      if (value === '') {
+        return callback(new Error('请填写登录密码'));
+      }
+
+      if (value.length < 6) {
+        return callback(new Error('密码不能小于6位'));
+      }
+
+      if (value.length > 16) {
+        return callback(new Error('密码不能大于16位'));
+      }
+
+      callback();
+    };
+
+    return {
+      form: {
+        access: '',
+        secret: '',
+        remember: true
+      },
+      rule: {
+        access: {
+          validator: validateAccess
+        },
+        secret: {
+          validator: validateSecret
+        }
+      },
+      loading: false,
+      showOAuth: true
+    };
+  },
+
+  methods: {
+    authQQ() {
+      window.location.href = 'https://api.calibur.tv/callback/oauth2/qq?from=sign';
+    },
+
+    authWechat() {
+      window.location.href = 'https://api.calibur.tv/callback/oauth2/wechat?from=sign';
+    },
+
+    redirect() {
+      return this.$route.query.redirect ? this.$route.query.redirect : encodeURIComponent(window.location.href);
+    },
+
+    login() {
+      if (this.loading) {
+        return;
+      }
+
+      this.loading = true;
+      Object(userApi["e" /* login */])(this, {
+        access: this.form.access,
+        secret: this.form.secret,
+        remember: this.form.remember
+      }).then(token => {
+        this.$cookie.set('JWT-TOKEN', token, {
+          expires: this.form.remember ? 365 : 1
+        });
+
+        if (this.$route.query.redirect) {
+          window.location = decodeURIComponent(this.$route.query.redirect);
+        } else {
+          window.location.reload();
+        }
+      }).catch(err => {
+        this.$toast.error(err.message);
+        this.loading = false;
+      });
+    },
+
+    showReset() {
+      this.$emit('to-reset');
+    },
+
+    showRegister() {
+      this.$emit('to-register');
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./components/form/SignInForm.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_SignInFormvue_type_script_lang_js_ = (SignInFormvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./components/form/SignInForm.vue
+
+
+
+function SignInForm_injectStyles (context) {
+  
+  var style0 = __webpack_require__(54)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var SignInForm_component = Object(componentNormalizer["a" /* default */])(
+  form_SignInFormvue_type_script_lang_js_,
+  SignInFormvue_type_template_id_650f8aec_render,
+  SignInFormvue_type_template_id_650f8aec_staticRenderFns,
+  false,
+  SignInForm_injectStyles,
+  null,
+  "2d0e92d6"
+  
+)
+
+/* harmony default export */ var SignInForm = (SignInForm_component.exports);
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/SignUpForm.vue?vue&type=template&id=58932e2e&
+var SignUpFormvue_type_template_id_58932e2e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"sign-up-form"},[_c('VForm',{attrs:{"loading":_vm.submitBtnLoading,"form":_vm.form,"rule":_vm.rule,"error":false},on:{"submit":_vm.submitForm}},[_c('VField',{attrs:{"type":"text","placeholder":"手机（填写常用手机号，用于登录）","auto-complete":"off"},model:{value:(_vm.form.access),callback:function ($$v) {_vm.$set(_vm.form, "access", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.access"}}),_vm._v(" "),_c('VField',{attrs:{"type":"password","show-password":"","placeholder":"密码（6-16个字符组成，区分大小写）","auto-complete":"off"},model:{value:(_vm.form.secret),callback:function ($$v) {_vm.$set(_vm.form, "secret", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.secret"}}),_vm._v(" "),(!_vm.inviteCode)?_c('VField',{attrs:{"placeholder":"邀请码（可为空）","auto-complete":"off"},model:{value:(_vm.form.inviteCode),callback:function ($$v) {_vm.$set(_vm.form, "inviteCode", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.inviteCode"}}):_vm._e(),_vm._v(" "),_c('VButton',{attrs:{"slot":"submit","loading":_vm.submitBtnLoading,"disabled":_vm.submitBtnDisabled,"size":"large","block":"","round":""},slot:"submit"},[_vm._v("\n      "+_vm._s(_vm.submitBtnText)+"\n      "),(_vm.timeout)?[_vm._v("\n        （"+_vm._s(_vm.timeout)+"s 后可重新获取）\n      ")]:_vm._e()],2)],1),_vm._ssrNode(" <div class=\"others\"><ul class=\"provider\"><span>社交账号注册</span> <li><i class=\"iconfont ic-qq\"></i></li> <li><i class=\"iconfont ic-v-chat\"></i></li></ul> "+((!_vm.inviteCode)?("<a>已有账号»</a>"):"<!---->")+"</div>")],2)}
+var SignUpFormvue_type_template_id_58932e2e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/form/SignUpForm.vue?vue&type=template&id=58932e2e&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/SignUpForm.vue?vue&type=script&lang=js&
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var SignUpFormvue_type_script_lang_js_ = ({
+  name: 'SignUpForm',
+  components: {
+    VForm: lib_v_form_default.a,
+    VButton: lib_v_button_default.a,
+    VField: lib_v_field_default.a
+  },
+  props: {
+    inviteCode: {
+      type: [String, Number],
+      default: ''
+    }
+  },
+
+  data() {
+    const validateAccess = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('请填写手机号'));
+      }
+
+      if (value.length !== 11) {
+        return callback(new Error('请填写11位手机号'));
+      }
+
+      if (!/^(0|86|17951)?(1)[0-9]{10}$/.test(value)) {
+        return callback(new Error('错误的手机号格式'));
+      }
+
+      callback();
+    };
+
+    const validateSecret = (rule, value, callback) => {
+      if (value === '') {
+        return callback(new Error('请填写登录密码'));
+      }
+
+      if (value.length < 6) {
+        return callback(new Error('密码不能小于6位'));
+      }
+
+      if (value.length > 16) {
+        return callback(new Error('密码不能大于16位'));
+      }
+
+      callback();
+    };
+
+    return {
+      form: {
+        access: '',
+        secret: '',
+        authCode: '',
+        inviteCode: this.inviteCode
+      },
+      rule: {
+        access: {
+          validator: validateAccess
+        },
+        secret: {
+          validator: validateSecret
+        }
+      },
+
+      /**
+       * 0：初始化，表单待校验
+       * ---- 如果表单校验失败，就一直在 0
+       * 1：表单校验成功，获取手机短信中...
+       * ---- 需要 loading
+       * ---- 发送手机验证码需要 geetest 认证
+       * ---- 如果 geetest 认证通过就请求发短信的接口
+       * ---- 如果 geetest 认证不通过或者加载失败，就会返回到 step 0
+       * ---- 请求发短信的接口如果失败，就会返回到 step 0
+       * ---- 请求发短信的接口如果成功，就会到 step 2
+       * ---- 30s 后会返回到 step 0，可以重新发短信
+       * 2：获取手机验证码成功，用户填写短信验证码
+       * ---- 如果用户填写的正确，就进入注册流程
+       * ---- 如果用户填写的失败或关闭填写框，就提示错误，继续在 step 2
+       * ---- 30s 后就会返回 step 0，用户可以重新发短信
+       * 3：注册中...
+       * ---- 需要 loading 和 disabled
+       * ---- 注册成功，需要刷新页面
+       * ---- 注册失败，可能是在 step 2 停留太久，短信验证码过期
+       * ---- 注册失败，可能是服务器挂了
+       * ---- 注册失败，可能是 unique 的信息被他人使用了
+       * ---- 无论如何，注册失败都返回 step 0
+       */
+      step: 0,
+      timeout: 0
+    };
+  },
+
+  computed: {
+    submitBtnText() {
+      if (this.step === 0) {
+        return '注册';
+      } else if (this.step === 1) {
+        return '提交中...';
+      } else if (this.step === 2) {
+        return '短信已发送';
+      } else if (this.step === 3) {
+        return '注册中...';
+      }
+
+      return '注册';
+    },
+
+    submitBtnLoading() {
+      return this.step === 1 || this.step === 3;
+    },
+
+    submitBtnDisabled() {
+      return this.timeout !== 0 && this.step === 0 || this.step === 3;
+    },
+
+    query() {
+      return this.$route.query;
+    },
+
+    paramsIsOK() {
+      return !!(this.query.uid && /^\d+$/.test(this.query.uid) && this.query.time && /^\d+$/.test(this.query.time) && Date.now() <= this.query.time * 1000 && this.query.key === this.$md5(`${this.query.uid}-the-world-${this.query.time}`));
+    }
+
+  },
+  methods: {
+    addInviteForLink(url) {
+      let result = url;
+
+      if (this.paramsIsOK) {
+        result = `${result}&invite=${this.query.uid}`;
+      } else if (this.$route.name === 'about-invite-id') {
+        result = `${result}&invite=${this.$route.params.id}`;
+      }
+
+      return result;
+    },
+
+    qqRegisterLink() {
+      window.location.href = `${this.addInviteForLink('https://api.calibur.tv/callback/oauth2/qq?from=sign')}}`;
+    },
+
+    wechatRegisterLink() {
+      window.location.href = `${this.addInviteForLink('https://api.calibur.tv/callback/oauth2/wechat?from=sign')}}`;
+    },
+
+    redirect() {
+      return this.$route.query.redirect ? this.$route.query.redirect : encodeURIComponent(window.location.href);
+    },
+
+    submitForm() {
+      if (this.step === 0) {
+        this.getRegisterAuthCode();
+      }
+
+      if (this.step === 2) {
+        this.openConfirmModal();
+      }
+    },
+
+    async getRegisterAuthCode() {
+      this.step = 1;
+
+      try {
+        await Object(userApi["i" /* sendMessage */])(this, {
+          type: 'sign_up',
+          phone_number: this.form.access
+        });
+        this.step = 2;
+        this.openConfirmModal();
+      } catch (err) {
+        this.$toast.error(err.message);
+        this.step = 0;
+      } finally {
+        this.timeout = 60;
+        const timer = setInterval(() => {
+          if (! --this.timeout) {
+            this.step = 0;
+            clearInterval(timer);
+          }
+        }, 1000);
+      }
+    },
+
+    openConfirmModal() {
+      this.$prompt('请输入收到的验证码', '短信已发送', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^\d{6}$/,
+        inputErrorMessage: '验证码格式不正确'
+      }).then(({
+        value
+      }) => {
+        this.form.authCode = value;
+        this.step = 3;
+        this.signUp();
+      }).catch(() => {});
+    },
+
+    signUp() {
+      Object(userApi["g" /* register */])(this, {
+        access: this.form.access,
+        secret: this.form.secret,
+        authCode: this.form.authCode,
+        inviteCode: this.form.inviteCode
+      }).then(token => {
+        this.$cookie.set('JWT-TOKEN', token);
+        this.$toast.success('注册成功！').then(() => {
+          if (this.$route.query.redirect) {
+            window.location = decodeURIComponent(this.$route.query.redirect);
+          } else {
+            window.location.reload();
+          }
+        });
+      }).catch(err => {
+        this.step = 0;
+        this.$toast.error(err.message);
+      });
+    },
+
+    showLogin() {
+      this.$emit('to-login');
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./components/form/SignUpForm.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_SignUpFormvue_type_script_lang_js_ = (SignUpFormvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./components/form/SignUpForm.vue
+
+
+
+function SignUpForm_injectStyles (context) {
+  
+  var style0 = __webpack_require__(55)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var SignUpForm_component = Object(componentNormalizer["a" /* default */])(
+  form_SignUpFormvue_type_script_lang_js_,
+  SignUpFormvue_type_template_id_58932e2e_render,
+  SignUpFormvue_type_template_id_58932e2e_staticRenderFns,
+  false,
+  SignUpForm_injectStyles,
+  null,
+  "f51a3bea"
+  
+)
+
+/* harmony default export */ var SignUpForm = (SignUpForm_component.exports);
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/ResetPasswordForm.vue?vue&type=template&id=3ffa5ab2&
+var ResetPasswordFormvue_type_template_id_3ffa5ab2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"reset-password-form"},[_c('VForm',{attrs:{"loading":_vm.submitBtnLoading,"form":_vm.form,"rule":_vm.rule},on:{"submit":_vm.submitForm}},[_c('VField',{attrs:{"type":"text","placeholder":"手机号","auto-complete":"off"},model:{value:(_vm.form.access),callback:function ($$v) {_vm.$set(_vm.form, "access", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.access"}}),_vm._v(" "),_c('VField',{attrs:{"type":"text","placeholder":"新密码","auto-complete":"off"},model:{value:(_vm.form.secret),callback:function ($$v) {_vm.$set(_vm.form, "secret", (typeof $$v === 'string'? $$v.trim(): $$v))},expression:"form.secret"}}),_vm._v(" "),_c('VButton',{attrs:{"slot":"submit","loading":_vm.submitBtnLoading,"disabled":_vm.submitBtnDisabled,"size":"large","block":"","round":""},slot:"submit"},[_vm._v("\n      "+_vm._s(_vm.submitBtnText)+"\n      "),(_vm.timeout)?[_vm._v("\n        （"+_vm._s(_vm.timeout)+"s 后可重新获取）\n      ")]:_vm._e()],2)],1),_vm._ssrNode(" <div class=\"others\"><a>返回登录&gt;</a> <a>点击注册»</a></div>")],2)}
+var ResetPasswordFormvue_type_template_id_3ffa5ab2_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/form/ResetPasswordForm.vue?vue&type=template&id=3ffa5ab2&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/form/ResetPasswordForm.vue?vue&type=script&lang=js&
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var ResetPasswordFormvue_type_script_lang_js_ = ({
+  name: 'ResetPasswordForm',
+  components: {
+    VForm: lib_v_form_default.a,
+    VButton: lib_v_button_default.a,
+    VField: lib_v_field_default.a
+  },
+
+  data() {
+    const validateAccess = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('请填写手机号'));
+      }
+
+      if (value.length !== 11) {
+        return callback(new Error('请填写11位手机号'));
+      }
+
+      callback();
+    };
+
+    const validateSecret = (rule, value, callback) => {
+      if (value === '') {
+        return callback(new Error('请填写登录密码'));
+      }
+
+      if (value.length < 6) {
+        return callback(new Error('密码不能小于6位'));
+      }
+
+      if (value.length > 16) {
+        return callback(new Error('密码不能大于16位'));
+      }
+
+      callback();
+    };
+
+    return {
+      form: {
+        access: '',
+        secret: '',
+        authCode: ''
+      },
+      rule: {
+        access: [{
+          validator: validateAccess,
+          trigger: 'blur'
+        }],
+        secret: [{
+          validator: validateSecret,
+          trigger: 'blur'
+        }]
+      },
+      step: 0,
+      timeout: 0
+    };
+  },
+
+  computed: {
+    submitBtnText() {
+      if (this.step === 0) {
+        return '立即重置';
+      } else if (this.step === 1) {
+        return '提交中...';
+      } else if (this.step === 2) {
+        return '短信已发送';
+      } else if (this.step === 3) {
+        return '已重置';
+      }
+
+      return '立即重置';
+    },
+
+    submitBtnLoading() {
+      return this.step === 1 || this.step === 3;
+    },
+
+    submitBtnDisabled() {
+      return this.timeout !== 0 && this.step === 0 || this.step === 3;
+    }
+
+  },
+  methods: {
+    submitForm() {
+      if (this.step === 0) {
+        this.getResetAuthCode();
+      }
+
+      if (this.step === 2) {
+        this.openConfirmModal();
+      }
+    },
+
+    async getResetAuthCode() {
+      this.step = 1;
+
+      try {
+        await Object(userApi["i" /* sendMessage */])(this, {
+          type: 'forgot_password',
+          phone_number: this.form.access
+        });
+        this.step = 2;
+        this.openConfirmModal();
+      } catch (err) {
+        this.$toast.error(err.message);
+        this.step = 0;
+      } finally {
+        this.timeout = 60;
+        const timer = setInterval(() => {
+          if (! --this.timeout) {
+            this.step = 0;
+            clearInterval(timer);
+          }
+        }, 1000);
+      }
+    },
+
+    openConfirmModal() {
+      this.$prompt('请输入收到的验证码', '短信已发送', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^\d{6}$/,
+        inputErrorMessage: '验证码格式不正确'
+      }).then(({
+        value
+      }) => {
+        this.form.authCode = value;
+        this.step = 3;
+        this.signReset();
+      }).catch(() => {});
+    },
+
+    async signReset() {
+      try {
+        const res = await Object(userApi["h" /* resetPassword */])(this, {
+          access: this.form.access,
+          authCode: this.form.authCode,
+          secret: this.form.secret
+        });
+        this.$toast.success(res);
+        this.showLogin();
+      } catch (err) {
+        this.$toast.error(err.message);
+      } finally {
+        this.step = 0;
+      }
+    },
+
+    showLogin() {
+      this.$emit('to-login');
+    },
+
+    showRegister() {
+      this.$emit('to-register');
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./components/form/ResetPasswordForm.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_ResetPasswordFormvue_type_script_lang_js_ = (ResetPasswordFormvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./components/form/ResetPasswordForm.vue
+
+
+
+function ResetPasswordForm_injectStyles (context) {
+  
+  var style0 = __webpack_require__(56)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var ResetPasswordForm_component = Object(componentNormalizer["a" /* default */])(
+  form_ResetPasswordFormvue_type_script_lang_js_,
+  ResetPasswordFormvue_type_template_id_3ffa5ab2_render,
+  ResetPasswordFormvue_type_template_id_3ffa5ab2_staticRenderFns,
+  false,
+  ResetPasswordForm_injectStyles,
+  null,
+  "3e46c94f"
+  
+)
+
+/* harmony default export */ var ResetPasswordForm = (ResetPasswordForm_component.exports);
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/SignDialog.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ var SignDialogvue_type_script_lang_js_ = ({
+  name: 'SignDialog',
+  components: {
+    SignUpForm: SignUpForm,
+    SignInForm: SignInForm,
+    ResetPasswordForm: ResetPasswordForm
+  },
+
+  data() {
+    return {
+      canRender: false,
+      showModal: false,
+      showSignIn: false,
+      showSignUp: false,
+      showReset: false
+    };
+  },
+
+  computed: {
+    isGuest() {
+      return !this.$store.state.isAuth;
+    }
+
+  },
+
+  mounted() {
+    this.canRender = true;
+    this.$channel.$on('sign-in', () => {
+      if (window.screen.width <= 768) {
+        window.location.href = this.$alias.sign();
+      } else {
+        this.showLogin();
+      }
+    });
+    this.$channel.$on('sign-up', () => {
+      this.showRegister();
+    });
+  },
+
+  methods: {
+    showLogin() {
+      this.showReset = false;
+      this.showModal = true;
+      this.showSignIn = true;
+      this.showSignUp = false;
+    },
+
+    showRegister() {
+      this.showModal = true;
+      this.showSignUp = true;
+      this.showSignIn = false;
+    },
+
+    hiddenSign() {
+      this.showModal = false;
+      this.showSignIn = false;
+      this.showSignUp = false;
+      this.showReset = false;
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./components/SignDialog.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_SignDialogvue_type_script_lang_js_ = (SignDialogvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./components/SignDialog.vue
+
+
+
+function SignDialog_injectStyles (context) {
+  
+  var style0 = __webpack_require__(57)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var SignDialog_component = Object(componentNormalizer["a" /* default */])(
+  components_SignDialogvue_type_script_lang_js_,
+  SignDialogvue_type_template_id_75f2c4a9_render,
+  SignDialogvue_type_template_id_75f2c4a9_staticRenderFns,
+  false,
+  SignDialog_injectStyles,
+  null,
+  "d1bf90de"
+  
+)
+
+/* harmony default export */ var SignDialog = (SignDialog_component.exports);
+// EXTERNAL MODULE: ./assets/js/parseToken.js
+var parseToken = __webpack_require__(16);
+
+// CONCATENATED MODULE: ./mixins/useSign.js
+
+/* harmony default export */ var useSign = ({
+  async beforeMount() {
+    if (this.$store.state.logging) {
+      const canceler = this.$watch('$store.state.logging', () => {
+        if (this.$store.state.isAuth) {
+          this.$channel.$fire('user-signed');
+          canceler();
+        } else {
+          this.$cookie.remove('JWT-TOKEN');
+          this.$channel.$fire('user-not-sign');
+        }
+      });
+    } else {
+      const token = Object(parseToken["a" /* default */])();
+      this.$store.commit('SET_USER_TOKEN', token);
+      const user = await this.$store.dispatch('initAuth');
+
+      if (user) {
+        this.$channel.$fire('user-signed');
+        this.$store.dispatch('getUserRoles');
+      } else {
+        this.$cookie.remove('JWT-TOKEN');
+        this.$channel.$fire('user-not-sign');
+      }
+    }
+  }
+
+});
+// CONCATENATED MODULE: ./mixins/socket.js
+/* harmony default export */ var socket = ({
+  beforeMount() {
+    this.$channel.$when('user-signed', () => {
+      const HEART_BEAT_TTL = 1000;
+
+      const detectSocketIsConnected = () => Date.now() - this.$cache.get('socket-connect-heartbeat', 0) <= HEART_BEAT_TTL;
+
+      const connectSocketIfNotExist = () => {
+        /**
+         * 连接 websocket，则连接并轮训更新状态
+         */
+        const connected = () => {
+          this.$channel.socketConnect();
+          const timer = setInterval(() => {
+            /**
+             * 1. 当 socket 连接正常的时候，会持续维持状态
+             * 2. 当 socket 服务不可用的时候，会 clear 状态维持
+             * 3. 但无法重连 socket，因为会造成前端死循环，并无限的向后端发请求
+             */
+            if (this.$store.state.socket.isConnected) {
+              this.$cache.set('socket-connect-heartbeat', Date.now());
+            } else {
+              clearInterval(timer);
+            }
+          }, HEART_BEAT_TTL);
+          window.addEventListener('beforeunload', () => {
+            this.$channel.socketDisconnect();
+          });
+        };
+        /**
+         * 1. 若心跳还在持续，就检测并从 localStorage 里同步最新的数据
+         * 2. 若心跳检测发现连接已经断开，并且当前页面是受访问的页面，则在当前页面进行重连
+         */
+
+
+        const heartbeat = () => {
+          const timer = setInterval(() => {
+            if (detectSocketIsConnected()) {
+              if (Date.now() - this.$cache.get('socket-on-message-time', 0) <= HEART_BEAT_TTL) {
+                this.$store.commit('SOCKET_ONMESSAGE', this.$cache.get('socket-on-message-data'));
+              }
+            } else if (document.visibilityState === 'visible') {
+              connected();
+              clearInterval(timer);
+            }
+          }, HEART_BEAT_TTL * 2);
+        };
+        /**
+         * 1. 检测 websocket 是否已经连接
+         * 2. 如果已连接则修改 store 状态，并进行心跳检测，如果未连接则创建连接
+         */
+
+
+        if (detectSocketIsConnected() || document.visibilityState !== 'visible') {
+          this.$store.commit('SOCKET_AUTO_CONNECT');
+          heartbeat();
+        } else {
+          connected();
+        }
+      }; // 用户登录后连接 websocket
+
+
+      setTimeout(connectSocketIfNotExist, HEART_BEAT_TTL * 2);
+    });
+  },
+
+  beforeDestroy() {
+    if (this.$store.state.socket.isConnected) {
+      this.$channel.socketDisconnect();
+    }
+  }
+
+});
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ var defaultvue_type_script_lang_js_ = ({
+  // eslint-disable-next-line
+  name: 'default',
+  components: {
+    SignDialog: SignDialog
+  },
+  mixins: [useSign, socket]
+});
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=script&lang=js&
+ /* harmony default export */ var layouts_defaultvue_type_script_lang_js_ = (defaultvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./layouts/default.vue
+
+
+
+
+
+/* normalize component */
+
+var default_component = Object(componentNormalizer["a" /* default */])(
+  layouts_defaultvue_type_script_lang_js_,
+  defaultvue_type_template_id_bf3baec6_render,
+  defaultvue_type_template_id_bf3baec6_staticRenderFns,
+  false,
+  null,
+  null,
+  "2a957fee"
+  
+)
+
+/* harmony default export */ var layouts_default = (default_component.exports);
+// CONCATENATED MODULE: ./.nuxt/App.js
+
+
+
+
+
+
+
+
+const layouts = {
+  "_default": sanitizeComponent(layouts_default)
+};
+/* harmony default export */ var App = ({
+  render(h, props) {
+    const loadingEl = h('NuxtLoading', {
+      ref: 'loading'
+    });
+
+    if (this.nuxt.err && layouts_error) {
+      const errorLayout = (layouts_error.options || layouts_error).layout;
+
+      if (errorLayout) {
+        this.setLayout(typeof errorLayout === 'function' ? errorLayout.call(layouts_error, this.context) : errorLayout);
+      }
+    }
+
+    const layoutEl = h(this.layout || 'nuxt');
+    const templateEl = h('div', {
+      domProps: {
+        id: '__layout'
+      },
+      key: this.layoutName
+    }, [layoutEl]);
+    const transitionEl = h('transition', {
+      props: {
+        name: 'layout',
+        mode: 'out-in'
+      },
+      on: {
+        beforeEnter(el) {
+          // Ensure to trigger scroll event after calling scrollBehavior
+          window.$nuxt.$nextTick(() => {
+            window.$nuxt.$emit('triggerScroll');
+          });
+        }
+
+      }
+    }, [templateEl]);
+    return h('div', {
+      domProps: {
+        id: '__nuxt'
+      }
+    }, [loadingEl, transitionEl]);
+  },
+
+  data: () => ({
+    isOnline: true,
+    layout: null,
+    layoutName: '',
+    nbFetching: 0
+  }),
+
+  beforeCreate() {
+    external_vue_default.a.util.defineReactive(this, 'nuxt', this.$options.nuxt);
+  },
+
+  created() {
+    // Add this.$nuxt in child instances
+    external_vue_default.a.prototype.$nuxt = this;
+
+    if (false) {} // Add $nuxt.error()
+
+
+    this.error = this.nuxt.error; // Add $nuxt.context
+
+    this.context = this.$options.context;
+  },
+
+  async mounted() {
+    this.$loading = this.$refs.loading;
+  },
+
+  watch: {
+    'nuxt.err': 'errorChanged'
+  },
+  computed: {
+    isOffline() {
+      return !this.isOnline;
+    },
+
+    isFetching() {
+      return this.nbFetching > 0;
+    }
+
+  },
+  methods: {
+    refreshOnlineStatus() {
+      if (false) {}
+    },
+
+    async refresh() {
+      const pages = getMatchedComponentsInstances(this.$route);
+
+      if (!pages.length) {
+        return;
+      }
+
+      this.$loading.start();
+      const promises = pages.map(page => {
+        const p = []; // Old fetch
+
+        if (page.$options.fetch && page.$options.fetch.length) {
+          p.push(promisify(page.$options.fetch, this.context));
+        }
+
+        if (page.$fetch) {
+          p.push(page.$fetch());
+        } else {
+          // Get all component instance to call $fetch
+          for (const component of getChildrenComponentInstancesUsingFetch(page.$vnode.componentInstance)) {
+            p.push(component.$fetch());
+          }
+        }
+
+        if (page.$options.asyncData) {
+          p.push(promisify(page.$options.asyncData, this.context).then(newData => {
+            for (const key in newData) {
+              external_vue_default.a.set(page.$data, key, newData[key]);
+            }
+          }));
+        }
+
+        return Promise.all(p);
+      });
+
+      try {
+        await Promise.all(promises);
+      } catch (error) {
+        this.$loading.fail(error);
+        globalHandleError(error);
+        this.error(error);
+      }
+
+      this.$loading.finish();
+    },
+
+    errorChanged() {
+      if (this.nuxt.err && this.$loading) {
+        if (this.$loading.fail) {
+          this.$loading.fail(this.nuxt.err);
+        }
+
+        if (this.$loading.finish) {
+          this.$loading.finish();
+        }
+      }
+    },
+
+    setLayout(layout) {
+      if (!layout || !layouts['_' + layout]) {
+        layout = 'default';
+      }
+
+      this.layoutName = layout;
+      this.layout = layouts['_' + layout];
+      return this.layout;
+    },
+
+    loadLayout(layout) {
+      if (!layout || !layouts['_' + layout]) {
+        layout = 'default';
+      }
+
+      return Promise.resolve(layouts['_' + layout]);
+    }
+
+  },
+  components: {
+    NuxtLoading: nuxt_loading
+  }
+});
+// EXTERNAL MODULE: external "vuex"
+var external_vuex_ = __webpack_require__(26);
+var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
+
+// CONCATENATED MODULE: ./.nuxt/store.js
+
+
+external_vue_default.a.use(external_vuex_default.a);
+const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
+let store_store = {};
+
+(function updateModules() {
+  store_store = normalizeRoot(__webpack_require__(65), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  // Enforce store modules
+
+  store_store.modules = store_store.modules || {};
+  resolveStoreModules(__webpack_require__(58), 'flow.js');
+  resolveStoreModules(__webpack_require__(59), 'global.js');
+  resolveStoreModules(__webpack_require__(60), 'social.js'); // If the environment supports hot reloading...
+})(); // createStore
+
+
+const createStore = store_store instanceof Function ? store_store : () => {
+  return new external_vuex_default.a.Store(Object.assign({
+    strict: "production" !== 'production'
+  }, store_store));
+};
+
+function normalizeRoot(moduleData, filePath) {
+  moduleData = moduleData.default || moduleData;
+
+  if (moduleData.commit) {
+    throw new Error(`[nuxt] ${filePath} should export a method that returns a Vuex instance.`);
+  }
+
+  if (typeof moduleData !== 'function') {
+    // Avoid TypeError: setting a property that has only a getter when overwriting top level keys
+    moduleData = Object.assign({}, moduleData);
+  }
+
+  return normalizeModule(moduleData, filePath);
+}
+
+function normalizeModule(moduleData, filePath) {
+  if (moduleData.state && typeof moduleData.state !== 'function') {
+    console.warn(`'state' should be a method that returns an object in ${filePath}`);
+    const state = Object.assign({}, moduleData.state); // Avoid TypeError: setting a property that has only a getter when overwriting top level keys
+
+    moduleData = Object.assign({}, moduleData, {
+      state: () => state
+    });
+  }
+
+  return moduleData;
+}
+
+function resolveStoreModules(moduleData, filename) {
+  moduleData = moduleData.default || moduleData; // Remove store src + extension (./foo/index.js -> foo/index)
+
+  const namespace = filename.replace(/\.(js|mjs)$/, '');
+  const namespaces = namespace.split('/');
+  let moduleName = namespaces[namespaces.length - 1];
+  const filePath = `store/${filename}`;
+  moduleData = moduleName === 'state' ? normalizeState(moduleData, filePath) : normalizeModule(moduleData, filePath); // If src is a known Vuex property
+
+  if (VUEX_PROPERTIES.includes(moduleName)) {
+    const property = moduleName;
+    const storeModule = getStoreModule(store_store, namespaces, {
+      isProperty: true
+    }); // Replace state since it's a function
+
+    mergeProperty(storeModule, moduleData, property);
+    return;
+  } // If file is foo/index.js, it should be saved as foo
+
+
+  const isIndexModule = moduleName === 'index';
+
+  if (isIndexModule) {
+    namespaces.pop();
+    moduleName = namespaces[namespaces.length - 1];
+  }
+
+  const storeModule = getStoreModule(store_store, namespaces);
+
+  for (const property of VUEX_PROPERTIES) {
+    mergeProperty(storeModule, moduleData[property], property);
+  }
+
+  if (moduleData.namespaced === false) {
+    delete storeModule.namespaced;
+  }
+}
+
+function normalizeState(moduleData, filePath) {
+  if (typeof moduleData !== 'function') {
+    console.warn(`${filePath} should export a method that returns an object`);
+    const state = Object.assign({}, moduleData);
+    return () => state;
+  }
+
+  return normalizeModule(moduleData, filePath);
+}
+
+function getStoreModule(storeModule, namespaces, {
+  isProperty = false
+} = {}) {
+  // If ./mutations.js
+  if (!namespaces.length || isProperty && namespaces.length === 1) {
+    return storeModule;
+  }
+
+  const namespace = namespaces.shift();
+  storeModule.modules[namespace] = storeModule.modules[namespace] || {};
+  storeModule.modules[namespace].namespaced = true;
+  storeModule.modules[namespace].modules = storeModule.modules[namespace].modules || {};
+  return getStoreModule(storeModule.modules[namespace], namespaces, {
+    isProperty
+  });
+}
+
+function mergeProperty(storeModule, moduleData, property) {
+  if (!moduleData) {
+    return;
+  }
+
+  if (property === 'state') {
+    storeModule.state = moduleData || storeModule.state;
+  } else {
+    storeModule[property] = Object.assign({}, storeModule[property], moduleData);
+  }
+}
+// CONCATENATED MODULE: ./.nuxt/components/plugin.js
+
+const globalComponents = {};
+
+for (const name in globalComponents) {
+  external_vue_default.a.component(name, globalComponents[name]);
+}
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__(19);
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
+// EXTERNAL MODULE: external "defu"
+var external_defu_ = __webpack_require__(42);
+var external_defu_default = /*#__PURE__*/__webpack_require__.n(external_defu_);
+
+// CONCATENATED MODULE: ./.nuxt/axios.js
+
+ // Axios.prototype cannot be modified
+
+const axiosExtra = {
+  setBaseURL(baseURL) {
+    this.defaults.baseURL = baseURL;
+  },
+
+  setHeader(name, value, scopes = 'common') {
+    for (let scope of Array.isArray(scopes) ? scopes : [scopes]) {
+      if (!value) {
+        delete this.defaults.headers[scope][name];
+        return;
+      }
+
+      this.defaults.headers[scope][name] = value;
+    }
+  },
+
+  setToken(token, type, scopes = 'common') {
+    const value = !token ? null : (type ? type + ' ' : '') + token;
+    this.setHeader('Authorization', value, scopes);
+  },
+
+  onRequest(fn) {
+    this.interceptors.request.use(config => fn(config) || config);
+  },
+
+  onResponse(fn) {
+    this.interceptors.response.use(response => fn(response) || response);
+  },
+
+  onRequestError(fn) {
+    this.interceptors.request.use(undefined, error => fn(error) || Promise.reject(error));
+  },
+
+  onResponseError(fn) {
+    this.interceptors.response.use(undefined, error => fn(error) || Promise.reject(error));
+  },
+
+  onError(fn) {
+    this.onRequestError(fn);
+    this.onResponseError(fn);
+  },
+
+  create(options) {
+    return createAxiosInstance(external_defu_default()(options, this.defaults));
+  }
+
+}; // Request helpers ($get, $post, ...)
+
+for (let method of ['request', 'delete', 'get', 'head', 'options', 'post', 'put', 'patch']) {
+  axiosExtra['$' + method] = function () {
+    return this[method].apply(this, arguments).then(res => res && res.data);
+  };
+}
+
+const extendAxiosInstance = axios => {
+  for (let key in axiosExtra) {
+    axios[key] = axiosExtra[key].bind(axios);
+  }
+};
+
+const createAxiosInstance = axiosOptions => {
+  // Create new axios instance
+  const axios = external_axios_default.a.create(axiosOptions);
+  axios.CancelToken = external_axios_default.a.CancelToken;
+  axios.isCancel = external_axios_default.a.isCancel; // Extend axios proto
+
+  extendAxiosInstance(axios); // Setup interceptors
+
+  return axios;
+};
+
+/* harmony default export */ var _nuxt_axios = ((ctx, inject) => {
+  // baseURL
+  const baseURL =  false ? undefined : process.env._AXIOS_BASE_URL_ || 'http://localhost:3000/'; // Create fresh objects for all default header scopes
+  // Axios creates only one which is shared across SSR requests!
+  // https://github.com/mzabriskie/axios/blob/master/lib/defaults.js
+
+  const headers = {
+    "common": {
+      "Accept": "application/json, text/plain, */*"
+    },
+    "delete": {},
+    "get": {},
+    "head": {},
+    "post": {},
+    "put": {},
+    "patch": {}
+  };
+  const axiosOptions = {
+    baseURL,
+    headers
+  }; // Proxy SSR request headers headers
+
+  if ( true && ctx.req && ctx.req.headers) {
+    const reqHeaders = { ...ctx.req.headers
+    };
+
+    for (let h of ["accept", "host", "cf-ray", "cf-connecting-ip", "content-length", "content-md5", "content-type"]) {
+      delete reqHeaders[h];
+    }
+
+    axiosOptions.headers.common = { ...reqHeaders,
+      ...axiosOptions.headers.common
+    };
+  }
+
+  if (true) {
+    // Don't accept brotli encoding because Node can't parse it
+    axiosOptions.headers.common['accept-encoding'] = 'gzip, deflate';
+  }
+
+  const axios = createAxiosInstance(axiosOptions); // Inject axios to the context as $axios
+
+  ctx.$axios = axios;
+  inject('axios', axios);
+});
+// CONCATENATED MODULE: ./assets/js/generateRequestError.js
+/* harmony default export */ var generateRequestError = (err => {
+  const result = {};
+
+  if (/timeout of/.test(err.message)) {
+    result.statusCode = 504;
+    result.message = '网络请求超时，请重试！';
+    return result;
+  }
+
+  if (!err.response) {
+    result.statusCode = 502;
+    result.message = '网络错误，请重试！';
+    return result;
+  }
+
+  result.statusCode = err.response.status;
+  result.message = err.response.data.message || '发生错误了，请稍后再试！';
+
+  if (typeof result.message !== 'string') {
+    result.message = '网络错误，请重试！';
+  }
+
+  return result;
+});
+// CONCATENATED MODULE: ./plugins/axios.all.js
+
+
+/* harmony default export */ var axios_all = (({
+  $axios,
+  app
+}) => {
+  const isClient = typeof window !== 'undefined';
+  $axios.setToken(Object(parseToken["a" /* default */])(app), 'Bearer');
+  $axios.onRequest(config => {
+    config.baseURL = isClient ? "https://api.calibur.tv/" : "http://localhost/";
+    config.timeout = 10000;
+  });
+  $axios.onResponse(resp => {
+    return resp.data;
+  });
+  $axios.onError(error => {
+    return Promise.reject(generateRequestError(error));
+  });
+});
+// EXTERNAL MODULE: external "element-ui/lib/input"
+var input_ = __webpack_require__(27);
+var input_default = /*#__PURE__*/__webpack_require__.n(input_);
+
+// EXTERNAL MODULE: external "element-ui/lib/form-item"
+var form_item_ = __webpack_require__(28);
+var form_item_default = /*#__PURE__*/__webpack_require__.n(form_item_);
+
+// EXTERNAL MODULE: external "element-ui/lib/form"
+var form_ = __webpack_require__(29);
+var form_default = /*#__PURE__*/__webpack_require__.n(form_);
+
+// EXTERNAL MODULE: external "element-ui/lib/tag"
+var tag_ = __webpack_require__(24);
+var tag_default = /*#__PURE__*/__webpack_require__.n(tag_);
+
+// EXTERNAL MODULE: external "element-ui/lib/col"
+var col_ = __webpack_require__(30);
+var col_default = /*#__PURE__*/__webpack_require__.n(col_);
+
+// EXTERNAL MODULE: external "element-ui/lib/row"
+var row_ = __webpack_require__(31);
+var row_default = /*#__PURE__*/__webpack_require__.n(row_);
+
+// EXTERNAL MODULE: external "element-ui/lib/button"
+var button_ = __webpack_require__(32);
+var button_default = /*#__PURE__*/__webpack_require__.n(button_);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-img.css
+var v_img = __webpack_require__(61);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-img"
+var v_img_ = __webpack_require__(33);
+var lib_v_img_default = /*#__PURE__*/__webpack_require__.n(v_img_);
+
+// EXTERNAL MODULE: ./node_modules/@calibur/sakura/lib/theme-sakura/v-lazyload.css
+var v_lazyload = __webpack_require__(62);
+
+// EXTERNAL MODULE: external "@calibur/sakura/lib/v-lazyload"
+var v_lazyload_ = __webpack_require__(43);
+var lib_v_lazyload_default = /*#__PURE__*/__webpack_require__.n(v_lazyload_);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/v-switcher/dist/v-switcher.vue?vue&type=template&id=41adfa03&
+var v_switchervue_type_template_id_41adfa03_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"v-switcher",class:[
+    { 'v-switcher-vertical': _vm.align === 'vertical' },
+    { 'v-switcher-sticky': _vm.sticky }
+  ],on:{"mouseenter":function($event){_vm.cursorInner = true},"mouseleave":function($event){_vm.cursorInner = false},"touchstart":function($event){_vm.touchInner = true},"touchend":function($event){_vm.touchInner = false}}},[_vm._ssrNode("<div"+(_vm._ssrClass("v-switcher-header-wrap",{ 'v-switcher-header-wrap-fixed': _vm.isFixed }))+(_vm._ssrStyle(null,[{ height: (_vm.headerHeight + "px") }, _vm.fixedHeaderStyle], null))+">","</div>",[_vm._ssrNode("<div class=\"v-switcher-header-before\">","</div>",[_vm._t("header-before")],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"v-switcher-header-after\">","</div>",[_vm._t("header-after")],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"v-switcher-header-tabs\">","</div>",[_vm._ssrNode("<ul"+(_vm._ssrClass("v-switcher-header",[("v-switcher-header-" + _vm.align), "v-switcher-header-translate"]))+(_vm._ssrStyle(null,_vm.headerStyle, { display: (!_vm.hiddenTabs) ? '' : 'none' }))+">","</ul>",[_vm._l((_vm.formatHeaders),function(item,index){return _vm._ssrNode("<li"+(_vm._ssrClass("v-switcher-header-item",{ 'is-active': index === _vm.focusIndex }))+(_vm._ssrStyle(null,_vm.headerItemStyle, null))+">","</li>",[_vm._t(("tab-" + index),[(item.icon)?_c('i',{class:item.icon}):_vm._e(),_vm._v(" "),_c('span',{domProps:{"textContent":_vm._s(item.text)}})])],2)}),_vm._ssrNode(" "),_vm._ssrNode("<li class=\"v-switcher-header-anchor\""+(_vm._ssrStyle(null,_vm.anchorStyle, null))+">","</li>",[_vm._t("anchor")],2)],2)])],2),_vm._ssrNode(" <div"+(_vm._ssrStyle(null,_vm.fixedShimStyle, { display: (_vm.showFixedShim) ? '' : 'none' }))+"></div> "),(!_vm.routable)?_vm._ssrNode("<div"+(_vm._ssrClass("v-switcher-content-wrap",{ 'v-switcher-content-swipe': _vm.swipe }))+(_vm._ssrStyle(null,_vm.contentWrapStyle, null))+">","</div>",[_vm._ssrNode("<div"+(_vm._ssrClass("v-switcher-content",[{ 'v-switcher-content-animated': _vm.animated && !_vm.swipe }]))+(_vm._ssrStyle(null,_vm.contentStyle, null))+">","</div>",_vm._l((_vm.headers),function(item,index){return _vm._ssrNode("<div class=\"v-switcher-content-panel\""+(_vm._ssrStyle(null,_vm._computePanelStyle(index), null))+">","</div>",[_vm._t(index)],2)}),0)]):_vm._e()],2)}
+var v_switchervue_type_template_id_41adfa03_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/v-switcher.vue?vue&type=template&id=41adfa03&
+
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/swipe.js
+/*
+ * Swipe 2.0
+ *
+ * Brad Birdsall
+ * Copyright 2013, MIT License
+ *
+ */
+function Swipe(container, options) {
+  'use strict'
+
+  // utilities
+  var noop = function() {} // simple no operation function
+  var offloadFn = function(fn) {
+    setTimeout(fn || noop, 0)
+  } // offload a functions execution
+
+  var isAndroid = /android/.test(window.navigator.userAgent.toLocaleLowerCase())
+  var lastMoveAt = 0
+
+  // quit if no root element
+  if (!container) return
+  var element = container.children[0]
+  var slides, slidePos, width
+  options = options || {}
+  var index = parseInt(options.startSlide, 10) || 0
+  var speed = options.speed || 300
+  var disabled = options.disabled || false
+  options.continuous =
+    options.continuous !== undefined ? options.continuous : true
+
+  function setup() {
+    // cache slides
+    slides = element.children
+
+    // set continuous to false if only one slide
+    if (slides.length < 2) options.continuous = false
+
+    //special case if two slides
+    if (options.continuous && slides.length < 3) {
+      element.appendChild(slides[0].cloneNode(true))
+      element.appendChild(element.children[1].cloneNode(true))
+      slides = element.children
+    }
+
+    // create an array to store current positions of each slide
+    slidePos = new Array(slides.length)
+
+    // determine width of each slide
+    width = slides[0].getBoundingClientRect().width || slides[0].offsetWidth
+
+    element.style.width = slides.length * width + 'px'
+    element.parentElement.style.width = width + 'px'
+
+    // stack elements
+    var pos = slides.length
+    while (pos--) {
+      var slide = slides[pos]
+
+      slide.style.width = width + 'px'
+      slide.setAttribute('data-index', pos)
+
+      slide.style.left = pos * -width + 'px'
+      slide.style.zIndex = slides.length - pos
+      move(pos, index > pos ? -width : index < pos ? width : 0, 0)
+    }
+
+    // reposition elements before and after index
+    if (options.continuous) {
+      move(circle(index - 1), -width, 0)
+      move(circle(index + 1), width, 0)
+    }
+
+    container.style.visibility = 'visible'
+  }
+
+  function prev() {
+    if (options.continuous) slide(index - 1)
+    else if (index) slide(index - 1)
+  }
+
+  function next() {
+    if (options.continuous) slide(index + 1)
+    else if (index < slides.length - 1) slide(index + 1)
+  }
+
+  function circle(index) {
+    // a simple positive modulo using slides.length
+    return (slides.length + (index % slides.length)) % slides.length
+  }
+
+  function slide(to, slideSpeed) {
+    // do nothing if already on requested slide
+    if (index === to) return
+
+    var direction = Math.abs(index - to) / (index - to) // 1: backward, -1: forward
+
+    // get the actual position of the slide
+    if (options.continuous) {
+      var natural_direction = direction
+      direction = -slidePos[circle(to)] / width
+
+      // if going forward but to < index, use to = slides.length + to
+      // if going backward but to > index, use to = -slides.length + to
+      if (direction !== natural_direction) to = -direction * slides.length + to
+    }
+
+    var diff = Math.abs(index - to) - 1
+
+    // move all the slides between index and to in the right direction
+    while (diff--)
+      move(circle((to > index ? to : index) - diff - 1), width * direction, 0)
+
+    to = circle(to)
+
+    move(index, width * direction, slideSpeed || speed)
+    move(to, 0, slideSpeed || speed)
+
+    if (options.continuous)
+      move(circle(to - direction), -(width * direction), 0) // we need to get the next in place
+
+    index = to
+    offloadFn(options.callback && options.callback(index, slides[index]))
+    lastMoveAt = Date.now()
+  }
+
+  function move(index, dist, speed) {
+    translate(index, dist, speed)
+    slidePos[index] = dist
+  }
+
+  function translate(index, dist, speed) {
+    var slide = slides[index]
+    var style = slide && slide.style
+
+    if (!style) return
+
+    style.webkitTransitionDuration = style.MozTransitionDuration = style.msTransitionDuration = style.OTransitionDuration = style.transitionDuration =
+      speed + 'ms'
+
+    style.webkitTransform = style.msTransform = style.MozTransform = style.OTransform =
+      'translateX(' + dist + 'px)'
+  }
+
+  // setup auto slideshow
+  var delay = options.auto || 0
+  var interval
+
+  function begin() {
+    interval = setTimeout(next, delay)
+  }
+
+  function stop() {
+    delay = 0
+    interval && clearTimeout(interval)
+  }
+
+  // setup initial vars
+  var start = {}
+  var delta = {}
+  var isScrolling
+
+  // setup event capturing
+  var events = {
+    handleEvent: function(event) {
+      switch (event.type) {
+        case 'touchstart':
+          this.start(event)
+          break
+        case 'touchmove':
+          this.move(event)
+          break
+        case 'touchend':
+          offloadFn(this.end(event))
+          break
+        case 'webkitTransitionEnd':
+        case 'msTransitionEnd':
+        case 'oTransitionEnd':
+        case 'otransitionend':
+        case 'transitionend':
+          offloadFn(this.transitionEnd(event))
+          break
+        case 'resize':
+          offloadFn(setup)
+          break
+      }
+
+      if (options.stopPropagation) event.stopPropagation()
+    },
+    start: function(event) {
+      if (disabled) {
+        return
+      }
+
+      var touches = event.touches[0]
+
+      // measure start values
+      start = {
+        // get initial touch coords
+        x: touches.pageX,
+        y: touches.pageY,
+
+        // store time to determine touch duration
+        time: +new Date()
+      }
+
+      // used for testing first move event
+      isScrolling = undefined
+
+      // reset delta and end measurements
+      delta = {}
+
+      // attach touchmove and touchend listeners
+      element.addEventListener('touchmove', this, false)
+      element.addEventListener('touchend', this, false)
+    },
+    move: function(event) {
+      if (disabled) {
+        return
+      }
+
+      // ensure swiping with one touch and not pinching
+      if (event.touches.length > 1 || (event.scale && event.scale !== 1)) return
+
+      if (options.disableScroll) event.preventDefault()
+
+      var touches = event.touches[0]
+
+      // measure change in x and y
+      delta = {
+        x: touches.pageX - start.x,
+        y: touches.pageY - start.y
+      }
+
+      // determine if scrolling test has run - one time test
+      if (typeof isScrolling === 'undefined') {
+        isScrolling = !!(isScrolling || Math.abs(delta.x) < Math.abs(delta.y))
+      }
+
+      // if user is not trying to scroll vertically
+      if (!isScrolling) {
+        // prevent native scrolling
+        event.preventDefault()
+        if (isAndroid) {
+          if (Math.abs(delta.x) < Math.abs(delta.y) * 3) {
+            stop()
+            return
+          }
+        } else {
+          event.stopPropagation()
+        }
+
+        // stop slideshow
+        stop()
+
+        // increase resistance if first or last slide
+        if (options.continuous) {
+          // we don't add resistance at the end
+
+          translate(circle(index - 1), delta.x + slidePos[circle(index - 1)], 0)
+          translate(index, delta.x + slidePos[index], 0)
+          translate(circle(index + 1), delta.x + slidePos[circle(index + 1)], 0)
+        } else {
+          delta.x =
+            delta.x /
+            ((!index && delta.x > 0) || // if first slide and sliding left
+            (index === slides.length - 1 && // or if last slide and sliding right
+              delta.x < 0) // and if sliding at all
+              ? Math.abs(delta.x) / width + 1 // determine resistance level
+              : 1) // no resistance if false
+
+          if (index === 0 && delta.x > 0) {
+            return
+          }
+          if (index === element.children.length - 1 && delta.x < 0) {
+            return
+          }
+          // translate 1:1
+          translate(index - 1, delta.x + slidePos[index - 1], 0)
+          translate(index, delta.x + slidePos[index], 0)
+          translate(index + 1, delta.x + slidePos[index + 1], 0)
+        }
+      }
+    },
+    end: function() {
+      // measure duration
+      var duration = +new Date() - start.time
+
+      // determine if slide attempt triggers next/prev slide
+      var isValidSlide =
+        (Number(duration) < 250 && // if slide duration is less than 250ms
+          Math.abs(delta.x) > 20) || // and if slide amt is greater than 20px
+        Math.abs(delta.x) > width / 2 // or if slide amt is greater than half the width
+
+      // determine if slide attempt is past start and end
+      var isPastBounds =
+        (!index && delta.x > 0) || // if first slide and slide amt is greater than 0
+        (index === slides.length - 1 && delta.x < 0) // or if last slide and slide amt is less than 0
+
+      if (options.continuous) isPastBounds = false
+
+      // determine direction of swipe (true:right, false:left)
+      var direction = delta.x < 0
+
+      // if not scrolling vertically
+      if (!isScrolling) {
+        if (isValidSlide && !isPastBounds) {
+          if (direction) {
+            if (options.continuous) {
+              // we need to get the next in this direction in place
+
+              move(circle(index - 1), -width, 0)
+              move(circle(index + 2), width, 0)
+            } else {
+              move(index - 1, -width, 0)
+            }
+
+            move(index, slidePos[index] - width, speed)
+            move(circle(index + 1), slidePos[circle(index + 1)] - width, speed)
+            index = circle(index + 1)
+          } else {
+            if (options.continuous) {
+              // we need to get the next in this direction in place
+
+              move(circle(index + 1), width, 0)
+              move(circle(index - 2), -width, 0)
+            } else {
+              move(index + 1, width, 0)
+            }
+
+            move(index, slidePos[index] + width, speed)
+            move(circle(index - 1), slidePos[circle(index - 1)] + width, speed)
+            index = circle(index - 1)
+          }
+          lastMoveAt = Date.now()
+          options.callback && options.callback(index, slides[index])
+        } else {
+          if (options.continuous) {
+            move(circle(index - 1), -width, speed)
+            move(index, 0, speed)
+            move(circle(index + 1), width, speed)
+          } else {
+            move(index - 1, -width, speed)
+            move(index, 0, speed)
+            move(index + 1, width, speed)
+          }
+        }
+      }
+
+      // kill touchmove and touchend event listeners until touchstart called again
+      element.removeEventListener('touchmove', events, false)
+      element.removeEventListener('touchend', events, false)
+    },
+    transitionEnd: function(event) {
+      if (parseInt(event.target.getAttribute('data-index'), 10) === index) {
+        if (delay) begin()
+
+        options.transitionEnd &&
+          options.transitionEnd.call(event, index, slides[index])
+      }
+    }
+  }
+
+  // trigger setup
+  setup()
+
+  // start auto slideshow if applicable
+  if (delay) begin()
+
+  // add event listeners
+  element.addEventListener('touchstart', events, false)
+  element.addEventListener('webkitTransitionEnd', events, false)
+  element.addEventListener('msTransitionEnd', events, false)
+  element.addEventListener('oTransitionEnd', events, false)
+  element.addEventListener('otransitionend', events, false)
+  element.addEventListener('transitionend', events, false)
+  window.addEventListener('resize', events, false)
+
+  // expose the Swipe API
+  return {
+    slide: function(to, speed) {
+      if (speed && Date.now() - lastMoveAt <= speed) {
+        return
+      }
+      // cancel slideshow
+      stop()
+
+      slide(to, speed)
+    },
+    prev: function() {
+      // cancel slideshow
+      stop()
+
+      prev()
+    },
+    next: function() {
+      // cancel slideshow
+      stop()
+
+      next()
+    }
+  }
+}
+
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/utils.js
+const getMatchedRouteIndex = (headers, path) => {
+  let result = -1
+  headers
+    .map(_ => _.route)
+    .forEach((route, index) => {
+      if (path.startsWith(route)) {
+        result = index
+      }
+    })
+  return result
+}
+
+const on = (function() {
+  if (typeof window === 'undefined') {
+    return
+  }
+  if (document.addEventListener) {
+    return function(element, event, handler) {
+      if (element && event && handler) {
+        element.addEventListener(event, handler, false)
+      }
+    }
+  } else {
+    return function(element, event, handler) {
+      if (element && event && handler) {
+        element.attachEvent('on' + event, handler)
+      }
+    }
+  }
+})()
+
+const off = (function() {
+  if (typeof window === 'undefined') {
+    return
+  }
+  if (document.removeEventListener) {
+    return function(element, event, handler) {
+      if (element && event) {
+        element.removeEventListener(event, handler, false)
+      }
+    }
+  } else {
+    return function(element, event, handler) {
+      if (element && event) {
+        element.detachEvent('on' + event, handler)
+      }
+    }
+  }
+})()
+
+const getScroll = (target, top) => {
+  const prop = top ? 'pageYOffset' : 'pageXOffset'
+  const method = top ? 'scrollTop' : 'scrollLeft'
+  let ret = target[prop]
+  if (typeof ret !== 'number') {
+    ret = window.document.documentElement[method]
+  }
+  return ret
+}
+
+const getOffset = element => {
+  const rect = element.getBoundingClientRect()
+  const scrollTop = getScroll(window, true)
+  const scrollLeft = getScroll(window)
+  const docEl = window.document.body
+  const clientTop = docEl.clientTop || 0
+  const clientLeft = docEl.clientLeft || 0
+  return {
+    top: rect.top + scrollTop - clientTop,
+    left: rect.left + scrollLeft - clientLeft
+  }
+}
+
+const getScrollTarget = dom => {
+  let el = dom
+  if (!el) {
+    return null
+  }
+  while (
+    el &&
+    el.tagName !== 'HTML' &&
+    el.tagName !== 'BOYD' &&
+    el.nodeType === 1
+  ) {
+    const overflowY = window.getComputedStyle(el).overflowY
+    if (overflowY === 'scroll' || overflowY === 'auto') {
+      if (el.tagName === 'HTML' || el.tagName === 'BODY') {
+        return document
+      }
+      return el
+    }
+    el = el.parentNode
+  }
+  return document
+}
+
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/affix.js
+
+
+/* harmony default export */ var affix = ({
+  props: {
+    fixedTop: { // eslint-disable-line
+      type: Number
+    }
+  },
+  data() {
+    return {
+      isFixed: false,
+      showFixedShim: false,
+      fixedShimStyle: {},
+      fixedHeaderStyle: {}
+    }
+  },
+  mounted() {
+    if (this.fixedTop !== undefined) {
+      const target = getScrollTarget(this.$el)
+      on(target, 'scroll', this.handleScroll)
+      on(target, 'resize', this.handleScroll)
+      this.$nextTick(() => {
+        this.handleScroll()
+      })
+    }
+  },
+  beforeDestroy() {
+    if (this.fixedTop !== undefined) {
+      const target = getScrollTarget(this.$el)
+      off(target, 'scroll', this.handleScroll)
+      off(target, 'resize', this.handleScroll)
+    }
+  },
+  methods: {
+    handleScroll() {
+      const isFixed = this.isFixed
+      const scrollTop = getScroll(window, true)
+      const elOffset = getOffset(this.$el)
+      // Fixed Top
+      if (elOffset.top - this.fixedTop < scrollTop && !isFixed) {
+        this.isFixed = true
+        this.fixedShimStyle = {
+          width: this.$refs.headerWrap.clientWidth + 'px',
+          height: this.$refs.headerWrap.clientHeight + 'px'
+        }
+        this.showFixedShim = true
+        this.fixedHeaderStyle = {
+          top: `${this.fixedTop}px`,
+          left: `${elOffset.left}px`,
+          width: `${this.$el.offsetWidth}px`
+        }
+        this.$emit('on-fixed', true)
+      } else if (elOffset.top - this.fixedTop > scrollTop && isFixed) {
+        this.showFixedShim = false
+        this.fixedShimStyle = {}
+        this.isFixed = false
+        this.fixedHeaderStyle = null
+        this.$emit('on-fixed', false)
+      }
+    }
+  }
+});
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/v-switcher/dist/v-switcher.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ var v_switchervue_type_script_lang_js_ = ({
+  name: 'VSwitcher',
+  mixins: [affix],
+  props: {
+    headers: {
+      type: Array,
+      required: true
+    },
+    defaultIndex: {
+      type: Number,
+      default: 0
+    },
+    routable: {
+      type: Boolean,
+      default: false
+    },
+    animated: {
+      type: Boolean,
+      default: false
+    },
+    duration: {
+      type: Number,
+      default: 300
+    },
+    align: {
+      type: String,
+      default: 'start',
+      validator: val => ~['around', 'start', 'center', 'end', 'vertical'].indexOf(val)
+    },
+    headerTrigger: {
+      type: String,
+      default: 'click',
+      validator: val => ~['click', 'hover'].indexOf(val)
+    },
+    anchorTrigger: {
+      type: String,
+      default: 'click',
+      validator: val => ~['click', 'hover'].indexOf(val)
+    },
+    anchorPadding: {
+      type: Number,
+      default: 0,
+      validator: val => val >= 0
+    },
+    swipe: {
+      type: Boolean,
+      default: false
+    },
+    autoplay: {
+      type: Number,
+      default: 0
+    },
+    contentWidth: {
+      type: String,
+      default: '100%'
+    },
+    headerHeight: {
+      type: Number,
+      default: 40,
+      validator: val => val >= 0
+    },
+    sticky: {
+      type: Boolean,
+      default: false
+    },
+    disabledSwipe: {
+      type: Boolean,
+      default: false
+    },
+    continuousSwipe: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  data() {
+    let focusIndex;
+
+    if (this.routable) {
+      focusIndex = getMatchedRouteIndex(this.headers, this.$route.path);
+    } else {
+      focusIndex = this.defaultIndex;
+    }
+
+    return {
+      cursorInner: false,
+      touchInner: false,
+      focusIndex,
+      anchorStyle: {},
+      headerStyle: {},
+      timer: 0,
+      headerLeft: 0,
+      headerLastPoint: 0,
+      contentStartPoint: {
+        x: 0,
+        y: 0
+      },
+      contentDeltaPoint: {
+        x: 0,
+        y: 0
+      },
+      swiper: null,
+      lastSlide: 0,
+      sizeCache: {
+        tabs: [],
+        header: null,
+        headerSize: 0,
+        headerTabsWidth: 0,
+        headerWrapWidth: 0,
+        headerListWidth: 0,
+        headerScrollHeight: 0,
+        curScreenIndex: 0,
+        maxScreenCount: 1
+      }
+    };
+  },
+
+  computed: {
+    hiddenTabs() {
+      return this.autoplay && this.headerCount <= 1;
+    },
+
+    formatHeaders() {
+      const result = [];
+      this.headers.forEach((item, index) => {
+        result.push({
+          text: this._computeItemText(item, index),
+          icon: this._computeItemIcon(item, index)
+        });
+      });
+      return result;
+    },
+
+    headerCount() {
+      return this.headers.length;
+    },
+
+    headerItemStyle() {
+      const result = {};
+
+      if (!this.autoplay && this.align !== 'vertical') {
+        result.height = `${this.headerHeight}px`;
+        result.lineHeight = `${this.headerHeight}px`;
+      }
+
+      if (this.align === 'around') {
+        result.width = `${100 / this.headerCount}%`;
+      }
+
+      return result;
+    },
+
+    contentWrapStyle() {
+      const style = {};
+
+      if (this.sticky) {
+        style.paddingTop = `${this.headerHeight}px`;
+        style.marginTop = `-${this.headerHeight}px`;
+      }
+
+      return style;
+    },
+
+    contentStyle() {
+      const style = {};
+
+      if (this.swipe) {
+        return style;
+      }
+
+      if (this.animated) {
+        style.width = `${this.headerCount * 100}%`;
+        style.transform = `translateX(${this.focusIndex / this.headerCount * -100}%)`;
+        style.transitionDuration = `${this.duration}ms`;
+      }
+
+      return style;
+    },
+
+    notTouchDevice() {
+      return typeof document === 'undefined' ? true : !('ontouchstart' in document.documentElement);
+    }
+
+  },
+
+  beforeMount() {
+    if (this.routable) {
+      this.$watch('$route', newVal => {
+        const currentIndex = getMatchedRouteIndex(this.headers, newVal.path);
+
+        if (currentIndex < 0) {
+          this.focusIndex = -1;
+
+          this._resetAnchorStyle();
+        } else {
+          this._handleTabSwitch(currentIndex, true);
+        }
+      });
+    }
+
+    this.$watch('headers', newVal => {
+      this.$nextTick(() => {
+        const beforeIndex = this.focusIndex;
+
+        this._cacheComponentSize();
+
+        if (this.routable) {
+          this.focusIndex = getMatchedRouteIndex(newVal, this.$route.path);
+        }
+
+        if (beforeIndex !== this.focusIndex) {
+          this._computeAnchorStyle(this.focusIndex);
+
+          this._computeHeaderStyle(beforeIndex);
+        }
+      });
+    });
+    this.$watch('focusIndex', (newVal, oldVal) => {
+      this._computeAnchorStyle(newVal);
+
+      this._computeHeaderStyle(oldVal);
+
+      this.$emit('change', newVal);
+    });
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this._cacheComponentSize();
+
+      this._initSwipe();
+
+      this._initCarousel();
+
+      this.$emit('change', this.focusIndex);
+      this.$nextTick(() => {
+        this._computeAnchorStyle(this.focusIndex);
+
+        this._computeHeaderStyle(0);
+      });
+      on(window, 'resize', this._cacheComponentSize);
+    });
+  },
+
+  beforeDestroy() {
+    off(window, 'resize', this._cacheComponentSize);
+
+    if (this.timer) {
+      window.clearInterval(this.timer);
+    }
+  },
+
+  methods: {
+    _initCarousel() {
+      if (!this.autoplay) {
+        return;
+      }
+
+      this.timer = window.setInterval(() => {
+        if (Date.now() - this.lastSlide < this.duration) {
+          return;
+        }
+
+        if (this.notTouchDevice) {
+          if (this.cursorInner) {
+            return;
+          }
+        } else {
+          if (this.touchInner) {
+            return;
+          }
+        }
+
+        this._switchTrigger(true);
+      }, this.autoplay);
+    },
+
+    _initSwipe() {
+      if (!this.swipe) {
+        return;
+      }
+
+      this.swiper = Swipe(this.$refs.content, {
+        startSlide: this.focusIndex,
+        speed: this.duration,
+        disabled: this.disabledSwipe,
+        continuous: this.continuousSwipe || !!this.autoplay,
+        callback: this._swipeCallback
+      });
+    },
+
+    _triggerSwiper() {
+      if (!this.swipe) {
+        return;
+      }
+
+      this.swiper.slide(this.focusIndex, this.duration);
+    },
+
+    _computeHeaderStyle(beforeIndex) {
+      /**
+       * 只支持 align 是 start
+       */
+      if (this.align !== 'start' || this.sizeCache.maxScreenCount <= 1) {
+        return;
+      }
+
+      const index = this.focusIndex;
+
+      if (index < 0) {
+        return;
+      }
+      /**
+       * left <= 0
+       */
+
+
+      let left = this.headerLeft;
+      const max = 0;
+      const min = this.sizeCache.headerScrollHeight;
+
+      if (!index) {
+        left = max;
+      } else if (index === this.headerCount - 1) {
+        left = min;
+      } else {
+        /**
+         * 如果设置了 beforeHeader 则 tabs[0].left 不为 0
+         */
+        const baseLeft = this._getComponentSize('tabs', 0).left;
+
+        const curTabRect = this._getComponentSize('tabs', index);
+
+        if (beforeIndex > index) {
+          /**
+           * 向前切换
+           * 取当前 focus 的前一个 tab 来 check
+           * 如果 checkTab 的左边在视口外，则重置 left
+           */
+          const checkTabRect = this._getComponentSize('tabs', index - 1);
+
+          if (checkTabRect.left + left < baseLeft) {
+            left = baseLeft - checkTabRect.left;
+          }
+          /**
+           * 如果下一个 tab 的宽度过大
+           * 导致当前 tab 无法完全展示在屏幕内
+           * 则重置 left
+           */
+
+
+          const condition = curTabRect.right - baseLeft - this.sizeCache.headerTabsWidth;
+
+          if (condition > left > 0) {
+            left = -condition;
+          }
+        } else {
+          /**
+           * 向后切换
+           * 取当前 focus 的后一个 tab 来 check
+           * 如果 checkTab 的右边
+           */
+          const checkTabRect = this._getComponentSize('tabs', index + 1);
+
+          const result = checkTabRect.right - baseLeft - this.sizeCache.headerTabsWidth;
+
+          if (result > 0) {
+            left = -result;
+          }
+          /**
+           * 如果上一个 tab 的宽度过大
+           * 导致当前 tab 无法完全展示在屏幕内
+           * 则重置 left 为当前 tab 的 left
+           */
+
+
+          const condition = curTabRect.left - baseLeft;
+
+          if (left + condition < 0) {
+            left = -condition;
+          }
+        }
+      }
+
+      if (left < min) {
+        left = min;
+      } else if (left > max) {
+        left = max;
+      }
+
+      this._setHeaderScroll(left);
+
+      this._computeCurrentScreenIndex(left);
+
+      this.headerLeft = left;
+    },
+
+    _setHeaderScroll(left, duration = true) {
+      this.headerStyle = {
+        transform: `translateX(${left}px)`,
+        transitionDuration: `${duration ? this.duration : 0}ms`
+      };
+    },
+
+    _computePanelStyle(index) {
+      if (this.swipe) {
+        return {
+          width: this.contentWidth
+        };
+      }
+
+      if (this.animated) {
+        return {
+          width: `${100 / this.headerCount}%`
+        };
+      }
+
+      if (this.focusIndex !== index) {
+        return {
+          display: 'none'
+        };
+      }
+
+      return {};
+    },
+
+    _computeMaxScreenCount() {
+      if (this.align !== 'start') {
+        return;
+      }
+
+      const tabSize = this._getComponentSize('tabs', this.headerCount - 1);
+
+      const header = this._getComponentSize('header');
+
+      if (!tabSize || !header) {
+        return;
+      }
+
+      const fullWidth = tabSize.left + tabSize.width - header.left;
+      this.sizeCache.maxScreenCount = Math.ceil(fullWidth / this.sizeCache.headerListWidth);
+      this.$emit('calc-screen-count', this.sizeCache.maxScreenCount);
+    },
+
+    _computeAnchorStyle(index, loop = 0) {
+      if (index < 0) {
+        return;
+      }
+
+      const tabSize = this._getComponentSize('tabs', index);
+
+      if (!tabSize) {
+        // 这个地方 DOM 可能还没渲染好，refs 不存在，循环 5 次来取值
+        if (loop < 5) {
+          setTimeout(() => {
+            this._computeAnchorStyle(this.focusIndex, loop + 1);
+          }, 200);
+        }
+
+        return;
+      }
+
+      const anchorPadding = +this.anchorPadding;
+
+      const header = this._getComponentSize('header');
+
+      if (this.align === 'vertical') {
+        this.anchorStyle = {
+          height: `${tabSize.height - anchorPadding * 2}px`,
+          transform: `translateY(${tabSize.top - header.top + anchorPadding}px)`,
+          transitionDuration: `${this.duration}ms`
+        };
+      } else {
+        this.anchorStyle = {
+          width: `${tabSize.width - anchorPadding * 2}px`,
+          transform: `translateX(${tabSize.left - header.left + anchorPadding}px)`,
+          transitionDuration: `${this.duration}ms`
+        };
+      }
+    },
+
+    _resetAnchorStyle() {
+      if (this.focusIndex > -1) {
+        return;
+      }
+
+      if (this.align === 'vertical') {
+        this.anchorStyle.transform = 'translateY(-100%)';
+      } else {
+        this.anchorStyle.transform = 'translateX(-100%)';
+      }
+    },
+
+    _computeItemText(item, curIndex) {
+      let result;
+
+      if (typeof item === 'string') {
+        result = item;
+      } else {
+        result = item.label || item.name || item.text;
+
+        if (this.focusIndex === curIndex) {
+          const temp = item['label-active'] || item['name-active'] || item['text-active'];
+
+          if (temp) {
+            result = temp;
+          }
+        }
+      }
+
+      return result;
+    },
+
+    _computeItemIcon(item, curIndex) {
+      let result;
+
+      if (typeof item === 'string' || !item.icon) {
+        result = '';
+      } else {
+        result = `iconfont ic-${item.icon.replace('ic-', '')}`;
+
+        if (this.focusIndex === curIndex && item['icon-active']) {
+          result = `iconfont ic-${item['icon-active'].replace('ic-', '')}`;
+        }
+      }
+
+      return result;
+    },
+
+    _swipeCallback(index) {
+      if (isNaN(index)) {
+        return;
+      }
+
+      this.lastSlide = Date.now();
+
+      this._handleTabSwitch(index, false, false);
+    },
+
+    _handleTabSwitch(index, force = false, move = true) {
+      if (this.routable && !force) {
+        return;
+      }
+
+      let newIndex = index;
+
+      if (this.autoplay && index >= this.headerCount) {
+        newIndex = (newIndex - this.headerCount) % 2 ? this.headerCount - 1 : 0;
+      }
+
+      if (this.focusIndex !== newIndex) {
+        this.focusIndex = newIndex;
+      }
+
+      move && this._triggerSwiper();
+    },
+
+    _switchTrigger(isNext) {
+      if (Date.now() - this.lastSlide < this.duration) {
+        return;
+      }
+
+      let result;
+
+      if (isNext) {
+        if (this.focusIndex === this.headerCount - 1) {
+          result = 0;
+        } else {
+          result = this.focusIndex + 1;
+        }
+      } else {
+        if (this.focusIndex === 0) {
+          result = this.headerCount - 1;
+        } else {
+          result = this.focusIndex - 1;
+        }
+      }
+
+      this._handleTabSwitch(result);
+    },
+
+    _handleAnchorTrigger(index) {
+      if (this.anchorTrigger === 'hover') {
+        this._computeAnchorStyle(index);
+      }
+
+      if (this.headerTrigger === 'hover') {
+        this._handleTabSwitch(index);
+      }
+    },
+
+    _moveHeader(targetScreenCount) {
+      const left = -targetScreenCount * this.sizeCache.headerListWidth;
+
+      this._setHeaderScroll(left);
+
+      this.headerLeft = left;
+      this.sizeCache.curScreenIndex = targetScreenCount;
+      this.$emit('header-move', {
+        is_first: targetScreenCount === 0,
+        is_last: targetScreenCount + 1 === this.sizeCache.maxScreenCount
+      });
+    },
+
+    _handleContentTouchStart(e) {
+      if (this.swipe || !this.animated) {
+        return;
+      }
+
+      const point = e.touches ? e.touches[0] : e;
+      this.contentStartPoint = {
+        x: point.pageX,
+        y: point.pageY
+      };
+    },
+
+    _handleContentTouchMove(e) {
+      if (this.swipe || !this.animated) {
+        return;
+      }
+
+      const point = e.touches ? e.touches[0] : e;
+      const lastPoint = this.contentStartPoint;
+      this.contentDeltaPoint = {
+        x: point.pageX - lastPoint.x,
+        y: point.pageY - lastPoint.y
+      };
+    },
+
+    _handleContentTouchEnd() {
+      if (this.swipe || !this.animated) {
+        return;
+      }
+
+      const delta = this.contentDeltaPoint;
+
+      if (Math.abs(delta.x) < Math.abs(delta.y)) {
+        return;
+      }
+
+      if (Math.abs(delta.x) * 3 < this.sizeCache.headerWrapWidth) {
+        return;
+      }
+
+      if (delta.x > 0) {
+        if (!this.focusIndex) {
+          return;
+        }
+
+        this.prev();
+      } else {
+        if (this.focusIndex >= this.headerCount - 1) {
+          return;
+        }
+
+        this.next();
+      }
+
+      this.lastSlide = Date.now();
+    },
+
+    _handleHeaderTouchStart(e) {
+      if (this.sizeCache.maxScreenCount <= 1) {
+        return;
+      }
+
+      const point = e.touches ? e.touches[0] : e;
+      this.headerLastPoint = this.align === 'vertical' ? point.pageY : point.pageX;
+    },
+
+    _handleHeaderTouchMove(e) {
+      if (this.sizeCache.maxScreenCount <= 1) {
+        return;
+      }
+
+      const point = e.touches ? e.touches[0] : e;
+      const isVertical = this.align === 'vertical';
+      const curPoint = isVertical ? point.pageY : point.pageX;
+      const delta = curPoint - this.headerLastPoint;
+      this.headerLastPoint = curPoint;
+      let left = this.headerLeft + delta;
+
+      if (isVertical) {
+        // 到顶了
+        if (delta < 0 && left < 0) {
+          return;
+        } // TODO：暂不支持垂直滚动吧~~~
+
+
+        return;
+      } else {
+        // 到开头了
+        if (left > 0 && delta > 0) {
+          left = 0;
+        } else if (delta < 0 && left + this.sizeCache.headerSize < this.sizeCache.headerTabsWidth) {
+          left = this.sizeCache.headerScrollHeight;
+        }
+      }
+
+      this.headerLeft = left;
+
+      this._setHeaderScroll(left, false);
+    },
+
+    _handleHeaderTouchEnd() {
+      if (this.sizeCache.maxScreenCount <= 1) {
+        return;
+      }
+
+      this._computeCurrentScreenIndex(this.headerLeft);
+    },
+
+    _computeCurrentScreenIndex(left) {
+      const result = Math.round(Math.abs(left / this.sizeCache.headerWrapWidth));
+      this.sizeCache.curScreenIndex = result;
+      this.$emit('header-move', {
+        is_first: result === 0,
+        is_last: result + 1 === this.sizeCache.maxScreenCount
+      });
+    },
+
+    _computeComponentSize() {
+      const lastRect = this._getComponentSize('tabs', this.headerCount - 1);
+
+      const firstRect = this._getComponentSize('tabs', 0);
+
+      if (!firstRect || !lastRect) {
+        return;
+      }
+
+      this.sizeCache.headerSize = this.align === 'vertical' ? firstRect.top - lastRect.bottom : lastRect.right - firstRect.left;
+    },
+
+    _cacheComponentSize() {
+      const tabs = this.$refs.tab;
+
+      if (tabs) {
+        const tabSize = [];
+        tabs.forEach(tab => {
+          const rect = tab.getBoundingClientRect();
+          tabSize.push({
+            top: rect.top,
+            left: rect.left,
+            right: rect.right,
+            bottom: rect.bottom,
+            width: rect.width,
+            height: rect.height
+          });
+        });
+        this.sizeCache.tabs = tabSize;
+
+        this._computeComponentSize();
+      }
+
+      const headerWrap = this.$refs.headerWrap;
+
+      if (headerWrap) {
+        this.sizeCache.headerWrapWidth = headerWrap.clientWidth;
+      }
+
+      const tabsWrap = this.$refs.tabWrap;
+
+      if (tabsWrap) {
+        this.sizeCache.headerTabsWidth = tabsWrap.clientWidth;
+      }
+
+      const header = this.$refs.header;
+
+      if (header) {
+        const headerRect = header.getBoundingClientRect();
+        this.sizeCache.header = {
+          top: headerRect.top,
+          left: headerRect.left,
+          right: headerRect.right,
+          bottom: headerRect.bottom
+        };
+        this.sizeCache.headerListWidth = headerRect.width;
+
+        this._computeMaxScreenCount();
+      }
+
+      this.sizeCache.headerScrollHeight = this.sizeCache.headerTabsWidth - this.sizeCache.headerSize;
+    },
+
+    _getComponentSize(type, index = -1) {
+      const value = this.sizeCache[type];
+
+      if (!value) {
+        return null;
+      }
+
+      if (index >= 0) {
+        if (!value[index]) {
+          return null;
+        }
+
+        return value[index];
+      }
+
+      return value;
+    },
+
+    next() {
+      if (this.swiper) {
+        this.swiper.next();
+      } else {
+        this._switchTrigger(true);
+      }
+    },
+
+    prev() {
+      if (this.swiper) {
+        this.swiper.prev();
+      } else {
+        this._switchTrigger(false);
+      }
+    },
+
+    forward() {
+      if (this.align !== 'start' || this.sizeCache.curScreenIndex + 1 >= this.sizeCache.maxScreenCount) {
+        this.$emit('header-move', {
+          is_first: false,
+          is_last: true
+        });
+      } else {
+        this._moveHeader(this.sizeCache.curScreenIndex + 1);
+      }
+    },
+
+    backward() {
+      if (this.align !== 'start' || this.sizeCache.curScreenIndex === 0) {
+        this.$emit('header-move', {
+          is_first: true,
+          is_last: false
+        });
+      } else {
+        this._moveHeader(this.sizeCache.curScreenIndex - 1);
+      }
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/v-switcher.vue?vue&type=script&lang=js&
+ /* harmony default export */ var dist_v_switchervue_type_script_lang_js_ = (v_switchervue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./node_modules/v-switcher/dist/v-switcher.vue
+
+
+
+function v_switcher_injectStyles (context) {
+  
+  var style0 = __webpack_require__(63)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var v_switcher_component = Object(componentNormalizer["a" /* default */])(
+  dist_v_switchervue_type_script_lang_js_,
+  v_switchervue_type_template_id_41adfa03_render,
+  v_switchervue_type_template_id_41adfa03_staticRenderFns,
+  false,
+  v_switcher_injectStyles,
+  null,
+  "4dd793c2"
+  
+)
+
+/* harmony default export */ var v_switcher = (v_switcher_component.exports);
+// EXTERNAL MODULE: external "vue-mixin-store"
+var external_vue_mixin_store_ = __webpack_require__(8);
+var external_vue_mixin_store_default = /*#__PURE__*/__webpack_require__.n(external_vue_mixin_store_);
+
+// CONCATENATED MODULE: ./plugins/components.all.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // import 'v-switcher/dist/v-switcher.css'
+
+
+external_vue_default.a.use(lib_v_lazyload_default.a);
+external_vue_default.a.component(lib_v_img_default.a.name, lib_v_img_default.a);
+external_vue_default.a.component(v_switcher.name, v_switcher);
+external_vue_default.a.component(external_vue_mixin_store_default.a.FlowLoader.name, external_vue_mixin_store_default.a.FlowLoader);
+external_vue_default.a.component(button_default.a.name, button_default.a);
+external_vue_default.a.component(row_default.a.name, row_default.a);
+external_vue_default.a.component(col_default.a.name, col_default.a);
+external_vue_default.a.component(tag_default.a.name, tag_default.a);
+external_vue_default.a.component(form_default.a.name, form_default.a);
+external_vue_default.a.component(form_item_default.a.name, form_item_default.a);
+external_vue_default.a.component(input_default.a.name, input_default.a);
+// CONCATENATED MODULE: ./assets/js/alias.js
+/* harmony default export */ var alias = ({
+  sign(redirect = '') {
+    return `/sign?redirect=${encodeURIComponent(redirect || (typeof window === 'undefined' ? '/' : window.location.href))}`;
+  },
+
+  tag(slug, path = '') {
+    return `/tag/${slug}/${path}`;
+  },
+
+  user(slug, path = 'timeline') {
+    return `/user/${slug}/${path}`;
+  },
+
+  pin(slug) {
+    return `/pin/${slug}`;
+  },
+
+  create(slug) {
+    return slug ? `/write?slug=${slug}` : '/write';
+  }
+
+});
+// EXTERNAL MODULE: ./assets/js/utils.js
+var utils = __webpack_require__(4);
+
+// CONCATENATED MODULE: ./assets/js/imageResize.js
+/* harmony default export */ var imageResize = ((url, {
+  width,
+  height,
+  rule,
+  webP
+}) => {
+  if (!url) {
+    return '';
+  }
+
+  if (/imageMogr2/.test(url) || url.startsWith('data')) {
+    return url;
+  }
+
+  const link = url.startsWith('http') ? url : `https://m1.calibur.tv/${url}`;
+  const format = webP ? '/format/webp' : '';
+  const mode = rule === undefined || rule === '' ? 1 : parseInt(rule);
+
+  if (mode === 1 && !width || !width && !height) {
+    return `${link}?imageMogr2/auto-orient/strip${format}`;
+  }
+
+  let w;
+  let h;
+  const DPR = typeof window === 'undefined' ? 2 : window.devicePixelRatio;
+
+  if (mode === 1) {
+    w = `/w/${width * DPR | 0}`;
+    h = height ? `/h/${height * DPR | 0}` : `/h/${width * DPR | 0}`;
+  } else {
+    w = width ? `/w/${width * DPR | 0}` : '';
+    h = height ? `/h/${height * DPR | 0}` : '';
+  }
+
+  return `${link}?imageMogr2/auto-orient/strip|imageView2/${mode}${w}${h}${format}`;
+});
+// CONCATENATED MODULE: ./plugins/prototypes.all.js
+
+
+
+
+/* harmony default export */ var prototypes_all = (({
+  store
+}) => {
+  external_vue_default.a.use({
+    install(Vue) {
+      Vue.prototype.$alias = alias;
+      Vue.prototype.$utils = utils;
+      Vue.prototype.$resizeImage = imageResize;
+      Vue.prototype.$hasRole = store.getters.hasRole;
+      Vue.prototype.$isMine = store.getters.isMine;
+    }
+
+  });
+});
+// EXTERNAL MODULE: ./.nuxt/empty.js
+var _nuxt_empty = __webpack_require__(23);
+
+// CONCATENATED MODULE: ./.nuxt/index.js
+
+
+
+
+
+
+
+
+
+
+
+/* Plugins */
+
+ // Source: ./components/plugin.js (mode: 'all')
+
+ // Source: ./axios.js (mode: 'all')
+
+ // Source: ../plugins/axios.all.js (mode: 'all')
+
+ // Source: ../plugins/components.all.js (mode: 'all')
+
+ // Source: ../plugins/prototypes.all.js (mode: 'all')
+
+ // Source: ../plugins/prototypes.client.js (mode: 'client')
+
+ // Source: ../plugins/socket.client.js (mode: 'client')
+
+ // Source: ../plugins/router.client.js (mode: 'client')
+// Component: <ClientOnly>
+
+external_vue_default.a.component(external_vue_client_only_default.a.name, external_vue_client_only_default.a); // TODO: Remove in Nuxt 3: <NoSsr>
+
+external_vue_default.a.component(external_vue_no_ssr_default.a.name, { ...external_vue_no_ssr_default.a,
+
+  render(h, ctx) {
+    if (false) {}
+
+    return external_vue_no_ssr_default.a.render(h, ctx);
+  }
+
+}); // Component: <NuxtChild>
+
+external_vue_default.a.component(nuxt_child.name, nuxt_child);
+external_vue_default.a.component('NChild', nuxt_child); // Component NuxtLink is imported in server.js or client.js
+// Component: <Nuxt>
+
+external_vue_default.a.component(components_nuxt.name, components_nuxt);
+external_vue_default.a.use(external_vue_meta_default.a, {
+  "keyName": "head",
+  "attribute": "data-n-head",
+  "ssrAttribute": "data-n-head-ssr",
+  "tagIDKeyName": "hid"
+});
+const defaultTransition = {
+  "name": "page",
+  "mode": "out-in",
+  "appear": false,
+  "appearClass": "appear",
+  "appearActiveClass": "appear-active",
+  "appearToClass": "appear-to"
+};
+
+async function createApp(ssrContext, config = {}) {
+  const router = await createRouter(ssrContext);
+  const store = createStore(ssrContext); // Add this.$router into store actions/mutations
+
+  store.$router = router; // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
+
+  const registerModule = store.registerModule;
+
+  store.registerModule = (path, rawModule, options) => registerModule.call(store, path, rawModule, Object.assign({
+    preserveState: false
+  }, options)); // Create Root instance
+  // here we inject the router and store to all child components,
+  // making them available everywhere as `this.$router` and `this.$store`.
+
+
+  const app = {
+    head: {
+      "titleTemplate": function anonymous(val) {
+        return val ? `${val} - ${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.title}` : `${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.title}`;
+      },
+      "meta": [{
+        "charset": "utf-8"
+      }, {
+        "name": "viewport",
+        "content": "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+      }, {
+        "name": "renderer",
+        "content": "webkit|ie-comp|ie-stand"
+      }, {
+        "name": "force-rendering",
+        "content": "webkit"
+      }, {
+        "http-equiv": "X-UA-Compatible",
+        "content": "IE=edge,chrome=1"
+      }, {
+        "hid": "description",
+        "name": "description",
+        "content": "",
+        "template": val => val ? `${val},${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.description}` : `${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.description}`
+      }, {
+        "hid": "keywords",
+        "name": "keywords",
+        "content": "",
+        "template": val => val ? `${val},${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.keywords}` : `${{"tags":{"newbie":"ugf6","notebook":"uh4f","bangumi":"2he","topic":"3p6","game":"285"},"author":"冰淤","description":"咔哩吧是一个二次元社区","keywords":"C站,calibur,咔哩吧,ACG,二次元,垂直社区,兴趣社交","title":"calibur - 天下漫友是一家","name":"calibur","baiduStat":"var _hmt=_hmt||[];(function(){var hm=document.createElement(\"script\");hm.src=\"https://hm.baidu.com/hm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();","baiduPush":"(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js'}else{bp.src='http://push.zhanzhang.baidu.com/push.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();"}.keywords}`
+      }],
+      "link": [{
+        "rel": "dns-prefetch",
+        "href": "https:\u002F\u002Ffile.calibur.tv"
+      }, {
+        "rel": "dns-prefetch",
+        "href": "https:\u002F\u002Fm1.calibur.tv"
+      }, {
+        "rel": "preconnect",
+        "href": "https:\u002F\u002Fwww.calibur.tv"
+      }, {
+        "rel": "preconnect",
+        "href": "https:\u002F\u002Fapi.calibur.tv"
+      }, {
+        "rel": "icon",
+        "type": "image\u002Fx-icon",
+        "href": "https:\u002F\u002Ffile.calibur.tv\u002Ffavicon.ico"
+      }],
+      "bodyAttrs": {
+        "id": "calibur"
+      },
+      "script": [{
+        "src": "https:\u002F\u002Fpolyfill.alicdn.com\u002Fpolyfill.min.js",
+        "type": "text\u002Fjavascript"
+      }, {
+        "innerHTML": "var _hmt=_hmt||[];(function (){var hm=document.createElement(\"script\");hm.src=\"https:\u002F\u002Fhm.baidu.com\u002Fhm.js?c10304a2f70ee2ddf8d2818551d37a4b\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(hm,s)})();",
+        "type": "text\u002Fjavascript",
+        "async": true
+      }, {
+        "innerHTML": "(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https:\u002F\u002Fzz.bdstatic.com\u002Flinksubmit\u002Fpush.js'}else{bp.src='http:\u002F\u002Fpush.zhanzhang.baidu.com\u002Fpush.js'}var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp,s)})();",
+        "type": "text\u002Fjavascript",
+        "async": true
+      }],
+      "__dangerouslyDisableSanitizers": ["script"],
+      "style": []
+    },
+    store,
+    router,
+    nuxt: {
+      defaultTransition,
+      transitions: [defaultTransition],
+
+      setTransitions(transitions) {
+        if (!Array.isArray(transitions)) {
+          transitions = [transitions];
+        }
+
+        transitions = transitions.map(transition => {
+          if (!transition) {
+            transition = defaultTransition;
+          } else if (typeof transition === 'string') {
+            transition = Object.assign({}, defaultTransition, {
+              name: transition
+            });
+          } else {
+            transition = Object.assign({}, defaultTransition, transition);
+          }
+
+          return transition;
+        });
+        this.$options.nuxt.transitions = transitions;
+        return transitions;
+      },
+
+      err: null,
+      dateErr: null,
+
+      error(err) {
+        err = err || null;
+        app.context._errored = Boolean(err);
+        err = err ? normalizeError(err) : null;
+        let nuxt = app.nuxt; // to work with @vue/composition-api, see https://github.com/nuxt/nuxt.js/issues/6517#issuecomment-573280207
+
+        if (this) {
+          nuxt = this.nuxt || this.$options.nuxt;
+        }
+
+        nuxt.dateErr = Date.now();
+        nuxt.err = err; // Used in src/server.js
+
+        if (ssrContext) {
+          ssrContext.nuxt.error = err;
+        }
+
+        return err;
+      }
+
+    },
+    ...App
+  }; // Make app available into store via this.app
+
+  store.app = app;
+  const next = ssrContext ? ssrContext.next : location => app.router.push(location); // Resolve route
+
+  let route;
+
+  if (ssrContext) {
+    route = router.resolve(ssrContext.url).route;
+  } else {
+    const path = getLocation(router.options.base, router.options.mode);
+    route = router.resolve(path).route;
+  } // Set context to app.context
+
+
+  await setContext(app, {
+    store,
+    route,
+    next,
+    error: app.nuxt.error.bind(app),
+    payload: ssrContext ? ssrContext.payload : undefined,
+    req: ssrContext ? ssrContext.req : undefined,
+    res: ssrContext ? ssrContext.res : undefined,
+    beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined,
+    ssrContext
+  });
+
+  function inject(key, value) {
+    if (!key) {
+      throw new Error('inject(key, value) has no key provided');
+    }
+
+    if (value === undefined) {
+      throw new Error(`inject('${key}', value) has no value provided`);
+    }
+
+    key = '$' + key; // Add into app
+
+    app[key] = value; // Add into context
+
+    if (!app.context[key]) {
+      app.context[key] = value;
+    } // Add into store
+
+
+    store[key] = app[key]; // Check if plugin not already installed
+
+    const installKey = '__nuxt_' + key + '_installed__';
+
+    if (external_vue_default.a[installKey]) {
+      return;
+    }
+
+    external_vue_default.a[installKey] = true; // Call Vue.use() to install the plugin into vm
+
+    external_vue_default.a.use(() => {
+      if (!Object.prototype.hasOwnProperty.call(external_vue_default.a, key)) {
+        Object.defineProperty(external_vue_default.a.prototype, key, {
+          get() {
+            return this.$root.$options[key];
+          }
+
+        });
+      }
+    });
+  } // Inject runtime config as $config
+
+
+  inject('config', config);
+
+  if (false) {} // Add enablePreview(previewData = {}) in context for plugins
+
+
+  if (false) {} // Plugin execution
+
+
+  if (typeof /* Cannot get final name for export "default" in "./.nuxt/components/plugin.js" (known exports: , known reexports: ) */ undefined === 'function') {
+    await /* Cannot get final name for export "default" in "./.nuxt/components/plugin.js" (known exports: , known reexports: ) */ undefined(app.context, inject);
+  }
+
+  if (typeof _nuxt_axios === 'function') {
+    await _nuxt_axios(app.context, inject);
+  }
+
+  if (typeof axios_all === 'function') {
+    await axios_all(app.context, inject);
+  }
+
+  if (typeof /* Cannot get final name for export "default" in "./plugins/components.all.js" (known exports: , known reexports: ) */ undefined === 'function') {
+    await /* Cannot get final name for export "default" in "./plugins/components.all.js" (known exports: , known reexports: ) */ undefined(app.context, inject);
+  }
+
+  if (typeof prototypes_all === 'function') {
+    await prototypes_all(app.context, inject);
+  }
+
+  if (false) {}
+
+  if (false) {}
+
+  if (false) {} // Lock enablePreview in context
+
+
+  if (false) {} // If server-side, wait for async component to be resolved first
+
+
+  if ( true && ssrContext && ssrContext.url) {
+    await new Promise((resolve, reject) => {
+      router.push(ssrContext.url, resolve, () => {
+        // navigated to a different route in router guard
+        const unregister = router.afterEach(async (to, from, next) => {
+          ssrContext.url = to.fullPath;
+          app.context.route = await getRouteData(to);
+          app.context.params = to.params || {};
+          app.context.query = to.query || {};
+          unregister();
+          resolve();
+        });
+      });
+    });
+  }
+
+  return {
+    store,
+    app,
+    router
+  };
+}
+
+
+// CONCATENATED MODULE: ./.nuxt/components/nuxt-link.server.js
+
+/* harmony default export */ var nuxt_link_server = ({
+  name: 'NuxtLink',
+  extends: external_vue_default.a.component('RouterLink'),
+  props: {
+    prefetch: {
+      type: Boolean,
+      default: true
+    },
+    noPrefetch: {
+      type: Boolean,
+      default: false
+    }
+  }
+});
+// CONCATENATED MODULE: ./.nuxt/server.js
+
+
+
+
+
+
+
+ // should be included after ./index.js
+// Update serverPrefetch strategy
+
+external_vue_default.a.config.optionMergeStrategies.serverPrefetch = external_vue_default.a.config.optionMergeStrategies.created; // Fetch mixin
+
+if (!external_vue_default.a.__nuxt__fetch__mixin__) {
+  external_vue_default.a.mixin(fetch_server);
+  external_vue_default.a.__nuxt__fetch__mixin__ = true;
+} // Component: <NuxtLink>
+
+
+external_vue_default.a.component(nuxt_link_server.name, nuxt_link_server);
+external_vue_default.a.component('NLink', nuxt_link_server);
+
+if (!global.fetch) {
+  global.fetch = external_node_fetch_default.a;
+}
+
+const noopApp = () => new external_vue_default.a({
+  render: h => h('div')
+});
+
+function server_urlJoin() {
+  return Array.prototype.slice.call(arguments).join('/').replace(/\/+/g, '/');
+}
+
+const createNext = ssrContext => opts => {
+  // If static target, render on client-side
+  ssrContext.redirected = opts;
+
+  if (ssrContext.target === 'static' || !ssrContext.res) {
+    ssrContext.nuxt.serverRendered = false;
+    return;
+  }
+
+  opts.query = Object(external_querystring_["stringify"])(opts.query);
+  opts.path = opts.path + (opts.query ? '?' + opts.query : '');
+  const routerBase = '/';
+
+  if (!opts.path.startsWith('http') && routerBase !== '/' && !opts.path.startsWith(routerBase)) {
+    opts.path = server_urlJoin(routerBase, opts.path);
+  } // Avoid loop redirect
+
+
+  if (opts.path === ssrContext.url) {
+    ssrContext.redirected = false;
+    return;
+  }
+
+  ssrContext.res.writeHead(opts.status, {
+    Location: opts.path
+  });
+  ssrContext.res.end();
+}; // This exported function will be called by `bundleRenderer`.
+// This is where we perform data-prefetching to determine the
+// state of our application before actually rendering it.
+// Since data fetching is async, this function is expected to
+// return a Promise that resolves to the app instance.
+
+
+/* harmony default export */ var server = __webpack_exports__["default"] = (async ssrContext => {
+  // Create ssrContext.next for simulate next() of beforeEach() when wanted to redirect
+  ssrContext.redirected = false;
+  ssrContext.next = createNext(ssrContext); // Used for beforeNuxtRender({ Components, nuxtState })
+
+  ssrContext.beforeRenderFns = []; // Nuxt object (window.{{globals.context}}, defaults to window.__NUXT__)
+
+  ssrContext.nuxt = {
+    layout: 'default',
+    data: [],
+    fetch: [],
+    error: null,
+    state: null,
+    serverRendered: true,
+    routePath: ''
+  }; // Remove query from url is static target
+
+  if (false) {} // Public runtime config
+
+
+  ssrContext.nuxt.config = ssrContext.runtimeConfig.public; // Create the app definition and the instance (created for each request)
+
+  const {
+    app,
+    router,
+    store
+  } = await createApp(ssrContext, { ...ssrContext.runtimeConfig.public,
+    ...ssrContext.runtimeConfig.private
+  });
+
+  const _app = new external_vue_default.a(app); // Add ssr route path to nuxt context so we can account for page navigation between ssr and csr
+
+
+  ssrContext.nuxt.routePath = app.context.route.path; // Add meta infos (used in renderer.js)
+
+  ssrContext.meta = _app.$meta(); // Keep asyncData for each matched component in ssrContext (used in app/utils.js via this.$ssrContext)
+
+  ssrContext.asyncData = {};
+
+  const beforeRender = async () => {
+    // Call beforeNuxtRender() methods
+    await Promise.all(ssrContext.beforeRenderFns.map(fn => promisify(fn, {
+      Components,
+      nuxtState: ssrContext.nuxt
+    })));
+
+    ssrContext.rendered = () => {
+      // Add the state from the vuex store
+      ssrContext.nuxt.state = store.state;
+    };
+  };
+
+  const renderErrorPage = async () => {
+    // Don't server-render the page in static target
+    if (ssrContext.target === 'static') {
+      ssrContext.nuxt.serverRendered = false;
+    } // Load layout for error page
+
+
+    const layout = (layouts_error.options || layouts_error).layout;
+    const errLayout = typeof layout === 'function' ? layout.call(layouts_error, app.context) : layout;
+    ssrContext.nuxt.layout = errLayout || 'default';
+    await _app.loadLayout(errLayout);
+
+    _app.setLayout(errLayout);
+
+    await beforeRender();
+    return _app;
+  };
+
+  const render404Page = () => {
+    app.context.error({
+      statusCode: 404,
+      path: ssrContext.url,
+      message: 'This page could not be found'
+    });
+    return renderErrorPage();
+  }; // Components are already resolved by setContext -> getRouteData (app/utils.js)
+
+
+  const Components = getMatchedComponents(router.match(ssrContext.url));
+  /*
+  ** Dispatch store nuxtServerInit
+  */
+
+  if (store._actions && store._actions.nuxtServerInit) {
+    try {
+      await store.dispatch('nuxtServerInit', app.context);
+    } catch (err) {
+      console.debug('Error occurred when calling nuxtServerInit: ', err.message);
+      throw err;
+    }
+  } // ...If there is a redirect or an error, stop the process
+
+
+  if (ssrContext.redirected) {
+    return noopApp();
+  }
+
+  if (ssrContext.nuxt.error) {
+    return renderErrorPage();
+  }
+  /*
+  ** Call global middleware (nuxt.config.js)
+  */
+
+
+  let midd = [];
+  midd = midd.map(name => {
+    if (typeof name === 'function') {
+      return name;
+    }
+
+    if (typeof _nuxt_middleware[name] !== 'function') {
+      app.context.error({
+        statusCode: 500,
+        message: 'Unknown middleware ' + name
+      });
+    }
+
+    return _nuxt_middleware[name];
+  });
+  await middlewareSeries(midd, app.context); // ...If there is a redirect or an error, stop the process
+
+  if (ssrContext.redirected) {
+    return noopApp();
+  }
+
+  if (ssrContext.nuxt.error) {
+    return renderErrorPage();
+  }
+  /*
+  ** Set layout
+  */
+
+
+  let layout = Components.length ? Components[0].options.layout : layouts_error.layout;
+
+  if (typeof layout === 'function') {
+    layout = layout(app.context);
+  }
+
+  await _app.loadLayout(layout);
+
+  if (ssrContext.nuxt.error) {
+    return renderErrorPage();
+  }
+
+  layout = _app.setLayout(layout);
+  ssrContext.nuxt.layout = _app.layoutName;
+  /*
+  ** Call middleware (layout + pages)
+  */
+
+  midd = [];
+  layout = sanitizeComponent(layout);
+
+  if (layout.options.middleware) {
+    midd = midd.concat(layout.options.middleware);
+  }
+
+  Components.forEach(Component => {
+    if (Component.options.middleware) {
+      midd = midd.concat(Component.options.middleware);
+    }
+  });
+  midd = midd.map(name => {
+    if (typeof name === 'function') {
+      return name;
+    }
+
+    if (typeof _nuxt_middleware[name] !== 'function') {
+      app.context.error({
+        statusCode: 500,
+        message: 'Unknown middleware ' + name
+      });
+    }
+
+    return _nuxt_middleware[name];
+  });
+  await middlewareSeries(midd, app.context); // ...If there is a redirect or an error, stop the process
+
+  if (ssrContext.redirected) {
+    return noopApp();
+  }
+
+  if (ssrContext.nuxt.error) {
+    return renderErrorPage();
+  }
+  /*
+  ** Call .validate()
+  */
+
+
+  let isValid = true;
+
+  try {
+    for (const Component of Components) {
+      if (typeof Component.options.validate !== 'function') {
+        continue;
+      }
+
+      isValid = await Component.options.validate(app.context);
+
+      if (!isValid) {
+        break;
+      }
+    }
+  } catch (validationError) {
+    // ...If .validate() threw an error
+    app.context.error({
+      statusCode: validationError.statusCode || '500',
+      message: validationError.message
+    });
+    return renderErrorPage();
+  } // ...If .validate() returned false
+
+
+  if (!isValid) {
+    // Render a 404 error page
+    return render404Page();
+  } // If no Components found, returns 404
+
+
+  if (!Components.length) {
+    return render404Page();
+  } // Call asyncData & fetch hooks on components matched by the route.
+
+
+  const asyncDatas = await Promise.all(Components.map(Component => {
+    const promises = []; // Call asyncData(context)
+
+    if (Component.options.asyncData && typeof Component.options.asyncData === 'function') {
+      const promise = promisify(Component.options.asyncData, app.context);
+      promise.then(asyncDataResult => {
+        ssrContext.asyncData[Component.cid] = asyncDataResult;
+        applyAsyncData(Component);
+        return asyncDataResult;
+      });
+      promises.push(promise);
+    } else {
+      promises.push(null);
+    } // Call fetch(context)
+
+
+    if (Component.options.fetch && Component.options.fetch.length) {
+      promises.push(Component.options.fetch(app.context));
+    } else {
+      promises.push(null);
+    }
+
+    return Promise.all(promises);
+  })); // datas are the first row of each
+
+  ssrContext.nuxt.data = asyncDatas.map(r => r[0] || {}); // ...If there is a redirect or an error, stop the process
+
+  if (ssrContext.redirected) {
+    return noopApp();
+  }
+
+  if (ssrContext.nuxt.error) {
+    return renderErrorPage();
+  } // Call beforeNuxtRender methods & add store state
+
+
+  await beforeRender();
+  return _app;
+});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "state", function() { return /* binding */ store_state; });
+__webpack_require__.d(__webpack_exports__, "mutations", function() { return /* binding */ mutations; });
+__webpack_require__.d(__webpack_exports__, "actions", function() { return /* binding */ actions; });
+__webpack_require__.d(__webpack_exports__, "getters", function() { return /* binding */ getters; });
+
+// EXTERNAL MODULE: external "vue"
+var external_vue_ = __webpack_require__(0);
+var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
+
+// EXTERNAL MODULE: ./api/userApi.js
+var userApi = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./assets/js/cache.js
+
+const getUserFromSessionStore = (ctx, slug) => {
+  const getUser = async () => {
+    const user = await Object(userApi["d" /* getUserInfo */])(ctx, {
+      slug
+    });
+    user && setUserSessionStore(user);
+    return user;
+  };
+
+  try {
+    const user = sessionStorage.getItem(`user-item-${slug}`);
+
+    if (!user) {
+      return getUser();
+    }
+
+    return JSON.parse(sessionStorage.getItem(`user-item-${slug}`));
+  } catch (e) {
+    return getUser();
+  }
+};
+const setUserSessionStore = user => {
+  try {
+    sessionStorage.setItem(`user-item-${user.slug}`, JSON.stringify(user));
+  } catch (e) {}
+};
+const clear = () => {
+  try {
+    localStorage.clear();
+  } catch (e) {}
+};
+const set = (key, value, timeout) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+
+    if (timeout) {
+      localStorage.setItem(`${key}-timeout`, Date.now() + timeout * 1000);
+    }
+  } catch (e) {}
+};
+const get = (key, def = null) => {
+  if (typeof window === 'undefined') {
+    return def;
+  }
+
+  try {
+    const value = localStorage.getItem(key);
+
+    if (!value) {
+      return def;
+    }
+
+    const timeout = localStorage.getItem(`${key}-timeout`);
+
+    if (timeout && parseInt(timeout) < Date.now()) {
+      localStorage.removeItem(key);
+      localStorage.removeItem(`${key}-timeout`);
+      return def;
+    }
+
+    return JSON.parse(value);
+  } catch (e) {
+    return def;
+  }
+};
+const del = key => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    localStorage.removeItem(key);
+  } catch (e) {// do nothing
+  }
+};
+const has = key => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  try {
+    return !!localStorage.getItem(key);
+  } catch (e) {
+    return false;
+  }
+};
+// EXTERNAL MODULE: ./assets/js/utils.js
+var utils = __webpack_require__(4);
+
+// CONCATENATED MODULE: ./store/index.js
+
+
+
+
+const store_state = () => ({
+  user: {},
+  haveAuthToken: false,
+  roles: null,
+  isAuth: false,
+  isLogout: false,
+  logging: false,
+  mailbox: {
+    unread_message_total: 0,
+    unread_notice_total: 0
+  },
+  messageMenu: {
+    list: [],
+    time: ''
+  },
+  messageRoom: {},
+  socket: {
+    isConnected: false,
+    reconnectErr: false,
+    isMaster: false
+  }
+});
+const mutations = {
+  SET_USER_INFO(state, user) {
+    const signed = !!(user && user.slug);
+    state.user = user;
+    state.haveAuthToken = signed;
+    state.isAuth = signed;
+    state.logging = false;
+  },
+
+  SET_USER_TOKEN(state, token) {
+    if (state.isLogout) {
+      return;
+    }
+
+    state.haveAuthToken = !!token;
+  },
+
+  SET_LOGGING(state) {
+    state.logging = true;
+  },
+
+  USER_LOGOUT(state) {
+    state.haveAuthToken = false;
+    state.isAuth = false;
+    state.logging = false;
+    state.isLogout = true;
+    state.user = {};
+  },
+
+  UPDATE_USER_INFO(state, {
+    key,
+    value
+  }) {
+    external_vue_default.a.set(state.user, key, value);
+  },
+
+  SOCKET_AUTO_CONNECT(state) {
+    state.socket.isConnected = true;
+    state.socket.reconnectErr = false;
+    state.socket.isMaster = false;
+  },
+
+  SOCKET_ONOPEN(state, event) {
+    state.socket.isConnected = true;
+    state.socket.reconnectErr = false;
+    state.socket.isMaster = true;
+  },
+
+  SOCKET_ONCLOSE(state, event) {
+    state.socket.isConnected = false;
+  },
+
+  SOCKET_ONERROR(state, event) {
+    // console.error(state, event)
+    state.socket.reconnectErr = true;
+  },
+
+  SOCKET_ONMESSAGE(state, message) {
+    if (message.channel === 'unread_total') {
+      state.mailbox = message;
+    } else if (message.channel === 'message-menu') {
+      const result = [];
+      message.data.forEach(item => {
+        if (!state.messageRoom[item.channel]) {
+          external_vue_default.a.set(state.messageRoom, item.channel, {
+            time: '',
+            data: null
+          });
+        }
+
+        result.push(Object.assign(item, {
+          user: {}
+        }));
+      });
+      state.messageMenu.list = result;
+      state.messageMenu.time = Object(utils["randomStr"])();
+    } else {
+      state.messageRoom[message.channel].data = message;
+      state.messageRoom[message.channel].time = Object(utils["randomStr"])();
+    }
+
+    if (state.socket.isMaster) {
+      set('socket-on-message-data', message);
+      set('socket-on-message-time', Date.now());
+    }
+  },
+
+  SOCKET_RECONNECT(state, count) {// console.info(state, count)
+  },
+
+  SOCKET_RECONNECT_ERROR(state) {
+    state.socket.reconnectErr = true;
+  },
+
+  SET_MESSAGE_MENU(state, menu) {
+    const result = [];
+    menu.forEach(item => {
+      if (state.messageRoom[item.channel]) {
+        external_vue_default.a.set(state.messageRoom, item.channel, {
+          time: Object(utils["randomStr"])(),
+          data: null
+        });
+      } else {
+        external_vue_default.a.set(state.messageRoom, item.channel, {
+          time: '',
+          data: null
+        });
+      }
+
+      item.user = {};
+      result.push(item);
+    });
+    state.messageMenu.list = result;
+    state.messageMenu.time = Object(utils["randomStr"])();
+  },
+
+  UPDATE_MESSAGE_MENU_USER(state, {
+    channel,
+    user
+  }) {
+    state.messageMenu.list.forEach(item => {
+      if (item.channel === channel) {
+        item.user = user;
+      }
+    });
+  },
+
+  DELETE_MESSAGE_MENU(state, channel) {
+    state.messageMenu.list.forEach((item, index) => {
+      if (item.channel === channel) {
+        state.messageMenu.list.splice(index, 1);
+      }
+    });
+  },
+
+  INIT_MESSAGE_ROOM(state, channel) {
+    external_vue_default.a.set(state.messageRoom, channel, {
+      time: '',
+      data: null
+    });
+  },
+
+  CLEAR_NOTIFICATION(state, {
+    channel,
+    count
+  }) {
+    state.messageMenu.list.forEach((item, index) => {
+      if (item.channel === channel) {
+        state.messageMenu.list[index].count -= count;
+        state.mailbox.unread_message_total -= count;
+      }
+    });
+  },
+
+  SET_USER_ROLE(state, data) {
+    state.roles = data;
+  }
+
+};
+const actions = {
+  async initAuth({
+    state,
+    commit
+  }) {
+    if (!state.haveAuthToken || state.logging) {
+      return null;
+    }
+
+    if (state.user.slug) {
+      return state.user;
+    }
+
+    try {
+      commit('SET_LOGGING');
+      const user = await Object(userApi["b" /* getLoginUser */])(this);
+      commit('SET_USER_INFO', user);
+      return user;
+    } catch (e) {
+      commit('SET_USER_INFO', {});
+      return null;
+    }
+  },
+
+  async refreshMailbox({
+    state,
+    commit
+  }) {
+    if (state.socket.isConnected) {
+      return;
+    }
+
+    const data = await Object(userApi["c" /* getMailboxTotal */])(this, {
+      slug: state.user.slug
+    });
+    commit('SOCKET_ONMESSAGE', data);
+  },
+
+  async getMessageMenu({
+    commit
+  }) {
+    const menu = await this.$axios.$get('v1/message/menu');
+    commit('SET_MESSAGE_MENU', menu);
+  },
+
+  updateMessageMenu({
+    state,
+    commit
+  }) {
+    const self = state.user.slug;
+    state.messageMenu.list.forEach(async item => {
+      const arr = item.channel.split('@');
+      let slug = arr[2];
+
+      if (slug === self) {
+        slug = arr[3];
+      }
+
+      const user = await getUserFromSessionStore(this, slug);
+      commit('UPDATE_MESSAGE_MENU_USER', {
+        channel: item.channel,
+        user
+      });
+    });
+  },
+
+  getUserRoles({
+    state,
+    commit
+  }) {
+    if (state.roles || !state.user || !state.user.title.length) {
+      return;
+    }
+
+    this.$axios.$get('v1/user/roles').then(data => {
+      commit('SET_USER_ROLE', data);
+    }).catch(() => {});
+  }
+
+};
+const getters = {
+  isMine: state => slug => state.isAuth ? state.user.slug === slug : false,
+  isAdmin: state => state.isAuth ? state.user.is_admin : false,
+  hasRole: state => role => state.user.is_admin ? true : state.roles ? ~state.roles.indexOf(role) : false
+};
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/alert");
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/upload");
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/dialog");
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/option");
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/select");
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports) {
+
+module.exports = require("@codexteam/ajax");
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/tooltip");
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/pagination");
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/popover");
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+module.exports = require("v-copy");
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/dropdown-item");
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/dropdown-menu");
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/dropdown");
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/cascader");
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/loading");
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports) {
+
+module.exports = require("oh-my-chat");
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports) {
+
+module.exports = require("@better-scroll/core");
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports = require("@better-scroll/mouse-wheel");
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/date-picker");
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/radio-group");
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/radio");
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/switch");
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/timeline-item");
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports) {
+
+module.exports = require("element-ui/lib/timeline");
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+module.exports = require("throttle-debounce");
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports = require("url-polyfill");
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports) {
+
+module.exports = require("@editorjs/editorjs");
+
+/***/ })
+/******/ ]);
+//# sourceMappingURL=server.js.map
