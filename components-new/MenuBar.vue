@@ -199,8 +199,11 @@ export default {
       getMenuCounter(this)
         .then((obj) => {
           Object.keys(obj).forEach((key) => {
-            const index = this.list.findIndex(_ => _.id.toString() === key.toString())
-            this.list[index].count = +obj[key]
+            this.list.forEach((item) => {
+              if (item.id.toString() === key.toString()) {
+                item.count = +obj[key]
+              }
+            })
           })
         })
         .catch(() => {})
