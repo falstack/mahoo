@@ -12,7 +12,6 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_fcebaa16 from 'nuxt_plugin_plugin_fcebaa16' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_axios_b7f544ea from 'nuxt_plugin_axios_b7f544ea' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_axiosall_6aea33a4 from 'nuxt_plugin_axiosall_6aea33a4' // Source: ../plugins/axios.all.js (mode: 'all')
 import nuxt_plugin_componentsall_f6b62450 from 'nuxt_plugin_componentsall_f6b62450' // Source: ../plugins/components.all.js (mode: 'all')
@@ -197,10 +196,6 @@ return (val ? `${val} - ${process.env.INJECT.title}` : `${process.env.INJECT.tit
     }
   }
   // Plugin execution
-
-  if (typeof nuxt_plugin_plugin_fcebaa16 === 'function') {
-    await nuxt_plugin_plugin_fcebaa16(app.context, inject)
-  }
 
   if (typeof nuxt_plugin_axios_b7f544ea === 'function') {
     await nuxt_plugin_axios_b7f544ea(app.context, inject)

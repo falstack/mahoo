@@ -1,7 +1,7 @@
 exports.ids = [25];
 exports.modules = {
 
-/***/ 274:
+/***/ 273:
 /***/ (function(module, exports) {
 
 // Exports
@@ -10,17 +10,17 @@ module.exports = {};
 
 /***/ }),
 
-/***/ 275:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(URL) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LinkTool; });
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(274);
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(273);
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var url_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92);
+/* harmony import */ var url_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(91);
 /* harmony import */ var url_polyfill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_polyfill__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _codexteam_ajax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71);
+/* harmony import */ var _codexteam_ajax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(70);
 /* harmony import */ var _codexteam_ajax__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_codexteam_ajax__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * @typedef {object} LinkToolData
@@ -471,7 +471,7 @@ class LinkTool {
   }
 
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(91)["URL"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(90)["URL"]))
 
 /***/ })
 

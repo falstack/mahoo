@@ -461,7 +461,11 @@ function normalizeComponents (to, ___) {
 
 function setLayoutForNextPage (to) {
   // Set layout
-  let layout = this.$options.nuxt.err
+  let hasError = Boolean(this.$options.nuxt.err)
+  if (this._hadError && this._dateLastError === this.$options.nuxt.dateErr) {
+    hasError = false
+  }
+  let layout = hasError
     ? (NuxtError.options || NuxtError).layout
     : to.matched[0].components.default.options.layout
 

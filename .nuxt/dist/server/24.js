@@ -1,7 +1,7 @@
 exports.ids = [24];
 exports.modules = {
 
-/***/ 273:
+/***/ 272:
 /***/ (function(module, exports) {
 
 // Exports
@@ -10,7 +10,7 @@ module.exports = {};
 
 /***/ }),
 
-/***/ 299:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ image_ImageTool; });
 
 // EXTERNAL MODULE: ./components/editor/plugin/image/index.scss
-var plugin_image = __webpack_require__(273);
+var plugin_image = __webpack_require__(272);
 
 // CONCATENATED MODULE: ./components/editor/plugin/image/ui.js
 /**
@@ -376,7 +376,7 @@ class tunes_Tunes {
 
 }
 // EXTERNAL MODULE: external "@codexteam/ajax"
-var ajax_ = __webpack_require__(71);
+var ajax_ = __webpack_require__(70);
 var ajax_default = /*#__PURE__*/__webpack_require__.n(ajax_);
 
 // CONCATENATED MODULE: ./components/editor/plugin/image/uploader.js
