@@ -194,9 +194,7 @@ export default {
     switchRecommended(isNext) {
       isNext ? this.$refs.switcher.next() : this.$refs.switcher.prev()
     },
-    handleLoaded() {
-      console.log('handleLoaded')
-    }
+    handleLoaded() {}
   }
 }
 </script>
