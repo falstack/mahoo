@@ -69,7 +69,7 @@ jobs:
       - name: Install Qshell
         run: |
           echo $PATH
-          cd /usr/local/sbin
+          cd /usr/share/rust/.cargo/bin
           echo "export PATH=\$PATH:$(pwd)" >> ~/.profile
           source ~/.profile
           wget http://devtools.qiniu.com/qshell-linux-x64-v2.4.1.zip
