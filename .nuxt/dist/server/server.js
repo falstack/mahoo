@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"pages/index","2":"pages/pin/_slug","3":"pages/user/_slug","4":"pages/user/_slug/draft","5":"pages/user/_slug/emotion/category","6":"pages/user/_slug/emotion/category/bangumi","7":"pages/user/_slug/emotion/category/game","8":"pages/user/_slug/emotion/category/notebook","9":"pages/user/_slug/emotion/category/topic","10":"pages/user/_slug/emotion/index","11":"pages/user/_slug/message","12":"pages/user/_slug/setting","13":"pages/user/_slug/setting/basic","14":"pages/user/_slug/setting/index","15":"pages/user/_slug/setting/oauth2","16":"pages/user/_slug/setting/spider","17":"pages/user/_slug/social","18":"pages/user/_slug/social/followers","19":"pages/user/_slug/social/following","20":"pages/user/_slug/social/friends","21":"pages/user/_slug/social/index","22":"pages/user/_slug/timeline","23":"pages/write/index"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"pages/about/donate","2":"pages/index","3":"pages/pin/_slug","4":"pages/user/_slug","5":"pages/user/_slug/draft","6":"pages/user/_slug/emotion/category","7":"pages/user/_slug/emotion/category/bangumi","8":"pages/user/_slug/emotion/category/game","9":"pages/user/_slug/emotion/category/notebook","10":"pages/user/_slug/emotion/category/topic","11":"pages/user/_slug/emotion/index","12":"pages/user/_slug/message","13":"pages/user/_slug/setting","14":"pages/user/_slug/setting/basic","15":"pages/user/_slug/setting/index","16":"pages/user/_slug/setting/oauth2","17":"pages/user/_slug/setting/spider","18":"pages/user/_slug/social","19":"pages/user/_slug/social/followers","20":"pages/user/_slug/social/following","21":"pages/user/_slug/social/friends","22":"pages/user/_slug/social/index","23":"pages/user/_slug/timeline","24":"pages/write/index"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -2516,51 +2516,53 @@ if (false) {}
 
 
 
-const _6b8c1ac3 = () => interopDefault(__webpack_require__.e(/* import() | pages/write/index */ 23).then(__webpack_require__.bind(null, 279)));
+const _6b8c1ac3 = () => interopDefault(__webpack_require__.e(/* import() | pages/write/index */ 24).then(__webpack_require__.bind(null, 282)));
 
-const _7a3ab5f1 = () => interopDefault(__webpack_require__.e(/* import() | pages/pin/_slug */ 2).then(__webpack_require__.bind(null, 276)));
+const _8e1e0840 = () => interopDefault(__webpack_require__.e(/* import() | pages/about/donate */ 1).then(__webpack_require__.bind(null, 284)));
 
-const _25f85796 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug */ 3).then(__webpack_require__.bind(null, 280)));
+const _7a3ab5f1 = () => interopDefault(__webpack_require__.e(/* import() | pages/pin/_slug */ 3).then(__webpack_require__.bind(null, 279)));
 
-const _a7781f72 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/draft */ 4).then(__webpack_require__.bind(null, 281)));
+const _25f85796 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug */ 4).then(__webpack_require__.bind(null, 283)));
 
-const _8166bf78 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/index */ 10).then(__webpack_require__.bind(null, 282)));
+const _a7781f72 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/draft */ 5).then(__webpack_require__.bind(null, 285)));
 
-const _b4942fa6 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/message */ 11).then(__webpack_require__.bind(null, 277)));
+const _8166bf78 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/index */ 11).then(__webpack_require__.bind(null, 286)));
 
-const _5b10ac14 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting */ 12).then(__webpack_require__.bind(null, 283)));
+const _b4942fa6 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/message */ 12).then(__webpack_require__.bind(null, 280)));
 
-const _7943400e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/index */ 14).then(__webpack_require__.bind(null, 284)));
+const _5b10ac14 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting */ 13).then(__webpack_require__.bind(null, 287)));
 
-const _e38e0556 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/basic */ 13).then(__webpack_require__.bind(null, 285)));
+const _7943400e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/index */ 15).then(__webpack_require__.bind(null, 288)));
 
-const _822f9438 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/oauth2 */ 15).then(__webpack_require__.bind(null, 286)));
+const _e38e0556 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/basic */ 14).then(__webpack_require__.bind(null, 289)));
 
-const _1186034e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/spider */ 16).then(__webpack_require__.bind(null, 287)));
+const _822f9438 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/oauth2 */ 16).then(__webpack_require__.bind(null, 290)));
 
-const _7de73e92 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social */ 17).then(__webpack_require__.bind(null, 288)));
+const _1186034e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/setting/spider */ 17).then(__webpack_require__.bind(null, 291)));
 
-const _02a541fa = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/index */ 21).then(__webpack_require__.bind(null, 289)));
+const _7de73e92 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social */ 18).then(__webpack_require__.bind(null, 292)));
 
-const _3c715bbd = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/followers */ 18).then(__webpack_require__.bind(null, 290)));
+const _02a541fa = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/index */ 22).then(__webpack_require__.bind(null, 293)));
 
-const _088dcc39 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/following */ 19).then(__webpack_require__.bind(null, 291)));
+const _3c715bbd = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/followers */ 19).then(__webpack_require__.bind(null, 294)));
 
-const _3107a53d = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/friends */ 20).then(__webpack_require__.bind(null, 292)));
+const _088dcc39 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/following */ 20).then(__webpack_require__.bind(null, 295)));
 
-const _908be1ea = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/timeline */ 22).then(__webpack_require__.bind(null, 278)));
+const _3107a53d = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/social/friends */ 21).then(__webpack_require__.bind(null, 296)));
 
-const _82a58708 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category */ 5).then(__webpack_require__.bind(null, 293)));
+const _908be1ea = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/timeline */ 23).then(__webpack_require__.bind(null, 281)));
 
-const _47f317f4 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/bangumi */ 6).then(__webpack_require__.bind(null, 294)));
+const _82a58708 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category */ 6).then(__webpack_require__.bind(null, 297)));
 
-const _0b341b55 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/game */ 7).then(__webpack_require__.bind(null, 295)));
+const _47f317f4 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/bangumi */ 7).then(__webpack_require__.bind(null, 298)));
 
-const _785b773e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/notebook */ 8).then(__webpack_require__.bind(null, 296)));
+const _0b341b55 = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/game */ 8).then(__webpack_require__.bind(null, 299)));
 
-const _3969a3dc = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/topic */ 9).then(__webpack_require__.bind(null, 297)));
+const _785b773e = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/notebook */ 9).then(__webpack_require__.bind(null, 300)));
 
-const _5276389a = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 1).then(__webpack_require__.bind(null, 275))); // TODO: remove in Nuxt 3
+const _3969a3dc = () => interopDefault(__webpack_require__.e(/* import() | pages/user/_slug/emotion/category/topic */ 10).then(__webpack_require__.bind(null, 301)));
+
+const _5276389a = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 2).then(__webpack_require__.bind(null, 278))); // TODO: remove in Nuxt 3
 
 
 const emptyFn = () => {};
@@ -2583,6 +2585,11 @@ const routerOptions = {
     component: _6b8c1ac3,
     props: false,
     name: "write"
+  }, {
+    path: "/about/donate",
+    component: _8e1e0840,
+    props: false,
+    name: "about-donate"
   }, {
     path: "/pin/:slug?",
     component: _7a3ab5f1,

@@ -8,6 +8,14 @@
     "_name": "_6b8c1ac3"
   },
   {
+    "name": "about-donate",
+    "path": "/about/donate",
+    "component": "/home/runner/work/mahoo/mahoo/pages/about/donate.vue",
+    "chunkName": "pages/about/donate",
+    "props": false,
+    "_name": "_8e1e0840"
+  },
+  {
     "name": "pin-slug",
     "path": "/pin/:slug?",
     "component": "/home/runner/work/mahoo/mahoo/pages/pin/_slug.vue",

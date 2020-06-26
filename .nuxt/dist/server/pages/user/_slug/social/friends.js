@@ -1,7 +1,211 @@
-exports.ids = [20];
+exports.ids = [21];
 exports.modules = {
 
 /***/ 100:
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {};
+
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/user/UserNickname.vue?vue&type=template&id=06a344e8&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clearfix oneline"},[(_vm.disabled)?_vm._ssrNode("<div class=\"user-nickname\">","</div>",[_vm._ssrNode("<div class=\"nickname\"><p class=\"oneline\">"+(_vm._s(_vm.nickname || _vm.user.nickname))+"</p></div> "+((_vm.sex)?("<span"+(_vm._ssrClass(null,_vm.$style.title))+"><i"+(_vm._ssrClass("iconfont",[_vm.$style['ic-sex'], ("ic-" + (_vm.sexClass.name))]))+(_vm._ssrStyle(null,{ backgroundColor: _vm.sexClass.color }, null))+"></i></span>"):"<!---->")+" "+((_vm.level)?("<span"+(_vm._ssrClass(null,[_vm.$style.title, _vm.$style['ic-level']]))+">"+_vm._ssrEscape(_vm._s(("Lv" + (_vm.user.level))))+"</span>"):"<!---->")+" "+(_vm._ssrList((_vm.user.title),function(item,index){return ("<span"+(_vm._ssrClass(null,[_vm.$style.title, _vm.$style['ic-title']]))+">"+_vm._ssrEscape(_vm._s(item))+"</span>")})))],2):_c('NLink',{staticClass:"user-nickname active",attrs:{"to":_vm.$alias.user(_vm.user.slug),"target":"_blank"}},[_c('div',{staticClass:"nickname"},[_c('p',{staticClass:"oneline",domProps:{"innerHTML":_vm._s(_vm.nickname || _vm.user.nickname)}})]),_vm._v(" "),(_vm.sex)?_c('span',{class:_vm.$style.title},[_c('i',{staticClass:"iconfont",class:[_vm.$style['ic-sex'], ("ic-" + (_vm.sexClass.name))],style:({ backgroundColor: _vm.sexClass.color })})]):_vm._e(),_vm._v(" "),(_vm.level)?_c('span',{class:[_vm.$style.title, _vm.$style['ic-level']],domProps:{"textContent":_vm._s(("Lv" + (_vm.user.level)))}}):_vm._e(),_vm._v(" "),_vm._l((_vm.user.title),function(item,index){return _c('span',{key:index,class:[_vm.$style.title, _vm.$style['ic-title']],domProps:{"textContent":_vm._s(item)}})})],2)],1)}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/user/UserNickname.vue?vue&type=template&id=06a344e8&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./components/user/UserNickname.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var UserNicknamevue_type_script_lang_js_ = ({
+  name: 'UserNickname',
+  props: {
+    user: {
+      type: Object,
+      required: true
+    },
+    sex: {
+      type: Number,
+      default: 0
+    },
+    level: {
+      type: Boolean,
+      default: true
+    },
+    nickname: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    sexClass() {
+      switch (this.sex) {
+        case -1:
+          return {
+            name: 'simi',
+            color: 'limegreen'
+          };
+
+        case 0:
+          return {
+            name: 'unknown',
+            color: 'gold'
+          };
+
+        case 1:
+          return {
+            name: 'nan',
+            color: 'deepskyblue'
+          };
+
+        case 2:
+          return {
+            name: 'nv',
+            color: 'hotpink'
+          };
+
+        default:
+          return {
+            name: 'weizhi',
+            color: 'gold'
+          };
+      }
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./components/user/UserNickname.vue?vue&type=script&lang=js&
+ /* harmony default export */ var user_UserNicknamevue_type_script_lang_js_ = (UserNicknamevue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./components/user/UserNickname.vue
+
+
+
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(102)
+if (style0.__inject__) style0.__inject__(context)
+var style1 = __webpack_require__(103)
+if (style1.__inject__) style1.__inject__(context)
+this["$style"] = (style1.locals || style1)
+
+}
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  user_UserNicknamevue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  injectStyles,
+  null,
+  "f6130c86"
+  
+)
+
+/* harmony default export */ var UserNickname = __webpack_exports__["a"] = (component.exports);
+
+/***/ }),
+
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,7 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25,7 +229,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 102:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,7 +369,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -267,19 +471,19 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 127:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(100);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserRelationItem_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 128:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -295,13 +499,13 @@ var staticRenderFns = []
 var UserAvatar = __webpack_require__(96);
 
 // EXTERNAL MODULE: ./components/user/UserNickname.vue + 4 modules
-var UserNickname = __webpack_require__(99);
+var UserNickname = __webpack_require__(101);
 
 // EXTERNAL MODULE: ./components/button/UserFollowBtn.vue + 4 modules
-var UserFollowBtn = __webpack_require__(102);
+var UserFollowBtn = __webpack_require__(104);
 
 // EXTERNAL MODULE: ./components/button/SendMailBtn.vue + 4 modules
-var SendMailBtn = __webpack_require__(123);
+var SendMailBtn = __webpack_require__(124);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./components/user/UserRelationItem.vue?vue&type=script&lang=js&
 //
@@ -392,7 +596,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(127)
+  var style0 = __webpack_require__(130)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -414,7 +618,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 292:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -435,7 +639,7 @@ var alert_ = __webpack_require__(65);
 var alert_default = /*#__PURE__*/__webpack_require__.n(alert_);
 
 // EXTERNAL MODULE: ./components/user/UserRelationItem.vue + 4 modules
-var UserRelationItem = __webpack_require__(128);
+var UserRelationItem = __webpack_require__(132);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/user/_slug/social/friends.vue?vue&type=script&lang=js&
 
@@ -635,7 +839,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(97)
+  var style0 = __webpack_require__(99)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -657,7 +861,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 97:
+/***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -666,210 +870,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAvatar_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAvatar_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAvatar_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAvatar_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_sass_resources_loader_lib_loader_js_ref_7_oneOf_1_3_node_modules_vue_loader_lib_index_js_vue_loader_options_UserAvatar_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ 98:
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {};
-
-
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/user/UserNickname.vue?vue&type=template&id=06a344e8&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clearfix oneline"},[(_vm.disabled)?_vm._ssrNode("<div class=\"user-nickname\">","</div>",[_vm._ssrNode("<div class=\"nickname\"><p class=\"oneline\">"+(_vm._s(_vm.nickname || _vm.user.nickname))+"</p></div> "+((_vm.sex)?("<span"+(_vm._ssrClass(null,_vm.$style.title))+"><i"+(_vm._ssrClass("iconfont",[_vm.$style['ic-sex'], ("ic-" + (_vm.sexClass.name))]))+(_vm._ssrStyle(null,{ backgroundColor: _vm.sexClass.color }, null))+"></i></span>"):"<!---->")+" "+((_vm.level)?("<span"+(_vm._ssrClass(null,[_vm.$style.title, _vm.$style['ic-level']]))+">"+_vm._ssrEscape(_vm._s(("Lv" + (_vm.user.level))))+"</span>"):"<!---->")+" "+(_vm._ssrList((_vm.user.title),function(item,index){return ("<span"+(_vm._ssrClass(null,[_vm.$style.title, _vm.$style['ic-title']]))+">"+_vm._ssrEscape(_vm._s(item))+"</span>")})))],2):_c('NLink',{staticClass:"user-nickname active",attrs:{"to":_vm.$alias.user(_vm.user.slug),"target":"_blank"}},[_c('div',{staticClass:"nickname"},[_c('p',{staticClass:"oneline",domProps:{"innerHTML":_vm._s(_vm.nickname || _vm.user.nickname)}})]),_vm._v(" "),(_vm.sex)?_c('span',{class:_vm.$style.title},[_c('i',{staticClass:"iconfont",class:[_vm.$style['ic-sex'], ("ic-" + (_vm.sexClass.name))],style:({ backgroundColor: _vm.sexClass.color })})]):_vm._e(),_vm._v(" "),(_vm.level)?_c('span',{class:[_vm.$style.title, _vm.$style['ic-level']],domProps:{"textContent":_vm._s(("Lv" + (_vm.user.level)))}}):_vm._e(),_vm._v(" "),_vm._l((_vm.user.title),function(item,index){return _c('span',{key:index,class:[_vm.$style.title, _vm.$style['ic-title']],domProps:{"textContent":_vm._s(item)}})})],2)],1)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./components/user/UserNickname.vue?vue&type=template&id=06a344e8&
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./components/user/UserNickname.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var UserNicknamevue_type_script_lang_js_ = ({
-  name: 'UserNickname',
-  props: {
-    user: {
-      type: Object,
-      required: true
-    },
-    sex: {
-      type: Number,
-      default: 0
-    },
-    level: {
-      type: Boolean,
-      default: true
-    },
-    nickname: {
-      type: String,
-      default: ''
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    sexClass() {
-      switch (this.sex) {
-        case -1:
-          return {
-            name: 'simi',
-            color: 'limegreen'
-          };
-
-        case 0:
-          return {
-            name: 'unknown',
-            color: 'gold'
-          };
-
-        case 1:
-          return {
-            name: 'nan',
-            color: 'deepskyblue'
-          };
-
-        case 2:
-          return {
-            name: 'nv',
-            color: 'hotpink'
-          };
-
-        default:
-          return {
-            name: 'weizhi',
-            color: 'gold'
-          };
-      }
-    }
-
-  }
-});
-// CONCATENATED MODULE: ./components/user/UserNickname.vue?vue&type=script&lang=js&
- /* harmony default export */ var user_UserNicknamevue_type_script_lang_js_ = (UserNicknamevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(1);
-
-// CONCATENATED MODULE: ./components/user/UserNickname.vue
-
-
-
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__(100)
-if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(101)
-if (style1.__inject__) style1.__inject__(context)
-this["$style"] = (style1.locals || style1)
-
-}
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  user_UserNicknamevue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  injectStyles,
-  null,
-  "f6130c86"
-  
-)
-
-/* harmony default export */ var UserNickname = __webpack_exports__["a"] = (component.exports);
 
 /***/ })
 

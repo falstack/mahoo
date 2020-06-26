@@ -4,6 +4,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _6b8c1ac3 = () => interopDefault(import('../pages/write/index.vue' /* webpackChunkName: "pages/write/index" */))
+const _8e1e0840 = () => interopDefault(import('../pages/about/donate.vue' /* webpackChunkName: "pages/about/donate" */))
 const _7a3ab5f1 = () => interopDefault(import('../pages/pin/_slug.vue' /* webpackChunkName: "pages/pin/_slug" */))
 const _25f85796 = () => interopDefault(import('../pages/user/_slug.vue' /* webpackChunkName: "pages/user/_slug" */))
 const _a7781f72 = () => interopDefault(import('../pages/user/_slug/draft.vue' /* webpackChunkName: "pages/user/_slug/draft" */))
@@ -48,6 +49,11 @@ export const routerOptions = {
     component: _6b8c1ac3,
     props: false,
     name: "write"
+  }, {
+    path: "/about/donate",
+    component: _8e1e0840,
+    props: false,
+    name: "about-donate"
   }, {
     path: "/pin/:slug?",
     component: _7a3ab5f1,

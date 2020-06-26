@@ -1,8 +1,9 @@
 {
   "entry": "server.js",
   "files": {
-    "24.js": "24.js",
     "25.js": "25.js",
+    "26.js": "26.js",
+    "pages/about/donate.js": "pages/about/donate.js",
     "pages/index.js": "pages/index.js",
     "pages/pin/_slug.js": "pages/pin/_slug.js",
     "pages/user/_slug.js": "pages/user/_slug.js",
@@ -29,8 +30,9 @@
     "server.js": "server.js"
   },
   "maps": {
-    "24.js": "24.js.map",
     "25.js": "25.js.map",
+    "26.js": "26.js.map",
+    "pages/about/donate.js": "pages/about/donate.js.map",
     "pages/index.js": "pages/index.js.map",
     "pages/pin/_slug.js": "pages/pin/_slug.js.map",
     "pages/user/_slug.js": "pages/user/_slug.js.map",
