@@ -222,6 +222,7 @@ $header-link-padding: 7px;
             <span>主站</span>
           </NLink>
         </li>
+        <!--
         <li>
           <NLink class="nav-link" to="/">
             <span>游戏中心</span>
@@ -253,6 +254,7 @@ $header-link-padding: 7px;
             <span>下载APP</span>
           </NLink>
         </li>
+        -->
       </ul>
       <ul class="header-right">
         <template v-if="isAuth">
@@ -311,12 +313,15 @@ $header-link-padding: 7px;
               登录
             </button>
           </li>
+          <!--
           <li>
             <NLink class="nav-link" to="/">
               <span>动态</span>
             </NLink>
           </li>
+          -->
         </template>
+        <!--
         <li>
           <NLink class="nav-link" to="/">
             <span>历史</span>
@@ -327,10 +332,11 @@ $header-link-padding: 7px;
             <span>创作中心</span>
           </NLink>
         </li>
+        -->
         <li>
-          <Button class="create-btn">
-            投稿
-          </Button>
+          <a href="/about/donate" target="_blank" class="create-btn">
+            捐赠
+          </a>
         </li>
       </ul>
     </div>
