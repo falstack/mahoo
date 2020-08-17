@@ -271,7 +271,8 @@ export function getLocation (base, mode) {
   if (mode === 'hash') {
     return window.location.hash.replace(/^#\//, '')
   }
-  if (base && path.indexOf(base) === 0) {
+  // To get matched with sanitized router.base add trailing slash
+  if (base && (path.endsWith('/') ? path : path + '/').startsWith(base)) {
     path = path.slice(base.length)
   }
   return (path || '/') + window.location.search + window.location.hash
@@ -616,10 +617,18 @@ export function addLifecycleHook(vm, hook, fn) {
   }
 }
 
-export const urlJoin = function urlJoin () {
+export function urlJoin () {
   return [].slice
     .call(arguments)
     .join('/')
     .replace(/\/+/g, '/')
     .replace(':/', '://')
+}
+
+export function stripTrailingSlash (path) {
+  return path.replace(/\/+$/, '') || '/'
+}
+
+export function isSamePath (p1, p2) {
+  return stripTrailingSlash(p1) === stripTrailingSlash(p2)
 }
