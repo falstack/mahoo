@@ -7,7 +7,7 @@ const axiosExtra = {
     this.defaults.baseURL = baseURL
   },
   setHeader (name, value, scopes = 'common') {
-    for (let scope of Array.isArray(scopes) ? scopes : [ scopes ]) {
+    for (const scope of Array.isArray(scopes) ? scopes : [ scopes ]) {
       if (!value) {
         delete this.defaults.headers[scope][name];
         return
@@ -41,12 +41,12 @@ const axiosExtra = {
 }
 
 // Request helpers ($get, $post, ...)
-for (let method of ['request', 'delete', 'get', 'head', 'options', 'post', 'put', 'patch']) {
+for (const method of ['request', 'delete', 'get', 'head', 'options', 'post', 'put', 'patch']) {
   axiosExtra['$' + method] = function () { return this[method].apply(this, arguments).then(res => res && res.data) }
 }
 
 const extendAxiosInstance = axios => {
-  for (let key in axiosExtra) {
+  for (const key in axiosExtra) {
     axios[key] = axiosExtra[key].bind(axios)
   }
 }
@@ -96,7 +96,7 @@ export default (ctx, inject) => {
   // Proxy SSR request headers headers
   if (process.server && ctx.req && ctx.req.headers) {
     const reqHeaders = { ...ctx.req.headers }
-    for (let h of ["accept","host","cf-ray","cf-connecting-ip","content-length","content-md5","content-type"]) {
+    for (const h of ["accept","host","cf-ray","cf-connecting-ip","content-length","content-md5","content-type"]) {
       delete reqHeaders[h]
     }
     axiosOptions.headers.common = { ...reqHeaders, ...axiosOptions.headers.common }
