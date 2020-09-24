@@ -2425,7 +2425,11 @@ async function serverPrefetch() {
       this._fetchOnServer = this.$options.fetchOnServer.call(this) !== false;
     } else {
       this._fetchOnServer = this.$options.fetchOnServer !== false;
-    }
+    } // Added for remove vue undefined warning while ssr
+
+
+    this.$fetch = () => {}; // issue #8043
+
 
     external_vue_default.a.util.defineReactive(this, '$fetchState', {
       pending: true,
