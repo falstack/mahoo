@@ -25,30 +25,32 @@
         <Carousel :list="carousel" />
         <RollRecommended />
       </div>
-      <div class="page-modules">
-        <a
-          v-for="row in pageMenu"
-          :id="row.type"
-          :key="row.type"
-          :class="{ 'anchor-module': row.main }"
-          class="v-layout__row"
-        >
-          <component
-            :is="row.left.type"
-            :slug="row.left.slug"
-            :type="row.type"
-            :name="row.left.name"
-            class="v-layout__left"
-          />
-          <component
-            :is="row.right.type"
-            :slug="row.right.slug"
-            :type="row.type"
-            :name="row.right.name"
-            class="v-layout__right"
-          />
-        </a>
-      </div>
+      <ClientOnly>
+        <div class="page-modules">
+          <a
+            v-for="row in pageMenu"
+            :id="row.type"
+            :key="row.type"
+            :class="{ 'anchor-module': row.main }"
+            class="v-layout__row"
+          >
+            <component
+              :is="row.left.type"
+              :slug="row.left.slug"
+              :type="row.type"
+              :name="row.left.name"
+              class="v-layout__left"
+            />
+            <component
+              :is="row.right.type"
+              :slug="row.right.slug"
+              :type="row.type"
+              :name="row.right.name"
+              class="v-layout__right"
+            />
+          </a>
+        </div>
+      </ClientOnly>
     </div>
     <VerticalNavBar :menu="pageMenu.filter(_ => _.main)" />
     <AboutSite />

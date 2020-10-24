@@ -113,11 +113,11 @@ export default {
       return this.atTop ? '232px' : this.offsetTop
     }
   },
-  watch: {},
-  created() {},
   mounted() {
-    this.calcOffset()
-    window.addEventListener('scroll', this.onScroll)
+    this.$nextTick(() => {
+      this.calcOffset()
+      window.addEventListener('scroll', this.onScroll)
+    })
   },
   methods: {
     onScroll: throttle(100, function() {
