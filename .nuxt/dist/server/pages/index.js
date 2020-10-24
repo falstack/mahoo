@@ -1265,12 +1265,12 @@ __webpack_require__.r(__webpack_exports__);
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=template&id=39a1affd&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"homepage"}},[_c('PageHeader',{attrs:{"background":_vm.banner}}),_vm._ssrNode(" "),_c('PageBanner',{attrs:{"background":_vm.banner}}),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"v-layout\">","</div>",[_c('MenuBar',{attrs:{"menu":_vm.menu}}),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"ssr-modules\">","</div>",[_c('Carousel',{attrs:{"list":_vm.carousel}}),_vm._ssrNode(" "),_c('RollRecommended')],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"page-modules\">","</div>",_vm._l((_vm.pageMenu),function(row){return _vm._ssrNode("<a"+(_vm._ssrAttr("id",row.type))+(_vm._ssrClass("v-layout__row",{ 'anchor-module': row.main }))+">","</a>",[_c(row.left.type,{tag:"component",staticClass:"v-layout__left",attrs:{"slug":row.left.slug,"type":row.type,"name":row.left.name}}),_vm._ssrNode(" "),_c(row.right.type,{tag:"component",staticClass:"v-layout__right",attrs:{"slug":row.right.slug,"type":row.type,"name":row.right.name}})],2)}),0)],2),_vm._ssrNode(" "),_c('VerticalNavBar',{attrs:{"menu":_vm.pageMenu.filter(function (_) { return _.main; })}}),_vm._ssrNode(" "),_c('AboutSite'),_vm._ssrNode(" "),_c('PageFooter')],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=template&id=3ba80a28&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"homepage"}},[_c('PageHeader',{attrs:{"background":_vm.banner}}),_vm._ssrNode(" "),_c('PageBanner',{attrs:{"background":_vm.banner}}),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"v-layout\">","</div>",[_c('MenuBar',{attrs:{"menu":_vm.menu}}),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"ssr-modules\">","</div>",[_c('Carousel',{attrs:{"list":_vm.carousel}}),_vm._ssrNode(" "),_c('RollRecommended')],2),_vm._ssrNode(" "),_c('ClientOnly',[_c('div',{staticClass:"page-modules"},_vm._l((_vm.pageMenu),function(row){return _c('a',{key:row.type,staticClass:"v-layout__row",class:{ 'anchor-module': row.main },attrs:{"id":row.type}},[_c(row.left.type,{tag:"component",staticClass:"v-layout__left",attrs:{"slug":row.left.slug,"type":row.type,"name":row.left.name}}),_vm._v(" "),_c(row.right.type,{tag:"component",staticClass:"v-layout__right",attrs:{"slug":row.right.slug,"type":row.type,"name":row.right.name}})],1)}),0)])],2),_vm._ssrNode(" "),_c('VerticalNavBar',{attrs:{"menu":_vm.pageMenu.filter(function (_) { return _.main; })}}),_vm._ssrNode(" "),_c('AboutSite'),_vm._ssrNode(" "),_c('PageFooter')],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=39a1affd&
+// CONCATENATED MODULE: ./pages/index.vue?vue&type=template&id=3ba80a28&
 
 // EXTERNAL MODULE: ./components-new/PageHeader.vue + 9 modules
 var PageHeader = __webpack_require__(131);
@@ -2067,12 +2067,12 @@ var AboutSite_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var AboutSite = (AboutSite_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components-new/VerticalNavBar.vue?vue&type=template&id=3d9a8f2d&
-var VerticalNavBarvue_type_template_id_3d9a8f2d_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{style:({ top: _vm.top }),attrs:{"id":"vertical-nav-bar"}},[_vm._ssrNode("<ul class=\"nav-list\">"+(_vm._ssrList((_vm.menu),function(item,index){return ("<li><a"+(_vm._ssrAttr("href",("#" + (item.type))))+(_vm._ssrClass(null,{ 'is-active': index === _vm.active }))+">"+_vm._ssrEscape(_vm._s(item.left.name))+"</a></li>")}))+"</ul> <a href=\"#\" class=\"back-top\"><span></span></a>")])}
-var VerticalNavBarvue_type_template_id_3d9a8f2d_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components-new/VerticalNavBar.vue?vue&type=template&id=25244ff8&
+var VerticalNavBarvue_type_template_id_25244ff8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{style:({ top: _vm.top }),attrs:{"id":"vertical-nav-bar"}},[_vm._ssrNode("<ul class=\"nav-list\">"+(_vm._ssrList((_vm.menu),function(item,index){return ("<li><a"+(_vm._ssrAttr("href",("#" + (item.type))))+(_vm._ssrClass(null,{ 'is-active': index === _vm.active }))+">"+_vm._ssrEscape(_vm._s(item.left.name))+"</a></li>")}))+"</ul> <a href=\"#\" class=\"back-top\"><span></span></a>")])}
+var VerticalNavBarvue_type_template_id_25244ff8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components-new/VerticalNavBar.vue?vue&type=template&id=3d9a8f2d&
+// CONCATENATED MODULE: ./components-new/VerticalNavBar.vue?vue&type=template&id=25244ff8&
 
 // EXTERNAL MODULE: external "throttle-debounce"
 var external_throttle_debounce_ = __webpack_require__(89);
@@ -2194,13 +2194,12 @@ var external_throttle_debounce_ = __webpack_require__(89);
     }
 
   },
-  watch: {},
-
-  created() {},
 
   mounted() {
-    this.calcOffset();
-    window.addEventListener('scroll', this.onScroll);
+    this.$nextTick(() => {
+      this.calcOffset();
+      window.addEventListener('scroll', this.onScroll);
+    });
   },
 
   methods: {
@@ -2257,8 +2256,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var VerticalNavBar_component = Object(componentNormalizer["a" /* default */])(
   components_new_VerticalNavBarvue_type_script_lang_js_,
-  VerticalNavBarvue_type_template_id_3d9a8f2d_render,
-  VerticalNavBarvue_type_template_id_3d9a8f2d_staticRenderFns,
+  VerticalNavBarvue_type_template_id_25244ff8_render,
+  VerticalNavBarvue_type_template_id_25244ff8_staticRenderFns,
   false,
   VerticalNavBar_injectStyles,
   null,
@@ -4211,6 +4210,8 @@ var RankDaily_component = Object(componentNormalizer["a" /* default */])(
 var channel = __webpack_require__(181);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/index.vue?vue&type=script&lang=js&
+//
+//
 //
 //
 //

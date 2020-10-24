@@ -2385,6 +2385,11 @@ function stripTrailingSlash(path) {
 function isSamePath(p1, p2) {
   return stripTrailingSlash(p1) === stripTrailingSlash(p2);
 }
+function setScrollRestoration(newVal) {
+  try {
+    window.history.scrollRestoration = newVal;
+  } catch (e) {}
+}
 // CONCATENATED MODULE: ./.nuxt/mixins/fetch.server.js
 
 
@@ -3263,12 +3268,12 @@ var css_global = __webpack_require__(50);
 // EXTERNAL MODULE: ./theme/index.css
 var theme = __webpack_require__(51);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=bf3baec6&
-var defaultvue_type_template_id_bf3baec6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"layout-web"}},[_vm._ssrNode("<span>","</span>",[_c('nuxt')],1),_vm._ssrNode(" "),_c('SignDialog')],2)}
-var defaultvue_type_template_id_bf3baec6_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=42dccab8&
+var defaultvue_type_template_id_42dccab8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"layout-web"}},[_c('nuxt'),_vm._ssrNode(" "),_c('SignDialog')],2)}
+var defaultvue_type_template_id_42dccab8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=bf3baec6&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=42dccab8&
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/SignDialog.vue?vue&type=template&id=75f2c4a9&
 var SignDialogvue_type_template_id_75f2c4a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.canRender)?_c('div',{staticClass:"sign-container"},[(_vm.isGuest)?_vm._ssrNode("<div id=\"space3D\""+(_vm._ssrClass(null,[_vm.showModal ? 'space-enter' : 'space-leave']))+">","</div>",[_vm._ssrNode("<div class=\"sign-modal-wrap\">","</div>",[_vm._ssrNode("<div"+(_vm._ssrClass("sign-modal sign-in-modal",{
@@ -4528,8 +4533,6 @@ var parseToken = __webpack_require__(17);
 //
 //
 //
-//
-//
 
 
 
@@ -4553,8 +4556,8 @@ var parseToken = __webpack_require__(17);
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   layouts_defaultvue_type_script_lang_js_,
-  defaultvue_type_template_id_bf3baec6_render,
-  defaultvue_type_template_id_bf3baec6_staticRenderFns,
+  defaultvue_type_template_id_42dccab8_render,
+  defaultvue_type_template_id_42dccab8_staticRenderFns,
   false,
   null,
   null,
@@ -4622,7 +4625,7 @@ const layouts = {
 
   created() {
     // Add this.$nuxt in child instances
-    external_vue_default.a.prototype.$nuxt = this;
+    this.$root.$options.$nuxt = this;
 
     if (false) {} // Add $nuxt.error()
 
@@ -6962,6 +6965,13 @@ external_vue_default.a.component('NChild', nuxt_child); // Component NuxtLink is
 // Component: <Nuxt>
 
 external_vue_default.a.component(components_nuxt.name, components_nuxt);
+Object.defineProperty(external_vue_default.a.prototype, '$nuxt', {
+  get() {
+    return this.$root.$options.$nuxt;
+  },
+
+  configurable: true
+});
 external_vue_default.a.use(external_vue_meta_default.a, {
   "keyName": "head",
   "attribute": "data-n-head",
